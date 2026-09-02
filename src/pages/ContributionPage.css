@@ -1,0 +1,327 @@
+/* ContributionPage.css - Full Width Premium Styles */
+
+.contribution-page-wrapper {
+  width: 100%;
+  background-color: #f8fafc;
+  min-height: 80vh;
+}
+
+/* Hero Header */
+.contribution-hero-header {
+  background: linear-gradient(135deg, #003853 0%, #005C8A 100%);
+  padding: 4rem 1.5rem 4.5rem;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
+.contribution-hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contribution-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #E58325;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.85rem;
+  border-radius: 100px;
+  transition: background 0.2s ease;
+}
+
+.contribution-back-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.contribution-hero-tag {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #E58325;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contribution-hero-title {
+  font-size: 2.35rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 0.85rem;
+}
+
+.contribution-hero-subtitle {
+  font-size: 1.025rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Main Content Grid Utilizing Full Container Width */
+.contribution-main-section {
+  padding: 0 1.5rem 5rem;
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.contribution-main-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.contribution-grid-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Form Container Card */
+.contribution-form-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2.25rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.form-section-card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 2rem !important;
+  box-shadow: none !important;
+}
+
+.form-section-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 800;
+  margin: 0 0 1rem;
+  display: block;
+}
+
+.form-field-group {
+  margin-bottom: 1rem;
+}
+
+.form-field-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.35rem;
+}
+
+.form-sub-label {
+  font-weight: 400;
+  color: #64748b;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 0.925rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 30, 45, 0.1);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Checkbox Grid (3 columns on wide desktop) */
+.items-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.chk-box-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chk-box-card.selected {
+  background: #fdf8ea;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(139, 30, 45, 0.08);
+}
+
+.chk-box-title {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.chk-box-note {
+  display: block;
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+.btn-submit-offer {
+  width: 100%;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 100px !important;
+  padding: 0.85rem 1.85rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 92, 138, 0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-submit-offer:hover {
+  transform: translateY(-2px);
+  background: var(--primary-dark);
+}
+
+/* Drop-off Point Sidebar Card */
+.contribution-sidebar-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2.25rem 1.85rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-badge {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.sidebar-house-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 0.25rem;
+}
+
+.sidebar-address-sub {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+  line-height: 1.45;
+}
+
+.sidebar-contact-highlight {
+  background: #fdf8ea;
+  border: 1px solid #fce8a6;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.sidebar-contact-name {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: block;
+}
+
+.sidebar-contact-phone {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--primary) !important;
+  text-decoration: none;
+}
+
+.sidebar-directions-box {
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 1.15rem;
+}
+
+.sidebar-direction-item {
+  font-size: 0.875rem;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-direction-item strong {
+  color: #0f172a;
+}
+
+.sidebar-gmaps-btn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--primary) !important;
+  font-weight: 800;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+@media (max-width: 990px) {
+  .contribution-grid-layout {
+    grid-template-columns: 1fr;
+  }
+  .items-checkbox-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contribution-sidebar-card {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .contribution-main-section {
+    padding: 0 1rem 3rem !important;
+    margin-top: 1.5rem !important;
+  }
+  .contribution-form-card {
+    padding: 1.5rem 1.25rem !important;
+    border-radius: 18px !important;
+  }
+  .form-section-card {
+    padding: 0 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .items-checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+}

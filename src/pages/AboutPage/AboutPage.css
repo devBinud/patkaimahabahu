@@ -1,0 +1,406 @@
+/* AboutPage.css - Untitled UI Style 4-Column Team Layout by Department */
+
+.about-page-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  min-height: 80vh;
+  font-family: var(--font-geist), sans-serif;
+}
+
+/* ==========================================
+   1. INTRO SECTION (Left Aligned Narrative)
+   ========================================== */
+
+.about-intro-section {
+  padding: 2.25rem 1.5rem 2.25rem;
+  background-color: #ffffff;
+}
+
+.about-intro-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.about-intro-header-left {
+  max-width: 920px;
+  text-align: left;
+}
+
+.about-assamese-badge {
+  display: inline-block;
+  background: rgba(0, 92, 138, 0.08);
+  color: #005C8A;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.about-intro-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #003853;
+  line-height: 1.25;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.02em;
+  font-family: var(--font-heading);
+}
+
+.about-intro-lead {
+  font-size: 0.98rem;
+  color: #1E293B;
+  line-height: 1.65;
+  margin: 0 0 0.75rem;
+  font-weight: 500;
+}
+
+.about-intro-desc {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+}
+
+/* Pillar Pills */
+.about-pillars-pills {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.about-pillar-pill {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #003853;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.pillar-icon {
+  color: #E58325;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   2. FOUNDER & LEADERSHIP SECTION (First Row)
+   ========================================== */
+.about-leadership-section {
+  padding: 2.5rem 1.5rem 1.5rem;
+  background-color: #ffffff;
+}
+
+/* ==========================================
+   3. FLOOD RELIEF TEAMS SECTION
+   ========================================== */
+.about-team-section {
+  padding: 2.5rem 1.5rem 6rem;
+  background-color: #ffffff;
+}
+
+.about-team-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Main Team Title */
+.about-team-header-main {
+  text-align: left;
+  max-width: 860px;
+  margin: 0 0 2.5rem 0;
+}
+
+.team-section-main-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #003853;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+  font-family: var(--font-heading);
+}
+
+.team-section-main-desc {
+  font-size: 0.95rem;
+  color: #64748B;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Department Groups */
+.department-groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.department-group-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.department-group-header {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.department-group-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #003853;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.015em;
+  font-family: var(--font-heading);
+}
+
+.department-group-desc {
+  font-size: 0.88rem;
+  color: #64748B;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* 4-COLUMN TEAM GRID */
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem;
+  row-gap: 2.75rem;
+}
+
+.about-member-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* Portrait Photo Frame */
+.member-photo-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #F1F5F9;
+  margin-bottom: 0.95rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid #E2E8F0;
+}
+
+.member-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.member-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F8FAFC;
+  color: #64748B;
+}
+
+.member-initials-badge {
+  font-size: 2.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #64748B;
+  opacity: 0.85;
+}
+
+/* Info Meta (Clean 2-Line Centered Layout) */
+.member-info-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.member-name {
+  font-family: var(--font-geist), sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #0F172A !important;
+  margin: 0 0 0.15rem !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+  text-align: center !important;
+}
+
+.member-role {
+  font-family: var(--font-geist), sans-serif !important;
+  font-size: 0.76rem !important;
+  font-weight: 500 !important;
+  color: #005C8A !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+/* ==========================================
+   PACKAGING & COMMUNITY ACKNOWLEDGMENT (Clean Borderless List)
+   ========================================== */
+.packaging-ack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  padding: 0.25rem 0 0.5rem;
+}
+
+.packaging-ack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.packaging-ack-title {
+  font-family: var(--font-geist), sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  color: #0F172A !important;
+  margin: 0 0 0.15rem !important;
+  line-height: 1.35 !important;
+}
+
+.packaging-ack-role {
+  font-family: var(--font-geist), sans-serif !important;
+  font-size: 0.8rem !important;
+  color: #005C8A !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 1100px) {
+  .about-team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+  }
+
+  .about-intro-title {
+    font-size: 1.75rem;
+  }
+
+  .team-section-main-title {
+    font-size: 1.6rem;
+  }
+
+  .department-groups-container {
+    gap: 2.75rem;
+  }
+
+  .member-name {
+    font-size: 0.78rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .member-role {
+    font-size: 0.68rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .packaging-ack-title {
+    font-size: 0.85rem !important;
+  }
+
+  .packaging-ack-role {
+    font-size: 0.74rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.65rem;
+    row-gap: 1.25rem;
+  }
+
+  .about-intro-section {
+    padding: 1.5rem 1rem 1.25rem;
+  }
+
+  .about-intro-title {
+    font-size: 1.35rem;
+  }
+
+  .about-leadership-section {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .about-team-section {
+    padding: 1rem 1rem 3rem;
+  }
+
+  .team-section-main-title {
+    font-size: 1.3rem;
+  }
+
+  .department-group-title {
+    font-size: 1.05rem;
+  }
+
+  .department-groups-container {
+    gap: 2rem;
+  }
+
+  .member-photo-frame {
+    margin-bottom: 0.35rem;
+    border-radius: 8px;
+  }
+
+  .member-name {
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    line-height: 1.18 !important;
+    margin-bottom: 0.1rem !important;
+  }
+
+  .member-role {
+    font-size: 0.62rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .packaging-ack-list {
+    gap: 0.85rem;
+  }
+
+  .packaging-ack-title {
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+  }
+
+  .packaging-ack-role {
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+  }
+}

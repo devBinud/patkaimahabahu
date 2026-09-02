@@ -1,0 +1,56 @@
+/* Breadcrumb.css - Simple, Clean & Minimal Breadcrumb Bar */
+
+.page-breadcrumb-strip {
+  background-color: #FFFBF5;
+  padding: 0.75rem 1.5rem 0.75rem;
+  width: 100%;
+}
+
+.breadcrumb-strip-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-geist), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  letter-spacing: 0.01em;
+}
+
+.breadcrumb-link {
+  color: #64748b !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #005C8A !important;
+  text-decoration: underline !important;
+}
+
+.breadcrumb-arrow {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  line-height: 1;
+}
+
+.breadcrumb-current {
+  color: #E58325;
+  font-weight: 400;
+}

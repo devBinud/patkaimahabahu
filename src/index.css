@@ -1,0 +1,286 @@
+:root {
+  /* ==========================================
+     PATKAI MAHABAHU FOUNDATION | ASSAM FLOOD RELIEF
+     RASHTRIYA SEWA BHARATI COLOR PALETTE
+     ========================================== */
+
+  /* 🔵 Primary Deep Teal Blue Palette (#005C8A) */
+  --primary: #005C8A;
+  --primary-dark: #004366;
+  --navy-blue: #003853;
+  --navy-dark: #00273B;
+
+  /* 🟢 Secondary Sewa Green Palette (#48A047) */
+  --secondary: #48A047;
+  --secondary-dark: #367B35;
+
+  /* 🟧 Saffron / Orange Accent Palette (#E58325) */
+  --accent: #E58325;
+  --accent-dark: #C76D17;
+  --accent-orange: #E58325;
+  --accent-orange-dark: #C76D17;
+  --accent-light: rgba(0, 92, 138, 0.08);
+  --accent-green: #48A047;
+  --accent-gold: #E58325;
+  --accent-gold-dark: #C76D17;
+
+  /* ⚪ Background & Card Colors */
+  --bg-main: #F4F7F9;
+  --bg-card: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.95);
+
+  /* ⚫ Typography Colors */
+  --text-heading: #003853;
+  --text-body: #334155;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+  --text-brand: #005C8A;
+
+  /* ⚙️ Borders & Shadows */
+  --border-gold: #E2E8F0;
+  --border-ui: #E2E8F0;
+
+  /* ==========================================
+     TYPOGRAPHY & UTILITIES
+     ========================================== */
+  --font-geist: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Geist', 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-body: 'Geist', 'Inter', sans-serif;
+
+  --shadow-sm: 0 2px 6px rgba(0, 92, 138, 0.06);
+  --shadow-md: 0 8px 24px -4px rgba(0, 92, 138, 0.12);
+  --shadow-lg: 0 20px 40px -8px rgba(0, 92, 138, 0.18);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Reset & Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Standardized Global Section Title Style (Matching Direct Ground Sewa Heading) */
+.section-main-heading,
+.dribbble-main-title,
+.rebuilding-main-title,
+.about-title,
+.ngo-pillars-title,
+.active-drive-title,
+.section-title {
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* Light Background Heading Color */
+.section-main-heading,
+.dribbble-main-title,
+.about-title,
+.ngo-pillars-title,
+.active-drive-title {
+  color: #005C8A !important;
+}
+
+/* Responsive Scaling for All Headings */
+@media (max-width: 1024px) {
+  .section-main-heading,
+  .dribbble-main-title,
+  .rebuilding-main-title,
+  .about-title,
+  .ngo-pillars-title,
+  .active-drive-title,
+  .section-title {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-main-heading,
+  .dribbble-main-title,
+  .rebuilding-main-title,
+  .about-title,
+  .ngo-pillars-title,
+  .active-drive-title,
+  .section-title {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+body {
+  font-family: var(--font-geist);
+  font-optical-sizing: auto;
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+span,
+li,
+input,
+textarea,
+select,
+button,
+label,
+.font-geist {
+  font-family: var(--font-geist);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-optical-sizing: auto;
+  color: var(--text-heading);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+a {
+  color: var(--text-brand);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Global Reusable Utility Classes */
+.bg-primary {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-dark) !important;
+  color: white !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+  color: white !important;
+}
+
+.bg-accent-light {
+  background-color: var(--accent-light) !important;
+}
+
+.bg-accent-beige {
+  background-color: var(--accent-beige) !important;
+}
+
+.bg-card {
+  background-color: var(--bg-card) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-brand {
+  color: var(--text-brand) !important;
+}
+
+.text-heading {
+  color: var(--text-heading) !important;
+}
+
+.text-body {
+  color: var(--text-body) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-gold {
+  color: var(--accent-gold) !important;
+}
+
+.border-gold {
+  border: 1px solid var(--border-gold) !important;
+}
+
+.border-ui {
+  border: 1px solid var(--border-ui) !important;
+}
+
+/* ==========================================
+   UNIFIED BUTTON DESIGN SYSTEM
+   Standardized to View Media & Photo Gallery Pill Style
+   ========================================== */
+.btn-hero-primary,
+.btn-hero-secondary,
+.btn-hero-saffron,
+.btn-cta-saffron,
+.btn-cta-volunteer,
+.btn-cta-pledge,
+.btn-cta-outline,
+.btn-submit-offer,
+.dribbble-cta-btn,
+.sidebar-gmaps-btn,
+.contact-gmaps-link {
+  border-radius: 100px !important;
+  padding: 0.8rem 1.85rem !important;
+  font-size: 0.925rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+}
+
+.btn-hero-primary:hover,
+.btn-hero-secondary:hover,
+.btn-hero-saffron:hover,
+.btn-cta-saffron:hover,
+.btn-cta-volunteer:hover,
+.btn-cta-pledge:hover,
+.btn-cta-outline:hover,
+.btn-submit-offer:hover,
+.dribbble-cta-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}

@@ -1,0 +1,384 @@
+/* VisionPage.css - Chairman's Vision Styling */
+
+.vision-page-wrapper {
+  width: 100%;
+  background-color: #F8FAFC;
+  min-height: 85vh;
+}
+
+/* Hero Section */
+.vision-hero-section {
+  width: 100%;
+  background: linear-gradient(135deg, #00273B 0%, #004366 50%, #005C8A 100%);
+  padding: 3.5rem 1.5rem 4rem;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-hero-container {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.vision-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #E2E8F0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 1.15rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.vision-main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.vision-hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(226, 241, 248, 0.92);
+  line-height: 1.6;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Content Section */
+.vision-content-section {
+  padding: 3.5rem 1.5rem 5rem;
+  position: relative;
+}
+
+.vision-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.vision-layout-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* Sticky Chairman Card */
+.chairman-profile-sticky {
+  position: sticky;
+  top: 100px;
+}
+
+.chairman-card {
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 56, 83, 0.06);
+}
+
+.chairman-avatar-frame {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 1.5rem;
+}
+
+.chairman-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #005C8A;
+  box-shadow: 0 8px 24px rgba(0, 92, 138, 0.2);
+}
+
+.chairman-verified-badge {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #019332;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chairman-meta {
+  margin-bottom: 1.5rem;
+}
+
+.chairman-name {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #003853;
+  margin: 0 0 0.35rem;
+}
+
+.chairman-title {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #E58325;
+  margin-bottom: 0.2rem;
+}
+
+.chairman-org {
+  display: block;
+  font-size: 0.8rem;
+  color: #64748B;
+}
+
+.chairman-contact-info {
+  width: 100%;
+  border-top: 1px solid #F1F5F9;
+  border-bottom: 1px solid #F1F5F9;
+  padding: 1.25rem 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chairman-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: #334155;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.chairman-contact-row:hover {
+  color: #005C8A;
+}
+
+.contact-icon {
+  color: #005C8A;
+  font-size: 0.95rem;
+}
+
+.chairman-card-cta {
+  width: 100%;
+}
+
+.btn-chairman-support {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: #E58325;
+  color: #ffffff !important;
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(229, 131, 37, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-chairman-support:hover {
+  background: #d8751b;
+  transform: translateY(-2px);
+}
+
+/* Right Message Body */
+.vision-message-body {
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 3rem 3.5rem;
+  box-shadow: 0 10px 30px rgba(0, 56, 83, 0.05);
+}
+
+.vision-featured-quote {
+  background: #F0F9FF;
+  border-left: 4px solid #005C8A;
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.quote-giant-icon {
+  color: rgba(0, 92, 138, 0.2);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.quote-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #003853;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 0.85rem;
+}
+
+.quote-author {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #005C8A;
+}
+
+.vision-prose h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #003853;
+  margin: 0 0 1.25rem;
+  line-height: 1.3;
+}
+
+.vision-prose h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #003853;
+  margin: 2.25rem 0 1.25rem;
+  line-height: 1.35;
+}
+
+.vision-prose p {
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.75;
+  margin-bottom: 1.35rem;
+}
+
+.vision-prose strong {
+  color: #0f172a;
+}
+
+/* 4 Pillars Grid inside Vision */
+.vision-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin: 1.75rem 0 2.25rem;
+}
+
+.vision-pillar-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 1.5rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.vision-pillar-box:hover {
+  transform: translateY(-2px);
+  border-color: #005C8A;
+}
+
+.pillar-box-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(0, 92, 138, 0.1);
+  color: #005C8A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.vision-pillar-box h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #003853;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.vision-pillar-box p {
+  font-size: 0.88rem;
+  color: #64748B;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Signature Block */
+.chairman-signature-block {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+.signature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sign-with-warmth {
+  font-size: 0.95rem;
+  color: #64748B;
+  font-style: italic;
+}
+
+.sign-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #003853;
+}
+
+.sign-role {
+  font-size: 0.88rem;
+  color: #E58325;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .vision-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .chairman-profile-sticky {
+    position: static;
+  }
+  .vision-message-body {
+    padding: 2.25rem 2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .vision-main-title {
+    font-size: 1.85rem;
+  }
+  .vision-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .vision-message-body {
+    padding: 1.75rem 1.25rem;
+  }
+}

@@ -1,0 +1,349 @@
+/* Footer.css - Rashtriya Sewa Bharati Style Footer */
+
+.rsb-footer-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  font-family: var(--font-geist), 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Upper CTA Banner: Join the Sewa Movement */
+.footer-cta-banner {
+  background: linear-gradient(135deg, #003853 0%, #005C8A 50%, #00273B 100%);
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(125, 211, 252, 0.15);
+  box-shadow: 0 0 80px rgba(56, 189, 248, 0.08);
+  pointer-events: none;
+}
+
+.footer-cta-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -120px;
+  left: -80px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(229, 131, 37, 0.18);
+  pointer-events: none;
+}
+
+.footer-cta-container {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-cta-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.footer-cta-desc {
+  font-size: 0.975rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.65;
+  margin: 0 0 2.25rem;
+  max-width: 760px;
+  font-weight: 400;
+}
+
+.footer-cta-buttons {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-cta-volunteer {
+  background-color: #E58325;
+  color: #ffffff !important;
+  padding: 0.8rem 1.85rem;
+  border-radius: 100px !important;
+  font-weight: 800;
+  font-size: 0.925rem;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(229, 131, 37, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cta-volunteer:hover {
+  background-color: #d9741a;
+  box-shadow: 0 6px 20px rgba(229, 131, 37, 0.45);
+}
+
+.btn-cta-pledge {
+  background-color: transparent;
+  color: #ffffff !important;
+  border: 1.5px solid #ffffff;
+  padding: 0.85rem 2.25rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cta-pledge:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Main Dark Footer */
+.footer-main-dark {
+  background-color: #0A1626;
+  color: #ffffff;
+  padding-top: 4.5rem;
+  width: 100%;
+}
+
+.footer-grid-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+  gap: 3.5rem;
+}
+
+.footer-hindi-tag,
+.footer-assamese-tag {
+  color: #E58325;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.footer-brand-desc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+  margin: 0 0 1.25rem;
+}
+
+.footer-reg-info {
+  font-size: 0.775rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.55;
+  margin: 0 0 1.5rem;
+  border-left: 3px solid #E58325;
+  padding-left: 0.75rem;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.social-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: background-color 0.25s ease;
+}
+
+.social-icon-btn:hover {
+  background-color: #E58325;
+  box-shadow: 0 4px 14px rgba(229, 131, 37, 0.4);
+}
+
+.footer-col-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links-list a {
+  color: rgba(255, 255, 255, 0.82) !important;
+  text-decoration: none !important;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links-list a:hover {
+  color: #ffffff !important;
+}
+
+.contact-office-label {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #E58325;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.contact-address-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+  margin: 0 0 1rem;
+}
+
+.contact-detail-line {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.65rem;
+}
+
+.contact-line-icon {
+  color: #E58325;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.contact-detail-line a {
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.contact-detail-line a:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+.contact-grievance-link {
+  color: #E58325 !important;
+  font-weight: 700;
+  text-decoration: underline !important;
+}
+
+/* Bottom Bar */
+.footer-bottom-bar {
+  background-color: #050E18;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.copyright-text {
+  margin: 0;
+}
+
+.developer-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.developer-link:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+.footer-policy-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-policy-links a {
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.footer-policy-links a:hover {
+  color: #ffffff !important;
+}
+
+.policy-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 990px) {
+  .footer-grid-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-cta-title {
+    font-size: 1.75rem;
+  }
+  .footer-grid-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

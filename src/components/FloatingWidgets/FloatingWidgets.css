@@ -1,0 +1,90 @@
+/* FloatingWidgets.css - Dedicated Styles for Floating Back-To-Top & Call/WhatsApp Buttons */
+
+.floating-widgets-stack {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.floating-btn.whatsapp-btn {
+  background-color: #48A047;
+}
+
+.floating-btn.whatsapp-btn:hover {
+  background-color: #367B35;
+  transform: scale(1.08);
+}
+
+.floating-btn.call-btn {
+  background-color: #005C8A;
+  border: none;
+}
+
+.floating-btn.call-btn:hover {
+  background-color: #004366;
+  transform: scale(1.08);
+}
+
+.floating-btn.scroll-top-btn {
+  background-color: #ffffff;
+  color: #003853 !important;
+  border: 1px solid #e2e8f0;
+}
+
+.scroll-percentage-text {
+  position: absolute;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #003853;
+}
+
+.btn-mobile-label {
+  display: none;
+}
+
+.tooltip-text {
+  position: absolute;
+  right: 62px;
+  background-color: #003853;
+  color: #ffffff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.floating-btn:hover .tooltip-text {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .floating-widgets-stack {
+    bottom: 16px;
+    right: 16px;
+  }
+}

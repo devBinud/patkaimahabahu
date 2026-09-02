@@ -1,0 +1,221 @@
+/* ContactPage.css - Full Width Premium 2-Card Layout */
+
+.contact-page-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  min-height: 80vh;
+}
+
+/* Main Section */
+.contact-main-section {
+  padding: 2.25rem 1.5rem 5rem;
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-main-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.contact-grid-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Left Contact Details Card */
+.contact-details-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 30px rgba(0, 56, 83, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-org-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #003853;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.contact-lead-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #E58325;
+  margin-bottom: 1.75rem;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Unified Matching Brand Icon Boxes */
+.contact-info-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0, 92, 138, 0.08);
+  border: 1px solid rgba(0, 92, 138, 0.15);
+  color: #005C8A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.contact-info-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+
+.contact-info-text {
+  font-size: 0.95rem;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+.contact-info-link {
+  color: #005C8A !important;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.contact-info-link:hover {
+  color: #E58325 !important;
+  text-decoration: underline;
+}
+
+/* Right Sidebar Action Card */
+.contact-sidebar-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 8px 30px rgba(0, 56, 83, 0.05);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-action-tag {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #005C8A;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.sidebar-action-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #003853;
+  margin: 0 0 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-action-desc {
+  font-size: 0.925rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.sidebar-cta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.btn-hero-primary {
+  background-color: #005C8A;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(0, 92, 138, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-hero-primary:hover {
+  background-color: #003853;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 92, 138, 0.28);
+}
+
+.btn-hero-secondary {
+  background-color: #FFFDF8;
+  color: #003853 !important;
+  border: 1px solid #005C8A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.btn-hero-secondary:hover {
+  background-color: #005C8A;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 960px) {
+  .contact-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-main-section {
+    padding: 1.25rem 1rem 3.5rem;
+  }
+
+  .contact-details-card,
+  .contact-sidebar-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .contact-org-title {
+    font-size: 1.35rem;
+  }
+}
