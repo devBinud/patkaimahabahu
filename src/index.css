@@ -19,7 +19,7 @@
   --accent-dark: #C76D17;
   --accent-orange: #E58325;
   --accent-orange-dark: #C76D17;
-  --accent-light: rgba(0, 92, 138, 0.08);
+  --accent-light: rgba(0, 92, 138, 0.04);
   --accent-green: #48A047;
   --accent-gold: #E58325;
   --accent-gold-dark: #C76D17;
@@ -47,6 +47,8 @@
   --font-sans: 'Geist', 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
   --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
   --font-body: 'Geist', 'Inter', sans-serif;
+  --font-noto-sans: 'Noto Sans', sans-serif;
+  --font-noto-serif: 'Noto Serif', sans-serif;
 
   --shadow-sm: 0 2px 6px rgba(0, 92, 138, 0.06);
   --shadow-md: 0 8px 24px -4px rgba(0, 92, 138, 0.12);
@@ -81,7 +83,6 @@ body {
 .section-main-heading,
 .dribbble-main-title,
 .rebuilding-main-title,
-.about-title,
 .ngo-pillars-title,
 .active-drive-title,
 .section-title {
@@ -91,17 +92,10 @@ body {
   letter-spacing: -0.015em !important;
 }
 
-/* Light Background Heading Color */
-.section-main-heading,
-.dribbble-main-title,
-.about-title,
-.ngo-pillars-title,
-.active-drive-title {
-  color: #005C8A !important;
-}
 
 /* Responsive Scaling for All Headings */
 @media (max-width: 1024px) {
+
   .section-main-heading,
   .dribbble-main-title,
   .rebuilding-main-title,
@@ -114,6 +108,7 @@ body {
 }
 
 @media (max-width: 640px) {
+
   .section-main-heading,
   .dribbble-main-title,
   .rebuilding-main-title,
@@ -244,11 +239,10 @@ img {
 
 /* ==========================================
    UNIFIED BUTTON DESIGN SYSTEM
-   Standardized to View Media & Photo Gallery Pill Style
+   Standardized to Premium Themed Pill Style
    ========================================== */
 .btn-hero-primary,
 .btn-hero-secondary,
-.btn-hero-saffron,
 .btn-cta-saffron,
 .btn-cta-volunteer,
 .btn-cta-pledge,
@@ -256,16 +250,18 @@ img {
 .btn-submit-offer,
 .dribbble-cta-btn,
 .sidebar-gmaps-btn,
-.contact-gmaps-link {
-  border-radius: 100px !important;
-  padding: 0.8rem 1.85rem !important;
-  font-size: 0.925rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.01em !important;
+.contact-gmaps-link,
+.btn-header-joinus,
+.btn-header-donate,
+.btn-paavai-pledge-cta,
+.btn-pledge-donate-dark {
+  border-radius: 9999px !important;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.6rem !important;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
   text-decoration: none !important;
   cursor: pointer !important;
@@ -280,7 +276,42 @@ img {
 .btn-cta-pledge:hover,
 .btn-cta-outline:hover,
 .btn-submit-offer:hover,
-.dribbble-cta-btn:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+.dribbble-cta-btn:hover,
+.btn-header-joinus:hover,
+.btn-header-donate:hover,
+.btn-paavai-pledge-cta:hover,
+.btn-pledge-donate-dark:hover {
+  transform: none !important;
+}
+
+/* ==========================================
+   ALL ORANGE / SAFFRON BUTTONS UNIFIED
+   Soft Pastel Amber (#FFE7AB), Color #6b6161, Weight 500
+   ========================================== */
+.btn-hero-saffron,
+.btn-topbar-contribute,
+.dashboard-live-action-btn,
+.btn-header-donate,
+.btn-paavai-pledge-cta,
+.btn-cta-saffron,
+.btn-chairman-support,
+.btn-rebuild-sponsor {
+  background: #FFE7AB !important;
+  color: #6b6161 !important;
+  font-weight: 500 !important;
+  border-color: #FFE7AB !important;
+}
+
+.btn-hero-saffron:hover,
+.btn-topbar-contribute:hover,
+.dashboard-live-action-btn:hover,
+.btn-header-donate:hover,
+.btn-paavai-pledge-cta:hover,
+.btn-cta-saffron:hover,
+.btn-chairman-support:hover,
+.btn-rebuild-sponsor:hover {
+  background: #FCE096 !important;
+  color: #554d4d !important;
+  border-color: #FCE096 !important;
+  transform: none !important;
 }

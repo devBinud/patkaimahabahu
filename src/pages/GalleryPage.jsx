@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
-import { FaExpand, FaXmark, FaNewspaper, FaImages, FaChevronLeft, FaChevronRight } from 'react-icons/fa6'
+import { FaExpand, FaXmark, FaChevronLeft, FaChevronRight } from 'react-icons/fa6'
 import gallery1 from '../assets/gallery/1.jpeg'
 import gallery2 from '../assets/gallery/2.jpeg'
 import gallery3 from '../assets/gallery/3.jpeg'
@@ -239,23 +239,7 @@ export default function GalleryPage() {
         {/* SECTION 1: TOP SIDE - Media & Press Coverage */}
         <section style={{ marginBottom: '4.5rem' }}>
           <div style={{ marginBottom: '1.75rem' }}>
-            <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              backgroundColor: '#E58325',
-              color: '#ffffff',
-              fontSize: '0.78rem',
-              fontWeight: 800,
-              padding: '0.35rem 0.85rem',
-              borderRadius: '20px',
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              marginBottom: '0.6rem'
-            }}>
-              <FaNewspaper size={13} /> Media Coverage
-            </span>
-            <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary, #005C8A)', margin: '0.2rem 0' }}>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 600, color: 'var(--primary, #005C8A)', margin: '0.2rem 0' }}>
               News & Press Coverage
             </h2>
           </div>
@@ -281,22 +265,6 @@ export default function GalleryPage() {
         {/* SECTION 2: BOTTOM SIDE - Photos From The Field (Gallery) */}
         <section>
           <div style={{ marginBottom: '1.75rem' }}>
-            <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.4rem',
-              backgroundColor: '#005C8A',
-              color: '#ffffff',
-              fontSize: '0.78rem',
-              fontWeight: 800,
-              padding: '0.35rem 0.85rem',
-              borderRadius: '20px',
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              marginBottom: '0.6rem'
-            }}>
-              <FaImages size={13} /> Field Photo Gallery
-            </span>
             <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary, #005C8A)', margin: '0.2rem 0' }}>
               Photos From The Field
             </h2>

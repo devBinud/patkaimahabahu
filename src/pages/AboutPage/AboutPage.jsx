@@ -167,11 +167,8 @@ export default function AboutPage() {
         <div className="about-intro-container">
           <div className="about-intro-header-left">
             <h1 className="about-intro-title">About Patkai Mahabahu Foundation</h1>
-            <p className="about-intro-lead">
-              Patkai Mahabahu Foundation is a non-profit trust committed to humanitarian relief, education, disaster recovery, and sustainable community development across Assam.
-            </p>
             <p className="about-intro-desc">
-              When floods isolate communities, our volunteers deliver essential food, clean water, hygiene supplies, and emergency shelter directly to affected families. Every contribution is publicly tracked through our Live Dashboard
+              Patkai Mahabahu Foundation is a non-profit trust committed to humanitarian relief, education, disaster recovery, and sustainable community development across Assam.
             </p>
           </div>
         </div>

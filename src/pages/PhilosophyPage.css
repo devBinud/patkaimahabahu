@@ -82,7 +82,7 @@
   border: none;
   cursor: pointer;
   text-align: left;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 1.05rem;
   color: #003853;
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
@@ -101,7 +101,7 @@
 }
 
 .faq-icon-question {
-  color: #E58325;
+  color: #6f9e98;
   font-size: 1.25rem;
   flex-shrink: 0;
 }
@@ -114,7 +114,7 @@
 
 .faq-item-card.open .faq-arrow-icon {
   transform: rotate(180deg);
-  color: #E58325;
+  color: #6f9e98;
 }
 
 .faq-answer-block {
@@ -125,7 +125,7 @@
 .faq-assamese-text {
   margin: 1rem 0 0.6rem;
   color: #00273B;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.95rem;
   line-height: 1.65;
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
@@ -170,16 +170,20 @@
   .philosophy-hero-header {
     padding: 2.5rem 1rem 3.5rem !important;
   }
+
   .philosophy-hero-title {
     font-size: 1.65rem !important;
   }
+
   .philosophy-main-section {
     padding: 0 0.85rem 3rem !important;
   }
+
   .faq-question-btn {
     padding: 1rem 1.15rem !important;
     font-size: 0.95rem !important;
   }
+
   .faq-answer-block {
     padding: 0 1.15rem 1.25rem !important;
   }

@@ -78,18 +78,18 @@
 }
 
 .contribution-grid-layout {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 2rem;
-  align-items: start;
+  display: block;
+  width: 100%;
 }
 
-/* Form Container Card */
+/* Form Container Card - Full Width */
 .contribution-form-card {
+  width: 100%;
+  box-sizing: border-box;
   background: #ffffff;
   border-radius: 24px;
-  padding: 2.25rem;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  padding: 2.75rem 2.5rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
   border: 1px solid #e2e8f0;
 }
 
@@ -208,7 +208,7 @@
 }
 
 .btn-submit-offer:hover {
-  transform: translateY(-2px);
+  transform: none;
   background: var(--primary-dark);
 }
 

@@ -153,7 +153,7 @@ body.drawer-open .floating-widgets-stack {
   padding: 0.65rem 0.85rem;
   color: #334155;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -161,9 +161,11 @@ body.drawer-open .floating-widgets-stack {
 
 .drawer-nav-link:hover,
 .drawer-nav-link.active {
-  background-color: rgba(139, 30, 45, 0.08);
-  color: var(--primary) !important;
-  font-weight: 700;
+  background-color: rgba(0, 92, 138, 0.08);
+  color: #005C8A !important;
+  font-weight: 500 !important;
+  font-size: 0.85rem !important;
+  transform: none !important;
 }
 
 .drawer-footer {
@@ -296,7 +298,7 @@ body.drawer-open .floating-widgets-stack {
   .doctor-quote-text,
   .testimonial-quote,
   .faq-lang-block p {
-    font-size: 0.875rem !important;
+    font-size: 0.95rem !important;
   }
 
   h1,
@@ -363,21 +365,32 @@ body.drawer-open .floating-widgets-stack {
 }
 
 .btn-hero-primary {
-  background: linear-gradient(135deg, #0260CA 0%, #014AA3 100%) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  background-color: var(--navy-blue, #003853) !important;
   color: #ffffff !important;
-  box-shadow: 0 6px 20px rgba(2, 96, 202, 0.3) !important;
-  border-radius: 100px !important;
-  padding: 0.85rem 1.85rem !important;
-  font-size: 0.975rem !important;
-  font-weight: 800 !important;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.95rem 2.4rem !important;
+  border-radius: 9999px !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 14px rgba(0, 56, 83, 0.18) !important;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
 }
 
 .btn-hero-primary:hover,
 .btn-hero-primary:focus {
-  background: linear-gradient(135deg, #014AA3 0%, #0B5E03 100%) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(2, 96, 202, 0.4) !important;
+  background-color: var(--navy-dark, #00273B) !important;
+  color: #ffffff !important;
+  transform: none !important;
+  box-shadow: 0 6px 18px rgba(0, 56, 83, 0.28) !important;
 }
 
 .btn-hero-secondary {
@@ -386,10 +399,10 @@ body.drawer-open .floating-widgets-stack {
   gap: 0.6rem;
   background-color: #ffffff;
   color: #151F38 !important;
-  font-weight: 800;
-  font-size: 0.95rem;
-  padding: 0.8rem 1.65rem;
-  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.85rem 2.2rem;
+  border-radius: 9999px !important;
   border: 2px solid #151F38;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
@@ -399,8 +412,8 @@ body.drawer-open .floating-widgets-stack {
 .btn-hero-secondary:hover {
   background-color: #151F38;
   color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(21, 31, 56, 0.2);
+  transform: none !important;
+  box-shadow: 0 4px 14px rgba(21, 31, 56, 0.2);
 }
 
 /* Floating 3-Column Specialty Action Bar */
@@ -624,7 +637,7 @@ body.drawer-open .floating-widgets-stack {
   }
 
   .about-title {
-    font-size: 1.5rem !important;
+    font-size: 1.8rem !important;
   }
 
   .section-title {
@@ -1518,4 +1531,25 @@ body.drawer-open .floating-widgets-stack {
 .floating-btn:hover .tooltip-text {
   opacity: 1;
   transform: translateX(0);
+}
+
+
+.hero-title-teal {
+  font-family: var(--font-noto-serif) !important;
+  font-size: 3.1rem !important;
+}
+
+@media (max-width: 768px) {
+  .editorial-gallery-title {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-title-teal {
+    font-family: var(--font-noto-serif) !important;
+    font-size: 1.6rem !important;
+  }
+
+  .specialty-card h3 {
+    font-size: 1rem !important;
+  }
 }

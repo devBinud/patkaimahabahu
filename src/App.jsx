@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import FloatingWidgets from './components/FloatingWidgets/FloatingWidgets'
@@ -19,12 +21,40 @@ import './App.css'
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
   return null;
 }
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      touchMultiplier: 1.5,
+    });
+
+    window.lenis = lenis;
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    const rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      delete window.lenis;
+    };
+  }, []);
+
   return (
     <div className="cureo-container">
       <ScrollToTop />

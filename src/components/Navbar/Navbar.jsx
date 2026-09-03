@@ -12,7 +12,6 @@ import {
   FaMagnifyingGlass,
   FaHeart,
   FaCalendarCheck,
-  FaUserShield,
   FaBullhorn
 } from 'react-icons/fa6'
 import { FiMenu } from 'react-icons/fi'
@@ -170,21 +169,10 @@ export default function Navbar() {
               <Link to="/contact" className="utility-link">Contact</Link>
             </div>
 
-            {/* Desktop Full Height Admin Login Button */}
-            <Link to="/contact" className="btn-admin-login desktop-only-btn">
-              <FaUserShield size={12} />
-              <span>Admin Login</span>
-            </Link>
-
-            {/* Mobile Top Navy Bar Donate Button */}
-            <a
-              href="https://flood-relief.pages.dev/contribution"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-header-donate mobile-only-top-donate"
-            >
+            {/* Top Bar Full Height Contribute Now Button */}
+            <Link to="/contribution" className="btn-topbar-contribute">
               <span>Contribute Now</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -201,14 +189,10 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Action Buttons: Join Us & Donate */}
+          {/* Action Button: Join Us Only */}
           <div className="header-brand-actions">
             <Link to="/contact" className="btn-header-joinus">
               Join Us
-            </Link>
-            <Link to="/contribution" className="btn-header-donate">
-              <FaHeart size={13} />
-              <span>Donate</span>
             </Link>
 
             {/* Mobile Hamburger Menu Toggle */}
@@ -332,12 +316,10 @@ export default function Navbar() {
           <div className="ticker-content-wrapper">
             <div className="ticker-text-track">
               <span className="ticker-text">
-                <span className="ticker-live-dot"></span>
-                <strong>Live Relief Update:</strong> Till now, collected <strong className="ticker-amount-highlight">₹19,52,856</strong> across 35+ villages | As of <strong>{currentDateTime}</strong> &mdash; Emergency ration kits, clean drinking water and shelter materials delivered directly to flood-affected families across Assam. <span className="ticker-diamond">◆</span>
+                Live Relief Update: Till now, collected <span className="ticker-amount-highlight">₹19,52,856</span> across 35+ villages | As of {currentDateTime} | Emergency ration kits, clean drinking water and shelter materials delivered directly to flood-affected families across Assam. <span className="ticker-diamond">◆</span>
               </span>
               <span className="ticker-text">
-                <span className="ticker-live-dot"></span>
-                <strong>Live Relief Update:</strong> Till now, collected <strong className="ticker-amount-highlight">₹19,52,856</strong> across 35+ villages | As of <strong>{currentDateTime}</strong> &mdash; Emergency ration kits, clean drinking water and shelter materials delivered directly to flood-affected families across Assam. <span className="ticker-diamond">◆</span>
+                Live Relief Update: Till now, collected <span className="ticker-amount-highlight">₹19,52,856</span> across 35+ villages | As of {currentDateTime} | Emergency ration kits, clean drinking water and shelter materials delivered directly to flood-affected families across Assam. <span className="ticker-diamond">◆</span>
               </span>
             </div>
           </div>
@@ -412,10 +394,6 @@ export default function Navbar() {
             <FaHeart size={14} />
             <span>Donate Now</span>
           </Link>
-          <a href="tel:+917002808115" className="drawer-phone-btn">
-            <FaPhone size={13} />
-            <span>Call Organiser: +91 70028 08115</span>
-          </a>
         </div>
       </div>
 

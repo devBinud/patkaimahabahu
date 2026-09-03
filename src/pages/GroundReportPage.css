@@ -82,7 +82,6 @@
   border-radius: 24px;
   padding: 2.75rem 2.25rem;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e2e8f0;
 }
 
 /* Field Photos Grid */
@@ -141,8 +140,9 @@
 }
 
 .ground-narrative-title {
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1.15rem;
+  font-family: var(--font-noto-sans), sans-serif;
+  font-weight: 500;
   color: var(--primary);
   margin: 0;
 }
@@ -185,14 +185,57 @@
 }
 
 @media (max-width: 900px) {
+  .ground-main-section {
+    padding: 0 0 3.5rem 0 !important;
+    margin-top: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  .ground-main-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .ground-content-card {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    padding: 1.5rem 1.25rem 2.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .ground-photos-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    margin-bottom: 2rem !important;
   }
+
+  .ground-photo-frame {
+    height: 230px !important;
+    border-radius: 16px !important;
+  }
+
   .ground-narrative-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+    padding-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
   }
+
+  .ground-narrative-title {
+    font-size: 0.95rem !important;
+  }
+
+  .ground-narrative-text {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+  }
+
   .ground-hero-title {
-    font-size: 1.85rem;
+    font-size: 1.85rem !important;
   }
 }

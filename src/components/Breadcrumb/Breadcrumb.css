@@ -14,10 +14,11 @@
 }
 
 .breadcrumb-nav {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.45rem;
-  font-family: var(--font-geist), sans-serif;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
   margin: 0 !important;
@@ -27,6 +28,19 @@
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   letter-spacing: 0.01em;
+}
+
+.breadcrumb-trail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.breadcrumb-current-trail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
 .breadcrumb-link {
@@ -52,5 +66,25 @@
 
 .breadcrumb-current {
   color: #E58325;
-  font-weight: 400;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .page-breadcrumb-strip {
+    padding: 0.65rem 1.25rem !important;
+  }
+
+  .breadcrumb-nav.has-parent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .breadcrumb-nav.has-parent .breadcrumb-current-trail {
+    padding-left: 0.25rem;
+  }
+
+  .breadcrumb-nav.has-parent .breadcrumb-current-trail .breadcrumb-arrow {
+    color: #E58325;
+  }
 }

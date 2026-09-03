@@ -191,20 +191,21 @@
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
-  background: #E58325;
-  color: #ffffff !important;
+  background: #FFE7AB !important;
+  color: #6b6161 !important;
   font-size: 0.92rem;
-  font-weight: 800;
-  padding: 0.85rem 1.25rem;
-  border-radius: 8px;
+  font-weight: 500 !important;
+  padding: 0.85rem 1.6rem;
+  border-radius: 9999px !important;
   text-decoration: none !important;
-  box-shadow: 0 4px 14px rgba(229, 131, 37, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   transition: all 0.25s ease;
 }
 
 .btn-chairman-support:hover {
-  background: #d8751b;
-  transform: translateY(-2px);
+  background: #FCE096 !important;
+  color: #554d4d !important;
+  transform: none !important;
 }
 
 /* Right Message Body */
@@ -363,9 +364,11 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
   .chairman-profile-sticky {
     position: static;
   }
+
   .vision-message-body {
     padding: 2.25rem 2rem;
   }
@@ -375,9 +378,11 @@
   .vision-main-title {
     font-size: 1.85rem;
   }
+
   .vision-pillars-grid {
     grid-template-columns: 1fr;
   }
+
   .vision-message-body {
     padding: 1.75rem 1.25rem;
   }

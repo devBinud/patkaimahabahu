@@ -46,7 +46,7 @@ export default function PhilosophyPage() {
       {/* Main Section */}
       <section className="philosophy-main-section">
         <div className="philosophy-main-container">
-          
+
           <div className="faq-list-container">
             {faqs.map((faq, idx) => {
               const isOpen = openIndex === idx;
@@ -77,17 +77,6 @@ export default function PhilosophyPage() {
               );
             })}
           </div>
-
-          <div className="faq-help-box">
-            <h3 className="faq-help-title">Have more questions?</h3>
-            <p className="faq-help-desc">
-              Speak directly with our Founder-Chairman Pranab Milan Gogoi.
-            </p>
-            <Link to="/contact" className="btn-hero-primary">
-              <FaHandHoldingHeart /> <span>Get In Touch</span>
-            </Link>
-          </div>
-
         </div>
       </section>
     </div>

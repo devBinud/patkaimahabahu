@@ -7,7 +7,7 @@ import {
   FaClock,
   FaHandHoldingHeart,
   FaTruckFast,
-  FaChevronRight
+  FaEnvelope
 } from 'react-icons/fa6'
 import './ContactPage.css'
 
@@ -23,98 +23,109 @@ export default function ContactPage() {
       <section className="contact-main-section">
         <div className="contact-main-container">
 
-          <div className="contact-grid-layout">
+          {/* Clean Header */}
+          <div className="contact-page-header">
+            <h1 className="contact-page-title">Contact & Ground Coordination</h1>
+            <p className="contact-page-subtitle">
+              Reach out directly to our field coordinators, relief drop-off point, and emergency volunteer desk across Assam.
+            </p>
+          </div>
 
-            {/* Left Column: Contact Details Card */}
-            <div className="contact-details-card">
-              <h2 className="contact-org-title">Patkai Mahabahu Foundation</h2>
-              <p className="contact-lead-name">Pranab Milan Gogoi and team</p>
-
-              <div className="contact-info-list">
-                {/* 1. Drop-off Point */}
-                <div className="contact-info-item">
-                  <div className="contact-info-icon-box">
-                    <FaLocationDot />
-                  </div>
-                  <div>
-                    <span className="contact-info-label">Drop-off Point Address</span>
-                    <span className="contact-info-text">
-                      House Name: Deochora, Nearby Lane 10, Chandan Nagar Club Road, Assam
-                    </span>
-                  </div>
-                </div>
-
-                {/* 2. Direct Phone Line */}
-                <div className="contact-info-item">
-                  <div className="contact-info-icon-box">
+          <div className="contact-layout-split">
+            {/* Left: Contact Info (Clean, open, modern editorial layout) */}
+            <div className="contact-info-panel">
+              <div className="contact-touchpoints-list">
+                {/* Phone */}
+                <div className="contact-touchpoint">
+                  <div className="touchpoint-icon-wrap">
                     <FaPhone />
                   </div>
-                  <div>
-                    <span className="contact-info-label">Direct Phone Line</span>
-                    <a href="tel:+917002808115" className="contact-info-link">
+                  <div className="touchpoint-details">
+                    <span className="touchpoint-label">Direct Helpline</span>
+                    <a href="tel:+917002808115" className="touchpoint-value-link">
                       +91 70028 08115
                     </a>
                   </div>
                 </div>
 
-                {/* 3. WhatsApp Coordination */}
-                <div className="contact-info-item">
-                  <div className="contact-info-icon-box">
+                {/* WhatsApp */}
+                <div className="contact-touchpoint">
+                  <div className="touchpoint-icon-wrap icon-whatsapp">
                     <FaWhatsapp />
                   </div>
-                  <div>
-                    <span className="contact-info-label">WhatsApp Coordination</span>
-                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="contact-info-link">
-                      +91 70028 08115
+                  <div className="touchpoint-details">
+                    <span className="touchpoint-label">WhatsApp Ground Desk</span>
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="touchpoint-value-link">
+                      +91 70028 08115 (Click to Chat)
                     </a>
                   </div>
                 </div>
 
-                {/* 4. Drop-off Hours */}
-                <div className="contact-info-item">
-                  <div className="contact-info-icon-box">
+                {/* Email */}
+                <div className="contact-touchpoint">
+                  <div className="touchpoint-icon-wrap">
+                    <FaEnvelope />
+                  </div>
+                  <div className="touchpoint-details">
+                    <span className="touchpoint-label">Official Email</span>
+                    <a href="mailto:patkaimahabahufoundation@gmail.com" className="touchpoint-value-link">
+                      patkaimahabahufoundation@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Drop-off Point */}
+                <div className="contact-touchpoint">
+                  <div className="touchpoint-icon-wrap">
+                    <FaLocationDot />
+                  </div>
+                  <div className="touchpoint-details">
+                    <span className="touchpoint-label">Central Drop-Off Point</span>
+                    <p className="touchpoint-value-text">
+                      Deochora, Nearby Lane 10, Chandan Nagar Club Road, Assam 781001
+                    </p>
+                  </div>
+                </div>
+
+                {/* Operating Hours */}
+                <div className="contact-touchpoint">
+                  <div className="touchpoint-icon-wrap">
                     <FaClock />
                   </div>
-                  <div>
-                    <span className="contact-info-label">Drop-off Operating Hours</span>
-                    <span className="contact-info-text">
-                      Every day: 9:00 AM to 7:00 PM <br />
-                      <small style={{ color: '#64748b' }}>(Call ahead for large vehicle deliveries)</small>
-                    </span>
+                  <div className="touchpoint-details">
+                    <span className="touchpoint-label">Operating Hours</span>
+                    <p className="touchpoint-value-text">
+                      Every day: 9:00 AM – 7:00 PM <span className="touchpoint-note">(Call ahead for large vehicle deliveries)</span>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Action Sidebar Card */}
-            <div className="contact-sidebar-card">
-              <div className="contact-sidebar-top">
-                <span className="sidebar-action-tag">NEED SUPPORT OR WANT TO HELP?</span>
-                <h3 className="sidebar-action-title">Get Involved With The Ground Team</h3>
-                <p className="sidebar-action-desc">
+            {/* Right: Action Panel */}
+            <div className="contact-action-panel">
+              <div className="contact-action-top">
+                <h3 className="contact-action-title">Get Involved With The Ground Team</h3>
+                <p className="contact-action-desc">
                   If your household requires emergency relief supplies or if you wish to contribute materials, select an action below to get in direct touch with our volunteers.
                 </p>
               </div>
 
-              <div className="sidebar-cta-stack">
-                <Link to="/appointment" className="btn-hero-primary">
+              <div className="contact-action-buttons">
+                <Link to="/appointment" className="btn-contact-action btn-action-teal">
                   <FaHandHoldingHeart />
                   <span>Request Relief Assistance</span>
-                  <FaChevronRight size={14} />
                 </Link>
-                <Link to="/contribution" className="btn-hero-secondary">
+                <Link to="/contribution" className="btn-contact-action btn-action-amber">
                   <FaTruckFast />
                   <span>Provide Relief Materials</span>
-                  <FaChevronRight size={14} />
                 </Link>
               </div>
             </div>
-
           </div>
 
         </div>
       </section>
-
     </div>
   )
 }

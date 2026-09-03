@@ -183,24 +183,6 @@ export default function ContributionPage() {
                 </form>
               )}
             </div>
-
-            {/* Right Column: Drop-off Point Sidebar */}
-            <div className="contribution-sidebar-card">
-              <span className="sidebar-badge">DROP-OFF POINT</span>
-              <h3 className="sidebar-house-title">House Name: Deochora</h3>
-              <p className="sidebar-address-sub">
-                Nearby Lane 10, Chandan Nagar Club Road, Assam
-              </p>
-
-              <div className="sidebar-contact-highlight">
-                <span className="sidebar-contact-name">Founder-Chairman</span>
-                <a href="tel:7002808115" className="sidebar-contact-phone">
-                  Pranab Milan Gogoi: +91 7002808115
-                </a>
-              </div>
-
-            </div>
-
           </div>
 
         </div>
