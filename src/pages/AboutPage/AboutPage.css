@@ -91,10 +91,20 @@
 }
 
 /* ==========================================
-   2. FOUNDER & LEADERSHIP SECTION (First Row)
+   2. ADVISORY, LEADERSHIP & LEGAL SECTIONS
    ========================================== */
-.about-leadership-section {
+.about-advisors-section {
   padding: 2.5rem 1.5rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.about-leadership-section {
+  padding: 1.5rem 1.5rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.about-legal-section {
+  padding: 1.5rem 1.5rem 1.75rem;
   background-color: #ffffff;
 }
 
@@ -234,7 +244,7 @@
 
 .member-name {
   font-family: var(--font-geist), sans-serif !important;
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
   font-weight: 600 !important;
   color: #005C8A !important;
   margin: 0 0 0.15rem !important;
@@ -249,11 +259,23 @@
   font-size: 0.90rem !important;
   font-weight: 500 !important;
   color: #363636 !important;
-  line-height: 1.28 !important;
+  line-height: 1.32 !important;
   margin: 0 !important;
   display: block !important;
   text-align: center !important;
   margin-top: 3px !important;
+}
+
+.member-role-sub {
+  font-family: var(--font-noto-sans), sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 400 !important;
+  color: #64748B !important;
+  line-height: 1.35 !important;
+  margin: 0 !important;
+  display: block !important;
+  text-align: center !important;
+  margin-top: 2px !important;
 }
 
 /* ==========================================
