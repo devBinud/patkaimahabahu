@@ -257,7 +257,7 @@ export default function AboutPage() {
       title: 'Social Media Cell',
       subtitle: 'Managing digital outreach, verified field updates, photo documentation, and online coordination.',
       members: [
-        { id: 'sm-1', name: 'Gourangon Gogoi', designation: 'Social Media Cell In-Charge', image: gourangonImg }
+        { id: 'sm-1', name: 'Gourangon Gogoi', designation: 'Social Media Cell', image: gourangonImg }
       ]
     },
     {
