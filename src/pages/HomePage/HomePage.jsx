@@ -9,10 +9,7 @@ import {
   FaArrowUpRightFromSquare,
   FaHeart
 } from 'react-icons/fa6'
-import heroBg from '../../assets/hero/hero_bg.jpg'
 import hero1 from '../../assets/hero/hero1.jpg'
-import hero2 from '../../assets/hero/hero2.jpg'
-import hero4 from '../../assets/hero/hero4.jpg'
 import pranabImg from '../../assets/pranab.jpeg'
 import gallery1 from '../../assets/gallery/1.jpeg'
 import gallery2 from '../../assets/gallery/2.jpeg'
@@ -37,14 +34,11 @@ import './HomePage.css'
 export default function HomePage() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [touchStartX, setTouchStartX] = useState(null);
-  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
-
-  const heroSlides = [heroBg, hero1, hero2, hero4];
 
   const focusAreas = [
     {
       id: 1,
-      title: 'Disaster Relief Drive',
+      title: 'Flood Relief Drive',
       icon: disasterIcon,
       link: '/contribution',
       color: '#006798'
@@ -65,7 +59,7 @@ export default function HomePage() {
     },
     {
       id: 4,
-      title: 'Rebuilding flood victims homes',
+      title: 'Project Home',
       icon: ruralIcon,
       link: '/contribution',
       color: '#E03A3E'
@@ -78,14 +72,6 @@ export default function HomePage() {
       color: '#388E3C'
     }
   ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 4500);
-
-    return () => clearInterval(timer);
-  }, [heroSlides.length]);
 
   const dashboardStats = [
     { label: 'Cash Raised', value: '₹19,52,856', bgType: 'amber' },
@@ -221,46 +207,60 @@ export default function HomePage() {
       <section className="hero-full-section hero-slider-section">
         <div className="hero-slider-container">
 
-          {/* Desktop Background Fade Slider */}
-          {heroSlides.map((slideImg, index) => (
-            <div
-              key={index}
-              className={`hero-slide-bg hero-desktop-bg ${index === currentHeroSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${slideImg})` }}
-            ></div>
-          ))}
+          {/* Desktop Background Image (hero1.jpg) */}
+          <div
+            className="hero-slide-bg hero-desktop-bg"
+            style={{ backgroundImage: `url(${hero1})` }}
+          ></div>
 
           {/* Deep Teal Blue Gradient Overlay */}
           <div className="hero-gradient-overlay"></div>
 
           {/* Mobile Image Wrapper */}
           <div className="hero-mobile-img-wrapper">
-            {heroSlides.map((slideImg, index) => (
-              <img
-                key={index}
-                src={slideImg}
-                alt="Assam Flood Relief Drive"
-                className={`hero-mobile-img ${index === currentHeroSlide ? 'active' : ''}`}
-              />
-            ))}
+            <img
+              src={hero1}
+              alt="Assam Flood Relief Drive"
+              className="hero-mobile-img"
+            />
           </div>
 
-          {/* Hero Text Content */}
+          {/* Hero Content Wrapper */}
           <div className="hero-content-wrapper">
-            <div className="hero-text-block">
-              <h1 className="hero-main-title">
-                <span className="hero-title-teal">Reaching Every</span><br />
-                <span className="hero-title-bold">Flood-Affected Family</span>
-              </h1>
+            <div className="hero-content-grid">
 
-              <p className="hero-banner-desc">
-                Emergency ration kits, clean water and essential supplies delivered directly to families displaced by the Assam floods, village by village.
-              </p>
+              {/* Left Side: Text Block */}
+              <div className="hero-text-block">
+                <h1 className="hero-main-title">
+                  <span className="hero-title-teal">Reaching Every</span><br />
+                  <span className="hero-title-bold">Flood-Affected Family</span>
+                </h1>
 
-              <div className="hero-banner-buttons">
-                <Link to="/contribution" className="btn-hero-saffron">
-                  <span>Provide Relief Materials</span>
-                </Link>
+                <p className="hero-banner-desc">
+                  Emergency ration kits, clean water and essential supplies delivered directly to families displaced by the Assam floods, village by village.
+                </p>
+
+                <div className="hero-banner-buttons">
+                  <Link to="/contribution" className="btn-hero-saffron">
+                    <span>Provide Relief Materials</span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Side (Desktop) / Top (Mobile): Founder-Chairman Card */}
+              <div className="hero-founder-card">
+                <div className="hero-founder-avatar-wrap">
+                  <img
+                    src={pranabImg}
+                    alt="Pranab Milan Gogoi"
+                    className="hero-founder-avatar"
+                  />
+                </div>
+                <div className="hero-founder-details">
+                  <h2 className="hero-founder-name">Pranab Milan Gogoi</h2>
+                  <span className="hero-founder-designation">Founder-Chairman</span>
+                  <span className="hero-founder-foundation">Patkai Mahabahu Foundation</span>
+                </div>
               </div>
 
             </div>
@@ -403,7 +403,9 @@ export default function HomePage() {
       <section className="project-home-section">
         <div className="project-home-container">
           <div className="project-home-header">
-            <h2 className="project-home-title">Project Home</h2>
+            <h2 className="project-home-title">
+              Project <span className="dashboard-title-highlight">Home</span>
+            </h2>
             <p className="project-home-subtitle">
               Assessment snippets of a few homes taken during our ground surveys.
             </p>
@@ -430,7 +432,9 @@ export default function HomePage() {
         <div className="editorial-gallery-container">
           <div className="editorial-gallery-header">
             <div className="editorial-gallery-header-left">
-              <h2 className="editorial-gallery-title">Relief Drive Highlights</h2>
+              <h2 className="editorial-gallery-title">
+                Relief Drive <span className="dashboard-title-highlight">Highlights</span>
+              </h2>
               <p className="editorial-gallery-subtitle">
                 Glimpses of ground relief drives, community seva, and rebuilding across Assam villages.
               </p>

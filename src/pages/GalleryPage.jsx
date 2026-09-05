@@ -26,6 +26,7 @@ import gallery24 from '../assets/gallery/24.jpeg'
 import media1 from '../assets/gallery/media/1.jpeg'
 import media2 from '../assets/gallery/media/2.jpeg'
 import './HomePage/HomePage.css'
+import './GalleryPage.css'
 
 export default function GalleryPage() {
   const [selectedIndex, setSelectedIndex] = useState(null)
@@ -234,17 +235,18 @@ export default function GalleryPage() {
     <div className="gallery-page-wrapper">
       <Breadcrumb currentPage="Media & Photo Gallery" />
 
-      <div style={{ maxWidth: '1240px', margin: '3rem auto 5rem', padding: '0 1.5rem' }}>
+      <div className="gallery-main-section">
+        <div className="gallery-main-container">
 
         {/* SECTION 1: TOP SIDE - Media & Press Coverage */}
-        <section style={{ marginBottom: '4.5rem' }}>
-          <div style={{ marginBottom: '1.75rem' }}>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 600, color: 'var(--primary, #005C8A)', margin: '0.2rem 0' }}>
+        <section className="gallery-section-block">
+          <div className="gallery-section-header">
+            <h2 className="gallery-section-title">
               News & Press Coverage
             </h2>
           </div>
 
-          <div className="gallery-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+          <div className="gallery-grid">
             {mediaItems.map((item, idx) => (
               <div
                 key={item.id}
@@ -263,17 +265,17 @@ export default function GalleryPage() {
         </section>
 
         {/* SECTION 2: BOTTOM SIDE - Photos From The Field (Gallery) */}
-        <section>
-          <div style={{ marginBottom: '1.75rem' }}>
-            <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--primary, #005C8A)', margin: '0.2rem 0' }}>
+        <section className="gallery-section-block">
+          <div className="gallery-section-header">
+            <h2 className="gallery-section-title">
               Photos From The Field
             </h2>
-            <p style={{ color: '#64748b', fontSize: '0.95rem', margin: 0 }}>
+            <p className="gallery-section-desc">
               Glimpses of emergency ration distribution, boat dispatches, and ground relief work across flood-hit villages in Jorhat, Sivasagar, and Charaideo.
             </p>
           </div>
 
-          <div className="gallery-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+          <div className="gallery-grid-field">
             {fieldItems.map((item, idx) => (
               <div
                 key={item.id}
@@ -291,6 +293,7 @@ export default function GalleryPage() {
           </div>
         </section>
 
+        </div>
       </div>
 
       {/* Lightbox Modal with Touch Swipe & Prev/Next Arrows */}

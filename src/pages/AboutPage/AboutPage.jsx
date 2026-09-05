@@ -26,6 +26,7 @@ import dimpleImg from '../../assets/team/dimple_baruah.jpeg'
 import jogeshImg from '../../assets/team/jogesh_ojha.jpeg'
 import shankurajImg from '../../assets/team/shankuraj_konwar.jpg'
 import urmilaImg from '../../assets/team/urmila_baruah.jpeg'
+import krisanubaruahImg from '../../assets/team/krishanu_aruah.jpeg'
 
 // Medical & Audit Images
 import sudiptaImg from '../../assets/team/suddipta_kumar_bora.jpeg'
@@ -158,7 +159,7 @@ export default function AboutPage() {
         { id: 'g-7', name: 'Manash Pratim Gogoi', designation: 'Ground Relief Coordinator', image: manashProtimImg },
         { id: 'g-8', name: 'Mun Chengpha Gogoi (Mungseng)', designation: 'Ground Relief Coordinator', image: mungsengImg },
         { id: 'g-9', name: 'Kumar Niroj Jyoti Gogoi (Niraj)', designation: 'Ground Relief Coordinator', image: nirajImg },
-        { id: 'g-10', name: 'Krisanu Baruah', designation: 'Ground Relief Coordinator', image: null },
+        { id: 'g-10', name: 'Krisanu Baruah', designation: 'Ground Relief Coordinator', image: krisanubaruahImg },
         { id: 'g-11', name: 'Dixit Subham Chetia', designation: 'Ground Relief Coordinator', image: dixitImg },
         { id: 'g-12', name: 'Dhon & Team', designation: 'Ground Volunteer Team', image: null },
         { id: 'g-13', name: 'Horen Dutta (Bhaikon)', designation: 'Ground Relief Coordinator', image: horenImg },
@@ -185,7 +186,7 @@ export default function AboutPage() {
       title: 'Medical Team',
       subtitle: 'Healthcare volunteers and medical responders conducting relief health camps across affected areas.',
       members: [
-        { id: 'm-1', name: 'Manash Borgohain', designation: 'Medical Relief In-Charge', image: null },
+        { id: 'm-1', name: 'Manash Borgohain', designation: 'Medical Relief', image: null },
         { id: 'm-2', name: 'Hiteswar Saikia', designation: 'Medical Team Member', image: null },
         {
           id: 'm-3',
@@ -206,7 +207,7 @@ export default function AboutPage() {
       title: 'Audit Team',
       subtitle: 'Dedicated audit committee ensuring complete transparency, inventory tracking, and accountability.',
       members: [
-        { id: 'a-1', name: 'Arindam Lahkar', designation: 'Audit & Accounts In-Charge', image: arindamImg },
+        { id: 'a-1', name: 'Arindam Lahkar', designation: 'Audit & Accounts ', image: arindamImg },
         { id: 'a-2', name: 'Abinash Dutta', designation: 'Audit Team Member', image: abinashImg },
         { id: 'a-3', name: 'Rohit Douglas', designation: 'Audit Team Member', image: rohitImg },
         { id: 'a-4', name: 'Kalpana Gogoi', designation: 'Audit Team Member', image: kalpanaImg },
@@ -265,7 +266,7 @@ export default function AboutPage() {
       title: 'Transportation Team',
       subtitle: 'Vehicle, boat, and logistics drivers ensuring emergency supplies reach isolated remote locations.',
       members: [
-        { id: 'tr-1', name: 'Biswajit Saikia', designation: 'Transportation In-Charge', image: null },
+        { id: 'tr-1', name: 'Biswajit Saikia', designation: 'Transportation ', image: null },
         { id: 'tr-2', name: 'Devid Mohan', designation: 'Transportation Team Member', image: null },
         { id: 'tr-3', name: 'Guddu', designation: 'Transportation Team Member', image: null }
       ]

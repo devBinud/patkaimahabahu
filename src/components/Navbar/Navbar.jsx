@@ -113,6 +113,7 @@ export default function Navbar() {
   const searchablePages = [
     { title: 'Live Relief Dashboard', link: '/', desc: 'Track the ongoing Assam flood relief drive' },
     { title: 'Objective of Foundation', link: '/objectives', desc: 'Official trust deed objectives: flood relief, education, healthcare & resilience' },
+    { title: 'Cash Contributors List', link: '/contribution', desc: 'Public disclosure and register of verified financial donations' },
     { title: 'Provide Relief Materials', link: '/contribution', desc: 'Pledge clothes, food, hygiene kits & more' },
     { title: 'Ground Dispatch Report', link: '/ground-report', desc: 'Stories & photos from the flood relief ground team' },
     { title: 'Relief Categories', link: '/specialties', desc: 'Ration, water, shelter, medical & rehabilitation aid' },
@@ -242,6 +243,9 @@ export default function Navbar() {
                     <Link to="/philosophy" className="dropdown-item">
                       <span className="dropdown-item-title">FAQs & Transparency</span>
                     </Link>
+                    <Link to="/contribution" className="dropdown-item">
+                      <span className="dropdown-item-title">Cash Contributors List</span>
+                    </Link>
                   </div>
                 </div>
               </li>
@@ -259,6 +263,9 @@ export default function Navbar() {
                     </Link>
                     <Link to="/specialties" className="dropdown-item">
                       <span className="dropdown-item-title">Relief Categories</span>
+                    </Link>
+                    <Link to="/contribution" className="dropdown-item">
+                      <span className="dropdown-item-title">Cash Contributors & Donors</span>
                     </Link>
                   </div>
                 </div>
@@ -354,6 +361,11 @@ export default function Navbar() {
             <li>
               <NavLink to="/objectives" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`}>
                 Objective of Foundation
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contribution" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`}>
+                Cash Contributors List
               </NavLink>
             </li>
             <li>

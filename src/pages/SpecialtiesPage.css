@@ -1,0 +1,127 @@
+/* =========================================================
+   SPECIALTIES / OUR FOCUS AREAS PAGE
+   HexaHealth Inspired Minimalist Card & Icon Design
+   ========================================================= */
+
+.specialties-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fafbfc;
+  overflow-x: hidden;
+}
+
+.specialties-main-section {
+  width: 100%;
+  padding: 1.75rem 1.5rem 4.5rem;
+  box-sizing: border-box;
+  margin-top: 0 !important;
+}
+
+.specialties-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 3-Column Responsive Grid */
+.specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* HexaHealth Style Minimal Card (Static, No Hover) */
+.specialty-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 18px !important;
+  padding: 2.25rem 2rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  box-sizing: border-box;
+  position: relative;
+  cursor: default;
+  transform: none !important;
+}
+
+/* HexaHealth Style Soft-Blue Squircle Icon Badge */
+.specialty-icon-box {
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 14px !important;
+  background-color: #eef6fc !important;
+  border: 1px solid rgba(0, 103, 152, 0.12) !important;
+  color: #006798 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 1.5rem !important;
+  flex-shrink: 0;
+}
+
+/* Card Heading */
+.specialty-card h3 {
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+  font-size: 1.22rem !important;
+  font-weight: 700 !important;
+  color: #003853 !important;
+  line-height: 1.35 !important;
+  margin: 0 0 0.75rem !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* Card Description */
+.specialty-card p {
+  font-family: var(--font-geist), sans-serif !important;
+  font-size: 0.93rem !important;
+  color: #526f8a !important;
+  line-height: 1.62 !important;
+  margin: 0 !important;
+  flex-grow: 1;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .specialty-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .specialties-main-section {
+    padding: 2.25rem 1.25rem 4rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .specialties-main-section {
+    padding: 1.5rem 1rem 3.5rem !important;
+  }
+
+  .specialty-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem !important;
+  }
+
+  .specialty-card {
+    padding: 1.75rem 1.5rem !important;
+    border-radius: 16px !important;
+  }
+
+  .specialty-icon-box {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .specialty-card h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .specialty-card p {
+    font-size: 0.88rem !important;
+  }
+}

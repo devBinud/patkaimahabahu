@@ -48,7 +48,7 @@
   --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
   --font-body: 'Geist', 'Inter', sans-serif;
   --font-noto-sans: 'Noto Sans', sans-serif;
-  --font-noto-serif: 'Noto Serif', sans-serif;
+  --font-noto-serif: 'Noto Serif', Georgia, serif;
 
   --shadow-sm: 0 2px 6px rgba(0, 92, 138, 0.06);
   --shadow-md: 0 8px 24px -4px rgba(0, 92, 138, 0.12);
@@ -79,6 +79,36 @@ body {
   width: 100%;
 }
 
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+/* Modern Sleek Browser Scrollbar (Prevents Windows wide/clunky scrollbar glitches) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
 /* Standardized Global Section Title Style (Matching Direct Ground Sewa Heading) */
 .section-main-heading,
 .dribbble-main-title,
@@ -87,7 +117,7 @@ body {
 .active-drive-title,
 .section-title {
   font-size: 1.6rem !important;
-  font-weight: 800 !important;
+  font-weight: 500 !important;
   line-height: 1.25 !important;
   letter-spacing: -0.015em !important;
 }
