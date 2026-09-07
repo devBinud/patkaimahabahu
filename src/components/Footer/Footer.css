@@ -50,7 +50,7 @@
 /* Headings */
 .rf-col-heading {
   font-size: 0.975rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--navy-blue, #003853);
   margin: 0 0 1.25rem;
   font-family: var(--font-noto-sans);
@@ -97,7 +97,7 @@
 
 .rf-bold-link {
   color: var(--navy-blue, #003853) !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   font-size: 0.88rem !important;
   text-decoration: none !important;
   transition: color 0.2s ease;

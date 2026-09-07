@@ -1,0 +1,480 @@
+/* ProjectHomePage.css - Assessment Long Format Showcase & Pre-Footer Strip */
+
+.project-home-page {
+  background-color: #f8fafc;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-sans, system-ui), sans-serif;
+  color: #1e293b;
+}
+
+/* ====================================================
+   1. ASSESSMENT IMAGES GALLERY SECTION (LONG FORMAT)
+   ==================================================== */
+.ph-gallery-section {
+  flex: 1;
+  padding: 2rem 1.5rem 4rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ph-gallery-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header Block */
+.ph-header-block {
+  margin-bottom: 2.25rem;
+}
+
+.ph-title {
+  font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
+  font-size: 2.15rem;
+  font-weight: 600;
+  color: #003853;
+  margin: 0 0 0.45rem;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.ph-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.55;
+  max-width: 780px;
+}
+
+.ph-images-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* Individual Image Card: Stable, clean, long-format container */
+.ph-image-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 45, 66, 0.05);
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  /* Smooth, calm hover transition without jumping or scaling */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ph-image-card:hover,
+.ph-image-card:focus-visible {
+  border-color: #005C8A;
+  box-shadow: 0 10px 28px rgba(0, 92, 138, 0.16);
+}
+
+/* Image wrapper preserving full long-format aspect ratio */
+.ph-image-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #f1f5f9;
+  overflow: hidden;
+  display: block;
+}
+
+.ph-lazy-wrapper {
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Display full uncropped vertical photo */
+.ph-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+/* ====================================================
+   2. HIGH-DEFINITION LIGHTBOX MODAL
+   ==================================================== */
+.ph-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 25, 40, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: phModalFadeIn 0.2s ease-out;
+}
+
+@keyframes phModalFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.ph-modal-content {
+  position: relative;
+  max-width: 94vw;
+  max-height: 94vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ph-modal-img-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  max-height: 92vh;
+}
+
+.ph-modal-img {
+  max-width: 90vw;
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  user-select: none;
+}
+
+/* Modal Close Button */
+.ph-modal-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10001;
+  backdrop-filter: blur(8px);
+}
+
+.ph-modal-close:hover {
+  background: #ffffff;
+  color: #002D42;
+  transform: scale(1.08);
+}
+
+/* Modal Nav Buttons */
+.ph-modal-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10001;
+  backdrop-filter: blur(8px);
+}
+
+.ph-modal-prev {
+  left: 20px;
+}
+
+.ph-modal-next {
+  right: 20px;
+}
+
+.ph-modal-nav:hover {
+  background: #ffffff;
+  color: #002D42;
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* ====================================================
+   3. REBUILDING & REHABILITATION INITIATIVE SECTION
+   ==================================================== */
+.ph-rebuild-section {
+  background: transparent;
+  border: none;
+  padding: 2rem 1.5rem 5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ph-rebuild-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ph-rebuild-header {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto 3.5rem;
+}
+
+.ph-rebuild-kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #005C8A;
+  background: #E8F4F8;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  margin-bottom: 0.9rem;
+}
+
+.ph-rebuild-title {
+  font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #003853;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+  letter-spacing: -0.015em;
+}
+
+.ph-rebuild-intro {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
+}
+
+/* 3 Step Cards Grid */
+.ph-rebuild-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.ph-rebuild-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 3.25rem 1.75rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.ph-rebuild-step-num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background-color: #FFE7AB !important;
+  color: #6b6161 !important;
+  padding: 0.42rem 1.15rem;
+  border-radius: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.ph-rebuild-card-title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.75rem;
+  line-height: 1.35;
+}
+
+.ph-rebuild-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Footer Banner with Metrics & Action */
+.ph-rebuild-footer-bar {
+  background: linear-gradient(135deg, #002D42 0%, #004D70 60%, #005C8A 100%);
+  border-radius: 18px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #ffffff;
+  box-shadow: 0 16px 36px rgba(0, 45, 66, 0.16);
+}
+
+.ph-rebuild-stats {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  flex: 1;
+}
+
+.ph-rebuild-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.ph-stat-num {
+  font-family: var(--font-noto-serif), Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFE7AB;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.ph-stat-lbl {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.ph-rebuild-stat-div {
+  width: 1px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ph-rebuild-cta-btn {
+  background: #FFE7AB;
+  color: #4a3e2a;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.ph-rebuild-cta-btn:hover {
+  background: #fce096;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+/* ====================================================
+   4. RESPONSIVE BREAKPOINTS
+   ==================================================== */
+@media (max-width: 1024px) {
+  .ph-images-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .ph-rebuild-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .ph-rebuild-footer-bar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 1.75rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .ph-rebuild-stats {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .ph-rebuild-stat-div {
+    display: none;
+  }
+
+  .ph-rebuild-cta-btn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .ph-gallery-section {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .ph-header-block {
+    margin-bottom: 1.5rem;
+  }
+
+  .ph-title {
+    font-size: 1.65rem;
+  }
+
+  .ph-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .ph-images-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .ph-rebuild-section {
+    padding: 3rem 1rem 3.5rem;
+  }
+
+  .ph-rebuild-title {
+    font-size: 1.65rem;
+  }
+
+  .ph-rebuild-intro {
+    font-size: 0.92rem;
+  }
+
+  .ph-rebuild-card {
+    padding: 3rem 1.25rem 1.75rem;
+  }
+
+  .ph-modal-prev {
+    left: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .ph-modal-next {
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .ph-modal-close {
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+  }
+}

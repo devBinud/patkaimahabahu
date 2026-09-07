@@ -313,15 +313,12 @@ export default function HomePage() {
               {/* Ground Impact Statistics Grid (Reliance Foundation 2-Card Pastel Style) */}
               <div className="about-stats-grid">
                 <div className="about-stat-box stat-box-amber">
-                  <span className="stat-box-num">
-                    5,000+<sup className="stat-info-icon">ⓘ</sup>
-                  </span>
+                  <span className="stat-box-num">5,000+</span>
                   <span className="stat-box-label">Ration kits delivered</span>
                 </div>
+
                 <div className="about-stat-box stat-box-mint">
-                  <span className="stat-box-num">
-                    40+<sup className="stat-info-icon">ⓘ</sup>
-                  </span>
+                  <span className="stat-box-num">40+</span>
                   <span className="stat-box-label">Villages covered</span>
                 </div>
               </div>

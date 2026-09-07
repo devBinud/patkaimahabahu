@@ -81,6 +81,7 @@ export default function Footer() {
           <div className="rf-footer-col">
             <h4 className="rf-col-heading">Quick Links</h4>
             <ul className="rf-links-list">
+              <li><Link to="/project-home">Project Home</Link></li>
               <li><Link to="/contribution">Support Relief Drives</Link></li>
               <li><Link to="/appointment">Request Relief Assistance</Link></li>
               <li><Link to="/contact">Volunteer Registration</Link></li>

@@ -15,6 +15,7 @@ import ContactPage from './pages/ContactPage/ContactPage'
 import ContributionPage from './pages/ContributionPage'
 import GroundReportPage from './pages/GroundReportPage'
 import ObjectivesPage from './pages/ObjectivesPage/ObjectivesPage'
+import ProjectHomePage from './pages/ProjectHomePage/ProjectHomePage'
 import './App.css'
 
 // Scroll to top helper on route change
@@ -72,6 +73,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/contribution" element={<ContributionPage />} />
           <Route path="/ground-report" element={<GroundReportPage />} />
+          <Route path="/project-home" element={<ProjectHomePage />} />
+          <Route path="/projects" element={<Navigate to="/project-home" replace />} />
           {/* Legacy redirects */}
           <Route path="/chairmans-vision" element={<Navigate to="/about" replace />} />
           <Route path="/vision" element={<Navigate to="/about" replace />} />

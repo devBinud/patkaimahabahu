@@ -668,6 +668,7 @@
 }
 
 .about-stat-box {
+  position: relative;
   border-radius: 18px;
   padding: 1.85rem 1.25rem;
   display: flex;
@@ -690,8 +691,8 @@
 
 .stat-box-num {
   font-family: var(--font-noto-serif), Georgia, serif;
-  font-size: 2.75rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 600;
   color: #063D36;
   line-height: 1.1;
   margin-bottom: 0.5rem;
@@ -699,17 +700,6 @@
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
-}
-
-.stat-info-icon {
-  font-size: 0.85rem;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 400;
-  color: #063D36;
-  opacity: 0.7;
-  margin-left: 0.25rem;
-  position: relative;
-  top: -0.85em;
 }
 
 .stat-box-label {

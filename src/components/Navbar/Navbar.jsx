@@ -112,6 +112,7 @@ export default function Navbar() {
 
   const searchablePages = [
     { title: 'Live Relief Dashboard', link: '/', desc: 'Track the ongoing Assam flood relief drive' },
+    { title: 'Project Home', link: '/project-home', desc: 'Flagship relief, safe water, healthcare, education & ecological initiatives across Assam' },
     { title: 'Objective of Foundation', link: '/objectives', desc: 'Official trust deed objectives: flood relief, education, healthcare & resilience' },
     { title: 'Cash Contributors List', link: '/contribution', desc: 'Public disclosure and register of verified financial donations' },
     { title: 'Provide Relief Materials', link: '/contribution', desc: 'Pledge clothes, food, hygiene kits & more' },
@@ -223,6 +224,15 @@ export default function Navbar() {
                   end
                 >
                   Home
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink
+                  to="/project-home"
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                >
+                  Project Home
                 </NavLink>
               </li>
 
@@ -351,6 +361,11 @@ export default function Navbar() {
             <li>
               <NavLink to="/" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`} end>
                 Home / Dashboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/project-home" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`}>
+                Project Home
               </NavLink>
             </li>
             <li>
