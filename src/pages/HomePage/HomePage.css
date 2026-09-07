@@ -29,12 +29,17 @@
   height: 100%;
   background-size: cover;
   background-position: center center;
-  opacity: 0.88;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
   z-index: 1;
+  pointer-events: none;
+  transform: none !important;
 }
 
-.hero-slide-dots {
-  display: none;
+.hero-slide-bg.active {
+  opacity: 0.88;
+  z-index: 2;
+  transform: none !important;
 }
 
 .hero-mobile-img-wrapper {
@@ -52,13 +57,13 @@
       rgba(0, 56, 83, 0.65) 45%,
       rgba(0, 56, 83, 0.40) 70%,
       rgba(0, 39, 59, 0.75) 100%);
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
 .hero-content-wrapper {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   max-width: 1240px;
   margin: 0 auto;
   width: 100%;
@@ -71,21 +76,20 @@
 }
 
 .hero-content-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 3.5rem;
-  align-items: center;
+  display: block;
   width: 100%;
 }
 
 .hero-text-block {
-  max-width: 620px;
+  max-width: 760px;
   background: transparent;
   backdrop-filter: none;
   border: none;
   box-shadow: none;
   margin-top: 0;
 }
+
+
 
 /* Hero Right Founder Card */
 .hero-founder-card {
@@ -1816,7 +1820,16 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    z-index: 1;
+    transform: none !important;
+  }
+
+  .hero-mobile-img.active {
     opacity: 1 !important;
+    z-index: 2;
+    transform: none !important;
   }
 
   .hero-content-wrapper {
@@ -1829,56 +1842,17 @@
   }
 
   .hero-content-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 2rem !important;
+    display: block !important;
     width: 100% !important;
-  }
-
-  /* Founder card at the TOP on mobile as requested */
-  .hero-founder-card {
-    order: 1 !important;
-    margin: 0 auto !important;
-    max-width: 320px !important;
-    width: 100% !important;
-    padding: 1.65rem 1.25rem 1.75rem !important;
-    background: rgba(0, 39, 59, 0.78) !important;
-    border-radius: 22px !important;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35) !important;
-  }
-
-  .hero-founder-avatar {
-    width: 155px !important;
-    height: 155px !important;
-    border: none !important;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38) !important;
-    object-position: top center !important;
-  }
-
-  .hero-founder-avatar-wrap {
-    margin-bottom: 1rem !important;
-  }
-
-  .hero-founder-name {
-    font-size: 1.3rem !important;
-  }
-
-  .hero-founder-designation {
-    font-size: 0.76rem !important;
-    padding: 0.28rem 0.95rem !important;
-  }
-
-  .hero-founder-foundation {
-    font-size: 0.82rem !important;
   }
 
   .hero-text-block {
-    order: 2 !important;
     max-width: 100% !important;
     text-align: center !important;
     padding-top: 0 !important;
   }
+
+
 
   .hero-slide-tag-saffron {
     margin-bottom: 0.85rem !important;
@@ -2540,7 +2514,7 @@
   }
 
   .project-home-title {
-    font-size: 1.85rem;
+    font-size: 1.85rem !important;
   }
 
   .project-home-subtitle {

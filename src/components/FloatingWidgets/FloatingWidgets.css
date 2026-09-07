@@ -1,4 +1,4 @@
-/* FloatingWidgets.css - Dedicated Styles for Floating Back-To-Top & Call/WhatsApp Buttons */
+/* FloatingWidgets.css - Modern Minimalist Floating Contact Action Buttons */
 
 .floating-widgets-stack {
   position: fixed;
@@ -7,84 +7,84 @@
   z-index: 9998;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   align-items: flex-end;
 }
 
 .floating-btn {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff !important;
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   cursor: pointer;
   position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .floating-btn.whatsapp-btn {
-  background-color: #48A047;
+  background-color: #25D366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
 }
 
 .floating-btn.whatsapp-btn:hover {
-  background-color: #367B35;
-  transform: scale(1.08);
+  background-color: #1eb956;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
 }
 
 .floating-btn.call-btn {
   background-color: #005C8A;
-  border: none;
+  box-shadow: 0 4px 14px rgba(0, 92, 138, 0.3);
 }
 
 .floating-btn.call-btn:hover {
-  background-color: #004366;
-  transform: scale(1.08);
-}
-
-.floating-btn.scroll-top-btn {
-  background-color: #ffffff;
-  color: #003853 !important;
-  border: 1px solid #e2e8f0;
-}
-
-.scroll-percentage-text {
-  position: absolute;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #003853;
-}
-
-.btn-mobile-label {
-  display: none;
+  background-color: #00496d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 92, 138, 0.4);
 }
 
 .tooltip-text {
   position: absolute;
-  right: 62px;
-  background-color: #003853;
-  color: #ffffff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  right: 52px;
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 0.25rem 0.6rem;
+  border-radius: 5px;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   white-space: nowrap;
   opacity: 0;
+  transform: translateX(4px);
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .floating-btn:hover .tooltip-text {
   opacity: 1;
+  transform: translateX(0);
 }
 
 @media (max-width: 768px) {
   .floating-widgets-stack {
     bottom: 16px;
     right: 16px;
+    gap: 8px;
+  }
+
+  .floating-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .tooltip-text {
+    display: none !important;
   }
 }

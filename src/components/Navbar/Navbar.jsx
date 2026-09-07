@@ -285,7 +285,7 @@ export default function Navbar() {
                   to="/contribution"
                   className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                 >
-                  Disaster Management
+                  Flood Relief Contributors
                 </NavLink>
               </li>
 
@@ -375,7 +375,7 @@ export default function Navbar() {
             </li>
             <li>
               <NavLink to="/contribution" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`}>
-                Disaster Management & Relief
+                Flood Relief Contributors
               </NavLink>
             </li>
             <li>
@@ -403,7 +403,6 @@ export default function Navbar() {
 
         <div className="drawer-footer">
           <Link to="/contribution" className="btn-header-donate" style={{ width: '100%', justifyContent: 'center' }}>
-            <FaHeart size={14} />
             <span>Donate Now</span>
           </Link>
         </div>

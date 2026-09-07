@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
 import { FaExpand, FaXmark, FaChevronLeft, FaChevronRight } from 'react-icons/fa6'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 import gallery1 from '../assets/gallery/1.jpeg'
 import gallery2 from '../assets/gallery/2.jpeg'
 import gallery3 from '../assets/gallery/3.jpeg'
@@ -254,7 +256,14 @@ export default function GalleryPage() {
                 onClick={() => setSelectedIndex(idx)}
               >
                 <div className="gallery-img-wrapper" style={{ height: '260px' }}>
-                  <img src={item.image} alt={item.title} className="gallery-img" />
+                  <LazyLoadImage
+                    src={item.image}
+                    alt={item.title}
+                    effect="blur"
+                    threshold={200}
+                    className="gallery-img"
+                    wrapperClassName="gallery-lazy-wrapper"
+                  />
                   <div className="gallery-overlay">
                     <span className="gallery-zoom-icon"><FaExpand size={15} /></span>
                   </div>
@@ -283,7 +292,14 @@ export default function GalleryPage() {
                 onClick={() => setSelectedIndex(mediaItems.length + idx)}
               >
                 <div className="gallery-img-wrapper" style={{ height: '240px' }}>
-                  <img src={item.image} alt={item.title} className="gallery-img" />
+                  <LazyLoadImage
+                    src={item.image}
+                    alt={item.title}
+                    effect="blur"
+                    threshold={200}
+                    className="gallery-img"
+                    wrapperClassName="gallery-lazy-wrapper"
+                  />
                   <div className="gallery-overlay">
                     <span className="gallery-zoom-icon"><FaExpand size={15} /></span>
                   </div>

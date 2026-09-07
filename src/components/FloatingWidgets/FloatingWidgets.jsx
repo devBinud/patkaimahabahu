@@ -10,27 +10,27 @@ export default function FloatingWidgets() {
     <div className="floating-widgets-stack">
 
       {/* Floating Call Button */}
-      <a 
-        href={phoneUrl} 
-        className="floating-btn call-btn" 
-        title="Call Organiser (7002808115)"
-        aria-label="Call Organiser"
+      <a
+        href={phoneUrl}
+        className="floating-btn call-btn"
+        title="Call 7002808115"
+        aria-label="Call 7002808115"
       >
-        <FaPhone size={18} />
-        <span className="tooltip-text">Call ☎ 7002808115</span>
+        <FaPhone size={16} />
+        <span className="tooltip-text">70028 08115</span>
       </a>
 
       {/* Floating WhatsApp Button */}
-      <a 
-        href={whatsappUrl} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="floating-btn whatsapp-btn" 
-        title="WhatsApp Organiser"
-        aria-label="WhatsApp Organiser"
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="floating-btn whatsapp-btn"
+        title="WhatsApp"
+        aria-label="WhatsApp"
       >
-        <FaWhatsapp size={22} />
-        <span className="tooltip-text">WhatsApp Organiser</span>
+        <FaWhatsapp size={20} />
+        <span className="tooltip-text">WhatsApp</span>
       </a>
     </div>
   )

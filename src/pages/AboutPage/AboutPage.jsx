@@ -1,4 +1,6 @@
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 // Leadership & Advisory Images
 import pranabImg from '../../assets/pranab.jpeg'
 import sunilImg from '../../assets/team/sunil_kr_bania.jpeg'
@@ -7,6 +9,7 @@ import mousumiImg from '../../assets/team/mousumi_boruah.jpeg'
 import jayantaImg from '../../assets/team/jayanta_patar.jpeg'
 import arpitaImg from '../../assets/team/arpita_dhar.jpeg'
 import ashokImg from '../../assets/team/ashok_ranjan_borah.jpeg'
+import ranjitImg from '../../assets/team/ranjit_kr_das.jpeg'
 
 // Ground Team Images
 import kalpanaImg from '../../assets/team/kalpana_gogoi.png'
@@ -19,7 +22,7 @@ import nirajImg from '../../assets/team/kumar_niroj_jyoti_gogoi.jpeg'
 import dixitImg from '../../assets/team/dixit_subham_chetia.jpeg'
 import horenImg from '../../assets/team/horen_dutta.jpeg'
 import sauravImg from '../../assets/team/saurav_jyoti_gogoi.jpeg'
-import parinitaImg from '../../assets/team/parinita_bhuyan.jpeg'
+import parinitaImg from '../../assets/team/parinita_bhuyan1.jpeg'
 import prachurjyaImg from '../../assets/team/prachurjya_protim_gogoi.jpeg'
 import gargeeImg from '../../assets/team/gargee_gogoi.jpeg'
 import dimpleImg from '../../assets/team/dimple_baruah.jpeg'
@@ -101,9 +104,27 @@ export default function AboutPage() {
     },
     {
       id: 'adv-5',
+      name: 'Dr. Ranjit Kumar Dutta',
+      designation: [
+        'Retired Professor & HoD, Mechanical Engineering Department, Assam Engg College, Jalukbari',
+        'PhD, MTech (IIT Kharagpur) | BE (DU)'
+      ],
+      image: ranjitImg
+    },
+    {
+      id: 'adv-6',
       name: 'Utpal Gogoi',
-      designation: 'Engineer, PSU',
+      designation: 'Engineer, Public Sector Undertaking(PSU)',
       image: utpalImg
+    },
+    {
+      id: 'adv-7',
+      name: 'Jogesh Ojha',
+      designation: [
+        'Senior Staff Reporter',
+        'Dainik Agradoot, Jorhat'
+      ],
+      image: jogeshImg
     }
   ]
 
@@ -111,7 +132,7 @@ export default function AboutPage() {
   const founderMember = {
     id: 'pranab',
     name: 'Pranab Milan Gogoi',
-    designation: 'Founder-Chairman',
+    designation: 'Founder-Chairman, Patkai Mahabahu Foundation',
     image: pranabImg
   }
 
@@ -124,7 +145,6 @@ export default function AboutPage() {
       'Indian Navy Veteran',
       'Head - Security Services (प्रमुख- सुरक्षा सेवा)',
       'National Institute of Design, Assam (राष्ट्रीय डिज़ाईन संस्थान, असम)',
-      'Vill. Tocklai, Rajabari, Jorhat (Assam) 785 014'
     ],
     image: sunilImg
   }
@@ -163,8 +183,8 @@ export default function AboutPage() {
         { id: 'g-11', name: 'Dixit Subham Chetia', designation: 'Ground Relief Coordinator', image: dixitImg },
         { id: 'g-12', name: 'Dhon & Team', designation: 'Ground Volunteer Team', image: null },
         { id: 'g-13', name: 'Horen Dutta (Bhaikon)', designation: 'Ground Relief Coordinator', image: horenImg },
-        { id: 'g-14', name: 'Saurav Jyoti Gogoi', designation: 'Ground Relief Coordinator', image: sauravImg },
-        { id: 'g-15', name: 'Parineeta Bhuyan', designation: 'Ground Relief Coordinator', image: parinitaImg },
+        { id: 'g-14', name: 'Saurav Jyoti Gogoi', designation: 'Advocate', image: sauravImg },
+        { id: 'g-15', name: 'Parineeta Bhuyan', designation: 'Advocate', image: parinitaImg },
         { id: 'g-16', name: 'Prachurjya Protim Gogoi', designation: 'Ground Relief Coordinator', image: prachurjyaImg },
         { id: 'g-17', name: 'Gargee Gogoi', designation: 'Ground Relief Coordinator', image: gargeeImg },
         { id: 'g-18', name: 'Dimple Baruah', designation: 'Ground Relief Coordinator', image: dimpleImg },
@@ -177,7 +197,7 @@ export default function AboutPage() {
           ],
           image: jogeshImg
         },
-        { id: 'g-20', name: 'Shankuraj Konwar', designation: 'Ground Relief Coordinator', image: shankurajImg },
+        { id: 'g-20', name: 'Shankuraj Konwar', designation: 'Assamese Artist , Singer, Composer', image: shankurajImg },
         { id: 'g-22', name: 'Pranjal Jyoti Borbora', designation: 'Ground Relief Coordinator', image: null }
       ]
     },
@@ -297,46 +317,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 1. Advisor Panel Section (Placed before Founder & Leadership) */}
-      <section className="about-advisors-section">
-        <div className="about-team-container">
-          <div className="department-group-header">
-            <h3 className="department-group-title">Advisor Panel</h3>
-            <p className="department-group-desc">
-              Distinguished advisors providing strategic guidance, academic insight, and institutional support.
-            </p>
-          </div>
-
-          <div className="about-team-grid">
-            {advisorMembers.map((member) => (
-              <div key={member.id} className="about-member-card">
-                <div className="member-photo-frame">
-                  <img
-                    src={member.image || defaultMemberImg}
-                    alt={member.name}
-                    className="member-photo-img"
-                  />
-                </div>
-
-                <div className="member-info-meta">
-                  <p className="member-name">{member.name}</p>
-                  {Array.isArray(member.designation) ? (
-                    member.designation.map((line, idx) => (
-                      <span key={idx} className={idx === 0 ? 'member-role' : 'member-role-sub'}>
-                        {line}
-                      </span>
-                    ))
-                  ) : (
-                    <span className="member-role">{member.designation}</span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Founder & Leadership Section */}
+      {/* 1. Founder & Leadership Section */}
       <section className="about-leadership-section">
         <div className="about-team-container">
           {/* Founder & Chairman (Top Div) */}
@@ -351,10 +332,13 @@ export default function AboutPage() {
             <div className="about-team-grid">
               <div className="about-member-card">
                 <div className="member-photo-frame">
-                  <img
+                  <LazyLoadImage
                     src={founderMember.image || defaultMemberImg}
                     alt={founderMember.name}
+                    effect="blur"
+                    threshold={200}
                     className="member-photo-img"
+                    wrapperClassName="member-photo-lazy-wrapper"
                   />
                 </div>
 
@@ -378,10 +362,13 @@ export default function AboutPage() {
             <div className="about-team-grid">
               <div className="about-member-card">
                 <div className="member-photo-frame">
-                  <img
+                  <LazyLoadImage
                     src={proMember.image || defaultMemberImg}
                     alt={proMember.name}
+                    effect="blur"
+                    threshold={200}
                     className="member-photo-img"
+                    wrapperClassName="member-photo-lazy-wrapper"
                   />
                 </div>
 
@@ -403,6 +390,48 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* 2. Advisor Panel Section */}
+      <section className="about-advisors-section">
+        <div className="about-team-container">
+          <div className="department-group-header">
+            <h3 className="department-group-title">Advisor Panel</h3>
+            <p className="department-group-desc">
+              Distinguished advisors providing strategic guidance, academic insight, and institutional support.
+            </p>
+          </div>
+
+          <div className="about-team-grid">
+            {advisorMembers.map((member) => (
+              <div key={member.id} className="about-member-card">
+                <div className="member-photo-frame">
+                  <LazyLoadImage
+                    src={member.image || defaultMemberImg}
+                    alt={member.name}
+                    effect="blur"
+                    threshold={200}
+                    className="member-photo-img"
+                    wrapperClassName="member-photo-lazy-wrapper"
+                  />
+                </div>
+
+                <div className="member-info-meta">
+                  <p className="member-name">{member.name}</p>
+                  {Array.isArray(member.designation) ? (
+                    member.designation.map((line, idx) => (
+                      <span key={idx} className={idx === 0 ? 'member-role' : 'member-role-sub'}>
+                        {line}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="member-role">{member.designation}</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 3. Legal Advisors Section */}
       <section className="about-legal-section">
         <div className="about-team-container">
@@ -417,10 +446,13 @@ export default function AboutPage() {
             {legalMembers.map((member) => (
               <div key={member.id} className="about-member-card">
                 <div className="member-photo-frame">
-                  <img
+                  <LazyLoadImage
                     src={member.image || defaultMemberImg}
                     alt={member.name}
+                    effect="blur"
+                    threshold={200}
                     className="member-photo-img"
+                    wrapperClassName="member-photo-lazy-wrapper"
                   />
                 </div>
 
@@ -468,10 +500,13 @@ export default function AboutPage() {
                   {dept.members.map((member) => (
                     <div key={member.id} className="about-member-card">
                       <div className="member-photo-frame">
-                        <img
+                        <LazyLoadImage
                           src={member.image || defaultMemberImg}
                           alt={member.name}
+                          effect="blur"
+                          threshold={200}
                           className="member-photo-img"
+                          wrapperClassName="member-photo-lazy-wrapper"
                         />
                       </div>
 
@@ -505,10 +540,13 @@ export default function AboutPage() {
               <div className="about-team-grid" style={{ marginBottom: '1.75rem' }}>
                 <div className="about-member-card">
                   <div className="member-photo-frame">
-                    <img
+                    <LazyLoadImage
                       src={plabonImg}
                       alt="Plabon Mouchum Saikia (Mejankari)"
+                      effect="blur"
+                      threshold={200}
                       className="member-photo-img"
+                      wrapperClassName="member-photo-lazy-wrapper"
                     />
                   </div>
                   <div className="member-info-meta">

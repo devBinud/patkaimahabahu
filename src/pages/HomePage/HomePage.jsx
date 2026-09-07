@@ -10,6 +10,9 @@ import {
   FaHeart
 } from 'react-icons/fa6'
 import hero1 from '../../assets/hero/hero1.jpg'
+import hero2 from '../../assets/hero/hero2.jpg'
+import hero4 from '../../assets/hero/hero4.jpg'
+import heroBg from '../../assets/hero/hero_bg.jpg'
 import pranabImg from '../../assets/pranab.jpeg'
 import gallery1 from '../../assets/gallery/1.jpeg'
 import gallery2 from '../../assets/gallery/2.jpeg'
@@ -31,9 +34,20 @@ import ruralIcon from '../../assets/icons/ruralt-icon.jpg'
 import healthIcon from '../../assets/icons/health-icon.jpg'
 import './HomePage.css'
 
+const heroSlides = [hero1, hero2, hero4, heroBg];
+
 export default function HomePage() {
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [touchStartX, setTouchStartX] = useState(null);
+
+  useEffect(() => {
+    const slideTimer = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => clearInterval(slideTimer);
+  }, []);
 
   const focusAreas = [
     {
@@ -207,29 +221,36 @@ export default function HomePage() {
       <section className="hero-full-section hero-slider-section">
         <div className="hero-slider-container">
 
-          {/* Desktop Background Image (hero1.jpg) */}
-          <div
-            className="hero-slide-bg hero-desktop-bg"
-            style={{ backgroundImage: `url(${hero1})` }}
-          ></div>
+          {/* Background Slides (hero1, hero2, hero4, hero_bg) */}
+          {heroSlides.map((slideImg, idx) => (
+            <div
+              key={idx}
+              className={`hero-slide-bg hero-desktop-bg ${idx === currentHeroSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${slideImg})` }}
+              aria-hidden={idx !== currentHeroSlide}
+            />
+          ))}
 
           {/* Deep Teal Blue Gradient Overlay */}
           <div className="hero-gradient-overlay"></div>
 
-          {/* Mobile Image Wrapper */}
+          {/* Mobile Image Wrapper with Rotating Slides */}
           <div className="hero-mobile-img-wrapper">
-            <img
-              src={hero1}
-              alt="Assam Flood Relief Drive"
-              className="hero-mobile-img"
-            />
+            {heroSlides.map((slideImg, idx) => (
+              <img
+                key={idx}
+                src={slideImg}
+                alt={`Assam Flood Relief Drive Slide ${idx + 1}`}
+                className={`hero-mobile-img ${idx === currentHeroSlide ? 'active' : ''}`}
+              />
+            ))}
           </div>
 
           {/* Hero Content Wrapper */}
           <div className="hero-content-wrapper">
             <div className="hero-content-grid">
 
-              {/* Left Side: Text Block */}
+              {/* Text Block */}
               <div className="hero-text-block">
                 <h1 className="hero-main-title">
                   <span className="hero-title-teal">Reaching Every</span><br />
@@ -247,23 +268,9 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Right Side (Desktop) / Top (Mobile): Founder-Chairman Card */}
-              <div className="hero-founder-card">
-                <div className="hero-founder-avatar-wrap">
-                  <img
-                    src={pranabImg}
-                    alt="Pranab Milan Gogoi"
-                    className="hero-founder-avatar"
-                  />
-                </div>
-                <div className="hero-founder-details">
-                  <h2 className="hero-founder-name">Pranab Milan Gogoi</h2>
-                  <span className="hero-founder-designation">Founder-Chairman</span>
-                  <span className="hero-founder-foundation">Patkai Mahabahu Foundation</span>
-                </div>
-              </div>
-
             </div>
+
+
           </div>
         </div>
       </section>

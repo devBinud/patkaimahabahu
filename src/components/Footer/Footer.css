@@ -147,6 +147,37 @@
   font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
 }
 
+/* Registration Badge */
+.rf-reg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  color: #005C8A;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1.15rem;
+  letter-spacing: 0.02em;
+  width: fit-content;
+}
+
+.rf-reg-badge-mobile {
+  margin-top: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+.rf-reg-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #16A34A;
+  flex-shrink: 0;
+}
+
 /* Address Block */
 .rf-address-block {
   margin-bottom: 1.5rem;
@@ -270,6 +301,11 @@
 
 .rf-dev-link:hover {
   color: #E58325 !important;
+}
+
+.rf-reg-bottom-text {
+  color: #005C8A;
+  font-weight: 600;
 }
 
 /* Reliance Foundation Signature Bottom-Right Leaf Decoration */

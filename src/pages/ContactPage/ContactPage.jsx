@@ -6,7 +6,6 @@ import {
   FaWhatsapp,
   FaClock,
   FaHandHoldingHeart,
-  FaTruckFast,
   FaEnvelope
 } from 'react-icons/fa6'
 import './ContactPage.css'
@@ -107,18 +106,13 @@ export default function ContactPage() {
               <div className="contact-action-top">
                 <h3 className="contact-action-title">Get Involved With The Ground Team</h3>
                 <p className="contact-action-desc">
-                  If your household requires emergency relief supplies or if you wish to contribute materials, select an action below to get in direct touch with our volunteers.
+                  If your household or community requires emergency relief supplies, medical aid, or immediate support, connect directly with our ground volunteers below.
                 </p>
               </div>
 
               <div className="contact-action-buttons">
                 <Link to="/appointment" className="btn-contact-action btn-action-teal">
-                  <FaHandHoldingHeart />
                   <span>Request Relief Assistance</span>
-                </Link>
-                <Link to="/contribution" className="btn-contact-action btn-action-amber">
-                  <FaTruckFast />
-                  <span>Provide Relief Materials</span>
                 </Link>
               </div>
             </div>

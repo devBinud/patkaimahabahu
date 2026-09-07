@@ -193,17 +193,18 @@
 .roadmap-wave-container {
   position: relative;
   width: 100%;
+  min-height: 250px;
   margin-top: 2rem;
-  margin-bottom: 1.75rem;
-  padding: 0.75rem 0;
+  margin-bottom: 2rem;
+  padding: 0;
 }
 
 .roadmap-wave-svg {
   position: absolute;
-  top: 30px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 160px;
+  height: 250px;
   pointer-events: none;
   z-index: 1;
 }
@@ -213,9 +214,9 @@
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 0.75rem;
   width: 100%;
-  align-items: center;
+  min-height: 250px;
+  align-items: start;
 }
 
 .roadmap-node-item {
@@ -223,19 +224,22 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
 .roadmap-node-item.node-up {
-  transform: translateY(-26px);
+  padding-top: 13px;
+  transform: none;
 }
 
 .roadmap-node-item.node-down {
-  transform: translateY(34px);
+  padding-top: 103px;
+  transform: none;
 }
 
 .roadmap-icon-circle {
-  width: 88px;
-  height: 88px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   background: #ffffff;
   border: 3.5px solid var(--node-color);
@@ -244,10 +248,12 @@
   align-items: center;
   justify-content: center;
   cursor: default;
+  position: relative;
+  z-index: 2;
 }
 
 .roadmap-icon-wrap {
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -255,14 +261,15 @@
 
 .roadmap-node-title {
   font-family: var(--font-sans), sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #356d9f;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #003853;
   text-align: center;
-  margin-top: 1.15rem;
+  margin-top: 0.85rem;
   line-height: 1.35;
   max-width: 135px;
+  text-transform: none;
 }
 
 /* 4. Ground Photos */
@@ -299,7 +306,7 @@
 
 /* 5. Contributors Register (Pure Table Design) */
 .disaster-contributors-section {
-  margin-bottom: 4.5rem;
+  margin-bottom: 2.25rem;
 }
 
 /* Key Metrics Strip */
@@ -330,7 +337,7 @@
 
 .contrib-stat-val {
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #003853;
   letter-spacing: -0.01em;
 }
@@ -740,11 +747,18 @@
   padding: 0.8rem 1rem;
   font-weight: 600;
   color: #003853;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 0.82rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
   border: 0.8px solid #eaecf0;
   white-space: nowrap;
+}
+
+.clean-contributors-table th:last-child,
+.clean-contributors-table td:last-child,
+.clean-contributors-table .td-amount {
+  text-align: right;
+  padding-right: 1.6rem !important;
 }
 
 .clean-contributors-table tbody tr {
@@ -783,10 +797,11 @@
 
 .td-amount {
   font-weight: 500;
-  color: #003853;
+  color: #005C8A;
   text-align: right;
   font-size: 0.95rem;
   white-space: nowrap;
+  padding-right: 1.6rem !important;
 }
 
 .td-status {
@@ -888,13 +903,70 @@
   font-size: 0.85rem;
 }
 
-.table-note-text {
-  font-size: 0.825rem;
-  color: #94a3b8;
-  margin: 0.5rem 0 0;
-  font-style: italic;
-  line-height: 1.5;
+.table-info-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #fff9ec;
+  border-radius: 8px;
+  padding: 0.85rem 1.15rem;
+  margin-top: 1.25rem;
 }
+
+.table-info-banner-icon {
+  font-size: 1.1rem;
+  color: #003853;
+  flex-shrink: 0;
+  margin-top: 0.12rem;
+}
+
+.table-note-text {
+  font-size: 0.84rem;
+  color: #77746e;
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   August 2026 Official Register Styles
+   ========================================================================== */
+.august-contributors-section {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.august-badge-pill {
+  display: inline-block;
+  background: #FFE7AB;
+  color: #003853;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.3rem 0.95rem;
+  border-radius: 9999px;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.august-summary-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.td-particulars {
+  color: #475569;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+
 
 /* ==========================================================================
    Responsive
@@ -913,11 +985,14 @@
   .roadmap-nodes-row {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem 1.25rem;
+    height: auto !important;
+    min-height: auto !important;
   }
 
   .roadmap-node-item.node-up,
   .roadmap-node-item.node-down {
     transform: none;
+    padding-top: 0 !important;
   }
 
   .photos-flow-grid {
@@ -1032,12 +1107,20 @@
 
   .clean-contributors-table th {
     font-size: 0.68rem !important;
-    padding: 0.4rem 0.5rem !important;
+    padding: 0.45rem 0.5rem !important;
+    text-transform: none !important;
   }
 
   .clean-contributors-table td {
     font-size: 0.72rem !important;
-    padding: 0.4rem 0.5rem !important;
+    padding: 0.45rem 0.5rem !important;
+  }
+
+  .clean-contributors-table th:last-child,
+  .clean-contributors-table td:last-child,
+  .clean-contributors-table .td-amount {
+    text-align: right !important;
+    padding-right: 1.25rem !important;
   }
 
   .td-name {
@@ -1047,7 +1130,7 @@
 
   .td-amount {
     font-size: 0.74rem !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
   }
 
   .accordion-body-meta {
@@ -1130,6 +1213,7 @@
   .roadmap-node-item.node-up,
   .roadmap-node-item.node-down {
     transform: none !important;
+    padding-top: 0 !important;
   }
 
   .roadmap-icon-circle {
@@ -1174,8 +1258,32 @@
   }
 
   .contrib-single-total-wrapper {
-    margin-top: 1.15rem !important;
-    margin-bottom: 0.35rem !important;
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .disaster-contributors-section {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .august-contributors-section {
+    margin-top: 1.25rem !important;
+    padding-top: 1.25rem !important;
+  }
+
+  .august-summary-strip {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .table-info-banner {
+    padding: 0.75rem 0.85rem !important;
+    margin-top: 0.85rem !important;
+    gap: 0.55rem !important;
+  }
+
+  .table-note-text {
+    font-size: 0.74rem !important;
   }
 
   .contrib-single-total-box {

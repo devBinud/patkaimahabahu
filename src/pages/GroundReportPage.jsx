@@ -6,6 +6,8 @@ import {
   FaShieldHalved,
   FaChevronRight
 } from 'react-icons/fa6'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 import hero1 from '../assets/gallery/1.jpeg'
 import hero2 from '../assets/gallery/2.jpeg'
 import hero3 from '../assets/gallery/3.jpeg'
@@ -25,13 +27,34 @@ export default function GroundReportPage() {
             {/* Story Photos Grid */}
             <div className="ground-photos-grid">
               <div className="ground-photo-frame">
-                <img src={hero3} alt="Boat relief distribution" className="ground-photo-img" />
+                <LazyLoadImage
+                  src={hero3}
+                  alt="Boat relief distribution"
+                  effect="blur"
+                  threshold={200}
+                  className="ground-photo-img"
+                  wrapperClassName="ground-photo-lazy-wrapper"
+                />
               </div>
               <div className="ground-photo-frame">
-                <img src={hero1} alt="Ration distribution" className="ground-photo-img" />
+                <LazyLoadImage
+                  src={hero1}
+                  alt="Ration distribution"
+                  effect="blur"
+                  threshold={200}
+                  className="ground-photo-img"
+                  wrapperClassName="ground-photo-lazy-wrapper"
+                />
               </div>
               <div className="ground-photo-frame">
-                <img src={hero2} alt="Medical relief camp" className="ground-photo-img" />
+                <LazyLoadImage
+                  src={hero2}
+                  alt="Medical relief camp"
+                  effect="blur"
+                  threshold={200}
+                  className="ground-photo-img"
+                  wrapperClassName="ground-photo-lazy-wrapper"
+                />
               </div>
             </div>
 

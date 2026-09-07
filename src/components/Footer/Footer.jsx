@@ -51,7 +51,7 @@ export default function Footer() {
               <li><Link to="/contribution">Emergency Food & Ration</Link></li>
               <li><Link to="/contribution">Clean Water & Sanitation</Link></li>
               <li><Link to="/specialties">Healthcare & Medical Relief</Link></li>
-              <li><Link to="/contribution">Disaster Management</Link></li>
+              <li><Link to="/contribution">Flood Relief Contributors</Link></li>
               <li><Link to="/specialties">Women & Child Support</Link></li>
               <li><Link to="/objectives">Community Empowerment</Link></li>
               <li><Link to="/contribution">Rebuilding Shelter Homes</Link></li>
@@ -187,7 +187,7 @@ export default function Footer() {
                 <li><Link to="/contribution">Emergency Food & Ration</Link></li>
                 <li><Link to="/contribution">Clean Water & Sanitation</Link></li>
                 <li><Link to="/specialties">Healthcare & Medical Relief</Link></li>
-                <li><Link to="/contribution">Disaster Management</Link></li>
+                <li><Link to="/contribution">Flood Relief Contributors</Link></li>
                 <li><Link to="/specialties">Women & Child Support</Link></li>
                 <li><Link to="/objectives">Community Empowerment</Link></li>
                 <li><Link to="/contribution">Rebuilding Shelter Homes</Link></li>
@@ -319,7 +319,7 @@ export default function Footer() {
         <div className="rf-footer-bottom">
           <div className="rf-bottom-content">
             <p className="rf-copyright-text">
-              © {new Date().getFullYear()}. All rights reserved
+              © {new Date().getFullYear()} Patkai Mahabahu Foundation. All rights reserved
               <span className="rf-sep">|</span>
               <Link to="/contact">Terms & Conditions</Link>
               <span className="rf-sep">|</span>
