@@ -40,15 +40,16 @@ main {
 /* Mobile Drawer State - Lock body scroll to prevent background scroll glitch */
 body.drawer-open {
   overflow: hidden !important;
-  touch-action: none;
 }
 
-/* Hide floating action widgets stack when mobile drawer is open */
-body.drawer-open .floating-widgets-stack {
+/* Hide floating action widgets stack and bottom nav when mobile drawer is open */
+body.drawer-open .floating-widgets-stack,
+body.drawer-open .mobile-bottom-nav {
   opacity: 0 !important;
   pointer-events: none !important;
   visibility: hidden !important;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  transform: translateY(100%) !important;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease !important;
 }
 
 /* Mobile Hero Banner Image Container (Hidden on Desktop by default) */
@@ -1137,33 +1138,6 @@ body.drawer-open .floating-widgets-stack {
   display: none;
 }
 
-.floating-widgets-stack {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.floating-btn {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  box-shadow: 0 6px 18px rgba(139, 30, 45, 0.25);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
-  text-decoration: none;
-}
-
 @media (max-width: 850px) {
   .cureo-footer {
     padding: 2.25rem 1.25rem 4.5rem !important;
@@ -1202,116 +1176,10 @@ body.drawer-open .floating-widgets-stack {
     display: none;
   }
 
-  /* Mobile Fixed 2-Button Sticky Bottom Action Bar (HealthCity Style) */
-  .floating-widgets-stack {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    height: 44px !important;
-    z-index: 9995 !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0 !important;
-    background-color: #ffffff !important;
-    border: none !important;
-    border-top: none !important;
-    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.12) !important;
-    padding: 0 !important;
-    margin: 0 !important;
+  /* Ensure bottom content is never obscured by the fixed mobile bottom bar */
+  body, .cureo-container {
+    padding-bottom: 78px !important;
   }
-
-  .floating-btn {
-    flex: 1 1 50% !important;
-    width: 50% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    transform: none !important;
-    box-shadow: none !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0.4rem !important;
-    margin: 0 !important;
-    color: #ffffff !important;
-  }
-
-  .scroll-top-btn {
-    display: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-
-  .call-btn {
-    background-color: #457B9D !important;
-    color: #ffffff !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-top: none !important;
-    border-left: none !important;
-    border-bottom: none !important;
-  }
-
-  .whatsapp-btn {
-    background-color: #25D366 !important;
-    color: #ffffff !important;
-    border: none !important;
-  }
-
-  .btn-mobile-label {
-    display: inline-block !important;
-    font-size: 0.8rem !important;
-    font-weight: 700 !important;
-    color: #ffffff !important;
-    letter-spacing: 0.01em !important;
-  }
-
-  .tooltip-text {
-    display: none !important;
-  }
-}
-
-.floating-btn,
-.call-btn,
-.whatsapp-btn {
-  color: #ffffff !important;
-}
-
-.floating-btn:hover,
-.call-btn:hover,
-.whatsapp-btn:hover,
-.floating-btn:hover svg,
-.call-btn:hover svg,
-.whatsapp-btn:hover svg,
-.floating-btn:hover .btn-mobile-label,
-.call-btn:hover .btn-mobile-label,
-.whatsapp-btn:hover .btn-mobile-label {
-  color: #ffffff !important;
-  fill: #ffffff !important;
-  transform: none;
-}
-
-.whatsapp-btn {
-  background-color: #25D366;
-}
-
-.whatsapp-btn:hover {
-  background-color: #1EBE57;
-}
-
-.call-btn {
-  background-color: var(--primary);
-  border: 1px solid var(--border-gold);
-}
-
-.call-btn:hover {
-  background-color: var(--primary-dark);
 }
 
 .scroll-top-btn {

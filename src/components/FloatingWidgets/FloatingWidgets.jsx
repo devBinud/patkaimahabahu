@@ -7,31 +7,28 @@ export default function FloatingWidgets() {
   const phoneUrl = "tel:7002808115";
 
   return (
-    <div className="floating-widgets-stack">
-
-      {/* Floating Call Button */}
+    <aside className="floating-widgets-stack" aria-label="Quick Contact Actions">
+      {/* Direct Call Button */}
       <a
         href={phoneUrl}
         className="floating-btn call-btn"
-        title="Call 7002808115"
-        aria-label="Call 7002808115"
+        title="Call +91 70028 08115"
+        aria-label="Call +91 70028 08115"
       >
-        <FaPhone size={16} />
-        <span className="tooltip-text">70028 08115</span>
+        <FaPhone size={18} />
       </a>
 
-      {/* Floating WhatsApp Button */}
+      {/* Direct WhatsApp Button */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="floating-btn whatsapp-btn"
-        title="WhatsApp"
-        aria-label="WhatsApp"
+        title="Chat on WhatsApp"
+        aria-label="Chat on WhatsApp"
       >
-        <FaWhatsapp size={20} />
-        <span className="tooltip-text">WhatsApp</span>
+        <FaWhatsapp size={22} />
       </a>
-    </div>
+    </aside>
   )
 }

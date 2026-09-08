@@ -33,16 +33,16 @@
 
 .ph-title {
   font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
-  font-size: 2.15rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  color: #003853;
+  color: #005C8A;
   margin: 0 0 0.45rem;
   letter-spacing: -0.015em;
   line-height: 1.25;
 }
 
 .ph-subtitle {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #64748b;
   margin: 0;
   line-height: 1.55;
@@ -249,9 +249,9 @@
 
 .ph-rebuild-title {
   font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
-  font-size: 2.25rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  color: #003853;
+  color: #005C8A;
   line-height: 1.25;
   margin: 0 0 1rem;
   letter-spacing: -0.015em;
@@ -260,7 +260,7 @@
 .ph-rebuild-intro {
   font-size: 1.02rem;
   line-height: 1.7;
-  color: #475569;
+  color: #64748B;
   margin: 0;
 }
 
@@ -274,7 +274,6 @@
 
 .ph-rebuild-card {
   background: #ffffff;
-  border: 1.5px solid #e2e8f0;
   border-radius: 16px;
   overflow: hidden;
   padding: 3.25rem 1.75rem 2rem;
@@ -289,7 +288,7 @@
   left: 0;
   font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   background-color: #FFE7AB !important;
@@ -300,10 +299,10 @@
 }
 
 .ph-rebuild-card-title {
-  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-family: var(--font-noto-serif), sans-serif;
   font-size: 1.22rem;
-  font-weight: 700;
-  color: #0f172a;
+  font-weight: 600;
+  color: #005C8A;
   margin: 0 0 0.75rem;
   line-height: 1.35;
 }
@@ -311,7 +310,7 @@
 .ph-rebuild-card-desc {
   font-size: 0.92rem;
   line-height: 1.6;
-  color: #64748b;
+  color: #64748B;
   margin: 0;
 }
 

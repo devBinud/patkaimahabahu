@@ -378,7 +378,7 @@ export default function ContributionPage() {
           {/* 5. Contributions Register as on 20 August 2026 (From Official Signed Record) */}
           <section className="disaster-contributors-section august-contributors-section" id="august-register">
             <div className="section-heading-block">
-              <h2 className="section-title">Contributions Register - As on 20 August 2026</h2>
+              <h2 className="section-title">Honouring those who stepped forward with compassion and generosity</h2>
             </div>
 
             {/* Total Summary Strip */}

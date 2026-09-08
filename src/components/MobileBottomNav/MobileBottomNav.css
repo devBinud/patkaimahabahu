@@ -1,0 +1,123 @@
+/* MobileBottomNav.css - Full-Height Active Mobile Bottom Navigation (#005C8A Brand Theme) */
+
+.mobile-bottom-nav {
+  display: none; /* Hidden on desktop screens */
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: block !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+    
+    /* 100% Solid Brand Background */
+    background-color: #005C8A !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 -4px 24px rgba(0, 25, 45, 0.35) !important;
+    
+    /* Hardware acceleration & solid bottom lock */
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-nav-inner {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    width: 100% !important;
+    height: 56px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+  }
+
+  /* Each tab takes full height of the bar */
+  .mobile-nav-tab {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    height: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 2px 4px 0 !important;
+    gap: 3px !important;
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-sizing: border-box !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+    cursor: pointer !important;
+  }
+
+  .mobile-nav-tab:last-child {
+    border-right: none !important;
+  }
+
+  /* Full-Height Column Active State */
+  .mobile-nav-tab.active {
+    background-color: rgba(0, 0, 0, 0.22) !important;
+    color: #ffffff !important;
+  }
+
+  /* Icon Container */
+  .mobile-tab-icon-wrap {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 28px !important;
+    height: 24px !important;
+    background: transparent !important;
+  }
+
+  .mobile-tab-icon {
+    color: rgba(255, 255, 255, 0.78) !important;
+    stroke: rgba(255, 255, 255, 0.78) !important;
+    stroke-width: 2 !important;
+    transform: none !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .mobile-nav-tab.active .mobile-tab-icon {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    stroke-width: 2 !important;
+    transform: none !important;
+  }
+
+  /* Text Label - Fixed size and weight so there is no layout jump */
+  .mobile-tab-label {
+    font-family: var(--font-heading, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif) !important;
+    font-size: 0.72rem !important;
+    line-height: 1.15 !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.015em !important;
+    white-space: nowrap !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .mobile-nav-tab.active .mobile-tab-label {
+    color: #ffffff !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+  }
+
+  /* Touch Interaction Feedback */
+  .mobile-nav-tab:active {
+    background-color: rgba(0, 0, 0, 0.32) !important;
+  }
+}

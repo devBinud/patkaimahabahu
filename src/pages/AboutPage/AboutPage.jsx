@@ -10,6 +10,7 @@ import jayantaImg from '../../assets/team/jayanta_patar.jpeg'
 import arpitaImg from '../../assets/team/arpita_dhar.jpeg'
 import ashokImg from '../../assets/team/ashok_ranjan_borah.jpeg'
 import ranjitImg from '../../assets/team/ranjit_kr_das.jpeg'
+import nipulImg from '../../assets/team/nipul_borthakur.jpeg'
 
 // Ground Team Images
 import kalpanaImg from '../../assets/team/kalpana_gogoi.png'
@@ -125,6 +126,12 @@ export default function AboutPage() {
         'Dainik Agradoot, Jorhat'
       ],
       image: jogeshImg
+    },
+    {
+      id: 'adv-8',
+      name: 'Nipul Borthakur',
+      designation: 'Industrialist',
+      image: nipulImg
     }
   ]
 
@@ -153,8 +160,11 @@ export default function AboutPage() {
   const legalMembers = [
     {
       id: 'la-1',
-      name: 'Arpita Dhar',
-      designation: 'Senior Advocate',
+      name: 'Ms. Arpita Dhar',
+      designation: [
+        'Entrepreneur, Lawyer & Practicing Company Secretary',
+        'Founder - One Circle Foundation and Mod & Relic Pvt Ltd, Guwahati'
+      ],
       image: arpitaImg
     },
     {
@@ -317,10 +327,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 1. Founder & Leadership Section */}
+      {/* 1. Founder & Chairman Section */}
       <section className="about-leadership-section">
         <div className="about-team-container">
-          {/* Founder & Chairman (Top Div) */}
           <div className="leadership-subgroup">
             <div className="department-group-header">
               <h3 className="department-group-title">Founder & Chairman</h3>
@@ -345,44 +354,6 @@ export default function AboutPage() {
                 <div className="member-info-meta">
                   <p className="member-name">{founderMember.name}</p>
                   <span className="member-role">{founderMember.designation}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Public Relations Officer (Separate Bottom Div) */}
-          <div className="leadership-subgroup" style={{ marginTop: '2.5rem' }}>
-            <div className="department-group-header">
-              <h3 className="department-group-title">Public Relations Officer</h3>
-              <p className="department-group-desc">
-                Public communications, institutional liaison, and veteran outreach.
-              </p>
-            </div>
-
-            <div className="about-team-grid">
-              <div className="about-member-card">
-                <div className="member-photo-frame">
-                  <LazyLoadImage
-                    src={proMember.image || defaultMemberImg}
-                    alt={proMember.name}
-                    effect="blur"
-                    threshold={200}
-                    className="member-photo-img"
-                    wrapperClassName="member-photo-lazy-wrapper"
-                  />
-                </div>
-
-                <div className="member-info-meta">
-                  <p className="member-name">{proMember.name}</p>
-                  {Array.isArray(proMember.designation) ? (
-                    proMember.designation.map((line, idx) => (
-                      <span key={idx} className={idx === 0 ? 'member-role' : 'member-role-sub'}>
-                        {line}
-                      </span>
-                    ))
-                  ) : (
-                    <span className="member-role">{proMember.designation}</span>
-                  )}
                 </div>
               </div>
             </div>
@@ -428,6 +399,48 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Public Relations Officer Section */}
+      <section className="about-pro-section">
+        <div className="about-team-container">
+          <div className="leadership-subgroup">
+            <div className="department-group-header">
+              <h3 className="department-group-title">Public Relations Officer</h3>
+              <p className="department-group-desc">
+                Public communications, institutional liaison, and veteran outreach.
+              </p>
+            </div>
+
+            <div className="about-team-grid">
+              <div className="about-member-card">
+                <div className="member-photo-frame">
+                  <LazyLoadImage
+                    src={proMember.image || defaultMemberImg}
+                    alt={proMember.name}
+                    effect="blur"
+                    threshold={200}
+                    className="member-photo-img"
+                    wrapperClassName="member-photo-lazy-wrapper"
+                  />
+                </div>
+
+                <div className="member-info-meta">
+                  <p className="member-name">{proMember.name}</p>
+                  {Array.isArray(proMember.designation) ? (
+                    proMember.designation.map((line, idx) => (
+                      <span key={idx} className={idx === 0 ? 'member-role' : 'member-role-sub'}>
+                        {line}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="member-role">{proMember.designation}</span>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

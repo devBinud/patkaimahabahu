@@ -86,11 +86,20 @@ export default function Navbar() {
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.classList.add('drawer-open');
+      if (window.lenis) {
+        window.lenis.stop();
+      }
     } else {
       document.body.classList.remove('drawer-open');
+      if (window.lenis) {
+        window.lenis.start();
+      }
     }
     return () => {
       document.body.classList.remove('drawer-open');
+      if (window.lenis) {
+        window.lenis.start();
+      }
     };
   }, [mobileMenuOpen]);
 
@@ -286,7 +295,7 @@ export default function Navbar() {
                   to="/specialties"
                   className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                 >
-                  Our Focus Areas
+                  What We Do
                 </NavLink>
               </li>
 
@@ -345,7 +354,7 @@ export default function Navbar() {
 
       {/* Mobile Off-Canvas Navigation Drawer */}
       <div className={`mobile-drawer-overlay ${mobileMenuOpen ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
-      <div className={`mobile-right-drawer ${mobileMenuOpen ? 'active' : ''}`}>
+      <div className={`mobile-right-drawer ${mobileMenuOpen ? 'active' : ''}`} data-lenis-prevent="true">
 
         <div className="drawer-header">
           <Link to="/" className="brand-logo-link" onClick={() => setMobileMenuOpen(false)}>
@@ -356,7 +365,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="drawer-body">
+        <div className="drawer-body" data-lenis-prevent="true">
           <ul className="drawer-nav-links">
             <li>
               <NavLink to="/" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`} end>
@@ -385,7 +394,7 @@ export default function Navbar() {
             </li>
             <li>
               <NavLink to="/specialties" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`}>
-                Our Focus Areas
+                What We Do
               </NavLink>
             </li>
             <li>

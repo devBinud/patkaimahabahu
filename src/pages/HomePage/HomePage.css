@@ -240,22 +240,31 @@
    RELIANCE FOUNDATION STYLE FOCUS AREAS SECTION
    Clean circular icons with colored ring, warm ivory card
    ========================================================= */
+.rf-focus-outer-section {
+  width: 100%;
+  background-color: #ffffff !important;
+  position: relative;
+  z-index: 30;
+  padding: 0 1.5rem 1rem;
+}
+
 .rf-focus-section {
   width: 100%;
   max-width: 1240px;
-  margin: -3.25rem auto 3.5rem;
-  padding: 0 1.25rem;
+  margin: 0 auto;
+  padding: 0;
   position: relative;
-  z-index: 30;
 }
 
 .rf-focus-container {
   width: 100%;
   background: #FAF7F2;
-  border: 1px solid #ECE7DE;
   border-radius: 18px;
   padding: 2.25rem 2rem 2.5rem;
   box-shadow: 0 10px 32px rgba(0, 56, 83, 0.07);
+  margin-top: -3.25rem;
+  position: relative;
+  z-index: 2;
 }
 
 .rf-focus-grid {
@@ -321,11 +330,17 @@
 
 /* Tablet & Mobile Responsiveness */
 @media (max-width: 960px) {
+  .rf-focus-outer-section {
+    padding: 0 1.25rem 1rem;
+  }
+
   .rf-focus-section {
-    margin: -2rem auto 2.75rem;
+    margin: 0 auto;
+    padding: 0;
   }
 
   .rf-focus-container {
+    margin-top: -2rem;
     padding: 1.85rem 1.25rem 2rem;
   }
 
@@ -344,15 +359,26 @@
   }
 }
 
-@media (max-width: 640px) {
+/* Mobile Screen: 100% Edge-to-Edge Full Width */
+@media (max-width: 768px) {
+  .rf-focus-outer-section {
+    padding: 0 !important;
+  }
+
   .rf-focus-section {
-    margin: -1.75rem auto 2.25rem;
-    padding: 0 0.85rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .rf-focus-container {
-    padding: 1.5rem 0.85rem 1.75rem;
-    border-radius: 14px;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    margin-top: -1.75rem !important;
+    padding: 1.65rem 0.85rem 1.85rem !important;
+    box-shadow: 0 6px 20px rgba(0, 56, 83, 0.08) !important;
   }
 
   .rf-focus-grid {
@@ -618,10 +644,8 @@
 }
 
 .about-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 3.5rem;
-  align-items: center;
+  display: block;
+  max-width: 860px;
 }
 
 .about-tag {
@@ -665,6 +689,7 @@
   gap: 1.25rem;
   margin: 1.85rem 0 0;
   width: 100%;
+  max-width: 560px;
 }
 
 .about-stat-box {
@@ -723,93 +748,157 @@
   font-weight: 700;
 }
 
-/* Right Founder Spotlight Card */
-.founder-spotlight-card {
-  background: #FAF7F2;
-  border-radius: 28px;
-  padding: 2.75rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 56, 83, 0.05);
+/* =========================================================
+   2B. FOUNDER & CHAIRMAN EDITORIAL SECTION
+   Image on Left with Decorative Corner Brackets, Content on Right
+   ========================================================= */
+.founder-editorial-section {
+  width: 100%;
+  background-color: #FAF8F5;
+  padding: 5rem 1.5rem;
+  box-sizing: border-box;
+  border: none !important;
 }
 
-.founder-header {
+.founder-editorial-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.founder-editorial-layout {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 4.5rem;
 }
 
-.founder-avatar-img {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+/* Left: Photo Frame with Corner Brackets */
+.founder-editorial-media {
   flex-shrink: 0;
+  width: 360px;
+  max-width: 100%;
 }
 
-.founder-name {
-  font-family: var(--font-geist), sans-serif !important;
-  font-size: 1.5rem !important;
-  font-weight: 600 !important;
-  color: #003853 !important;
-  margin: 0 0 0.15rem !important;
-  line-height: 1.25 !important;
-}
-
-.founder-role {
-  font-family: var(--font-geist), sans-serif !important;
-  font-size: 1rem !important;
-  font-weight: 500 !important;
-  color: #334155 !important;
-  display: block !important;
-  line-height: 1.35 !important;
-}
-
-.founder-org {
-  font-family: var(--font-noto-sans), sans-serif !important;
-  font-size: 0.88rem !important;
-  font-weight: 500 !important;
-  color: #64748B !important;
-  display: block !important;
-  line-height: 1.35 !important;
-  margin-top: 5px !important;
-}
-
-.founder-quote-body {
+.founder-frame-wrapper {
   position: relative;
+  padding: 16px;
 }
 
-.quote-mark-large {
-  font-size: 3.5rem;
-  color: rgba(0, 92, 138, 0.2);
-  font-family: Georgia, serif;
-  line-height: 0.8;
+.founder-corner-bracket {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+}
+
+.bracket-top-left {
+  top: 0;
+  left: 0;
+  border-top: 4px solid var(--primary, #005C8A);
+  border-left: 4px solid var(--primary, #005C8A);
+}
+
+.bracket-bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom: 4px solid var(--primary, #005C8A);
+  border-right: 4px solid var(--primary, #005C8A);
+}
+
+.founder-photo-box {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 56, 83, 0.09);
+  background-color: #E2E8F0;
+  border-radius: 4px;
+}
+
+.founder-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   display: block;
-  margin-bottom: 0.25rem;
 }
 
-.founder-quote-paragraph {
-  font-size: 0.95rem;
-  color: #334155;
-  line-height: 1.8;
-  margin: 0;
-  font-style: normal;
+/* Right: Editorial Typography */
+.founder-editorial-content {
+  flex: 1;
 }
 
-.founder-quote-org {
-  color: #003853;
-  font-weight: 600;
+.founder-editorial-title {
+  font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif !important;
+  font-size: 2.15rem !important;
+  font-weight: 600 !important;
+  color: var(--primary, #005C8A) !important;
+  letter-spacing: 0.03em !important;
+  margin: 0 0 0.5rem !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase;
 }
 
-.founder-quote-accent {
-  color: #005C8A;
-  font-weight: 600;
-  background: linear-gradient(180deg, transparent 65%, rgba(0, 92, 138, 0.12) 65%);
-  padding: 0 0.25rem;
-  border-radius: 2px;
+.founder-editorial-name {
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin: 0 0 1.35rem !important;
+  letter-spacing: -0.01em !important;
+}
+
+.founder-editorial-desc {
+  font-family: var(--font-geist, var(--font-sans, system-ui), sans-serif);
+  font-size: 1.02rem;
+  color: #475569;
+  line-height: 1.75;
+}
+
+.founder-editorial-desc p {
+  margin: 0 0 1rem;
+}
+
+.founder-editorial-desc p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Styles for Founder Section */
+@media (max-width: 900px) {
+  .founder-editorial-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .founder-editorial-layout {
+    flex-direction: column;
+    gap: 2.25rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .founder-editorial-media {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .founder-photo-box {
+    height: 330px;
+  }
+
+  .founder-editorial-title {
+    font-size: 1.65rem !important;
+  }
+
+  .founder-editorial-name {
+    font-size: 1.05rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .founder-editorial-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
 }
 
 /* Brown Wired Background Separator Banner */
@@ -2478,7 +2567,7 @@
 }
 
 .rebuild-card-caption {
-  padding: 1.15rem 1.25rem 1.25rem;
+  padding: 0.5rem 0.5rem 0.5rem;
   background-color: #fff8e9 !important;
   text-align: center;
 }
@@ -2490,6 +2579,35 @@
   color: #3e3a3a !important;
   letter-spacing: -0.01em;
   display: block;
+}
+
+.project-home-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.75rem;
+}
+
+.btn-project-home-view-more {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #005C8A !important;
+  color: #ffffff !important;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.75rem 2.25rem !important;
+  border-radius: 9999px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(0, 92, 138, 0.22) !important;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+
+.btn-project-home-view-more:hover {
+  background-color: #004366 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(0, 92, 138, 0.32) !important;
 }
 
 /* Responsive Styles */
@@ -2523,5 +2641,9 @@
 
   .rebuild-card-caption {
     padding: 1rem 1rem 1.1rem;
+  }
+
+  .project-home-action {
+    margin-top: 1.85rem;
   }
 }

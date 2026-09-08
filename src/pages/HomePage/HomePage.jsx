@@ -61,28 +61,28 @@ export default function HomePage() {
       id: 2,
       title: 'Education',
       icon: educationIcon,
-      link: '/about',
+      link: '/education',
       color: '#C41230'
     },
     {
       id: 3,
       title: 'Environment',
       icon: vantaraIcon,
-      link: '/about',
+      link: '/environment',
       color: '#2E7D32'
     },
     {
       id: 4,
       title: 'Project Home',
       icon: ruralIcon,
-      link: '/contribution',
+      link: '/project-home',
       color: '#E03A3E'
     },
     {
       id: 5,
       title: 'Healthcare',
       icon: healthIcon,
-      link: '/about',
+      link: '/healthcare',
       color: '#388E3C'
     }
   ];
@@ -278,17 +278,19 @@ export default function HomePage() {
 
 
       {/* Reliance Foundation Style Focus Areas Section */}
-      <section className="rf-focus-section">
-        <div className="rf-focus-container">
-          <div className="rf-focus-grid">
-            {focusAreas.map((item) => (
-              <Link key={item.id} to={item.link} className="rf-focus-item">
-                <div className="rf-icon-ring" style={{ '--ring-color': item.color }}>
-                  <img src={item.icon} alt={item.title} className="rf-focus-img" />
-                </div>
-                <span className="rf-focus-title">{item.title}</span>
-              </Link>
-            ))}
+      <section className="rf-focus-outer-section">
+        <div className="rf-focus-section">
+          <div className="rf-focus-container">
+            <div className="rf-focus-grid">
+              {focusAreas.map((item) => (
+                <Link key={item.id} to={item.link} className="rf-focus-item">
+                  <div className="rf-icon-ring" style={{ '--ring-color': item.color }}>
+                    <img src={item.icon} alt={item.title} className="rf-focus-img" />
+                  </div>
+                  <span className="rf-focus-title">{item.title}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -324,21 +326,42 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Founder Spotlight Card */}
-            <div className="founder-spotlight-card">
-              <div className="founder-header">
-                <img src={pranabImg} alt="Pranab Milan Gogoi" className="founder-avatar-img" />
-                <div className="founder-info">
-                  <p className="founder-name">Pranab Milan Gogoi</p>
-                  <span className="founder-role">Founder-Chairman</span>
-                  <span className="founder-org">Patkai Mahabahu Foundation</span>
+          </div>
+        </div>
+      </section>
+
+      {/* 2B. Founder & Chairman Editorial Feature Section */}
+      <section className="founder-editorial-section">
+        <div className="founder-editorial-container">
+          <div className="founder-editorial-layout">
+
+            {/* Left: Image with Decorative Corner Brackets */}
+            <div className="founder-editorial-media">
+              <div className="founder-frame-wrapper">
+                <div className="founder-corner-bracket bracket-top-left" aria-hidden="true"></div>
+                <div className="founder-corner-bracket bracket-bottom-right" aria-hidden="true"></div>
+
+                <div className="founder-photo-box">
+                  <img
+                    src={pranabImg}
+                    alt="Pranab Milan Gogoi, Founder-Chairman"
+                    className="founder-photo-img"
+                    loading="lazy"
+                  />
                 </div>
               </div>
+            </div>
 
-              <div className="founder-quote-body">
-                <span className="quote-mark-large">“</span>
-                <p className="founder-quote-paragraph">
-                  At <span className="founder-quote-org">Patkai Mahabahu Foundation</span>, we are deeply committed to empowering every flood-affected family in Assam with <span className="founder-quote-accent">direct, transparent ground support</span> that provides immediate ration, clean water, and long-term rebuilding tailored to each village&apos;s emergency needs.
+            {/* Right: Editorial Typography */}
+            <div className="founder-editorial-content">
+              <h2 className="founder-editorial-title">THE FOUNDER & CHAIRMAN</h2>
+              <p className="founder-editorial-name">Pranab Milan Gogoi</p>
+              <div className="founder-editorial-desc">
+                <p>
+                  A strong commitment to humanitarian service and community development, with a vision to create meaningful and lasting change across Assam. The work extends across disaster relief, post-flood rehabilitation, healthcare, education, livelihood generation, environmental conservation, and empowerment of vulnerable communities.
+                </p>
+                <p>
+                  Rooted in compassion and grassroots action, the vision is to reach those in need while creating sustainable opportunities for communities to rebuild, grow, and thrive.
                 </p>
               </div>
             </div>
@@ -426,6 +449,12 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="project-home-action">
+            <Link to="/project-home" className="btn-project-home-view-more">
+              View More
+            </Link>
           </div>
         </div>
       </section>
