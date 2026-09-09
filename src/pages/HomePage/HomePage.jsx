@@ -7,13 +7,16 @@ import {
   FaExpand,
   FaXmark,
   FaArrowUpRightFromSquare,
-  FaHeart
+  FaHeart,
+  FaCircleCheck,
+  FaAward
 } from 'react-icons/fa6'
 import hero1 from '../../assets/hero/hero1.jpg'
 import hero2 from '../../assets/hero/hero2.jpg'
 import hero4 from '../../assets/hero/hero4.jpg'
 import heroBg from '../../assets/hero/hero_bg.jpg'
 import pranabImg from '../../assets/pranab.jpeg'
+import floodReliefDeliveredImg from '../../assets/flood_relief_delivered.jpeg'
 import gallery1 from '../../assets/gallery/1.jpeg'
 import gallery2 from '../../assets/gallery/2.jpeg'
 import gallery3 from '../../assets/gallery/3.jpeg'
@@ -32,9 +35,27 @@ import educationIcon from '../../assets/icons/education-icon.jpg'
 import vantaraIcon from '../../assets/icons/vantara_icon_r.png'
 import ruralIcon from '../../assets/icons/ruralt-icon.jpg'
 import healthIcon from '../../assets/icons/health-icon.jpg'
+import PersonTestimonials from '../../components/PersonTestimonials/PersonTestimonials'
 import './HomePage.css'
 
 const heroSlides = [hero1, hero2, hero4, heroBg];
+
+const HomeShelterIcon = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M3 10.5L12 3l9 7.5" />
+    <path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5" />
+    <path d="M18 7V4h-3v2.5" />
+    <path d="M10 21v-6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v6" />
+  </svg>
+)
 
 export default function HomePage() {
   const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
@@ -302,8 +323,8 @@ export default function HomePage() {
         <div className="about-spotlight-container">
           <div className="about-grid">
 
-            {/* Left Content Column */}
-            <div className="about-left-col">
+            {/* Left Column (Desktop): Content Column (Relief Delivered Transparently Tracked) */}
+            <div className="about-content-col">
               <h2 className="about-title">
                 Relief Delivered<br />
                 <span className="about-title-highlight">Transparently Tracked</span>
@@ -322,6 +343,23 @@ export default function HomePage() {
                 <div className="about-stat-box stat-box-mint">
                   <span className="stat-box-num">40+</span>
                   <span className="stat-box-label">Villages covered</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column (Desktop) / Top (Mobile via order:-1): Photo Frame with Decorative Corner Brackets */}
+            <div className="about-photo-col">
+              <div className="founder-frame-wrapper">
+                <div className="founder-corner-bracket bracket-top-left" aria-hidden="true"></div>
+                <div className="founder-corner-bracket bracket-bottom-right" aria-hidden="true"></div>
+
+                <div className="founder-photo-box about-photo-box">
+                  <img
+                    src={floodReliefDeliveredImg}
+                    alt="Flood relief delivered directly to families across Assam"
+                    className="founder-photo-img"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </div>
@@ -426,39 +464,104 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Project Home: Simple & Smooth Rebuilding Showcase */}
-      <section className="project-home-section">
-        <div className="project-home-container">
-          <div className="project-home-header">
-            <h2 className="project-home-title">
-              Project <span className="dashboard-title-highlight">Home</span>
+      {/* Project Home: Editorial Showcase (Matching Reference Screenshot 1) */}
+      <section className="project-home-editorial-section">
+        <div className="project-home-editorial-container">
+          {/* Left Column: Story, Commitments & Actions */}
+          <div className="project-home-editorial-left">
+            <span className="project-home-eyebrow">About Project Home</span>
+            <h2 className="project-home-editorial-title">
+              Rebuilding Homes: Inspiring Hope And Shaping Futures
             </h2>
-            <p className="project-home-subtitle">
-              Assessment snippets of a few homes taken during our ground surveys.
+            <p className="project-home-editorial-desc">
+              Patkai Mahabahu Foundation has to its credit continuous dedication and an enriching journey during which on-ground relief and structural rehabilitation have reached vulnerable families on the strength of an exceptional vision and mission, as well as an untiring effort to rebuild what floodwaters destroyed.
             </p>
-          </div>
-
-          <div className="project-home-grid">
-            {rebuildHouses.map((house) => (
-              <div key={house.id} className="rebuild-card">
-                <div className="rebuild-image-wrapper">
-                  <img src={house.image} alt={house.title} className="rebuild-img" loading="lazy" />
+            <div className="project-home-checklist">
+              <div className="checklist-column">
+                <div className="checklist-item">
+                  <FaCircleCheck className="check-icon" />
+                  <span>Ground Household Damage Surveys</span>
                 </div>
-                <div className="rebuild-card-caption">
-                  <span className="rebuild-caption-title">{house.title}</span>
+                <div className="checklist-item">
+                  <FaCircleCheck className="check-icon" />
+                  <span>Rebuilding Washed-Out Mud & Bamboo Homes</span>
+                </div>
+                <div className="checklist-item">
+                  <FaCircleCheck className="check-icon" />
+                  <span>Ensuring Safe Shelter & Dignity</span>
                 </div>
               </div>
-            ))}
+              <div className="checklist-column">
+                <div className="checklist-item">
+                  <FaCircleCheck className="check-icon" />
+                  <span>Corrugated Tin & Bamboo Supply</span>
+                </div>
+                <div className="checklist-item">
+                  <FaCircleCheck className="check-icon" />
+                  <span>Protecting Vulnerable Children & Elders</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-home-bottom-actions">
+              <Link to="/project-home" className="btn-editorial-read-more">
+                Read More
+              </Link>
+              <div className="editorial-award-badge">
+                <FaAward className="award-badge-icon" />
+                <span>Verified Grassroots Initiative</span>
+              </div>
+            </div>
           </div>
 
-          <div className="project-home-action">
-            <Link to="/project-home" className="btn-project-home-view-more">
-              View More
-            </Link>
+          {/* Right Column: 3-Element Masonry Visual Grid */}
+          <div className="project-home-editorial-right">
+            {/* Left tall image */}
+            <div className="editorial-tall-card">
+              <img
+                src={rebuild2}
+                alt="Household flood damage assessment survey"
+                className="editorial-tall-img"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Right stack: top image + bottom blue stat card */}
+            <div className="editorial-stack-cards">
+              <div className="editorial-top-card">
+                <img
+                  src={rebuild1}
+                  alt="Rural home assessment and restoration"
+                  className="editorial-top-img"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="editorial-stat-card">
+                <img
+                  src={rebuild3}
+                  alt="Rural home assessment background"
+                  className="editorial-stat-bg"
+                  aria-hidden="true"
+                />
+                <div className="editorial-stat-overlay" aria-hidden="true" />
+                <div className="editorial-stat-icon-wrap" aria-hidden="true">
+                  <HomeShelterIcon className="stat-home-icon" />
+                </div>
+                <div className="editorial-stat-text-group">
+                  <div className="editorial-stat-number">
+                    50<span className="editorial-stat-plus">+</span>
+                  </div>
+                  <div className="editorial-stat-label">Target 50+ Homes</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Person Testimonials: 3D Peeking Carousel Slider (Matching Screenshot 2) */}
+      <PersonTestimonials />
 
       {/* Modern Editorial 9-Image Collage Gallery Section */}
       <section className="editorial-gallery-section">
