@@ -9,11 +9,11 @@ export default function Breadcrumb({ currentPage, parentPage, parentLink }) {
           <Link to="/" className="breadcrumb-link">Home</Link>
           {parentPage && (
             <>
-              <span className="breadcrumb-arrow">→</span>
+              <span className="breadcrumb-arrow">›</span>
               <Link to={parentLink || '/'} className="breadcrumb-link">{parentPage}</Link>
             </>
           )}
-          <span className="breadcrumb-arrow">→</span>
+          <span className="breadcrumb-arrow">›</span>
           <span className="breadcrumb-current">{currentPage}</span>
         </nav>
       </div>

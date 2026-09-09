@@ -155,7 +155,7 @@
 
 .dashboard-stat-label {
   font-family: var(--font-noto-sans), sans-serif !important;
-  font-size: 0.9rem !important;
+  font-size: 1rem !important;
   font-weight: 400 !important;
   color: #1E463E !important;
   line-height: 1.35 !important;

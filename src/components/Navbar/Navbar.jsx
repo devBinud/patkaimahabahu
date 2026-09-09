@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import {
   FaPhone,
+  FaEnvelope,
   FaWhatsapp,
   FaFacebookF,
   FaInstagram,
@@ -16,6 +17,7 @@ import {
 } from 'react-icons/fa6'
 import { FiMenu } from 'react-icons/fi'
 import logoImg from '../../assets/logo.png'
+import hours24Icon from '../../assets/24_hours.png'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -159,17 +161,14 @@ export default function Navbar() {
         <div className="top-bar-container">
           <div className="top-bar-left">
             <a href="tel:+917002808115" className="phone-fullheight-link">
-              <FaPhone size={11} />
+              <img src={hours24Icon} alt="24/7 Helpline" className="topbar-24h-icon" />
               <span>+91 70028 08115</span>
             </a>
             <span className="topbar-vertical-divider"></span>
-            <div className="topbar-assamese-pillars">
-              <span className="pillar-item">মানৱতা</span>
-              <span className="topbar-vertical-divider"></span>
-              <span className="pillar-item">পৰিৱেশ</span>
-              <span className="topbar-vertical-divider"></span>
-              <span className="pillar-item">স্বাস্থ্য</span>
-            </div>
+            <a href="mailto:patkaimahabahufoundation@gmail.com" className="email-fullheight-link">
+              <FaEnvelope size={11} />
+              <span>patkaimahabahufoundation@gmail.com</span>
+            </a>
           </div>
 
           <div className="top-bar-right">

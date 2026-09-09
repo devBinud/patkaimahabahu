@@ -217,7 +217,7 @@
 .ph-rebuild-section {
   background: transparent;
   border: none;
-  padding: 2rem 1.5rem 5rem;
+  padding: 2rem 1.5rem 1.5rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -269,7 +269,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
 }
 
 .ph-rebuild-card {

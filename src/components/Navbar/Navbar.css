@@ -67,6 +67,38 @@
   border-bottom: none !important;
 }
 
+.topbar-24h-icon {
+  object-fit: contain;
+  filter: brightness(0) invert();
+  transform-origin: 50%;
+  vertical-align: middle;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.email-fullheight-link {
+  height: 100%;
+  color: #ffffff !important;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  padding: 0 0.85rem;
+  transition: opacity 0.2s ease;
+}
+
+.email-fullheight-link:hover {
+  color: #ffffff !important;
+  opacity: 0.85;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
 .topbar-tagline {
   color: rgba(255, 255, 255, 0.9) !important;
   font-size: 0.78rem;
@@ -948,6 +980,7 @@
   .nav-search-block,
   .topbar-tagline,
   .topbar-assamese-pillars,
+  .email-fullheight-link,
   .topbar-vertical-divider,
   .utility-links-group {
     display: none !important;

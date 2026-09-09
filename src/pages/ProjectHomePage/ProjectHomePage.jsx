@@ -173,31 +173,6 @@ export default function ProjectHomePage() {
               </p>
             </div>
           </div>
-
-          {/* Key Planning Highlights & CTA */}
-          <div className="ph-rebuild-footer-bar">
-            <div className="ph-rebuild-stats">
-              <div className="ph-rebuild-stat">
-                <span className="ph-stat-num">50</span>
-                <span className="ph-stat-lbl">Homes Planned</span>
-              </div>
-              <div className="ph-rebuild-stat-div" aria-hidden="true"></div>
-              <div className="ph-rebuild-stat">
-                <span className="ph-stat-num">3</span>
-                <span className="ph-stat-lbl">Districts (Charaideo, Sivasagar, Jorhat)</span>
-              </div>
-              <div className="ph-rebuild-stat-div" aria-hidden="true"></div>
-              <div className="ph-rebuild-stat">
-                <span className="ph-stat-num">Expert</span>
-                <span className="ph-stat-lbl">Engineers &amp; Advisors Guided</span>
-              </div>
-            </div>
-
-            <Link to="/contribution" className="ph-rebuild-cta-btn">
-              <span>Support Rebuilding Project</span>
-              <FaArrowRight size={13} />
-            </Link>
-          </div>
         </div>
       </section>
 

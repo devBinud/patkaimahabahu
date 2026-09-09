@@ -9,6 +9,7 @@ import {
   FaChevronDown
 } from 'react-icons/fa6'
 import logoImg from '../../assets/logo.png'
+import NewsletterBanner from '../NewsletterBanner/NewsletterBanner'
 import './Footer.css'
 
 export default function Footer() {
@@ -20,6 +21,9 @@ export default function Footer() {
 
   return (
     <footer className="rf-footer-wrapper">
+      {/* Newsletter Subscription Banner before main footer */}
+      <NewsletterBanner />
+
       {/* Main Footer Card */}
       <div className="rf-footer-card">
         {/* Desktop 5-Column Grid */}
@@ -325,6 +329,8 @@ export default function Footer() {
               <Link to="/contact">Terms & Conditions</Link>
               <span className="rf-sep">|</span>
               <Link to="/contact">Privacy Policy</Link>
+              <span className="rf-sep">|</span>
+              <Link to="/admin" title="PMF Management Portal" style={{ opacity: 0.85 }}>Admin Portal</Link>
               <span className="rf-sep">|</span>
               Designed & Developed by{' '}
               <a
