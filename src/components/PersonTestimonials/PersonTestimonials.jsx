@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import { FaXmark } from 'react-icons/fa6';
 import person1Img from '../../assets/testimonials/person1.jpg';
 import person2Img from '../../assets/testimonials/person2.jpg';
@@ -8,7 +8,7 @@ import './PersonTestimonials.css';
 const RAW_TESTIMONIALS = [
   {
     id: 1,
-    theme: 'theme-blue',
+    theme: 'theme-amber',
     tag: 'Stories That Matter',
     quote:
       '“When our village was submerged during the devastating flood, the Patkai Mahabahu Foundation team arrived with food, clean drinking water, and dry rations within hours. Their selfless seva gave our entire family the courage to rebuild.”',
@@ -30,7 +30,7 @@ const RAW_TESTIMONIALS = [
   },
   {
     id: 3,
-    theme: 'theme-green',
+    theme: 'theme-amber',
     tag: 'Stories That Matter',
     quote:
       '“Seeing the transparent grassroots work of Patkai Mahabahu Foundation inspired me to join hands as a ground seva volunteer. Rebuilding homes and delivering essential supplies directly into hands who need it most brings genuine purpose.”',
@@ -235,14 +235,28 @@ export default function PersonTestimonials() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [modalStory, slidePrev, slideNext]);
 
-  // Calculate physical track translation safely
-  const { cardWidth = 840, gap = 24, containerWidth = 1200 } = slideParams || {};
-  const safeContainerWidth = containerWidth > 0 ? containerWidth : (typeof window !== 'undefined' ? window.innerWidth : 1200);
-  const safeCardWidth = cardWidth > 0 ? cardWidth : Math.min(safeContainerWidth - 40, 840);
-  const safeGap = gap !== undefined ? gap : 24;
-  const trackCenterOffset = (safeContainerWidth - safeCardWidth) / 2;
-  const safeIndex = Number.isFinite(activeIndex) ? activeIndex : INITIAL_INDEX;
-  const currentTranslateX = trackCenterOffset - safeIndex * (safeCardWidth + safeGap) + (dragOffset || 0);
+  const { cardWidth = 840, gap = 24 } = slideParams || {};
+
+  // Measure the actual active card's layout position (cards now have two
+  // distinct widths - active vs peek - so translateX must be derived from
+  // real DOM geometry rather than a uniform-width formula) and center it.
+  const [baseTranslateX, setBaseTranslateX] = useState(0);
+
+  useLayoutEffect(() => {
+    const containerEl = containerRef.current;
+    const trackEl = trackRef.current;
+    if (!containerEl || !trackEl) return;
+    const activeEl = trackEl.children[activeIndex];
+    if (!activeEl) return;
+
+    const containerWidth = containerEl.offsetWidth || 0;
+    const elWidth = activeEl.offsetWidth || 0;
+    const elLeft = activeEl.offsetLeft || 0;
+
+    setBaseTranslateX((containerWidth - elWidth) / 2 - elLeft);
+  }, [activeIndex, slideParams]);
+
+  const currentTranslateX = baseTranslateX + (dragOffset || 0);
 
   return (
     <section
@@ -274,7 +288,7 @@ export default function PersonTestimonials() {
             return (
               <div
                 key={item.slideKey}
-                className={`person-testimonials-card ${item.theme || 'theme-blue'} ${isActive ? 'card-active' : 'card-peek'}`}
+                className={`person-testimonials-card ${item.theme || 'theme-amber'} ${isActive ? 'card-active' : 'card-peek'}`}
                 style={{ width: `${cardWidth}px` }}
                 onClick={() => {
                   if (!dragMovedRef.current && !isActive) {

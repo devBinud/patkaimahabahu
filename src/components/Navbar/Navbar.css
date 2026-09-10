@@ -606,11 +606,10 @@
 }
 
 .ticker-badge {
-  /* background-color: #6f9e98 !important; */
-  background-color: #FFDE3A !important;
-  color: #727070;
+  background-color: #FFE7AB!important;
+  color: #686565;
   font-size: 0.725rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   padding: 0.25rem 0.75rem;
   border-radius: 4px;

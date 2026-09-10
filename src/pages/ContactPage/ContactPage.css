@@ -36,7 +36,7 @@
 
 .contact-main-heading {
   font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--primary);
   line-height: 1.15;
@@ -46,7 +46,7 @@
 
 .contact-intro-text {
   font-family: var(--font-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: #475569;
   margin: 0;
@@ -83,8 +83,8 @@
 
 .contact-card-title {
   font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
-  font-size: 1.9rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 500;
   color: #003853;
   margin: 0 0 24px 0;
   letter-spacing: -0.015em;
@@ -124,8 +124,8 @@
 .contact-address-text {
   margin: 0;
   color: #334155;
-  font-weight: 500;
-  font-size: 1.05rem;
+  font-weight: 400;
+  font-size: 1rem;
   font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif;
   text-align: left;
 }
@@ -184,7 +184,7 @@
 .queries-label {
   font-size: 1rem;
   color: #003853;
-  font-weight: 500;
+  font-weight: 400;
   margin: 0;
   font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif;
   text-align: left;
@@ -231,9 +231,9 @@
 
 .form-card-title {
   font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
-  font-size: 2.25rem;
-  font-weight: 600;
-  color: #003853;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--primary);
   text-align: left;
   margin-bottom: 28px;
   letter-spacing: -0.015em;

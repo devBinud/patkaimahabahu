@@ -116,22 +116,41 @@
     line-height: 1.45 !important;
   }
 
-  .gallery-grid,
   .gallery-grid-field {
     grid-template-columns: 1fr !important;
     gap: 0.85rem !important;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
   }
 
   .gallery-card {
     border-radius: 12px !important;
   }
 
-  .gallery-img-wrapper {
+  .gallery-grid-field .gallery-img-wrapper {
     height: 210px !important;
+  }
+
+  .gallery-grid .gallery-img-wrapper {
+    height: 140px !important;
+  }
+
+  .gallery-grid .gallery-zoom-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .gallery-grid .gallery-overlay {
+    padding: 0.6rem !important;
   }
 }
 
-/* Lazy Load Image Integration */
+/* Lazy Load Image Integration (sizing only - hover transform/opacity is
+   owned solely by .gallery-img / .gallery-card:hover .gallery-img in
+   HomePage.css, so the two rule sets don't fight over the same <img>) */
 .gallery-lazy-wrapper,
 .gallery-img-wrapper .lazy-load-image-background {
   width: 100% !important;
@@ -145,9 +164,4 @@
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
-  transition: transform 0.4s ease;
-}
-
-.gallery-card:hover .gallery-lazy-wrapper img {
-  transform: scale(1.05);
 }

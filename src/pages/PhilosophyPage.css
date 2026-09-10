@@ -62,16 +62,10 @@
 
 .faq-item-card {
   background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: none;
   border-radius: 18px;
   overflow: hidden;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-}
-
-.faq-item-card.open {
-  box-shadow: 0 8px 25px rgba(0, 56, 83, 0.08);
-  border-color: #cbd5e1;
 }
 
 .faq-question-btn {
@@ -92,7 +86,7 @@
 }
 
 .faq-question-btn:hover {
-  color: #E58325;
+  color: var(--primary, #005C8A);
 }
 
 .faq-question-text {

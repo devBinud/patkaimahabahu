@@ -77,7 +77,7 @@ export default function DashboardOverview() {
       {/* Stats Grid */}
       <div className="admin-stats-grid">
         <div className="admin-stat-card">
-          <div className="admin-stat-icon-wrapper emerald">
+          <div className="admin-stat-icon-wrapper blue">
             <FaHandHoldingHeart />
           </div>
           <div className="admin-stat-content">
@@ -97,7 +97,7 @@ export default function DashboardOverview() {
         </div>
 
         <div className="admin-stat-card">
-          <div className="admin-stat-icon-wrapper amber">
+          <div className="admin-stat-icon-wrapper blue">
             <FaLayerGroup />
           </div>
           <div className="admin-stat-content">
@@ -107,7 +107,7 @@ export default function DashboardOverview() {
         </div>
 
         <div className="admin-stat-card">
-          <div className="admin-stat-icon-wrapper purple">
+          <div className="admin-stat-icon-wrapper blue">
             <FaEnvelope />
           </div>
           <div className="admin-stat-content">

@@ -53,9 +53,49 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+
+  <style>
+    #initial-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      transition: opacity 0.3s ease;
+    }
+
+    #initial-loader.loader-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #initial-loader .loader {
+      width: 50px;
+      aspect-ratio: 1;
+      --_c: no-repeat radial-gradient(farthest-side, #005C8A 92%, #0000);
+      background:
+        var(--_c) top,
+        var(--_c) left,
+        var(--_c) right,
+        var(--_c) bottom;
+      background-size: 12px 12px;
+      animation: initial-loader-spin 1s infinite;
+    }
+
+    @keyframes initial-loader-spin {
+      to {
+        transform: rotate(.5turn);
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div id="initial-loader" aria-hidden="true">
+    <div class="loader"></div>
+  </div>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

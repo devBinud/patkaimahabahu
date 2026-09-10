@@ -85,7 +85,8 @@
 }
 
 .admin-login-title {
-  font-size: 21px;
+  font-family: 'Noto Serif', serif;
+  font-size: 20px;
   font-weight: 700;
   color: #0f172a;
   margin: 0 0 6px 0;
@@ -174,14 +175,14 @@
 
 .input-with-icon input {
   width: 100%;
-  padding: 12px 14px 12px 42px;
+  padding: 11.5px 14px 11.5px 42px;
   background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
+  border: 2px solid #e2e8f0;
   border-radius: 12px;
   color: #0f172a;
   font-size: 14px;
   outline: none;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
 }
 
@@ -190,9 +191,8 @@
 }
 
 .input-with-icon input:focus {
-  border-color: #10b981;
+  border-color: #1e3a8a;
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
 }
 
 .password-toggle-btn {
@@ -221,23 +221,28 @@
   justify-content: center;
   gap: 9px;
   padding: 13px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
   color: #ffffff;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 12px;
   font-size: 14.5px;
   font-weight: 600;
   letter-spacing: 0.2px;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
   margin-top: 8px;
 }
 
 .admin-submit-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.4);
+  background: linear-gradient(135deg, #1e40af 0%, #172554 100%);
+  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.4);
   transform: translateY(-1px);
+}
+
+.admin-submit-btn:focus-visible {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.25);
 }
 
 .admin-submit-btn:disabled {
@@ -258,6 +263,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Help / contact link */
+.admin-login-help {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.admin-login-help-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #64748b;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.admin-login-help-link:hover {
+  color: #1e3a8a;
+  text-decoration-color: currentColor;
+}
+
+.admin-login-help-email {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.admin-login-help-email a {
+  color: #1e3a8a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.admin-login-help-email a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive */

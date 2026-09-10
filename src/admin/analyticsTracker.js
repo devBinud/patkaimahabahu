@@ -59,14 +59,15 @@ async function getGeoLocation() {
     const cached = sessionStorage.getItem(STORAGE_KEYS.VISITOR_GEO);
     if (cached) return JSON.parse(cached);
 
-    const res = await fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(3000) });
+    const res = await fetch('https://ipwho.is/', { signal: AbortSignal.timeout(3000) });
     if (res.ok) {
       const data = await res.json();
+      if (data.success === false) throw new Error(data.message || 'Geo lookup failed');
       const geo = {
         ip: data.ip || '106.222.224.22',
         city: data.city || 'Guwahati',
         region: data.region || 'Assam',
-        country: data.country_name || 'India'
+        country: data.country || 'India'
       };
       sessionStorage.setItem(STORAGE_KEYS.VISITOR_GEO, JSON.stringify(geo));
       return geo;

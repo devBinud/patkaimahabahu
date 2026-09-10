@@ -21,6 +21,7 @@ export default function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   const from = location.state?.from?.pathname || '/admin';
 
@@ -60,7 +61,7 @@ export default function AdminLogin() {
             <div className="admin-login-logo-container">
               <img src={logoImg} alt="Patkai Mahabahu Foundation" className="admin-logo-img" />
             </div>
-            <h1 className="admin-login-title">Patkai Mahabahu Foundation</h1>
+            <h1 className="admin-login-title">Admin Login</h1>
             <p className="admin-login-subtitle">
               Sign in to your account
             </p>
@@ -143,6 +144,22 @@ export default function AdminLogin() {
               )}
             </button>
           </form>
+
+          <div className="admin-login-help">
+            {showContact ? (
+              <p className="admin-login-help-email">
+                Contact: <a href="mailto:binudp.dev@gmail.com">binudp.dev@gmail.com</a>
+              </p>
+            ) : (
+              <button
+                type="button"
+                className="admin-login-help-link"
+                onClick={() => setShowContact(true)}
+              >
+                Having trouble signing in?
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

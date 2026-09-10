@@ -50,7 +50,7 @@
   flex: 0 0 auto;
   min-height: 400px;
   background: linear-gradient(135deg, #004d73 0%, #00314a 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: none;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
@@ -58,7 +58,7 @@
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
-  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   transform: none;
 }
 
@@ -66,7 +66,6 @@
 .person-testimonials-card.card-active {
   opacity: 1;
   transform: none;
-  box-shadow: 0 20px 48px rgba(0, 56, 83, 0.32);
 }
 
 /* Inactive peeking cards to the left & right (Same size, gently dimmed) */
@@ -74,107 +73,32 @@
   opacity: 0.45;
   transform: none;
   cursor: pointer;
-  box-shadow: 0 10px 28px rgba(0, 56, 83, 0.16);
 }
 
 .person-testimonials-card.card-peek:hover {
   opacity: 0.68;
 }
 
-/* Card 1: Default / Signature Blue */
-.person-testimonials-card.theme-blue {
-  background: linear-gradient(135deg, #004d73 0%, #00314a 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.person-testimonials-card.theme-blue.card-active {
-  box-shadow: 0 20px 48px rgba(0, 56, 83, 0.32);
-}
-
-/* Card 2: Contribute Now Amber/Gold Theme (#FFE7AB) */
+/* Signature Amber/Gold Theme - applied consistently to every card */
 .person-testimonials-card.theme-amber {
-  background: linear-gradient(135deg, #FFE7AB 0%, #F5CE70 100%);
-  border: 1.5px solid rgba(217, 119, 6, 0.28);
-}
-
-.person-testimonials-card.theme-amber.card-active {
-  box-shadow: 0 20px 48px rgba(180, 100, 20, 0.24);
-}
-
-.person-testimonials-card.theme-amber.card-peek {
-  box-shadow: 0 10px 28px rgba(180, 100, 20, 0.14);
+  background: #FFE7AB !important;
+  border: none;
 }
 
 .person-testimonials-card.theme-amber .person-testimonial-tag {
-  color: #78350F;
+  color: #cf8155;
 }
 
 .person-testimonials-card.theme-amber .person-testimonial-quote {
-  color: #381E05;
+  color: #604224;
 }
 
 .person-testimonials-card.theme-amber .person-testimonial-author {
-  color: #92400E;
-}
-
-.person-testimonials-card.theme-amber .btn-read-full-story {
-  background: #005C8A;
-  color: #ffffff;
-  border: 1.5px solid #005C8A;
-  box-shadow: 0 4px 14px rgba(0, 92, 138, 0.22);
-}
-
-.person-testimonials-card.theme-amber .btn-read-full-story:hover {
-  background: #003853;
-  border-color: #003853;
-  color: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 56, 83, 0.3);
+  color: #504137;
 }
 
 .person-testimonials-card.theme-amber .person-testimonial-image-box {
   background: #E8C162;
-}
-
-/* Card 3: Grassroots Seva Forest Green Theme */
-.person-testimonials-card.theme-green {
-  background: linear-gradient(135deg, #175C3B 0%, #0C3621 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.person-testimonials-card.theme-green.card-active {
-  box-shadow: 0 20px 48px rgba(12, 54, 33, 0.32);
-}
-
-.person-testimonials-card.theme-green.card-peek {
-  box-shadow: 0 10px 28px rgba(12, 54, 33, 0.16);
-}
-
-.person-testimonials-card.theme-green .person-testimonial-tag {
-  color: #ffffff;
-}
-
-.person-testimonials-card.theme-green .person-testimonial-quote {
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.person-testimonials-card.theme-green .person-testimonial-author {
-  color: #86EFAC;
-}
-
-.person-testimonials-card.theme-green .btn-read-full-story {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #ffffff;
-}
-
-.person-testimonials-card.theme-green .btn-read-full-story:hover {
-  background: #ffffff;
-  color: #0C3621;
-  border-color: #ffffff;
-}
-
-.person-testimonials-card.theme-green .person-testimonial-image-box {
-  background: #082918;
 }
 
 /* Left Content Area */
@@ -191,9 +115,9 @@
 }
 
 .person-testimonial-tag {
-  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-family: var(--font-noto-serif, 'Plus Jakarta Sans'), sans-serif;
   font-size: 1.45rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   margin: 0 0 16px 0;
   letter-spacing: -0.01em;
@@ -222,24 +146,26 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 24px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  background: #005C8A;
+  border: none;
+  color: #fff;
   font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
 .btn-read-full-story:hover {
-  background: #ffffff;
+  background: #FCE096;
   color: #003853;
-  border-color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
 }
 
 /* Right Image Area (Solid integrated unit, non-hoverable) */

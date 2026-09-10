@@ -84,7 +84,7 @@ export default function NewsletterBanner() {
         } else {
           // Fallback: stored in local storage successfully
           setStatus('success');
-          setFeedback("Thank you for subscribing! We've recorded your email.");
+          setFeedback("Thank you for subscribing");
           setEmail('');
         }
       }
@@ -92,7 +92,7 @@ export default function NewsletterBanner() {
       console.warn('Supabase post error:', err);
       // Offline / network fallback: successfully saved locally
       setStatus('success');
-      setFeedback("Thank you for subscribing! We've recorded your email.");
+      setFeedback("Thank you for subscribing!");
       setEmail('');
     }
   };

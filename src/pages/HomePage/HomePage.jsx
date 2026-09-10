@@ -392,7 +392,7 @@ export default function HomePage() {
 
             {/* Right: Editorial Typography */}
             <div className="founder-editorial-content">
-              <h2 className="founder-editorial-title">THE FOUNDER & CHAIRMAN</h2>
+              <h2 className="founder-editorial-title">The Founder & Chairman</h2>
               <p className="founder-editorial-name">Pranab Milan Gogoi</p>
               <div className="founder-editorial-desc">
                 <p>
@@ -469,9 +469,8 @@ export default function HomePage() {
         <div className="project-home-editorial-container">
           {/* Left Column: Story, Commitments & Actions */}
           <div className="project-home-editorial-left">
-            <span className="project-home-eyebrow">About Project Home</span>
             <h2 className="project-home-editorial-title">
-              Rebuilding Homes: Inspiring Hope And Shaping Futures
+              Rebuilding Homes <span className="project-home-title-highlight">Inspiring Hope And Shaping Futures</span>
             </h2>
             <p className="project-home-editorial-desc">
               Patkai Mahabahu Foundation has to its credit continuous dedication and an enriching journey during which on-ground relief and structural rehabilitation have reached vulnerable families on the strength of an exceptional vision and mission, as well as an untiring effort to rebuild what floodwaters destroyed.
@@ -507,10 +506,6 @@ export default function HomePage() {
               <Link to="/project-home" className="btn-editorial-read-more">
                 Read More
               </Link>
-              <div className="editorial-award-badge">
-                <FaAward className="award-badge-icon" />
-                <span>Verified Grassroots Initiative</span>
-              </div>
             </div>
           </div>
 
@@ -545,9 +540,7 @@ export default function HomePage() {
                   aria-hidden="true"
                 />
                 <div className="editorial-stat-overlay" aria-hidden="true" />
-                <div className="editorial-stat-icon-wrap" aria-hidden="true">
-                  <HomeShelterIcon className="stat-home-icon" />
-                </div>
+              
                 <div className="editorial-stat-text-group">
                   <div className="editorial-stat-number">
                     50<span className="editorial-stat-plus">+</span>

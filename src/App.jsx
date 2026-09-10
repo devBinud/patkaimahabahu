@@ -81,6 +81,15 @@ function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
 
+  // Dismiss the static index.html preloader once the app has mounted
+  useEffect(() => {
+    const loader = document.getElementById('initial-loader');
+    if (!loader) return;
+    loader.classList.add('loader-hidden');
+    const removeTimer = setTimeout(() => loader.remove(), 320);
+    return () => clearTimeout(removeTimer);
+  }, []);
+
   useEffect(() => {
     if (isAdminRoute) return;
 

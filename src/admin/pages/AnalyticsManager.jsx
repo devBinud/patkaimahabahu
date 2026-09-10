@@ -63,6 +63,10 @@ export default function AnalyticsManager() {
     return logs.filter((l) => l.device === 'Mobile').length;
   }, [logs]);
 
+  const iosCount = useMemo(() => {
+    return logs.filter((l) => l.os === 'iOS').length;
+  }, [logs]);
+
   const mobilePercentage = totalViews > 0 ? Math.round((mobileCount / totalViews) * 100) : 0;
 
   const topPage = useMemo(() => {
@@ -86,7 +90,8 @@ export default function AnalyticsManager() {
   const filteredLogs = useMemo(() => {
     return logs.filter((item) => {
       const matchDevice =
-        deviceFilter === 'all' || item.device.toLowerCase() === deviceFilter.toLowerCase();
+        deviceFilter === 'all' ||
+        (deviceFilter === 'ios' ? item.os === 'iOS' : item.device.toLowerCase() === deviceFilter.toLowerCase());
 
       const q = searchTerm.toLowerCase().trim();
       const matchSearch =
@@ -226,7 +231,7 @@ export default function AnalyticsManager() {
         ) : (
           <>
             <div className="admin-stat-card">
-              <div className="admin-stat-icon-wrapper emerald">
+              <div className="admin-stat-icon-wrapper blue">
                 <FaChartLine />
               </div>
               <div className="admin-stat-content">
@@ -246,7 +251,7 @@ export default function AnalyticsManager() {
             </div>
 
             <div className="admin-stat-card">
-              <div className="admin-stat-icon-wrapper amber">
+              <div className="admin-stat-icon-wrapper blue">
                 <FaMobileScreenButton />
               </div>
               <div className="admin-stat-content">
@@ -256,7 +261,7 @@ export default function AnalyticsManager() {
             </div>
 
             <div className="admin-stat-card">
-              <div className="admin-stat-icon-wrapper purple">
+              <div className="admin-stat-icon-wrapper blue">
                 <FaCompass />
               </div>
               <div className="admin-stat-content">
@@ -303,6 +308,12 @@ export default function AnalyticsManager() {
                 onClick={() => setDeviceFilter('desktop')}
               >
                 Desktop ({totalViews - mobileCount})
+              </button>
+              <button
+                className={`admin-tab-btn ${deviceFilter === 'ios' ? 'active' : ''}`}
+                onClick={() => setDeviceFilter('ios')}
+              >
+                iOS ({iosCount})
               </button>
             </div>
           </div>

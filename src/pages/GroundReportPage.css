@@ -116,12 +116,6 @@
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
-  transition: transform 0.35s ease;
-}
-
-.ground-photo-frame:hover .ground-photo-img,
-.ground-photo-frame:hover img {
-  transform: scale(1.04);
 }
 
 /* Highlights 2-Column Row */

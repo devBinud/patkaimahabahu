@@ -148,38 +148,28 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #FCE7A6;
-  color: #6b6161 !important;
+  background-color: #FFE7AB;
+  color: #554d4d !important;
   font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   text-decoration: none;
-  padding: 0.7rem 1.9rem;
+  padding: 14px 40px;
   border-radius: 9999px;
-  box-shadow: 0 2px 8px rgba(252, 231, 166, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
-/* When Card is Hovered OR Button is Hovered: Reflect Join Us Blue */
-.rf-whatwedo-card:hover .rf-whatwedo-btn,
 .rf-whatwedo-btn:hover {
-  background-color: #005C8A !important;
-  color: #ffffff !important;
-  box-shadow: 0 6px 18px rgba(0, 92, 138, 0.28) !important;
-}
-
-/* Direct Hover on the Button: Deeper blue & subtle lift */
-.rf-whatwedo-btn:hover {
-  background-color: #004366 !important;
-  border-color: #004366 !important;
-  transform: translateY(-2px);
+  background-color: #FCE096 !important;
+  color: #3e3737 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
 .rf-whatwedo-btn:active {
-  background-color: #003853 !important;
-  border-color: #003853 !important;
   transform: translateY(0);
 }
 
@@ -255,8 +245,8 @@
   }
 
   .rf-whatwedo-btn {
-    padding: 0.65rem 1.8rem;
-    font-size: 0.82rem;
+    padding: 10px 30px;
+    font-size: 11.5px;
   }
 
   .rf-card-logo-badge {

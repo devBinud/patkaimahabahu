@@ -40,12 +40,12 @@
 
 .about-intro-title {
   font-size: 1.65rem;
-  font-weight: 600;
-  color: #003853;
+  font-weight: 500;
+  color: var(--primary);
   line-height: 1.25;
   margin: 0 0 0.85rem;
   letter-spacing: -0.02em;
-  font-family: var(--font-heading);
+  font-family: var(--font-noto-serif);
 }
 
 .about-intro-lead {

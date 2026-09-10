@@ -326,11 +326,7 @@ export default function Footer() {
             <p className="rf-copyright-text">
               © {new Date().getFullYear()} Patkai Mahabahu Foundation. All rights reserved
               <span className="rf-sep">|</span>
-              <Link to="/contact">Terms & Conditions</Link>
-              <span className="rf-sep">|</span>
               <Link to="/contact">Privacy Policy</Link>
-              <span className="rf-sep">|</span>
-              <Link to="/admin" title="PMF Management Portal" style={{ opacity: 0.85 }}>Admin Portal</Link>
               <span className="rf-sep">|</span>
               Designed & Developed by{' '}
               <a
@@ -343,22 +339,6 @@ export default function Footer() {
               </a>
             </p>
           </div>
-        </div>
-
-        {/* Decorative Leaf SVG in Bottom-Right Corner (Reliance Foundation signature) */}
-        <div className="rf-corner-leaf-decor" aria-hidden="true">
-          <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M120 160C120 160 110 80 190 40C190 40 210 120 120 160Z"
-              fill="#48A047"
-              fillOpacity="0.32"
-            />
-            <path
-              d="M20 160C20 160 30 70 140 30C140 30 155 120 20 160Z"
-              fill="#005C8A"
-              fillOpacity="0.2"
-            />
-          </svg>
         </div>
       </div>
     </footer>

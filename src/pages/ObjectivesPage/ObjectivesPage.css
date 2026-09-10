@@ -58,8 +58,8 @@
 .objective-letter {
   font-family: var(--font-noto-sans), sans-serif;
   font-size: 0.98rem;
-  font-weight: 700;
-  color: #003853;
+  font-weight: 600;
+  color: var(--primary);
   line-height: 1.65;
   display: inline-block;
   min-width: 22px;

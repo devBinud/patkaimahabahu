@@ -161,24 +161,6 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Direct Phone & WhatsApp */}
-              <div className="contact-channels-row">
-                <a href="tel:+917002808115" className="contact-channel-item">
-                  <FaPhone className="contact-row-icon icon-phone" />
-                  <span>+91 70028 08115</span>
-                </a>
-                <span className="channel-separator" aria-hidden="true">•</span>
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-channel-item icon-wa"
-                >
-                  <FaWhatsapp className="contact-row-icon" />
-                  <span>WhatsApp: +91 70028 08115</span>
-                </a>
-              </div>
-
               {/* General Queries Email */}
               <div className="contact-queries-block">
                 <span className="queries-label">For any general queries, email us</span>
@@ -199,10 +181,8 @@ export default function ContactPage() {
 
             {status === 'success' && (
               <div className="contact-success-banner" role="alert">
-                <FaCircleCheck className="success-icon" />
                 <div>
-                  <h4>Thank you for reaching out!</h4>
-                  <p>Your message has been safely received. Our coordination desk will respond to you shortly.</p>
+                  <p>Thank you for reaching out!</p>
                 </div>
               </div>
             )}
