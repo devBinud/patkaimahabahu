@@ -32,7 +32,7 @@ export default function ObjectivesPage() {
 
   return (
     <div className="objectives-page-wrapper">
-      <Breadcrumb currentPage="Objective of Foundation" parentLink="/about" />
+      <Breadcrumb currentPage="Objective of the Trust" parentLink="/about" />
 
       {/* Main Objectives Section */}
       <section className="objectives-content-section">

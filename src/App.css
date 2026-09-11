@@ -1177,8 +1177,9 @@ body.drawer-open .mobile-bottom-nav {
   }
 
   /* Ensure bottom content is never obscured by the fixed mobile bottom bar */
-  body, .cureo-container {
-    padding-bottom: 78px !important;
+  body,
+  .cureo-container {
+    padding-bottom: 38px !important;
   }
 }
 

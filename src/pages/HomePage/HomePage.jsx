@@ -263,6 +263,9 @@ export default function HomePage() {
                 src={slideImg}
                 alt={`Assam Flood Relief Drive Slide ${idx + 1}`}
                 className={`hero-mobile-img ${idx === currentHeroSlide ? 'active' : ''}`}
+                loading={idx === 0 ? 'eager' : 'lazy'}
+                fetchPriority={idx === 0 ? 'high' : 'low'}
+                decoding="async"
               />
             ))}
           </div>
@@ -594,6 +597,7 @@ export default function HomePage() {
       </section>
 
       {/* Gallery Photo Lightbox Modal with Swipe & Prev/Next Arrows */}
+      {/* Lightbox Modal with Touch Swipe & Prev/Next Arrows */}
       {selectedGalleryImg && (
         <div
           className="gallery-modal-overlay"
@@ -601,7 +605,16 @@ export default function HomePage() {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="gallery-modal-content" onClick={(e) => e.stopPropagation()}>
+          {/* Top Bar: Counter on Left, Close on Right (Outside Image) */}
+          <div className="gallery-modal-topbar" onClick={(e) => e.stopPropagation()}>
+            <div className="gallery-modal-info">
+              <span className="gallery-modal-pill">
+                {selectedIndex + 1} / {allHomeImages.length}
+              </span>
+              {selectedGalleryImg.title && (
+                <span className="gallery-modal-title">{selectedGalleryImg.title}</span>
+              )}
+            </div>
             <button
               className="gallery-modal-close"
               onClick={() => setSelectedIndex(null)}
@@ -609,27 +622,37 @@ export default function HomePage() {
             >
               <FaXmark size={20} />
             </button>
+          </div>
 
-            <button
-              className="gallery-modal-nav-prev"
-              onClick={handlePrev}
-              aria-label="Previous photo"
-            >
-              <FaChevronLeft size={20} />
-            </button>
+          {/* Nav Buttons Floating in Overlay Margins (NOT on top of image) */}
+          <button
+            className="gallery-modal-nav-prev"
+            onClick={handlePrev}
+            aria-label="Previous photo"
+          >
+            <FaChevronLeft size={22} />
+          </button>
 
-            <button
-              className="gallery-modal-nav-next"
-              onClick={handleNext}
-              aria-label="Next photo"
-            >
-              <FaChevronRight size={20} />
-            </button>
+          <button
+            className="gallery-modal-nav-next"
+            onClick={handleNext}
+            aria-label="Next photo"
+          >
+            <FaChevronRight size={22} />
+          </button>
 
+          {/* Central Image Container - Clean & Completely Unobstructed */}
+          <div
+            className="gallery-modal-content"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <img
               src={selectedGalleryImg.image}
               alt={selectedGalleryImg.title}
               className="gallery-modal-img"
+              draggable="false"
             />
           </div>
         </div>

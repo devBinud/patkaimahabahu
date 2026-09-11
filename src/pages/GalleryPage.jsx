@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
 import { FaExpand, FaXmark, FaChevronLeft, FaChevronRight } from 'react-icons/fa6'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
 import gallery1 from '../assets/gallery/1.jpeg'
 import gallery2 from '../assets/gallery/2.jpeg'
 import gallery3 from '../assets/gallery/3.jpeg'
@@ -256,16 +254,14 @@ export default function GalleryPage() {
                 onClick={() => setSelectedIndex(idx)}
               >
                 <div className="gallery-img-wrapper" style={{ height: '260px' }}>
-                  <LazyLoadImage
+                  <img
                     src={item.image}
                     alt={item.title}
-                    effect="blur"
-                    threshold={200}
+                    loading="lazy"
                     className="gallery-img"
-                    wrapperClassName="gallery-lazy-wrapper"
                   />
                   <div className="gallery-overlay">
-                    <span className="gallery-zoom-icon"><FaExpand size={15} /></span>
+                    <span className="gallery-zoom-icon"><FaExpand size={16} /></span>
                   </div>
                 </div>
               </div>
@@ -292,16 +288,14 @@ export default function GalleryPage() {
                 onClick={() => setSelectedIndex(mediaItems.length + idx)}
               >
                 <div className="gallery-img-wrapper" style={{ height: '240px' }}>
-                  <LazyLoadImage
+                  <img
                     src={item.image}
                     alt={item.title}
-                    effect="blur"
-                    threshold={200}
+                    loading="lazy"
                     className="gallery-img"
-                    wrapperClassName="gallery-lazy-wrapper"
                   />
                   <div className="gallery-overlay">
-                    <span className="gallery-zoom-icon"><FaExpand size={15} /></span>
+                    <span className="gallery-zoom-icon"><FaExpand size={16} /></span>
                   </div>
                 </div>
               </div>
@@ -320,7 +314,16 @@ export default function GalleryPage() {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="gallery-modal-content" onClick={(e) => e.stopPropagation()}>
+          {/* Top Bar: Counter on Left, Close on Right (Outside Image) */}
+          <div className="gallery-modal-topbar" onClick={(e) => e.stopPropagation()}>
+            <div className="gallery-modal-info">
+              <span className="gallery-modal-pill">
+                {selectedIndex + 1} / {allGalleryImages.length}
+              </span>
+              {selectedGalleryImg.title && (
+                <span className="gallery-modal-title">{selectedGalleryImg.title}</span>
+              )}
+            </div>
             <button
               className="gallery-modal-close"
               onClick={() => setSelectedIndex(null)}
@@ -328,27 +331,37 @@ export default function GalleryPage() {
             >
               <FaXmark size={20} />
             </button>
+          </div>
 
-            <button
-              className="gallery-modal-nav-prev"
-              onClick={handlePrev}
-              aria-label="Previous photo"
-            >
-              <FaChevronLeft size={20} />
-            </button>
+          {/* Nav Buttons Floating in Overlay Margins (NOT on top of image) */}
+          <button
+            className="gallery-modal-nav-prev"
+            onClick={handlePrev}
+            aria-label="Previous photo"
+          >
+            <FaChevronLeft size={22} />
+          </button>
 
-            <button
-              className="gallery-modal-nav-next"
-              onClick={handleNext}
-              aria-label="Next photo"
-            >
-              <FaChevronRight size={20} />
-            </button>
+          <button
+            className="gallery-modal-nav-next"
+            onClick={handleNext}
+            aria-label="Next photo"
+          >
+            <FaChevronRight size={22} />
+          </button>
 
+          {/* Central Image Container - Clean & Completely Unobstructed */}
+          <div
+            className="gallery-modal-content"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <img
               src={selectedGalleryImg.image}
               alt={selectedGalleryImg.title}
               className="gallery-modal-img"
+              draggable="false"
             />
           </div>
         </div>

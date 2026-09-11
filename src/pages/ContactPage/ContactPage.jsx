@@ -257,13 +257,11 @@ export default function ContactPage() {
                       required
                     >
                       <option value="">Select area of interest</option>
-                      <option value="Disaster & Flood Emergency Relief">Disaster &amp; Flood Emergency Relief</option>
-                      <option value="Rural Healthcare & Free Medical Camps">Rural Healthcare &amp; Free Medical Camps</option>
-                      <option value="Bright Horizons Educational Aid">Bright Horizons Educational Aid</option>
-                      <option value="Green Assam Ecological Drive">Green Assam Ecological Drive</option>
-                      <option value="Volunteer With Ground Team">Volunteer With Ground Team</option>
-                      <option value="Donations & 80G Tax Exemption">Donations &amp; 80G Tax Exemption</option>
-                      <option value="General Query & Partnership">General Query &amp; Partnership</option>
+                      <option value="Disaster Management Support">Disaster Management Support</option>
+                      <option value="Education">Education</option>
+                      <option value="Environment">Environment</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Rebuilding Homes">Rebuilding Homes</option>
                     </select>
                   </div>
                 </div>
