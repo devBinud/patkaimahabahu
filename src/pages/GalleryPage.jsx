@@ -242,27 +242,24 @@ export default function GalleryPage() {
         <section className="gallery-section-block">
           <div className="gallery-section-header">
             <h2 className="gallery-section-title">
-              News & Press Coverage
+              News &amp; Press <span className="gallery-title-highlight">Coverage</span>
             </h2>
           </div>
 
-          <div className="gallery-grid">
+          <div className="gallery-grid gallery-media-grid">
             {mediaItems.map((item, idx) => (
               <div
                 key={item.id}
-                className="gallery-card"
+                className="gallery-card gallery-media-card"
                 onClick={() => setSelectedIndex(idx)}
               >
-                <div className="gallery-img-wrapper" style={{ height: '260px' }}>
+                <div className="gallery-img-wrapper gallery-media-img-wrapper">
                   <img
                     src={item.image}
                     alt={item.title}
                     loading="lazy"
                     className="gallery-img"
                   />
-                  <div className="gallery-overlay">
-                    <span className="gallery-zoom-icon"><FaExpand size={16} /></span>
-                  </div>
                 </div>
               </div>
             ))}
@@ -273,7 +270,7 @@ export default function GalleryPage() {
         <section className="gallery-section-block">
           <div className="gallery-section-header">
             <h2 className="gallery-section-title">
-              Photos From The Field
+              Photos From <span className="gallery-title-highlight">The Field</span>
             </h2>
             <p className="gallery-section-desc">
               Glimpses of emergency ration distribution, boat dispatches, and ground relief work across flood-hit villages in Jorhat, Sivasagar, and Charaideo.

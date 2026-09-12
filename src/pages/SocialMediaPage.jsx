@@ -10,7 +10,7 @@ import {
   FaArrowUpRightFromSquare,
   FaHashtag
 } from 'react-icons/fa6'
-import bgSocialMedia from '../assets/bg/bg_socialmedia1.jpg'
+import breadcrumbsBg from '../assets/breadcrumbs_bg.jpg'
 import './SocialMediaPage.css'
 
 export default function SocialMediaPage() {
@@ -105,18 +105,10 @@ export default function SocialMediaPage() {
       <section
         className="social-hero-section"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(0, 24, 42, 0.86) 0%, rgba(0, 56, 88, 0.82) 100%), url(${bgSocialMedia})`
+          backgroundImage: `linear-gradient(135deg, rgba(0, 24, 42, 0.86) 0%, rgba(0, 56, 88, 0.82) 100%), url(${breadcrumbsBg})`
         }}
       >
         <div className="social-hero-container">
-          <nav className="social-hero-breadcrumb" aria-label="Breadcrumb">
-            <Link to="/" className="social-bc-link">Home</Link>
-            <span className="social-bc-arrow">›</span>
-            <Link to="/gallery" className="social-bc-link">Media & Gallery</Link>
-            <span className="social-bc-arrow">›</span>
-            <span className="social-bc-current">Patkai Social Media</span>
-          </nav>
-
           <h1 className="social-hero-title">Patkai Social Media</h1>
           <p className="social-hero-subtitle">
             Follow and join Patkai Mahabahu Foundation across our verified social channels for live field dispatches, real-time rescue coordinates, daily photo reports, and volunteer mobilization.
@@ -131,13 +123,9 @@ export default function SocialMediaPage() {
           {/* SECTION 1: All Social Channels */}
           <section className="social-section-block">
             <div className="social-section-header">
-              <div>
-                <span className="social-section-tag">CONNECT & FOLLOW</span>
-                <h2 className="social-section-title">Official Foundation Social Media Handles</h2>
-              </div>
-              <p className="social-section-desc">
-                Select your preferred platform below to follow our verified handles and receive authentic on-ground updates.
-              </p>
+              <h2 className="social-section-title">
+                Official Foundation <span className="social-title-highlight">Social Media Handles</span>
+              </h2>
             </div>
 
             <div className="social-cards-grid">
