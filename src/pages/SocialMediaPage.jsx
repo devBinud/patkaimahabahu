@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import {
   FaFacebookF,
   FaInstagram,
@@ -7,8 +6,7 @@ import {
   FaWhatsapp,
   FaLinkedinIn,
   FaCheck,
-  FaArrowUpRightFromSquare,
-  FaHashtag
+  FaArrowUpRightFromSquare
 } from 'react-icons/fa6'
 import breadcrumbsBg from '../assets/breadcrumbs_bg.jpg'
 import './SocialMediaPage.css'
@@ -89,16 +87,6 @@ export default function SocialMediaPage() {
     }
   ]
 
-  const officialHashtags = [
-    '#PatkaiMahabahu',
-    '#AssamFloodRelief2026',
-    '#GroundReliefSewa',
-    '#FloodWarriorsAssam',
-    '#EveryLifeMatters',
-    '#SewaInAction',
-    '#UpperAssamRelief'
-  ]
-
   return (
     <div className="social-media-page">
       {/* Hero Header with Background Image from assets/bg */}
@@ -167,40 +155,6 @@ export default function SocialMediaPage() {
                   </div>
                 )
               })}
-            </div>
-          </section>
-
-          {/* SECTION 2: Campaign Hashtags & Community Banner */}
-          <section className="hashtags-banner-card">
-            <div className="hashtags-content">
-              <div className="hashtags-badge">
-                <FaHashtag size={14} />
-                <span>OFFICIAL CAMPAIGN HASHTAGS</span>
-              </div>
-              <h3 className="hashtags-title">Help Us Amplify Relief Work Across Social Media</h3>
-              <p className="hashtags-desc">
-                When sharing relief photos, donating, or volunteering with Patkai Mahabahu Foundation, use these official hashtags to help displaced families and coordinators connect faster:
-              </p>
-              <div className="hashtags-list">
-                {officialHashtags.map((tag, idx) => (
-                  <span key={idx} className="hashtag-pill">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="hashtags-cta-box">
-              <span className="cta-box-sub">Want to Volunteer or Share Field Updates?</span>
-              <h4 className="cta-box-title">Join Our Ground Support Volunteers</h4>
-              <div className="cta-box-actions">
-                <Link to="/contact" className="btn-cta-contact">
-                  Register as Volunteer
-                </Link>
-                <Link to="/contribution" className="btn-cta-donate">
-                  Contribute Now
-                </Link>
-              </div>
             </div>
           </section>
 
