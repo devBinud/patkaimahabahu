@@ -75,8 +75,8 @@ export default function Footer() {
             <h4 className="rf-col-heading rf-heading-spaced">Media</h4>
             <ul className="rf-links-list">
               <li><Link to="/gallery">Ground Photo Gallery</Link></li>
-              <li><Link to="/gallery">Press & Media Releases</Link></li>
-              <li><Link to="/gallery">Relief Documentaries</Link></li>
+              <li><Link to="/news-media">News & Media Releases</Link></li>
+              <li><Link to="/social-media">Patkai Social Media</Link></li>
               <li><Link to="/ground-report">Live Flood Updates</Link></li>
             </ul>
           </div>
@@ -235,8 +235,8 @@ export default function Footer() {
             <div className={`rf-accordion-collapse ${openAccordion === 'media' ? 'open' : ''}`}>
               <ul className="rf-accordion-links">
                 <li><Link to="/gallery">Ground Photo Gallery</Link></li>
-                <li><Link to="/gallery">Press & Media Releases</Link></li>
-                <li><Link to="/gallery">Relief Documentaries</Link></li>
+                <li><Link to="/news-media">News & Media Releases</Link></li>
+                <li><Link to="/social-media">Patkai Social Media</Link></li>
                 <li><Link to="/ground-report">Live Flood Updates</Link></li>
               </ul>
             </div>

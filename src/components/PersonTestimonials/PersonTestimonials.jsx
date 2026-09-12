@@ -258,6 +258,8 @@ export default function PersonTestimonials() {
 
   const currentTranslateX = baseTranslateX + (dragOffset || 0);
 
+  const activeDotIndex = ((activeIndex % RAW_COUNT) + RAW_COUNT) % RAW_COUNT;
+
   return (
     <section
       className="person-testimonials-section"
@@ -328,6 +330,29 @@ export default function PersonTestimonials() {
             );
           })}
         </div>
+      </div>
+
+      {/* 3-Dots Indicator */}
+      <div className="person-testimonials-dots" role="tablist" aria-label="Stories Indicators">
+        {RAW_TESTIMONIALS.map((item, dotIdx) => {
+          const isActive = dotIdx === activeDotIndex;
+          return (
+            <button
+              key={item.id}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              aria-label={`Go to slide ${dotIdx + 1}`}
+              className={`person-testimonials-dot ${isActive ? 'active' : ''}`}
+              onClick={() => {
+                setEnableTransition(true);
+                const currentRaw = ((activeIndex % RAW_COUNT) + RAW_COUNT) % RAW_COUNT;
+                const diff = dotIdx - currentRaw;
+                setActiveIndex((prev) => prev + diff);
+              }}
+            />
+          );
+        })}
       </div>
 
       {/* Read Full Story Modal */}

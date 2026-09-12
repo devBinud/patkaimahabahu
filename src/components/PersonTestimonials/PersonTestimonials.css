@@ -349,4 +349,59 @@
     width: 100%;
     flex: none;
   }
+
+  .person-testimonials-carousel-viewport {
+    padding: 12px 0 16px;
+  }
+
+  .person-testimonials-dots {
+    margin-top: 12px;
+    margin-bottom: 6px;
+    gap: 16px;
+  }
+}
+
+/* =========================================================
+   3-DOTS INDICATORS (Double-Bordered Outline Style)
+   ========================================================= */
+
+.person-testimonials-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+  position: relative;
+  z-index: 10;
+}
+
+.person-testimonials-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.person-testimonials-dot:hover {
+  background: #94a3b8;
+  transform: scale(1.2);
+}
+
+.person-testimonials-dot.active {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #005C8A;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px #005C8A;
+  transform: scale(1.05);
+}
+
+.person-testimonials-dot:focus-visible {
+  outline: 2px solid #005C8A;
+  outline-offset: 6px;
 }

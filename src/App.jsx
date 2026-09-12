@@ -11,6 +11,8 @@ import SpecialtiesPage from './pages/SpecialtiesPage'
 import PhilosophyPage from './pages/PhilosophyPage'
 import AppointmentPage from './pages/AppointmentPage'
 import GalleryPage from './pages/GalleryPage'
+import NewsMediaPage from './pages/NewsMediaPage'
+import SocialMediaPage from './pages/SocialMediaPage'
 import ContactPage from './pages/ContactPage/ContactPage'
 import ContributionPage from './pages/ContributionPage'
 import GroundReportPage from './pages/GroundReportPage'
@@ -161,6 +163,11 @@ function App() {
       <Route path="/philosophy" element={<PhilosophyPage />} />
       <Route path="/appointment" element={<AppointmentPage />} />
       <Route path="/gallery" element={<GalleryPage />} />
+      <Route path="/news-media" element={<NewsMediaPage />} />
+      <Route path="/news" element={<Navigate to="/news-media" replace />} />
+      <Route path="/media" element={<Navigate to="/news-media" replace />} />
+      <Route path="/social-media" element={<SocialMediaPage />} />
+      <Route path="/patkai-social-media" element={<Navigate to="/social-media" replace />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/contribution" element={<ContributionPage />} />
       <Route path="/ground-report" element={<GroundReportPage />} />

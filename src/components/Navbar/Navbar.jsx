@@ -131,6 +131,8 @@ export default function Navbar() {
     { title: 'Relief Categories', link: '/specialties', desc: 'Ration, water, shelter, medical & rehabilitation aid' },
     { title: 'Request Relief Assistance', link: '/appointment', desc: 'Ask for ration, medical, shelter or rescue support' },
     { title: 'Relief Drive Gallery', link: '/gallery', desc: 'Photos from the field and drop-off point' },
+    { title: 'News & Media', link: '/news-media', desc: 'Press coverage, newspaper clippings & media releases' },
+    { title: 'Patkai Social Media', link: '/social-media', desc: 'Official Facebook, Instagram, YouTube & WhatsApp channels' },
     { title: 'FAQs About the Relief Drive', link: '/philosophy', desc: 'Transparency, verification and volunteering questions' },
     { title: 'About Our Ground Team', link: '/about', desc: 'Meet the Patkai Mahabahu Foundation & organiser' },
     { title: 'Drop-off Point & Contact', link: '/contact', desc: 'Collection point address, map and phone numbers' }
@@ -307,13 +309,25 @@ export default function Navbar() {
                 </NavLink>
               </li>
 
-              <li className="nav-item">
-                <NavLink
-                  to="/gallery"
-                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                >
+              {/* Dropdown 3: Media & Gallery */}
+              <li className="nav-item has-dropdown">
+                <span className={`nav-link ${['/gallery', '/news-media', '/social-media', '/news', '/media', '/patkai-social-media'].includes(location.pathname) ? 'active' : ''}`}>
                   Media & Gallery
-                </NavLink>
+                  <FaChevronDown className="dropdown-chevron" />
+                </span>
+                <div className="nav-dropdown-menu">
+                  <div className="dropdown-inner">
+                    <Link to="/gallery" className="dropdown-item">
+                      <span className="dropdown-item-title">Gallery</span>
+                    </Link>
+                    <Link to="/news-media" className="dropdown-item">
+                      <span className="dropdown-item-title">News & Media</span>
+                    </Link>
+                    <Link to="/social-media" className="dropdown-item">
+                      <span className="dropdown-item-title">Patkai Social Media</span>
+                    </Link>
+                  </div>
+                </div>
               </li>
 
               <li className="nav-item">
@@ -413,7 +427,17 @@ export default function Navbar() {
             </li>
             <li>
               <NavLink to="/gallery" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`}>
-                Media & Gallery
+                Gallery
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/news-media" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`}>
+                News & Media
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/social-media" className={({ isActive }) => `drawer-nav-link ${isActive ? 'active' : ''}`}>
+                Patkai Social Media
               </NavLink>
             </li>
             <li>

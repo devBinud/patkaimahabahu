@@ -39,7 +39,7 @@
 }
 
 .about-intro-title {
-  font-size: 1.65rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: var(--primary);
   line-height: 1.25;
@@ -389,7 +389,7 @@
   }
 
   .about-intro-title {
-    font-size: 1.15rem !important;
+    font-size: 1.35rem !important;
   }
 
   .about-leadership-section {
@@ -405,7 +405,7 @@
   }
 
   .department-group-title {
-    font-size: 1.15rem !important;
+    font-size: 1.35rem !important;
   }
 
   .department-groups-container {

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  FaArrowRight,
   FaChevronRight,
   FaChevronLeft,
   FaExpand,
@@ -9,7 +8,11 @@ import {
   FaArrowUpRightFromSquare,
   FaHeart,
   FaCircleCheck,
-  FaAward
+  FaCheck,
+  FaGear,
+  FaAward,
+  FaHandHoldingHeart,
+  FaUsers
 } from 'react-icons/fa6'
 import hero1 from '../../assets/hero/hero1.jpg'
 import hero2 from '../../assets/hero/hero2.jpg'
@@ -17,6 +20,7 @@ import hero4 from '../../assets/hero/hero4.jpg'
 import heroBg from '../../assets/hero/hero_bg.jpg'
 import pranabImg from '../../assets/pranab.jpeg'
 import floodReliefDeliveredImg from '../../assets/flood_relief_delivered.jpeg'
+import homeJoinUsImg from '../../assets/home_joinus.jpeg'
 import gallery1 from '../../assets/gallery/1.jpeg'
 import gallery2 from '../../assets/gallery/2.jpeg'
 import gallery3 from '../../assets/gallery/3.jpeg'
@@ -30,6 +34,7 @@ import mainImg from '../../assets/main.jpeg'
 import rebuild1 from '../../assets/gallery/rebuilding_house_assessment/1.jpeg'
 import rebuild2 from '../../assets/gallery/rebuilding_house_assessment/2.jpeg'
 import rebuild3 from '../../assets/gallery/rebuilding_house_assessment/3.jpeg'
+import media1 from '../../assets/gallery/media/1.jpeg'
 import disasterIcon from '../../assets/icons/disaster-icon.jpg'
 import educationIcon from '../../assets/icons/education-icon.jpg'
 import vantaraIcon from '../../assets/icons/vantara_icon_r.png'
@@ -467,6 +472,149 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Patkai Mahabahu Magazine Feature Section (Matching Reference Screenshot Exactly) */}
+      <section className="patkai-magazine-banner-section" aria-label="Patkai Mahabahu Magazine Publication">
+        <div className="patkai-magazine-container">
+          <div className="patkai-magazine-layout">
+
+            {/* Left Column: Tilted Editorial Open Magazine Spread */}
+            <div className="magazine-visual-wrapper">
+              <div className="magazine-spread-book">
+
+                {/* Left Magazine Page */}
+                <div className="magazine-page page-left">
+                  <div className="mag-page-header">
+                    <span className="mag-pub-tag">PATKAI MAHABAHU FOUNDATION</span>
+                    <span className="mag-page-num">18</span>
+                  </div>
+
+                  <div className="mag-page-hero-img-wrap">
+                    <img
+                      src={floodReliefDeliveredImg}
+                      alt="Assam Flood Relief Ground Operation"
+                      className="mag-page-hero-img"
+                      loading="lazy"
+                    />
+                    <div className="mag-hero-gradient-overlay"></div>
+                    <span className="mag-cover-strip">SPECIAL RELIEF EDITION</span>
+                  </div>
+
+                  <h3 className="mag-left-headline">
+                    Ground Relief &amp; <span className="mag-headline-highlight">Emergency Supply Distribution</span>
+                  </h3>
+
+                  <div className="mag-left-subtopics">
+                    <div className="mag-topic-row">
+                      <FaCheck className="mag-topic-check" aria-hidden="true" />
+                      <span>Ground Household Damage Surveys</span>
+                    </div>
+                    <div className="mag-topic-row">
+                      <FaCheck className="mag-topic-check" aria-hidden="true" />
+                      <span>Emergency Ration &amp; Potable Water</span>
+                    </div>
+                    <div className="mag-topic-row">
+                      <FaCheck className="mag-topic-check" aria-hidden="true" />
+                      <span>Shelter Rebuilding &amp; Medical Camps</span>
+                    </div>
+                    <div className="mag-topic-row">
+                      <FaCheck className="mag-topic-check" aria-hidden="true" />
+                      <span>Direct Village Sewa Across Sivasagar, Charaideo &amp; Jorhat</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Center Book Spine Fold Shadow */}
+                <div className="magazine-spine-shadow" aria-hidden="true"></div>
+
+                {/* Right Magazine Page */}
+                <div className="magazine-page page-right">
+                  <div className="mag-page-header">
+                    <span className="mag-pub-tag">RELIEF DISPATCH JOURNAL</span>
+                    <span className="mag-page-num">19</span>
+                  </div>
+
+                  <h3 className="mag-right-headline">
+                    Real-Time Relief <span className="mag-headline-highlight">Tracking and Community Sewa</span>
+                  </h3>
+
+                  <div className="mag-columns-wrapper">
+                    <div className="mag-text-col">
+                      <p className="mag-lead-para">
+                        Sivasagar, Charaideo & Jorhat
+                        Patkai Mahabahu Foundation volunteers have mobilized relief operations across marooned villages in these districts.
+
+
+                      </p>
+                      <p className="mag-body-para">
+                        Direct Relief Distribution
+                        Ration kits are being delivered directly to families cut off by the floods.
+                        Verified ground distribution with direct community coordination.
+                      </p>
+
+                      <p className="mag-body-para" style={{ marginTop: 10 }}>
+                        Direct Relief Distribution
+                        Ration kits are being delivered directly to families cut off by the floods.
+                      </p>
+                    </div>
+
+                    <div className="mag-text-col">
+                      <div className="mag-inset-photo-box">
+                        <img
+                          src={media1}
+                          alt="Regional Press Coverage of Relief"
+                          className="mag-inset-photo"
+                          loading="lazy"
+                        />
+                        <span className="mag-inset-caption">Press Bulletin • Regional Coverage</span>
+                      </div>
+                      <p className="mag-body-para mag-mt-xs">
+                        Every single contribution is publicly accounted for, ensuring full transparency and swift assistance to the most vulnerable elders and children.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Key Stats Strip on Magazine Page */}
+                  <div className="mag-stats-strip">
+                    <div className="mag-stat-chip">
+                      <span className="chip-val">35+</span>
+                      <span className="chip-lbl">Villages Covered</span>
+                    </div>
+                    <div className="mag-stat-chip">
+                      <span className="chip-val">5,000+</span>
+                      <span className="chip-lbl">Ration Kits</span>
+                    </div>
+                    <div className="mag-stat-chip">
+                      <span className="chip-val">100%</span>
+                      <span className="chip-lbl">Transparent</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Right Column: Title, Editorial Text & Single CTA Button */}
+            <div className="magazine-content-wrapper">
+              <h2 className="magazine-banner-title">
+                Patkai Mahabahu Magazine
+              </h2>
+              <p className="magazine-banner-desc">
+                The Trust shall promote education, healthcare, disaster relief, environmental protection, livelihood generation and skill development for public welfare.
+              </p>
+              <p className="magazine-banner-desc">
+                The Trust shall support vulnerable communities through relief, rehabilitation, education, healthcare and sustainable community development initiatives.
+              </p>
+              <div className="magazine-banner-actions">
+                <Link to="/news-media" className="btn-mag-pill-solid">
+                  Read Current Issue
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Project Home: Editorial Showcase (Matching Reference Screenshot 1) */}
       <section className="project-home-editorial-section">
         <div className="project-home-editorial-container">
@@ -543,14 +691,75 @@ export default function HomePage() {
                   aria-hidden="true"
                 />
                 <div className="editorial-stat-overlay" aria-hidden="true" />
-              
+
                 <div className="editorial-stat-text-group">
                   <div className="editorial-stat-number">
                     50<span className="editorial-stat-plus">+</span>
                   </div>
-                  <div className="editorial-stat-label">Target 50+ Homes</div>
+                  <div className="editorial-stat-label">Target Rebuilding Homes</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us / Trust Showcase Section (Matching Reference with Theme Blue Overlay) */}
+      <section className="why-choose-section">
+        <div className="why-choose-bg-media">
+          <img
+            src={hero4}
+            alt="Ground relief mission"
+            className="why-choose-bg-img"
+            aria-hidden="true"
+          />
+          <div className="why-choose-blue-overlay" aria-hidden="true" />
+        </div>
+
+        <div className="why-choose-container">
+          <div className="why-choose-content">
+            <h2 className="why-choose-title">
+              Why Communities Choose Patkai Mahabahu Foundation
+            </h2>
+
+            <div className="why-choose-pill-divider" aria-hidden="true" />
+
+            <p className="why-choose-desc">
+              Patkai Mahabahu Foundation stands out as a dedicated grassroots humanitarian movement with transparent ground relief, rehabilitation, and long-term community seva across Assam.
+            </p>
+
+            <div className="why-choose-highlights-strip">
+              <div className="why-highlight-item">
+                <FaGear className="why-gear-icon" aria-hidden="true" />
+                <span>98% Community Trust</span>
+              </div>
+              <span className="why-highlight-divider" aria-hidden="true">|</span>
+              <div className="why-highlight-item">
+                <FaHandHoldingHeart className="why-gear-icon" aria-hidden="true" />
+                <span>100% Direct Ground Relief</span>
+              </div>
+              <span className="why-highlight-divider" aria-hidden="true">|</span>
+              <div className="why-highlight-item">
+                <FaUsers className="why-gear-icon" aria-hidden="true" />
+                <span>Dedicated Volunteer Network</span>
+              </div>
+            </div>
+
+            <div className="why-choose-btn-wrap">
+              <Link to="/join-us" className="btn-why-choose-join">
+                Join Us
+              </Link>
+            </div>
+          </div>
+
+          {/* Overlapping Featured Image Showcase Card */}
+          <div className="why-choose-video-wrapper">
+            <div className="why-choose-video-card">
+              <img
+                src={homeJoinUsImg}
+                alt="Patkai Mahabahu Foundation volunteers and team members"
+                className="why-video-thumbnail"
+              />
             </div>
           </div>
         </div>
@@ -611,9 +820,6 @@ export default function HomePage() {
               <span className="gallery-modal-pill">
                 {selectedIndex + 1} / {allHomeImages.length}
               </span>
-              {selectedGalleryImg.title && (
-                <span className="gallery-modal-title">{selectedGalleryImg.title}</span>
-              )}
             </div>
             <button
               className="gallery-modal-close"

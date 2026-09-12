@@ -320,9 +320,6 @@ export default function GalleryPage() {
               <span className="gallery-modal-pill">
                 {selectedIndex + 1} / {allGalleryImages.length}
               </span>
-              {selectedGalleryImg.title && (
-                <span className="gallery-modal-title">{selectedGalleryImg.title}</span>
-              )}
             </div>
             <button
               className="gallery-modal-close"
