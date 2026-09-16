@@ -1,0 +1,527 @@
+/* =========================================================
+   RELIANCE FOUNDATION STYLE FULL-WIDTH CLEAN FOOTER
+   Full width edge-to-edge, crisp white canvas, clean typography
+   ========================================================= */
+
+.rf-footer-wrapper {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  position: relative !important;
+  z-index: 10 !important;
+  font-family: var(--font-sans, 'Plus Jakarta Sans'), system-ui, sans-serif !important;
+}
+
+/* =========================================================
+   RELIANCE FOUNDATION NEWSLETTER SECTION (BEFORE FOOTER)
+   Warm ivory backdrop, rounded pastel mint card, serif typography
+   ========================================================= */
+
+
+
+.rf-footer-card {
+  width: 100% !important;
+  background: #ffffff !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-top: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* 5-Column Grid Layout */
+.rf-footer-grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 0.95fr 1fr 1.5fr;
+  gap: 2.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.rf-footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings */
+.rf-col-heading {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--navy-blue, #003853);
+  margin: 0 0 1.25rem;
+  font-family: var(--font-noto-sans);
+  letter-spacing: -0.01em;
+}
+
+.rf-heading-spaced {
+  margin-top: 2rem;
+}
+
+/* Links List */
+.rf-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.rf-links-list a {
+  color: #334155 !important;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  text-decoration: none !important;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.rf-links-list a:hover {
+  color: var(--primary, #005C8A) !important;
+}
+
+/* Sub Links Group (Volunteer, Contact, Helpline) */
+.rf-sub-links-group {
+  margin-top: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 1.25rem;
+}
+
+.rf-bold-link {
+  color: var(--navy-blue, #003853) !important;
+  font-weight: 500 !important;
+  font-size: 0.88rem !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.rf-bold-link:hover {
+  color: #E58325 !important;
+}
+
+/* Column 5: Brand Block */
+.rf-brand-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.rf-brand-block {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none !important;
+}
+
+.rf-brand-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.rf-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.rf-brand-assamese {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #3e3a3a;
+  letter-spacing: 0.01em;
+}
+
+.rf-brand-english {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #005C8A;
+  letter-spacing: -0.015em;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+}
+
+/* Registration Badge */
+.rf-reg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  color: #005C8A;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1.15rem;
+  letter-spacing: 0.02em;
+  width: fit-content;
+}
+
+.rf-reg-badge-mobile {
+  margin-top: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+.rf-reg-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #16A34A;
+  flex-shrink: 0;
+}
+
+/* Address Block */
+.rf-address-block {
+  margin-bottom: 1.5rem;
+}
+
+.rf-address-title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--navy-blue, #003853);
+  margin: 0 0 0.55rem;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+}
+
+.rf-address-text {
+  font-size: 0.825rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 0.65rem;
+}
+
+.rf-address-text strong {
+  color: #1E293B;
+  font-weight: 600;
+}
+
+.rf-contact-direct {
+  font-size: 0.825rem;
+  color: #64748B;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.rf-contact-link {
+  color: var(--primary, #005C8A) !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.rf-contact-sep {
+  color: #CBD5E1;
+}
+
+/* Social Media Circular Buttons (Solid Dark Navy to Sewa Green) */
+.rf-social-icons {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.rf-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50% !important;
+  background-color: var(--navy-blue, #003853) !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: background-color 0.25s ease !important;
+  transform: none !important;
+  /* Strictly static hover */
+}
+
+.rf-social-btn:hover {
+  background-color: var(--secondary, #48A047) !important;
+  transform: none !important;
+}
+
+/* Bottom Horizontal Copyright Bar */
+.rf-footer-bottom {
+  border-top: 0.6px solid #E2E8F0;
+  padding: 1.5rem 2rem;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.rf-bottom-content {
+  max-width: 1320px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rf-copyright-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748B;
+  line-height: 1.7;
+  font-family: var(--font-sans)
+}
+
+.rf-copyright-text a {
+  color: #475569 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.rf-copyright-text a:hover {
+  color: var(--primary, #005C8A) !important;
+  text-decoration: underline !important;
+}
+
+.rf-sep {
+  margin: 0 0.65rem;
+  color: #CBD5E1;
+}
+
+.rf-dev-link {
+  color: var(--primary, #005C8A) !important;
+  font-weight: 600 !important;
+}
+
+.rf-dev-link:hover {
+  color: #E58325 !important;
+}
+
+.rf-reg-bottom-text {
+  color: #005C8A;
+  font-weight: 600;
+}
+
+/* Visibility Helpers */
+.rf-desktop-only {
+  display: grid !important;
+}
+
+.rf-mobile-only {
+  display: none !important;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 1100px) {
+  .rf-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    padding: 3.5rem 1.5rem 2.5rem;
+  }
+
+  .rf-brand-col {
+    grid-column: span 3;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .rf-desktop-only {
+    display: none !important;
+  }
+
+  .rf-mobile-only {
+    display: flex !important;
+  }
+
+
+
+  .rf-footer-wrapper {
+    background-color: #ffffff !important;
+    padding: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .rf-footer-card {
+    background: #ffffff !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 2rem 1.25rem 0 !important;
+    box-shadow: none !important;
+    border-top: none !important;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Reliance Foundation Mobile Accordion */
+  .rf-mobile-accordion-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .rf-accordion-item {
+    border-bottom: 1px solid #E6ECEF;
+    width: 100%;
+  }
+
+  .rf-accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.15rem 0.25rem;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+    font-size: 1.01rem !important;
+    font-weight: 500 !important;
+    color: #003853 !important;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .rf-accordion-chevron {
+    font-size: 0.8rem;
+    color: #003853;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+  }
+
+  .rf-accordion-chevron.open {
+    transform: rotate(180deg);
+  }
+
+  .rf-accordion-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .rf-accordion-collapse.open {
+    max-height: 500px;
+    padding-bottom: 1rem;
+  }
+
+  .rf-accordion-links {
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .rf-accordion-links li a {
+    color: #475569 !important;
+    font-size: 0.92rem !important;
+    text-decoration: none !important;
+    display: block;
+    transition: color 0.2s ease;
+    line-height: 1.4;
+  }
+
+  .rf-accordion-links li a:hover {
+    color: #005C8A !important;
+  }
+
+  .rf-direct-item {
+    border-bottom: 1px solid #E6ECEF;
+  }
+
+  .rf-direct-link {
+    display: block;
+    padding: 1.15rem 0.25rem;
+    font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+    font-size: 1.01rem !important;
+    font-weight: 600 !important;
+    color: #003853 !important;
+    text-decoration: none !important;
+  }
+
+  .rf-direct-link:hover {
+    color: #005C8A !important;
+  }
+
+  .rf-mobile-brand-section {
+    padding: 2.25rem 0.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    align-items: flex-start;
+  }
+
+  .rf-mobile-brand-section .rf-brand-block {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+  }
+
+  .rf-mobile-brand-section .rf-brand-logo {
+    width: 48px;
+    height: auto;
+  }
+
+  .rf-mobile-brand-section .rf-brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rf-mobile-brand-section .rf-brand-assamese {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: #003853;
+  }
+
+  .rf-mobile-brand-section .rf-brand-english {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #003853;
+  }
+
+  .rf-mobile-brand-section .rf-social-icons {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .rf-mobile-brand-section .rf-social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50% !important;
+    background-color: #003853 !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+  }
+
+  .rf-footer-bottom {
+    border-top: 1px solid #E6ECEF !important;
+    margin-left: -1.25rem !important;
+    margin-right: -1.25rem !important;
+    margin-top: 1.15rem !important;
+    padding: 1.15rem 1.25rem calc(3.85rem + env(safe-area-inset-bottom, 0px)) !important;
+    background-color: transparent !important;
+    box-sizing: border-box !important;
+  }
+
+  .rf-copyright-text {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .rf-sep {
+    margin: 0 0.35rem;
+  }
+}

@@ -1,0 +1,347 @@
+:root {
+  /* ==========================================
+     PATKAI MAHABAHU FOUNDATION | ASSAM FLOOD RELIEF
+     RASHTRIYA SEWA BHARATI COLOR PALETTE
+     ========================================== */
+
+  /* 🔵 Primary Deep Teal Blue Palette (#005C8A) */
+  --primary: #005C8A;
+  --primary-dark: #004366;
+  --navy-blue: #003853;
+  --navy-dark: #00273B;
+
+  /* 🟢 Secondary Sewa Green Palette (#48A047) */
+  --secondary: #48A047;
+  --secondary-dark: #367B35;
+
+  /* 🟧 Saffron / Orange Accent Palette (#E58325) */
+  --accent: #E58325;
+  --accent-dark: #C76D17;
+  --accent-orange: #E58325;
+  --accent-orange-dark: #C76D17;
+  --accent-light: rgba(0, 92, 138, 0.04);
+  --accent-green: #48A047;
+  --accent-gold: #E58325;
+  --accent-gold-dark: #C76D17;
+
+  /* ⚪ Background & Card Colors */
+  --bg-main: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.95);
+
+  /* ⚫ Typography Colors */
+  --text-heading: #003853;
+  --text-body: #334155;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+  --text-brand: #005C8A;
+
+  /* ⚙️ Borders & Shadows */
+  --border-gold: #E2E8F0;
+  --border-ui: #E2E8F0;
+
+  /* ==========================================
+     TYPOGRAPHY & UTILITIES
+     ========================================== */
+  --font-geist: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Geist', 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-body: 'Geist', 'Inter', sans-serif;
+  --font-noto-sans: 'Noto Sans', sans-serif;
+  --font-noto-serif: 'Noto Serif', Georgia, serif;
+
+  --shadow-sm: 0 2px 6px rgba(0, 92, 138, 0.06);
+  --shadow-md: 0 8px 24px -4px rgba(0, 92, 138, 0.12);
+  --shadow-lg: 0 20px 40px -8px rgba(0, 92, 138, 0.18);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Reset & Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+/* Modern Sleek Browser Scrollbar (Prevents Windows wide/clunky scrollbar glitches) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+/* Standardized Global Section Title Style (Matching Direct Ground Sewa Heading) */
+.section-main-heading,
+.dribbble-main-title,
+.rebuilding-main-title,
+.ngo-pillars-title,
+.active-drive-title,
+.section-title {
+  font-size: 1.6rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+}
+
+
+/* Responsive Scaling for All Headings */
+@media (max-width: 1024px) {
+
+  .section-main-heading,
+  .dribbble-main-title,
+  .rebuilding-main-title,
+  .about-title,
+  .ngo-pillars-title,
+  .active-drive-title,
+  .section-title {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .section-main-heading,
+  .dribbble-main-title,
+  .rebuilding-main-title,
+  .about-title,
+  .ngo-pillars-title,
+  .active-drive-title,
+  .section-title {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+body {
+  font-family: var(--font-geist);
+  font-optical-sizing: auto;
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+span,
+li,
+input,
+textarea,
+select,
+button,
+label,
+.font-geist {
+  font-family: var(--font-geist);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-optical-sizing: auto;
+  color: var(--text-heading);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+a {
+  color: var(--text-brand);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Global Reusable Utility Classes */
+.bg-primary {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-dark) !important;
+  color: white !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+  color: white !important;
+}
+
+.bg-accent-light {
+  background-color: var(--accent-light) !important;
+}
+
+.bg-accent-beige {
+  background-color: var(--accent-beige) !important;
+}
+
+.bg-card {
+  background-color: var(--bg-card) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-brand {
+  color: var(--text-brand) !important;
+}
+
+.text-heading {
+  color: var(--text-heading) !important;
+}
+
+.text-body {
+  color: var(--text-body) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-gold {
+  color: var(--accent-gold) !important;
+}
+
+.border-gold {
+  border: 1px solid var(--border-gold) !important;
+}
+
+.border-ui {
+  border: 1px solid var(--border-ui) !important;
+}
+
+/* ==========================================
+   UNIFIED BUTTON DESIGN SYSTEM
+   Standardized to Premium Themed Pill Style
+   ========================================== */
+.btn-hero-primary,
+.btn-hero-secondary,
+.btn-cta-saffron,
+.btn-cta-volunteer,
+.btn-cta-pledge,
+.btn-cta-outline,
+.btn-submit-offer,
+.dribbble-cta-btn,
+.sidebar-gmaps-btn,
+.contact-gmaps-link,
+.btn-header-joinus,
+.btn-header-donate,
+.btn-paavai-pledge-cta,
+.btn-pledge-donate-dark {
+  border-radius: 9999px !important;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+}
+
+.btn-hero-primary:hover,
+.btn-hero-secondary:hover,
+.btn-hero-saffron:hover,
+.btn-cta-saffron:hover,
+.btn-cta-volunteer:hover,
+.btn-cta-pledge:hover,
+.btn-cta-outline:hover,
+.btn-submit-offer:hover,
+.dribbble-cta-btn:hover,
+.btn-header-joinus:hover,
+.btn-header-donate:hover,
+.btn-paavai-pledge-cta:hover,
+.btn-pledge-donate-dark:hover {
+  transform: none !important;
+}
+
+/* ==========================================
+   ALL ORANGE / SAFFRON BUTTONS UNIFIED
+   Soft Pastel Amber (#FFE7AB), Color #6b6161, Weight 500
+   ========================================== */
+.btn-hero-saffron,
+.btn-topbar-contribute,
+.dashboard-live-action-btn,
+.btn-header-donate,
+.btn-paavai-pledge-cta,
+.btn-cta-saffron,
+.btn-chairman-support,
+.btn-rebuild-sponsor {
+  background: #FFE7AB !important;
+  color: #6b6161 !important;
+  font-weight: 500 !important;
+  border-color: #FFE7AB !important;
+}
+
+.btn-hero-saffron:hover,
+.btn-topbar-contribute:hover,
+.dashboard-live-action-btn:hover,
+.btn-header-donate:hover,
+.btn-paavai-pledge-cta:hover,
+.btn-cta-saffron:hover,
+.btn-chairman-support:hover,
+.btn-rebuild-sponsor:hover {
+  background: #FCE096 !important;
+  color: #554d4d !important;
+  border-color: #FCE096 !important;
+  transform: none !important;
+}
