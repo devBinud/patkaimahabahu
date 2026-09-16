@@ -1,12 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
 import {
-  FaTruckFast,
-  FaBottleWater,
-  FaKitMedical,
-  FaShieldHalved,
-  FaPeopleRoof,
-  FaHandHoldingHeart,
   FaMagnifyingGlass,
   FaChevronDown,
   FaAngleLeft,
@@ -16,9 +10,11 @@ import {
 import disasterImg2 from '../assets/disaster_management/2.jpg'
 import cashContributorsData from '../data/cashContributors.json'
 import augustContributionsData from '../data/augustContributions.json'
+import useScrollAnimations from '../hooks/useScrollAnimations'
 import './ContributionPage.css'
 
 export default function ContributionPage() {
+  const pageRef = useScrollAnimations()
   const [searchTerm, setSearchTerm] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const rowsPerPage = 50
@@ -80,7 +76,7 @@ export default function ContributionPage() {
   }
 
   return (
-    <div className="disaster-page-wrapper">
+    <div className="disaster-page-wrapper" ref={pageRef}>
       <Breadcrumb currentPage="Flood Relief Contributors" parentLink="/ground-report" />
 
       {/* Main Flowing Content Container */}
@@ -88,7 +84,7 @@ export default function ContributionPage() {
         <div className="disaster-content-container">
 
           {/* 1. Header & Lead Narrative */}
-          <section className="disaster-intro-block">
+          <section className="disaster-intro-block" data-animate="fade-up">
             <h1 className="disaster-page-title">
               Flood Disaster Relief & Response: Saraideu, Sivasagar & Jorhat
             </h1>
@@ -116,7 +112,7 @@ export default function ContributionPage() {
           {/* 2. Featured Impact Showcase: Left Stats + Center Second Image + Right Stats */}
           <section className="disaster-showcase-section" aria-label="Live Relief Metrics & Ground Impact">
             {/* Left Side Stats Cards */}
-            <div className="showcase-stats-col showcase-stats-left">
+            <div className="showcase-stats-col showcase-stats-left" data-animate="stagger" data-stagger-time="0.1">
               <div className="dashboard-metric-card stat-pastel-amber">
                 <span className="dashboard-stat-num">₹19,52,856</span>
                 <span className="dashboard-stat-label">Cash Raised</span>
@@ -132,7 +128,7 @@ export default function ContributionPage() {
             </div>
 
             {/* Center Image: Second Disaster Image Only */}
-            <div className="showcase-image-col">
+            <div className="showcase-image-col" data-animate="zoom-in">
               <img
                 src={disasterImg2}
                 alt="Ground relief drive and community support in flood-affected village"
@@ -141,7 +137,7 @@ export default function ContributionPage() {
             </div>
 
             {/* Right Side Stats Cards */}
-            <div className="showcase-stats-col showcase-stats-right">
+            <div className="showcase-stats-col showcase-stats-right" data-animate="stagger" data-stagger-time="0.1">
               <div className="dashboard-metric-card stat-pastel-mint">
                 <span className="dashboard-stat-num">20</span>
                 <span className="dashboard-stat-label">Goods Donors</span>
@@ -157,85 +153,7 @@ export default function ContributionPage() {
             </div>
           </section>
 
-          {/* 3. Wavy Roadmap Timeline (Replacing long text paragraphs) */}
-          <section className="disaster-roadmap-section">
-            <div className="section-heading-block">
-              <h2 className="section-title">Emergency Steps & Ground Interventions Undertaken</h2>
-              <p className="section-subtitle">
-                Structured operational response carried out by our on-ground volunteers and field coordinators across the flood zones.
-              </p>
-            </div>
 
-            <div className="roadmap-wave-container">
-              {/* SVG Connecting Dotted Wave */}
-              <svg className="roadmap-wave-svg" viewBox="0 0 1200 250" preserveAspectRatio="none">
-                <path
-                  d="M 0 100 C 50 100, 50 55, 100 55 C 200 55, 200 145, 300 145 C 400 145, 400 55, 500 55 C 600 55, 600 145, 700 145 C 800 145, 800 55, 900 55 C 1000 55, 1000 145, 1100 145 C 1150 145, 1150 100, 1200 100"
-                  fill="none"
-                  stroke="#cbd5e1"
-                  strokeWidth="2.5"
-                  strokeDasharray="6 6"
-                />
-              </svg>
-
-              {/* Process Nodes */}
-              <div className="roadmap-nodes-row">
-                <div className="roadmap-node-item node-up">
-                  <div className="roadmap-icon-circle" style={{ '--node-color': '#005C8A' }}>
-                    <span className="roadmap-icon-wrap" style={{ color: '#005C8A' }}>
-                      <FaTruckFast />
-                    </span>
-                  </div>
-                  <span className="roadmap-node-title">Rapid Ground Assessment</span>
-                </div>
-
-                <div className="roadmap-node-item node-down">
-                  <div className="roadmap-icon-circle" style={{ '--node-color': '#7cb342' }}>
-                    <span className="roadmap-icon-wrap" style={{ color: '#7cb342' }}>
-                      <FaBottleWater />
-                    </span>
-                  </div>
-                  <span className="roadmap-node-title">Dry Rations & Clean Water</span>
-                </div>
-
-                <div className="roadmap-node-item node-up">
-                  <div className="roadmap-icon-circle" style={{ '--node-color': '#005C8A' }}>
-                    <span className="roadmap-icon-wrap" style={{ color: '#005C8A' }}>
-                      <FaKitMedical />
-                    </span>
-                  </div>
-                  <span className="roadmap-node-title">Medical & Hygiene Aid</span>
-                </div>
-
-                <div className="roadmap-node-item node-down">
-                  <div className="roadmap-icon-circle" style={{ '--node-color': '#7cb342' }}>
-                    <span className="roadmap-icon-wrap" style={{ color: '#7cb342' }}>
-                      <FaShieldHalved />
-                    </span>
-                  </div>
-                  <span className="roadmap-node-title">Village Disinfection</span>
-                </div>
-
-                <div className="roadmap-node-item node-up">
-                  <div className="roadmap-icon-circle" style={{ '--node-color': '#005C8A' }}>
-                    <span className="roadmap-icon-wrap" style={{ color: '#005C8A' }}>
-                      <FaPeopleRoof />
-                    </span>
-                  </div>
-                  <span className="roadmap-node-title">Shelter & Tarpaulins</span>
-                </div>
-
-                <div className="roadmap-node-item node-down">
-                  <div className="roadmap-icon-circle" style={{ '--node-color': '#7cb342' }}>
-                    <span className="roadmap-icon-wrap" style={{ color: '#7cb342' }}>
-                      <FaHandHoldingHeart />
-                    </span>
-                  </div>
-                  <span className="roadmap-node-title">Post-Flood Rebuilding</span>
-                </div>
-              </div>
-            </div>
-          </section>
 
           {/* 4. Cash Contributors Register */}
           <section className="disaster-contributors-section">

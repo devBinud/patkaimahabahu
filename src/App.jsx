@@ -2,6 +2,10 @@ import { useEffect, useLayoutEffect } from 'react'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import HomePage from './pages/HomePage/HomePage'
@@ -56,6 +60,9 @@ function ScrollToTop() {
       if (window.lenis) {
         window.lenis.scrollTo(0, { immediate: true, force: true });
       }
+
+      // 3. Refresh GSAP ScrollTrigger positions after scroll reset
+      ScrollTrigger.refresh();
     };
 
     // Immediate synchronous reset before browser paint
@@ -103,15 +110,18 @@ function App() {
 
     window.lenis = lenis;
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    // Sync Lenis scroll with ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
 
-    const rafId = requestAnimationFrame(raf);
+    const updateLenisWithGsap = (time) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(updateLenisWithGsap);
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
-      cancelAnimationFrame(rafId);
+      gsap.ticker.remove(updateLenisWithGsap);
       lenis.destroy();
       delete window.lenis;
     };

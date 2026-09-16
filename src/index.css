@@ -81,7 +81,6 @@ body {
 
 html {
   scrollbar-gutter: stable;
-  scroll-behavior: smooth;
 }
 
 /* Modern Sleek Browser Scrollbar (Prevents Windows wide/clunky scrollbar glitches) */
@@ -344,4 +343,47 @@ img {
   color: #554d4d !important;
   border-color: #FCE096 !important;
   transform: none !important;
+}
+
+/* ==========================================
+   GSAP SCROLL ANIMATION SYSTEM UTILITIES
+   ========================================== */
+[data-animate],
+.gsap-fade-up,
+.gsap-fade-left,
+.gsap-fade-right,
+.gsap-zoom-in,
+.gsap-clip-reveal {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Prevent horizontal scrollbars during slide reveals */
+.hero-full-section,
+.about-spotlight-section,
+.founder-editorial-section,
+.live-dashboard-section,
+.field-updates-section,
+.project-home-editorial-section,
+.why-choose-section,
+.editorial-gallery-section,
+.rf-footer-wrapper {
+  overflow-x: clip;
+}
+
+/* Respect prefers-reduced-motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  .gsap-fade-up,
+  .gsap-fade-left,
+  .gsap-fade-right,
+  .gsap-zoom-in,
+  .gsap-clip-reveal,
+  .gsap-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
 }

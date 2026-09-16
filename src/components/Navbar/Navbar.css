@@ -8,6 +8,10 @@
   width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   font-family: var(--font-sans) !important;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ==========================================
@@ -261,7 +265,6 @@
   flex-direction: column;
 }
 
-.brand-title-hindi,
 .brand-title-assamese {
   font-size: 1.05rem;
   font-weight: 600;
@@ -606,7 +609,7 @@
 }
 
 .ticker-badge {
-  background-color: #FFE7AB!important;
+  background-color: #FFE7AB !important;
   color: #686565;
   font-size: 0.725rem;
   font-weight: 700;
@@ -775,7 +778,8 @@
 .drawer-body {
   padding: 1rem 1.25rem 2rem;
   flex: 1 1 auto;
-  min-height: 0; /* CRITICAL: Enables flex child vertical scrolling */
+  min-height: 0;
+  /* CRITICAL: Enables flex child vertical scrolling */
   overflow-y: auto !important;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch !important;
@@ -1013,13 +1017,12 @@
     display: flex !important;
   }
 
-  .brand-title-hindi,
   .brand-title-assamese {
     font-size: 0.875rem;
   }
 
   .brand-title-english {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1044,13 +1047,12 @@
     gap: 0.65rem !important;
   }
 
-  .brand-title-assamese,
-  .brand-title-hindi {
-    font-size: 0.8rem !important;
+  .brand-title-assamese {
+    font-size: 0.9rem !important;
   }
 
   .brand-title-english {
-    font-size: 0.9rem !important;
+    font-size: 1.1rem !important;
   }
 
   .top-bar-container {

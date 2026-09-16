@@ -53,8 +53,13 @@ export default function Navbar() {
   useEffect(() => {
     const updateHeaderHeight = () => {
       if (headerRef.current) {
-        const height = headerRef.current.offsetHeight;
-        document.documentElement.style.setProperty('--header-height', `${height}px`);
+        const height = Math.round(headerRef.current.getBoundingClientRect().height);
+        if (height > 0) {
+          const currentVal = document.documentElement.style.getPropertyValue('--header-height');
+          if (currentVal !== `${height}px`) {
+            document.documentElement.style.setProperty('--header-height', `${height}px`);
+          }
+        }
       }
     };
 
@@ -72,11 +77,15 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const shouldBeScrolled = window.scrollY > 40;
+          setScrolled((prev) => (prev !== shouldBeScrolled ? shouldBeScrolled : prev));
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 

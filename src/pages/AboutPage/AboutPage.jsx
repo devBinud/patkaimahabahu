@@ -50,9 +50,11 @@ import prabirImg from '../../assets/team/prabir_baruah.jpeg'
 import gourangonImg from '../../assets/team/gourangon_gogoi.jpeg'
 import plabonImg from '../../assets/team/plabon_mouchum_saikia.jpeg'
 import defaultMemberImg from '../../assets/team/default.jpg'
+import useScrollAnimations from '../../hooks/useScrollAnimations'
 import './AboutPage.css'
 
 export default function AboutPage() {
+  const pageRef = useScrollAnimations()
   const getInitials = (name) => {
     if (!name) return 'PM'
     const parts = name.replace(/[^a-zA-Z0-9\s]/g, '').trim().split(/\s+/).filter(Boolean)
@@ -312,11 +314,11 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="about-page-wrapper">
+    <div className="about-page-wrapper" ref={pageRef}>
       <Breadcrumb currentPage="About Patkai Mahabahu" />
 
       {/* Main Mission Text Section (Left Aligned) */}
-      <section className="about-intro-section">
+      <section className="about-intro-section" data-animate="fade-up">
         <div className="about-intro-container">
           <div className="about-intro-header-left">
             <h1 className="about-intro-title">About Patkai Mahabahu Foundation</h1>
@@ -328,7 +330,7 @@ export default function AboutPage() {
       </section>
 
       {/* 1. Founder & Chairman Section */}
-      <section className="about-leadership-section">
+      <section className="about-leadership-section" data-animate="fade-up">
         <div className="about-team-container">
           <div className="leadership-subgroup">
             <div className="department-group-header">
@@ -362,7 +364,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. Advisor Panel Section */}
-      <section className="about-advisors-section">
+      <section className="about-advisors-section" data-animate="fade-up">
         <div className="about-team-container">
           <div className="department-group-header">
             <h3 className="department-group-title">Advisor Panel</h3>
@@ -371,7 +373,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="about-team-grid">
+          <div className="about-team-grid" data-animate="stagger" data-stagger-time="0.08">
             {advisorMembers.map((member) => (
               <div key={member.id} className="about-member-card">
                 <div className="member-photo-frame">

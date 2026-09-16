@@ -10,9 +10,11 @@ import {
 } from 'react-icons/fa6'
 import logoImg from '../../assets/logo.png'
 import NewsletterBanner from '../NewsletterBanner/NewsletterBanner'
+import useScrollAnimations from '../../hooks/useScrollAnimations'
 import './Footer.css'
 
 export default function Footer() {
+  const footerRef = useScrollAnimations()
   const [openAccordion, setOpenAccordion] = useState(null)
 
   const toggleAccordion = (name) => {
@@ -20,14 +22,16 @@ export default function Footer() {
   }
 
   return (
-    <footer className="rf-footer-wrapper">
+    <footer className="rf-footer-wrapper" ref={footerRef}>
       {/* Newsletter Subscription Banner before main footer */}
-      <NewsletterBanner />
+      <div data-animate="fade-up">
+        <NewsletterBanner />
+      </div>
 
       {/* Main Footer Card */}
       <div className="rf-footer-card">
         {/* Desktop 5-Column Grid */}
-        <div className="rf-footer-grid rf-desktop-only">
+        <div className="rf-footer-grid rf-desktop-only" data-animate="stagger" data-stagger-time="0.08">
           {/* Column 1: About Us */}
           <div className="rf-footer-col">
             <h4 className="rf-col-heading">About Us</h4>

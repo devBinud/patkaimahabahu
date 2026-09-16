@@ -20,10 +20,8 @@ import {
   FaHeartPulse,
   FaArrowRight
 } from 'react-icons/fa6'
-import hero1 from '../../assets/hero/hero1.jpg'
-import hero2 from '../../assets/hero/hero2.jpg'
+import heroBgImg from '../../assets/hero/herobgg.png'
 import hero4 from '../../assets/hero/hero4.jpg'
-import heroBg from '../../assets/hero/hero_bg.jpg'
 import pranabImg from '../../assets/pranab.jpeg'
 import floodReliefDeliveredImg from '../../assets/fld_home.jpeg'
 import homeJoinUsImg from '../../assets/home_joinus.jpeg'
@@ -42,9 +40,8 @@ import rebuild2 from '../../assets/gallery/rebuilding_house_assessment/2.jpeg'
 import rebuild3 from '../../assets/gallery/rebuilding_house_assessment/3.jpeg'
 import media1 from '../../assets/gallery/media/1.jpeg'
 import PersonTestimonials from '../../components/PersonTestimonials/PersonTestimonials'
+import useScrollAnimations from '../../hooks/useScrollAnimations'
 import './HomePage.css'
-
-const heroSlides = [hero1, hero2, hero4, heroBg];
 
 const HomeShelterIcon = (props) => (
   <svg
@@ -64,33 +61,9 @@ const HomeShelterIcon = (props) => (
 )
 
 export default function HomePage() {
-  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+  const pageContainerRef = useScrollAnimations();
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [touchStartX, setTouchStartX] = useState(null);
-  const [heroTouchStartX, setHeroTouchStartX] = useState(null);
-
-  useEffect(() => {
-    const slideTimer = setInterval(() => {
-      setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-
-    return () => clearInterval(slideTimer);
-  }, []);
-
-  const handleHeroTouchStart = (e) => {
-    setHeroTouchStartX(e.changedTouches[0].clientX);
-  };
-
-  const handleHeroTouchEnd = (e) => {
-    if (heroTouchStartX === null) return;
-    const diffX = heroTouchStartX - e.changedTouches[0].clientX;
-    if (diffX > 40) {
-      setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length);
-    } else if (diffX < -40) {
-      setCurrentHeroSlide((prev) => (prev > 0 ? prev - 1 : heroSlides.length - 1));
-    }
-    setHeroTouchStartX(null);
-  };
 
   const focusAreas = [
     {
@@ -99,7 +72,7 @@ export default function HomePage() {
       desc: 'Direct distribution of food rations, clean water & survival kits to displaced flood victims.',
       icon: FaHandHoldingDroplet,
       link: '/contribution',
-      color: '#005C8A',
+      color: '#34548d',
       bgType: 'amber'
     },
     {
@@ -161,63 +134,63 @@ export default function HomePage() {
       image: gallery1,
       title: 'Ground Relief & Emergency Supply Distribution',
       categoryLabel: 'Ground Relief',
-      badgeBg: '#005C8A'
+      badgeBg: '#34548d'
     },
     {
       id: 2,
       image: gallery2,
       title: 'Emergency Ration Kit Delivery to Flood Families',
       categoryLabel: 'Ground Relief',
-      badgeBg: '#005C8A'
+      badgeBg: '#34548d'
     },
     {
       id: 3,
       image: gallery3,
       title: 'Direct Household Sewa in Flood-Hit Villages',
       categoryLabel: 'Ground Relief',
-      badgeBg: '#005C8A'
+      badgeBg: '#34548d'
     },
     {
       id: 4,
       image: gallery4,
       title: 'Relief Material Loading & Transportation Drive',
       categoryLabel: 'Ground Relief',
-      badgeBg: '#005C8A'
+      badgeBg: '#34548d'
     },
     {
       id: 5,
       image: gallery5,
       title: 'Community Relief Support & Ground Team Sewa',
       categoryLabel: 'Ground Relief',
-      badgeBg: '#005C8A'
+      badgeBg: '#34548d'
     },
     {
       id: 6,
       image: gallery6,
       title: 'Emergency Aid Package Assembly for Flood Victims',
       categoryLabel: 'Ground Relief',
-      badgeBg: '#005C8A'
+      badgeBg: '#34548d'
     },
     {
       id: 7,
       image: gallery7,
       title: 'On-Ground Volunteer Coordination & Village Outreach',
       categoryLabel: 'Ground Relief',
-      badgeBg: '#005C8A'
+      badgeBg: '#34548d'
     },
     {
       id: 8,
       image: gallery8,
       title: 'Direct Flood Relief Distribution Drive',
       categoryLabel: 'Ground Relief',
-      badgeBg: '#005C8A'
+      badgeBg: '#34548d'
     },
     {
       id: 9,
       image: gallery9,
       title: 'Youth Volunteer Community Outreach',
       categoryLabel: 'Ground Relief',
-      badgeBg: '#005C8A'
+      badgeBg: '#34548d'
     }
   ];
 
@@ -269,24 +242,17 @@ export default function HomePage() {
   const selectedGalleryImg = selectedIndex !== null ? allHomeImages[selectedIndex] : null
 
   return (
-    <>
+    <div ref={pageContainerRef} className="homepage-animated-root">
       {/* Full-Width Hero Section */}
-      <section
-        className="hero-full-section hero-slider-section"
-        onTouchStart={handleHeroTouchStart}
-        onTouchEnd={handleHeroTouchEnd}
-      >
+      <section className="hero-full-section hero-slider-section">
         <div className="hero-slider-container">
 
-          {/* Background Slides (hero1, hero2, hero4, hero_bg) */}
-          {heroSlides.map((slideImg, idx) => (
-            <div
-              key={idx}
-              className={`hero-slide-bg ${idx === currentHeroSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${slideImg})` }}
-              aria-hidden={idx !== currentHeroSlide}
-            />
-          ))}
+          {/* Single Hero Background Image (herobgg.png) */}
+          <div
+            className="hero-single-bg"
+            style={{ backgroundImage: `url(${heroBgImg})` }}
+            aria-hidden="true"
+          />
 
           {/* Deep Teal Blue Cinematic Gradient Overlay */}
           <div className="hero-gradient-overlay"></div>
@@ -295,21 +261,20 @@ export default function HomePage() {
           <div className="hero-content-wrapper">
             <div className="hero-content-grid">
 
-              {/* Text Block */}
+              {/* Text Block with natural staggered reveal */}
               <div className="hero-text-block">
-                <h1 className="hero-main-title">
+                <h1 className="hero-main-title" data-animate="fade-up" data-delay="0.1">
                   <span className="hero-title-teal">Reaching Every</span><br />
-                  <span className="hero-title-bold">Flood-Affected Family</span>
+                  <span className="hero-title-bold">Flood Affected Family</span>
                 </h1>
 
-                <p className="hero-banner-desc">
+                <p className="hero-banner-desc" data-animate="fade-up" data-delay="0.25">
                   Emergency ration kits, clean water and essential supplies delivered directly to families displaced by the Assam floods, village by village.
                 </p>
 
-                <div className="hero-banner-buttons">
+                <div className="hero-banner-buttons" data-animate="fade-up" data-delay="0.4">
                   <Link to="/contribution" className="btn-hero-saffron">
-                    <span>Provide Relief Materials</span>
-                    <FaChevronRight className="btn-hero-icon" />
+                    <span>Donate Now</span>
                   </Link>
                 </div>
               </div>
@@ -327,7 +292,7 @@ export default function HomePage() {
           <div className="about-grid">
 
             {/* Left Column (Desktop): Content Column (Relief Delivered Transparently Tracked) */}
-            <div className="about-content-col">
+            <div className="about-content-col" data-animate="fade-left">
               <h2 className="about-title">
                 Relief Delivered<br />
                 <span className="about-title-highlight">Transparently Tracked</span>
@@ -337,7 +302,7 @@ export default function HomePage() {
               </p>
 
               {/* Ground Impact Statistics Grid (Reliance Foundation 2-Card Pastel Style) */}
-              <div className="about-stats-grid">
+              <div className="about-stats-grid" data-animate="stagger" data-stagger-time="0.12">
                 <div className="about-stat-box stat-box-amber">
                   <span className="stat-box-num">5,000+</span>
                   <span className="stat-box-label">Ration kits delivered</span>
@@ -351,7 +316,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Column (Desktop) / Top (Mobile via order:-1): Photo Frame with Decorative Corner Brackets */}
-            <div className="about-photo-col">
+            <div className="about-photo-col" data-animate="fade-right">
               <div className="founder-frame-wrapper">
                 <div className="founder-corner-bracket bracket-top-left" aria-hidden="true"></div>
                 <div className="founder-corner-bracket bracket-bottom-right" aria-hidden="true"></div>
@@ -377,7 +342,7 @@ export default function HomePage() {
           <div className="founder-editorial-layout">
 
             {/* Left: Image with Decorative Corner Brackets */}
-            <div className="founder-editorial-media">
+            <div className="founder-editorial-media" data-animate="fade-left">
               <div className="founder-frame-wrapper">
                 <div className="founder-corner-bracket bracket-top-left" aria-hidden="true"></div>
                 <div className="founder-corner-bracket bracket-bottom-right" aria-hidden="true"></div>
@@ -394,7 +359,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: Editorial Typography */}
-            <div className="founder-editorial-content">
+            <div className="founder-editorial-content" data-animate="fade-right">
               <h2 className="founder-editorial-title">The Founder & Chairman</h2>
               <p className="founder-editorial-name">Pranab Milan Gogoi</p>
               <div className="founder-editorial-desc">
@@ -416,7 +381,7 @@ export default function HomePage() {
         <div className="live-dashboard-container">
 
           {/* Left Column: Framed Editorial Photo + Button Directly Below Image */}
-          <div className="dashboard-split-left">
+          <div className="dashboard-split-left" data-animate="fade-left">
             <div className="dashboard-image-frame">
               <img src={mainImg} alt="Assam Flood Relief Community Drive" className="dashboard-main-banner-img" />
             </div>
@@ -437,7 +402,7 @@ export default function HomePage() {
 
           {/* Right Column: Title, Subtitle, Fraxity Style Metric Cards */}
           <div className="dashboard-split-right">
-            <div className="dashboard-header-block">
+            <div className="dashboard-header-block" data-animate="fade-up">
               <h2 className="dashboard-main-title">
                 Our Journey <span className="dashboard-title-highlight">Begins Here</span>
               </h2>
@@ -447,7 +412,7 @@ export default function HomePage() {
             </div>
 
             {/* Metric Cards Grid (Pastel Style Matching 5,000+ & 40+ Top Cards) */}
-            <div className="dashboard-cards-grid">
+            <div className="dashboard-cards-grid" data-animate="stagger" data-stagger-time="0.08">
               {dashboardStats.map((stat, idx) => (
                 <a
                   key={idx}
@@ -471,24 +436,16 @@ export default function HomePage() {
       <section className="field-updates-section" aria-label="Grassroots Flood Relief Updates">
         <div className="field-updates-container">
           {/* Section Header (Matching Reference Screenshot) */}
-          <div className="field-updates-header">
+          <div className="field-updates-header" data-animate="fade-up">
             <div className="field-header-left">
-              <div className="field-header-tag-wrap">
-                <span className="field-header-tag">RELIEF IN ACTION</span>
-              </div>
               <h2 className="field-header-title">
                 Serving communities where<br />help matters most
               </h2>
             </div>
-            <div className="field-header-right">
-              <p className="field-header-desc">
-                On-ground moments from Charaideo and surrounding flood-affected communities, reflecting direct engagement with families, essential supply distribution and coordinated relief efforts.
-              </p>
-            </div>
           </div>
 
           {/* Top Row: 2 Cards (Wide Left ~60% + Narrow Right ~40%) */}
-          <div className="field-updates-grid-top">
+          <div className="field-updates-grid-top" data-animate="stagger" data-stagger-time="0.14">
             <Link to="/gallery" className="field-update-card field-update-card-top-left">
               <img
                 src={gallery5}
@@ -519,7 +476,7 @@ export default function HomePage() {
           </div>
 
           {/* Bottom Row: 3 Equal Cards */}
-          <div className="field-updates-grid-bottom">
+          <div className="field-updates-grid-bottom" data-animate="stagger" data-stagger-time="0.1">
             <Link to="/gallery" className="field-update-card field-update-card-bottom">
               <img
                 src={gallery7}
@@ -569,14 +526,14 @@ export default function HomePage() {
       <section className="project-home-editorial-section">
         <div className="project-home-editorial-container">
           {/* Left Column: Story, Commitments & Actions */}
-          <div className="project-home-editorial-left">
+          <div className="project-home-editorial-left" data-animate="fade-left">
             <h2 className="project-home-editorial-title">
               Rebuilding Homes <span className="project-home-title-highlight">Inspiring Hope And Shaping Futures</span>
             </h2>
             <p className="project-home-editorial-desc">
               Patkai Mahabahu Foundation has to its credit continuous dedication and an enriching journey during which on-ground relief and structural rehabilitation have reached vulnerable families on the strength of an exceptional vision and mission, as well as an untiring effort to rebuild what floodwaters destroyed.
             </p>
-            <div className="project-home-checklist">
+            <div className="project-home-checklist" data-animate="stagger" data-stagger-time="0.08">
               <div className="checklist-column">
                 <div className="checklist-item">
                   <FaCircleCheck className="check-icon" />
@@ -611,7 +568,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Column: 3-Element Masonry Visual Grid */}
-          <div className="project-home-editorial-right">
+          <div className="project-home-editorial-right" data-animate="fade-right">
             {/* Left tall image */}
             <div className="editorial-tall-card">
               <img
@@ -667,7 +624,7 @@ export default function HomePage() {
         </div>
 
         <div className="why-choose-container">
-          <div className="why-choose-content">
+          <div className="why-choose-content" data-animate="fade-left">
             <h2 className="why-choose-title">
               Why Communities Choose Patkai Mahabahu Foundation
             </h2>
@@ -678,7 +635,7 @@ export default function HomePage() {
               Patkai Mahabahu Foundation stands out as a dedicated grassroots humanitarian movement with transparent ground relief, rehabilitation, and long-term community seva across Assam.
             </p>
 
-            <div className="why-choose-highlights-strip">
+            <div className="why-choose-highlights-strip" data-animate="stagger" data-stagger-time="0.12">
               <div className="why-highlight-item">
                 <FaGear className="why-gear-icon" aria-hidden="true" />
                 <span>98% Community Trust</span>
@@ -703,7 +660,7 @@ export default function HomePage() {
           </div>
 
           {/* Overlapping Featured Image Showcase Card */}
-          <div className="why-choose-video-wrapper">
+          <div className="why-choose-video-wrapper" data-animate="zoom-in">
             <div className="why-choose-video-card">
               <img
                 src={homeJoinUsImg}
@@ -715,13 +672,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Person Testimonials: 3D Peeking Carousel Slider (Matching Screenshot 2) */}
-      <PersonTestimonials />
+      {/* Person Testimonials: 3D Peeking Carousel Slider */}
+      <div data-animate="fade-up">
+        <PersonTestimonials />
+      </div>
 
       {/* Modern Editorial 9-Image Collage Gallery Section */}
       <section className="editorial-gallery-section">
         <div className="editorial-gallery-container">
-          <div className="editorial-gallery-header">
+          <div className="editorial-gallery-header" data-animate="fade-up">
             <div className="editorial-gallery-header-left">
               <h2 className="editorial-gallery-title">
                 Relief Drive <span className="dashboard-title-highlight">Highlights</span>
@@ -737,7 +696,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="editorial-gallery-grid">
+          <div className="editorial-gallery-grid" data-animate="stagger" data-stagger-time="0.06">
             {galleryItems.map((item, index) => (
               <div
                 key={item.id}
@@ -756,7 +715,6 @@ export default function HomePage() {
       </section>
 
       {/* Gallery Photo Lightbox Modal with Swipe & Prev/Next Arrows */}
-      {/* Lightbox Modal with Touch Swipe & Prev/Next Arrows */}
       {selectedGalleryImg && (
         <div
           className="gallery-modal-overlay"
@@ -813,6 +771,6 @@ export default function HomePage() {
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
