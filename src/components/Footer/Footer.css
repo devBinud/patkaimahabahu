@@ -292,7 +292,7 @@
 
 .rf-dev-link {
   color: var(--primary, #005C8A) !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 .rf-dev-link:hover {

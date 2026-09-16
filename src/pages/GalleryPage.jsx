@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
-import { FaExpand, FaXmark, FaChevronLeft, FaChevronRight } from 'react-icons/fa6'
+import { FaExpand, FaXmark, FaChevronLeft, FaChevronRight, FaPlay } from 'react-icons/fa6'
 import gallery1 from '../assets/gallery/1.jpeg'
 import gallery2 from '../assets/gallery/2.jpeg'
 import gallery3 from '../assets/gallery/3.jpeg'
@@ -23,29 +23,101 @@ import gallery21 from '../assets/gallery/21.jpeg'
 import gallery22 from '../assets/gallery/22.jpeg'
 import gallery23 from '../assets/gallery/23.jpeg'
 import gallery24 from '../assets/gallery/24.jpeg'
-import media1 from '../assets/gallery/media/1.jpeg'
-import media2 from '../assets/gallery/media/2.jpeg'
+import projectHomeVideo1 from '../assets/videos/project_home1.mp4'
+import projectHomeThumb1 from '../assets/videos/project_home1_thumbnail.jpeg'
+import projectHomeVideo2 from '../assets/videos/project_home2.mp4'
+import projectHomeThumb2 from '../assets/videos/project_home2_thumbnail.jpeg'
+import projectHomeVideo3 from '../assets/videos/projecthome3_thumbnail.mp4'
+import projectHomeThumb3 from '../assets/videos/projecthome3_thumbnail.jpeg'
+import projectHomeVideo4 from '../assets/videos/projecthome4.mp4'
+import projectHomeThumb4 from '../assets/videos/projecthome4_thumbnail.jpeg'
+import projectHomeVideo5 from '../assets/videos/projecthome5.mp4'
+import useScrollAnimations from '../hooks/useScrollAnimations'
 import './HomePage/HomePage.css'
 import './GalleryPage.css'
 
 export default function GalleryPage() {
+  const pageRef = useScrollAnimations()
+  const [activeTab, setActiveTab] = useState('photos') // 'photos' active by default
+  const [selectedVideo, setSelectedVideo] = useState(null)
   const [selectedIndex, setSelectedIndex] = useState(null)
   const [touchStartX, setTouchStartX] = useState(null)
+  const [autoThumbnails, setAutoThumbnails] = useState({})
 
-  const mediaItems = [
+  // Ground Videos 1 to 5 - Video 5 has automatic frame thumbnail extraction
+  const videoItems = [
     {
-      id: 'm1',
-      image: media1,
-      title: 'Media & Press Coverage of Relief Activities',
-      categoryLabel: 'Media Coverage'
+      id: 'v1',
+      src: projectHomeVideo1,
+      thumbnail: projectHomeThumb1,
+      title: 'Project Home: Ground Assessment & Rural House Reconstruction'
     },
     {
-      id: 'm2',
-      image: media2,
-      title: 'Foundation Ground Work Featured in News Channels',
-      categoryLabel: 'Media Coverage'
+      id: 'v2',
+      src: projectHomeVideo2,
+      thumbnail: projectHomeThumb2,
+      title: 'Emergency Aid & Flood Assessment Footage'
+    },
+    {
+      id: 'v3',
+      src: projectHomeVideo3,
+      thumbnail: projectHomeThumb3,
+      title: 'Rural House Rebuilding & Village Field Inspection'
+    },
+    {
+      id: 'v4',
+      src: projectHomeVideo4,
+      thumbnail: projectHomeThumb4,
+      title: 'Assam Flood Ground Action & Volunteer Sewa'
+    },
+    {
+      id: 'v5',
+      src: projectHomeVideo5,
+      thumbnail: null, // Automatically extracted from video
+      title: 'Community Relief & Rehabilitation Drive'
     }
   ]
+
+  // Automatically extract thumbnail for video 5 and any video without a provided image
+  useEffect(() => {
+    videoItems.forEach((video) => {
+      if (!video.thumbnail && !autoThumbnails[video.id]) {
+        try {
+          const vid = document.createElement('video')
+          vid.src = video.src
+          vid.muted = true
+          vid.playsInline = true
+          vid.preload = 'auto'
+          vid.currentTime = 1.0
+
+          const handleLoaded = () => {
+            vid.currentTime = 1.0
+          }
+
+          const handleSeeked = () => {
+            try {
+              const canvas = document.createElement('canvas')
+              canvas.width = vid.videoWidth || 480
+              canvas.height = vid.videoHeight || 640
+              const ctx = canvas.getContext('2d')
+              ctx.drawImage(vid, 0, 0, canvas.width, canvas.height)
+              const dataUrl = canvas.toDataURL('image/jpeg', 0.85)
+              if (dataUrl && dataUrl.length > 500) {
+                setAutoThumbnails((prev) => ({ ...prev, [video.id]: dataUrl }))
+              }
+            } catch (e) {
+              // Browser security fallback handled by native video element
+            }
+          }
+
+          vid.addEventListener('loadeddata', handleLoaded)
+          vid.addEventListener('seeked', handleSeeked)
+        } catch (e) {
+          // Ignore
+        }
+      }
+    })
+  }, [videoItems, autoThumbnails])
 
   const fieldItems = [
     {
@@ -182,7 +254,7 @@ export default function GalleryPage() {
     }
   ]
 
-  const allGalleryImages = [...mediaItems, ...fieldItems]
+  const allGalleryImages = fieldItems
 
   const handlePrev = (e) => {
     if (e) e.stopPropagation()
@@ -196,21 +268,22 @@ export default function GalleryPage() {
 
   // Keyboard Navigation (Left / Right arrows & Escape)
   useEffect(() => {
-    if (selectedIndex === null) return
-
     const handleKeyDown = (e) => {
-      if (e.key === 'ArrowLeft') {
-        handlePrev()
-      } else if (e.key === 'ArrowRight') {
-        handleNext()
-      } else if (e.key === 'Escape') {
-        setSelectedIndex(null)
+      if (e.key === 'Escape') {
+        if (selectedVideo) setSelectedVideo(null)
+        if (selectedIndex !== null) setSelectedIndex(null)
+      } else if (selectedIndex !== null) {
+        if (e.key === 'ArrowLeft') {
+          handlePrev()
+        } else if (e.key === 'ArrowRight') {
+          handleNext()
+        }
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [selectedIndex, allGalleryImages.length])
+  }, [selectedIndex, selectedVideo, allGalleryImages.length])
 
   // Touch Swipe Navigation for Mobile
   const handleTouchStart = (e) => {
@@ -232,78 +305,129 @@ export default function GalleryPage() {
   const selectedGalleryImg = selectedIndex !== null ? allGalleryImages[selectedIndex] : null
 
   return (
-    <div className="gallery-page-wrapper">
+    <div className="gallery-page-wrapper" ref={pageRef}>
       <Breadcrumb currentPage="Media & Photo Gallery" />
 
       <div className="gallery-main-section">
         <div className="gallery-main-container">
 
-        {/* SECTION 1: TOP SIDE - Media & Press Coverage */}
-        <section className="gallery-section-block">
-          <div className="gallery-section-header">
-            <h2 className="gallery-section-title">
-              News &amp; Press <span className="gallery-title-highlight">Coverage</span>
-            </h2>
+          {/* Digital India Inspired Tabs Bar */}
+          <div className="gallery-tabs-container" data-animate="fade-up">
+            <div className="gallery-tabs-bar">
+              <button
+                type="button"
+                className={`gallery-tab-btn ${activeTab === 'photos' ? 'active' : ''}`}
+                onClick={() => setActiveTab('photos')}
+              >
+                Photos
+              </button>
+              <button
+                type="button"
+                className={`gallery-tab-btn ${activeTab === 'videos' ? 'active' : ''}`}
+                onClick={() => setActiveTab('videos')}
+              >
+                Videos
+              </button>
+            </div>
           </div>
 
-          <div className="gallery-grid gallery-media-grid">
-            {mediaItems.map((item, idx) => (
-              <div
-                key={item.id}
-                className="gallery-card gallery-media-card"
-                onClick={() => setSelectedIndex(idx)}
-              >
-                <div className="gallery-img-wrapper gallery-media-img-wrapper">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    loading="lazy"
-                    className="gallery-img"
-                  />
-                </div>
+          {/* TAB 1: Photos Grid (Active by default) */}
+          {activeTab === 'photos' && (
+            <section className="gallery-section-block">
+              <div className="gallery-section-header" data-animate="fade-up">
+                <h2 className="gallery-section-title">
+                  Photos From <span className="gallery-title-highlight">The Field</span>
+                </h2>
+                <p className="gallery-section-desc">
+                  Glimpses of emergency ration distribution, boat dispatches, and ground relief work across flood-hit villages in Jorhat, Sivasagar, and Charaideo.
+                </p>
               </div>
-            ))}
-          </div>
-        </section>
 
-        {/* SECTION 2: BOTTOM SIDE - Photos From The Field (Gallery) */}
-        <section className="gallery-section-block">
-          <div className="gallery-section-header">
-            <h2 className="gallery-section-title">
-              Photos From <span className="gallery-title-highlight">The Field</span>
-            </h2>
-            <p className="gallery-section-desc">
-              Glimpses of emergency ration distribution, boat dispatches, and ground relief work across flood-hit villages in Jorhat, Sivasagar, and Charaideo.
-            </p>
-          </div>
-
-          <div className="gallery-grid-field">
-            {fieldItems.map((item, idx) => (
-              <div
-                key={item.id}
-                className="gallery-card"
-                onClick={() => setSelectedIndex(mediaItems.length + idx)}
-              >
-                <div className="gallery-img-wrapper" style={{ height: '240px' }}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    loading="lazy"
-                    className="gallery-img"
-                  />
-                  <div className="gallery-overlay">
-                    <span className="gallery-zoom-icon"><FaExpand size={16} /></span>
+              <div className="gallery-grid-field" data-animate="stagger" data-stagger-time="0.06">
+                {fieldItems.map((item, idx) => (
+                  <div
+                    key={item.id}
+                    className="gallery-card"
+                    onClick={() => setSelectedIndex(idx)}
+                  >
+                    <div className="gallery-img-wrapper" style={{ height: '240px' }}>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        loading="lazy"
+                        className="gallery-img"
+                      />
+                      <div className="gallery-overlay">
+                        <span className="gallery-zoom-icon"><FaExpand size={16} /></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
+          )}
+
+          {/* TAB 2: Videos Grid (Digital India Layout) */}
+          {activeTab === 'videos' && (
+            <section className="gallery-section-block">
+              <div className="gallery-section-header" data-animate="fade-up">
+                <h2 className="gallery-section-title">
+                  Videos &amp; <span className="gallery-title-highlight">Field Footage</span>
+                </h2>
+                <p className="gallery-section-desc">
+                  Live video documentation of relief kit distribution, village flood assessments, and community seva across Assam. Click any video to open and watch.
+                </p>
+              </div>
+
+              <div className="digitalindia-videos-grid" data-animate="stagger" data-stagger-time="0.08">
+                {videoItems.map((video) => (
+                  <div
+                    key={video.id}
+                    className="digitalindia-video-card"
+                    onClick={() => setSelectedVideo(video)}
+                    title={video.title || 'Play Video'}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        setSelectedVideo(video)
+                      }
+                    }}
+                  >
+                    {/* Video Thumbnail */}
+                    <div className="digitalindia-video-poster">
+                      {video.thumbnail || autoThumbnails[video.id] ? (
+                        <img
+                          src={video.thumbnail || autoThumbnails[video.id]}
+                          alt={video.title || 'Video Thumbnail'}
+                          loading="lazy"
+                          className="digitalindia-poster-img"
+                        />
+                      ) : (
+                        <video
+                          src={`${video.src}#t=0.5`}
+                          preload="metadata"
+                          muted
+                          playsInline
+                          className="digitalindia-poster-video"
+                        />
+                      )}
+                      {/* Center Orange Play Button */}
+                      <div className="digitalindia-play-badge" aria-label="Play video">
+                        <FaPlay className="digitalindia-play-icon" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
         </div>
       </div>
 
-      {/* Lightbox Modal with Touch Swipe & Prev/Next Arrows */}
+      {/* Lightbox Modal for Photos */}
       {selectedGalleryImg && (
         <div
           className="gallery-modal-overlay"
@@ -327,7 +451,7 @@ export default function GalleryPage() {
             </button>
           </div>
 
-          {/* Nav Buttons Floating in Overlay Margins (NOT on top of image) */}
+          {/* Nav Buttons Floating in Overlay Margins */}
           <button
             className="gallery-modal-nav-prev"
             onClick={handlePrev}
@@ -344,7 +468,7 @@ export default function GalleryPage() {
             <FaChevronRight size={22} />
           </button>
 
-          {/* Central Image Container - Clean & Completely Unobstructed */}
+          {/* Central Image Container */}
           <div
             className="gallery-modal-content"
             onClick={(e) => e.stopPropagation()}
@@ -357,6 +481,39 @@ export default function GalleryPage() {
               className="gallery-modal-img"
               draggable="false"
             />
+          </div>
+        </div>
+      )}
+
+      {/* Video Popup Modal Player with full playback options */}
+      {selectedVideo && (
+        <div
+          className="video-popup-overlay"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            className="video-popup-dialog"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="video-popup-close"
+              onClick={() => setSelectedVideo(null)}
+              aria-label="Close video"
+            >
+              <FaXmark size={20} />
+            </button>
+
+            <div className="video-popup-player-box">
+              <video
+                src={selectedVideo.src}
+                controls
+                autoPlay
+                playsInline
+                preload="auto"
+                className="video-popup-element"
+              />
+            </div>
           </div>
         </div>
       )}

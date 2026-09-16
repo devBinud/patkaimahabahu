@@ -20,7 +20,7 @@ import {
   FaHeartPulse,
   FaArrowRight
 } from 'react-icons/fa6'
-import heroBgImg from '../../assets/hero/herobgg.png'
+import heroBgImg from '../../assets/hero/herobgg.jpg'
 import hero4 from '../../assets/hero/hero4.jpg'
 import pranabImg from '../../assets/pranab.jpeg'
 import floodReliefDeliveredImg from '../../assets/fld_home.jpeg'
@@ -439,7 +439,7 @@ export default function HomePage() {
           <div className="field-updates-header" data-animate="fade-up">
             <div className="field-header-left">
               <h2 className="field-header-title">
-                Serving communities where<br />help matters most
+                Serving where<br />help matters most
               </h2>
             </div>
           </div>

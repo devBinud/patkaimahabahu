@@ -491,3 +491,288 @@
     border-radius: 12px !important;
   }
 }
+
+/* ==========================================
+   MEDIA GALLERY TABS (Digital India Style)
+   ========================================== */
+.gallery-tabs-container {
+  margin-bottom: 2.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.gallery-tabs-bar {
+  display: flex;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.gallery-tab-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #64748b;
+  padding: 0.65rem 0.25rem 0.95rem;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.gallery-tab-btn:hover {
+  color: #0f172a;
+}
+
+.gallery-tab-btn.active {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.gallery-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: #c25e00; /* Orange indicator matching Digital India reference */
+  border-radius: 3px 3px 0 0;
+}
+
+/* ==========================================
+   DIGITAL INDIA STYLE VIDEO CARDS GRID
+   ========================================== */
+.digitalindia-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 340px));
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+.digitalindia-video-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  aspect-ratio: 9 / 14; /* Taller/portrait card to display entire vertical video thumbnail */
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.digitalindia-video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+}
+
+/* Poster / Exact Video Frame */
+.digitalindia-video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000000;
+}
+
+.digitalindia-poster-img,
+.digitalindia-poster-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  background: #000000;
+}
+
+/* Center Play Button Badge - Refined, elegant proportion */
+.digitalindia-play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #c25e00;
+  border: 2.5px solid #ffffff;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.digitalindia-play-icon {
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin-left: 2px; /* optical center alignment for play triangle */
+}
+
+.digitalindia-video-card:hover .digitalindia-play-badge {
+  transform: translate(-50%, -50%);
+  background: #d86900;
+  box-shadow: none;
+}
+
+/* ==========================================
+   VIDEO POPUP MODAL PLAYER
+   ========================================== */
+.video-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(5, 10, 18, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  animation: modalOverlayFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.video-popup-dialog {
+  position: relative;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  max-width: min(92vw, 920px);
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  animation: modalContentZoomIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.video-popup-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 25;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.video-popup-close:hover {
+  background: rgba(220, 38, 38, 0.9);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.08);
+}
+
+.video-popup-player-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+}
+
+.video-popup-element {
+  max-width: min(92vw, 920px);
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  outline: none;
+}
+
+/* Mobile Responsiveness for Videos & Tabs */
+@media (max-width: 768px) {
+  .gallery-tabs-bar {
+    gap: 1.5rem;
+  }
+
+  .gallery-tab-btn {
+    font-size: 1.05rem;
+  }
+
+  .digitalindia-videos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-tabs-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .digitalindia-videos-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 1.5rem !important;
+  }
+
+  .digitalindia-play-badge {
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
+  }
+
+  .digitalindia-play-icon {
+    font-size: 0.82rem;
+    margin-left: 2px;
+  }
+
+  .video-popup-overlay {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .video-popup-dialog {
+    border-radius: 16px;
+    max-width: 95vw;
+    max-height: 85vh;
+    width: 100%;
+    height: auto;
+  }
+
+  .video-popup-player-box {
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+  }
+
+  .video-popup-element {
+    width: 100%;
+    max-height: 85vh;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .video-popup-close {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+}
