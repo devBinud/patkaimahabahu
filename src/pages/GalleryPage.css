@@ -525,7 +525,6 @@
 
 .gallery-tab-btn.active {
   color: #0f172a;
-  font-weight: 700;
 }
 
 .gallery-tab-btn.active::after {
@@ -534,8 +533,9 @@
   bottom: -1px;
   left: 0;
   width: 100%;
-  height: 3.5px;
-  background: #c25e00; /* Orange indicator matching Digital India reference */
+  height: 3px;
+  background: #c25e00;
+  /* Orange indicator matching Digital India reference */
   border-radius: 3px 3px 0 0;
 }
 
@@ -556,7 +556,8 @@
   background: #000000;
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
   cursor: pointer;
-  aspect-ratio: 9 / 14; /* Taller/portrait card to display entire vertical video thumbnail */
+  aspect-ratio: 9 / 14;
+  /* Taller/portrait card to display entire vertical video thumbnail */
   display: block;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   user-select: none;
@@ -610,7 +611,8 @@
 .digitalindia-play-icon {
   color: #ffffff;
   font-size: 0.95rem;
-  margin-left: 2px; /* optical center alignment for play triangle */
+  margin-left: 2px;
+  /* optical center alignment for play triangle */
 }
 
 .digitalindia-video-card:hover .digitalindia-play-badge {
