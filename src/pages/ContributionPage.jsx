@@ -10,11 +10,9 @@ import {
 import disasterImg2 from '../assets/disaster_management/2.jpg'
 import cashContributorsData from '../data/cashContributors.json'
 import augustContributionsData from '../data/augustContributions.json'
-import useScrollAnimations from '../hooks/useScrollAnimations'
 import './ContributionPage.css'
 
 export default function ContributionPage() {
-  const pageRef = useScrollAnimations()
   const [searchTerm, setSearchTerm] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const rowsPerPage = 50
@@ -76,7 +74,7 @@ export default function ContributionPage() {
   }
 
   return (
-    <div className="disaster-page-wrapper" ref={pageRef}>
+    <div className="disaster-page-wrapper">
       <Breadcrumb currentPage="Flood Relief Contributors" parentLink="/ground-report" />
 
       {/* Main Flowing Content Container */}
@@ -84,7 +82,7 @@ export default function ContributionPage() {
         <div className="disaster-content-container">
 
           {/* 1. Header & Lead Narrative */}
-          <section className="disaster-intro-block" data-animate="fade-up">
+          <section className="disaster-intro-block">
             <h1 className="disaster-page-title">
               Flood Disaster Relief & Response: Saraideu, Sivasagar & Jorhat
             </h1>
@@ -112,7 +110,7 @@ export default function ContributionPage() {
           {/* 2. Featured Impact Showcase: Left Stats + Center Second Image + Right Stats */}
           <section className="disaster-showcase-section" aria-label="Live Relief Metrics & Ground Impact">
             {/* Left Side Stats Cards */}
-            <div className="showcase-stats-col showcase-stats-left" data-animate="stagger" data-stagger-time="0.1">
+            <div className="showcase-stats-col showcase-stats-left">
               <div className="dashboard-metric-card stat-pastel-amber">
                 <span className="dashboard-stat-num">₹19,52,856</span>
                 <span className="dashboard-stat-label">Cash Raised</span>
@@ -128,7 +126,7 @@ export default function ContributionPage() {
             </div>
 
             {/* Center Image: Second Disaster Image Only */}
-            <div className="showcase-image-col" data-animate="zoom-in">
+            <div className="showcase-image-col">
               <img
                 src={disasterImg2}
                 alt="Ground relief drive and community support in flood-affected village"
@@ -137,7 +135,7 @@ export default function ContributionPage() {
             </div>
 
             {/* Right Side Stats Cards */}
-            <div className="showcase-stats-col showcase-stats-right" data-animate="stagger" data-stagger-time="0.1">
+            <div className="showcase-stats-col showcase-stats-right">
               <div className="dashboard-metric-card stat-pastel-mint">
                 <span className="dashboard-stat-num">20</span>
                 <span className="dashboard-stat-label">Goods Donors</span>

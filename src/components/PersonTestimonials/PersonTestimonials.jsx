@@ -306,14 +306,15 @@ export default function PersonTestimonials() {
                   <p className="person-testimonial-author">{item.author}</p>
                   <button
                     type="button"
-                    className="btn-read-full-story"
+                    className="pmf-btn pmf-btn-outline"
                     onClick={(e) => {
                       e.stopPropagation();
                       if (dragMovedRef.current) return;
                       setModalStory(item);
                     }}
                   >
-                    Read full story
+                    <span>Read full story</span>
+                    <span className="pmf-btn-icon">↗</span>
                   </button>
                 </div>
 

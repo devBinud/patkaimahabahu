@@ -39,6 +39,7 @@ import abinashImg from '../../assets/team/abhinash_dutta.jpeg'
 import rohitImg from '../../assets/team/rohit_douglas.jpeg'
 import parthajeetImg from '../../assets/team/parthajeet_chutia.jpeg'
 import vivekImg from '../../assets/team/vivek_das.jpeg'
+import rakkiImg from '../../assets/team/rakki_saikia.jpeg'
 
 // Engineering, Tech & Communications Images
 import manikImg from '../../assets/team/manik_chandra_gogoi.jpeg'
@@ -50,11 +51,9 @@ import prabirImg from '../../assets/team/prabir_baruah.jpeg'
 import gourangonImg from '../../assets/team/gourangon_gogoi.jpeg'
 import plabonImg from '../../assets/team/plabon_mouchum_saikia.jpeg'
 import defaultMemberImg from '../../assets/team/default.jpg'
-import useScrollAnimations from '../../hooks/useScrollAnimations'
 import './AboutPage.css'
 
 export default function AboutPage() {
-  const pageRef = useScrollAnimations()
   const getInitials = (name) => {
     if (!name) return 'PM'
     const parts = name.replace(/[^a-zA-Z0-9\s]/g, '').trim().split(/\s+/).filter(Boolean)
@@ -231,7 +230,7 @@ export default function AboutPage() {
         },
         { id: 'm-4', name: 'Himanish Goswami', designation: 'Medical Team Member', image: null },
         { id: 'm-5', name: 'Bedanta Pathak', designation: 'Medical Team Member', image: null },
-        { id: 'm-6', name: 'Rakki Saikia', designation: 'Medical Team Member', image: null }
+        { id: 'm-6', name: 'Rakki Saikia', designation: 'Medical Team Member', image: rakkiImg }
       ]
     },
     {
@@ -314,11 +313,11 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="about-page-wrapper" ref={pageRef}>
+    <div className="about-page-wrapper">
       <Breadcrumb currentPage="About Patkai Mahabahu" />
 
       {/* Main Mission Text Section (Left Aligned) */}
-      <section className="about-intro-section" data-animate="fade-up">
+      <section className="about-intro-section">
         <div className="about-intro-container">
           <div className="about-intro-header-left">
             <h1 className="about-intro-title">About Patkai Mahabahu Foundation</h1>
@@ -330,7 +329,7 @@ export default function AboutPage() {
       </section>
 
       {/* 1. Founder & Chairman Section */}
-      <section className="about-leadership-section" data-animate="fade-up">
+      <section className="about-leadership-section">
         <div className="about-team-container">
           <div className="leadership-subgroup">
             <div className="department-group-header">
@@ -364,7 +363,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. Advisor Panel Section */}
-      <section className="about-advisors-section" data-animate="fade-up">
+      <section className="about-advisors-section">
         <div className="about-team-container">
           <div className="department-group-header">
             <h3 className="department-group-title">Advisor Panel</h3>
@@ -373,7 +372,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="about-team-grid" data-animate="stagger" data-stagger-time="0.08">
+          <div className="about-team-grid">
             {advisorMembers.map((member) => (
               <div key={member.id} className="about-member-card">
                 <div className="member-photo-frame">

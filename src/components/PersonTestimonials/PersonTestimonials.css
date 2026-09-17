@@ -86,7 +86,7 @@
 }
 
 .person-testimonials-card.theme-amber .person-testimonial-tag {
-  color: #cf8155;
+  color: #a35f38;
 }
 
 .person-testimonials-card.theme-amber .person-testimonial-quote {
@@ -142,32 +142,6 @@
 }
 
 /* Read Full Story Button */
-.btn-read-full-story {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 28px;
-  border-radius: 9999px;
-  background: #005C8A;
-  border: none;
-  color: #fff;
-  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  cursor: pointer;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-}
-
-.btn-read-full-story:hover {
-  background: #FCE096;
-  color: #003853;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
-}
-
 /* Right Image Area (Solid integrated unit, non-hoverable) */
 .person-testimonial-image-box {
   flex: 1 1 46%;

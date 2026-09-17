@@ -125,7 +125,7 @@ export default function NewsletterBanner() {
 
             <button
               type="submit"
-              className="pmf-newsletter-btn"
+              className="pmf-newsletter-btn pmf-btn pmf-btn-outline"
               disabled={status === 'loading'}
             >
               {status === 'loading' ? (
@@ -133,7 +133,10 @@ export default function NewsletterBanner() {
                   <FaSpinner className="pmf-spinner" /> SUBSCRIBING...
                 </span>
               ) : (
-                'SUBSCRIBE'
+                <>
+                  <span>Subscribe</span>
+                  <span className="pmf-btn-icon"></span>
+                </>
               )}
             </button>
           </form>

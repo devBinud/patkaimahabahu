@@ -234,20 +234,21 @@
 .rf-social-btn {
   width: 36px;
   height: 36px;
-  border-radius: 50% !important;
-  background-color: var(--navy-blue, #003853) !important;
-  color: #ffffff !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  color: var(--navy-blue, #003853) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   text-decoration: none !important;
-  transition: background-color 0.25s ease !important;
+  transition: color 0.25s ease !important;
   transform: none !important;
   /* Strictly static hover */
 }
 
 .rf-social-btn:hover {
-  background-color: var(--secondary, #48A047) !important;
+  background-color: transparent !important;
+  color: var(--secondary, #48A047) !important;
   transform: none !important;
 }
 
@@ -496,9 +497,9 @@
   .rf-mobile-brand-section .rf-social-btn {
     width: 38px;
     height: 38px;
-    border-radius: 50% !important;
-    background-color: #003853 !important;
-    color: #ffffff !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    color: #003853 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;

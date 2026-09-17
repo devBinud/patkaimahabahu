@@ -95,8 +95,9 @@ export default function SpecialtiesPage() {
                   <p className="rf-whatwedo-desc">{card.description}</p>
                   
                   <div className="rf-whatwedo-action">
-                    <Link to={card.link} className="rf-whatwedo-btn">
-                      View Details
+                    <Link to={card.link} className="pmf-btn pmf-btn-outline">
+                      <span>View Details</span>
+                      <span className="pmf-btn-icon">↗</span>
                     </Link>
                   </div>
                 </div>

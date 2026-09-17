@@ -9,19 +9,18 @@ import {
   FaHeart,
   FaCircleCheck,
   FaCheck,
-  FaGear,
   FaAward,
-  FaHandHoldingHeart,
-  FaUsers,
   FaHandHoldingDroplet,
   FaGraduationCap,
   FaSeedling,
   FaHouseChimney,
-  FaHeartPulse,
-  FaArrowRight
+  FaHeartPulse
 } from 'react-icons/fa6'
-import heroBgImg from '../../assets/hero/herobgg.jpg'
-import hero4 from '../../assets/hero/hero4.jpg'
+
+
+import heroImg from '../../assets/hero/hero.png'
+
+
 import pranabImg from '../../assets/pranab.jpeg'
 import floodReliefDeliveredImg from '../../assets/fld_home.jpeg'
 import homeJoinUsImg from '../../assets/home_joinus.jpeg'
@@ -38,9 +37,7 @@ import mainImg from '../../assets/main.jpeg'
 import rebuild1 from '../../assets/gallery/rebuilding_house_assessment/1.jpeg'
 import rebuild2 from '../../assets/gallery/rebuilding_house_assessment/2.jpeg'
 import rebuild3 from '../../assets/gallery/rebuilding_house_assessment/3.jpeg'
-import media1 from '../../assets/gallery/media/1.jpeg'
 import PersonTestimonials from '../../components/PersonTestimonials/PersonTestimonials'
-import useScrollAnimations from '../../hooks/useScrollAnimations'
 import './HomePage.css'
 
 const HomeShelterIcon = (props) => (
@@ -61,7 +58,6 @@ const HomeShelterIcon = (props) => (
 )
 
 export default function HomePage() {
-  const pageContainerRef = useScrollAnimations();
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [touchStartX, setTouchStartX] = useState(null);
 
@@ -114,12 +110,12 @@ export default function HomePage() {
   ];
 
   const dashboardStats = [
-    { label: 'Cash Raised', value: '₹19,52,856', bgType: 'amber' },
-    { label: 'Cash Donors', value: '1,072', bgType: 'mint' },
-    { label: 'Goods Donors', value: '20', bgType: 'amber' },
-    { label: 'Goods Items', value: '48', bgType: 'mint' },
-    { label: 'Villages Attended', value: '35+', bgType: 'amber' },
-    { label: 'Contributions Pending', value: '12', bgType: 'mint' }
+    { label: 'Cash Raised', value: '₹19,52,856', bgType: 'sky' },
+    { label: 'Cash Donors', value: '1,072', bgType: 'blush' },
+    { label: 'Goods Donors', value: '20', bgType: 'sky' },
+    { label: 'Goods Items', value: '48', bgType: 'blush' },
+    { label: 'Villages Attended', value: '35+', bgType: 'sky' },
+    { label: 'Contributions Pending', value: '12', bgType: 'blush' }
   ];
 
   const rebuildHouses = [
@@ -242,15 +238,15 @@ export default function HomePage() {
   const selectedGalleryImg = selectedIndex !== null ? allHomeImages[selectedIndex] : null
 
   return (
-    <div ref={pageContainerRef} className="homepage-animated-root">
+    <div className="homepage-animated-root">
       {/* Full-Width Hero Section */}
       <section className="hero-full-section hero-slider-section">
         <div className="hero-slider-container">
 
-          {/* Single Hero Background Image (herobgg.png) */}
+          {/* Single Hero Background Image */}
           <div
             className="hero-single-bg"
-            style={{ backgroundImage: `url(${heroBgImg})` }}
+            style={{ backgroundImage: `url(${heroImg})` }}
             aria-hidden="true"
           />
 
@@ -263,18 +259,19 @@ export default function HomePage() {
 
               {/* Text Block with natural staggered reveal */}
               <div className="hero-text-block">
-                <h1 className="hero-main-title" data-animate="fade-up" data-delay="0.1">
+                <h1 className="hero-main-title">
                   <span className="hero-title-teal">Reaching Every</span><br />
                   <span className="hero-title-bold">Flood Affected Family</span>
                 </h1>
 
-                <p className="hero-banner-desc" data-animate="fade-up" data-delay="0.25">
+                <p className="hero-banner-desc">
                   Emergency ration kits, clean water and essential supplies delivered directly to families displaced by the Assam floods, village by village.
                 </p>
 
-                <div className="hero-banner-buttons" data-animate="fade-up" data-delay="0.4">
-                  <Link to="/contribution" className="btn-hero-saffron">
+                <div className="hero-banner-buttons">
+                  <Link to="/contribution" className="hero-donate-btn pmf-btn pmf-btn-outline">
                     <span>Donate Now</span>
+                    <span className="pmf-btn-icon">↗</span>
                   </Link>
                 </div>
               </div>
@@ -286,13 +283,14 @@ export default function HomePage() {
 
 
 
+
       {/* About Us Section (Matching Second UI Reference Layout) */}
       <section className="about-spotlight-section">
         <div className="about-spotlight-container">
           <div className="about-grid">
 
             {/* Left Column (Desktop): Content Column (Relief Delivered Transparently Tracked) */}
-            <div className="about-content-col" data-animate="fade-left">
+            <div className="about-content-col">
               <h2 className="about-title">
                 Relief Delivered<br />
                 <span className="about-title-highlight">Transparently Tracked</span>
@@ -302,7 +300,7 @@ export default function HomePage() {
               </p>
 
               {/* Ground Impact Statistics Grid (Reliance Foundation 2-Card Pastel Style) */}
-              <div className="about-stats-grid" data-animate="stagger" data-stagger-time="0.12">
+              <div className="about-stats-grid">
                 <div className="about-stat-box stat-box-amber">
                   <span className="stat-box-num">5,000+</span>
                   <span className="stat-box-label">Ration kits delivered</span>
@@ -316,7 +314,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Column (Desktop) / Top (Mobile via order:-1): Photo Frame with Decorative Corner Brackets */}
-            <div className="about-photo-col" data-animate="fade-right">
+            <div className="about-photo-col">
               <div className="founder-frame-wrapper">
                 <div className="founder-corner-bracket bracket-top-left" aria-hidden="true"></div>
                 <div className="founder-corner-bracket bracket-bottom-right" aria-hidden="true"></div>
@@ -342,7 +340,7 @@ export default function HomePage() {
           <div className="founder-editorial-layout">
 
             {/* Left: Image with Decorative Corner Brackets */}
-            <div className="founder-editorial-media" data-animate="fade-left">
+            <div className="founder-editorial-media">
               <div className="founder-frame-wrapper">
                 <div className="founder-corner-bracket bracket-top-left" aria-hidden="true"></div>
                 <div className="founder-corner-bracket bracket-bottom-right" aria-hidden="true"></div>
@@ -359,7 +357,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: Editorial Typography */}
-            <div className="founder-editorial-content" data-animate="fade-right">
+            <div className="founder-editorial-content">
               <h2 className="founder-editorial-title">The Founder & Chairman</h2>
               <p className="founder-editorial-name">Pranab Milan Gogoi</p>
               <div className="founder-editorial-desc">
@@ -381,7 +379,7 @@ export default function HomePage() {
         <div className="live-dashboard-container">
 
           {/* Left Column: Framed Editorial Photo + Button Directly Below Image */}
-          <div className="dashboard-split-left" data-animate="fade-left">
+          <div className="dashboard-split-left">
             <div className="dashboard-image-frame">
               <img src={mainImg} alt="Assam Flood Relief Community Drive" className="dashboard-main-banner-img" />
             </div>
@@ -392,17 +390,18 @@ export default function HomePage() {
                 href="https://flood-relief.pages.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="dashboard-live-action-btn"
+                className="dashboard-live-action-btn pmf-btn pmf-btn-fill"
                 title="Open Live Dashboard"
               >
                 <span>View Live Dashboard</span>
+                <span className="pmf-btn-icon">↗</span>
               </a>
             </div>
           </div>
 
           {/* Right Column: Title, Subtitle, Fraxity Style Metric Cards */}
           <div className="dashboard-split-right">
-            <div className="dashboard-header-block" data-animate="fade-up">
+            <div className="dashboard-header-block">
               <h2 className="dashboard-main-title">
                 Our Journey <span className="dashboard-title-highlight">Begins Here</span>
               </h2>
@@ -412,7 +411,7 @@ export default function HomePage() {
             </div>
 
             {/* Metric Cards Grid (Pastel Style Matching 5,000+ & 40+ Top Cards) */}
-            <div className="dashboard-cards-grid" data-animate="stagger" data-stagger-time="0.08">
+            <div className="dashboard-cards-grid">
               {dashboardStats.map((stat, idx) => (
                 <a
                   key={idx}
@@ -436,7 +435,7 @@ export default function HomePage() {
       <section className="field-updates-section" aria-label="Grassroots Flood Relief Updates">
         <div className="field-updates-container">
           {/* Section Header (Matching Reference Screenshot) */}
-          <div className="field-updates-header" data-animate="fade-up">
+          <div className="field-updates-header">
             <div className="field-header-left">
               <h2 className="field-header-title">
                 Serving where<br />help matters most
@@ -445,7 +444,7 @@ export default function HomePage() {
           </div>
 
           {/* Top Row: 2 Cards (Wide Left ~60% + Narrow Right ~40%) */}
-          <div className="field-updates-grid-top" data-animate="stagger" data-stagger-time="0.14">
+          <div className="field-updates-grid-top">
             <Link to="/gallery" className="field-update-card field-update-card-top-left">
               <img
                 src={gallery5}
@@ -476,7 +475,7 @@ export default function HomePage() {
           </div>
 
           {/* Bottom Row: 3 Equal Cards */}
-          <div className="field-updates-grid-bottom" data-animate="stagger" data-stagger-time="0.1">
+          <div className="field-updates-grid-bottom">
             <Link to="/gallery" className="field-update-card field-update-card-bottom">
               <img
                 src={gallery7}
@@ -526,14 +525,14 @@ export default function HomePage() {
       <section className="project-home-editorial-section">
         <div className="project-home-editorial-container">
           {/* Left Column: Story, Commitments & Actions */}
-          <div className="project-home-editorial-left" data-animate="fade-left">
+          <div className="project-home-editorial-left">
             <h2 className="project-home-editorial-title">
               Rebuilding Homes <span className="project-home-title-highlight">Inspiring Hope And Shaping Futures</span>
             </h2>
             <p className="project-home-editorial-desc">
               Patkai Mahabahu Foundation has to its credit continuous dedication and an enriching journey during which on-ground relief and structural rehabilitation have reached vulnerable families on the strength of an exceptional vision and mission, as well as an untiring effort to rebuild what floodwaters destroyed.
             </p>
-            <div className="project-home-checklist" data-animate="stagger" data-stagger-time="0.08">
+            <div className="project-home-checklist">
               <div className="checklist-column">
                 <div className="checklist-item">
                   <FaCircleCheck className="check-icon" />
@@ -561,14 +560,15 @@ export default function HomePage() {
             </div>
 
             <div className="project-home-bottom-actions">
-              <Link to="/project-home" className="btn-editorial-read-more">
-                Read More
+              <Link to="/project-home" className="pmf-btn pmf-btn-outline">
+                <span>Read More</span>
+                <span className="pmf-btn-icon">↗</span>
               </Link>
             </div>
           </div>
 
           {/* Right Column: 3-Element Masonry Visual Grid */}
-          <div className="project-home-editorial-right" data-animate="fade-right">
+          <div className="project-home-editorial-right">
             {/* Left tall image */}
             <div className="editorial-tall-card">
               <img
@@ -615,7 +615,7 @@ export default function HomePage() {
       <section className="why-choose-section">
         <div className="why-choose-bg-media">
           <img
-            src={hero4}
+            src={heroImg}
             alt="Ground relief mission"
             className="why-choose-bg-img"
             aria-hidden="true"
@@ -624,7 +624,7 @@ export default function HomePage() {
         </div>
 
         <div className="why-choose-container">
-          <div className="why-choose-content" data-animate="fade-left">
+          <div className="why-choose-content">
             <h2 className="why-choose-title">
               Why Communities Choose Patkai Mahabahu Foundation
             </h2>
@@ -635,32 +635,16 @@ export default function HomePage() {
               Patkai Mahabahu Foundation stands out as a dedicated grassroots humanitarian movement with transparent ground relief, rehabilitation, and long-term community seva across Assam.
             </p>
 
-            <div className="why-choose-highlights-strip" data-animate="stagger" data-stagger-time="0.12">
-              <div className="why-highlight-item">
-                <FaGear className="why-gear-icon" aria-hidden="true" />
-                <span>98% Community Trust</span>
-              </div>
-              <span className="why-highlight-divider" aria-hidden="true">|</span>
-              <div className="why-highlight-item">
-                <FaHandHoldingHeart className="why-gear-icon" aria-hidden="true" />
-                <span>100% Direct Ground Relief</span>
-              </div>
-              <span className="why-highlight-divider" aria-hidden="true">|</span>
-              <div className="why-highlight-item">
-                <FaUsers className="why-gear-icon" aria-hidden="true" />
-                <span>Dedicated Volunteer Network</span>
-              </div>
-            </div>
-
             <div className="why-choose-btn-wrap">
-              <Link to="/join-us" className="btn-why-choose-join">
-                Join Us
+              <Link to="/contact" className="pmf-btn pmf-btn-outline">
+                <span>Join Us</span>
+                <span className="pmf-btn-icon">↗</span>
               </Link>
             </div>
           </div>
 
           {/* Overlapping Featured Image Showcase Card */}
-          <div className="why-choose-video-wrapper" data-animate="zoom-in">
+          <div className="why-choose-video-wrapper">
             <div className="why-choose-video-card">
               <img
                 src={homeJoinUsImg}
@@ -673,14 +657,14 @@ export default function HomePage() {
       </section>
 
       {/* Person Testimonials: 3D Peeking Carousel Slider */}
-      <div data-animate="fade-up">
+      <div>
         <PersonTestimonials />
       </div>
 
       {/* Modern Editorial 9-Image Collage Gallery Section */}
       <section className="editorial-gallery-section">
         <div className="editorial-gallery-container">
-          <div className="editorial-gallery-header" data-animate="fade-up">
+          <div className="editorial-gallery-header">
             <div className="editorial-gallery-header-left">
               <h2 className="editorial-gallery-title">
                 Relief Drive <span className="dashboard-title-highlight">Highlights</span>
@@ -690,13 +674,14 @@ export default function HomePage() {
               </p>
             </div>
             <div className="editorial-gallery-header-right">
-              <Link to="/gallery" className="btn-gallery-view-all">
-                View All
+              <Link to="/gallery" className="pmf-btn pmf-btn-outline">
+                <span>View All</span>
+                <span className="pmf-btn-icon">↗</span>
               </Link>
             </div>
           </div>
 
-          <div className="editorial-gallery-grid" data-animate="stagger" data-stagger-time="0.06">
+          <div className="editorial-gallery-grid">
             {galleryItems.map((item, index) => (
               <div
                 key={item.id}

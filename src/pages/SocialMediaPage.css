@@ -261,69 +261,6 @@
   font-weight: 500;
 }
 
-.social-card-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.88rem;
-  color: #ffffff;
-  transition: all 0.2s ease;
-}
-
-.theme-facebook .social-card-btn {
-  background: #1877f2;
-}
-
-.theme-facebook .social-card-btn:hover {
-  background: #1464cc;
-}
-
-.theme-instagram .social-card-btn {
-  background: #dc2743;
-}
-
-.theme-instagram .social-card-btn:hover {
-  background: #b81b33;
-}
-
-.theme-youtube .social-card-btn {
-  background: #ff0000;
-}
-
-.theme-youtube .social-card-btn:hover {
-  background: #cc0000;
-}
-
-.theme-whatsapp .social-card-btn {
-  background: #25d366;
-}
-
-.theme-whatsapp .social-card-btn:hover {
-  background: #1eb956;
-}
-
-.theme-x .social-card-btn {
-  background: #0f1419;
-}
-
-.theme-x .social-card-btn:hover {
-  background: #000000;
-}
-
-.theme-linkedin .social-card-btn {
-  background: #0a66c2;
-}
-
-.theme-linkedin .social-card-btn:hover {
-  background: #084e96;
-}
-
-
 @media (max-width: 640px) {
   .social-section-title {
     font-size: 1.6rem;

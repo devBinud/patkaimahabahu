@@ -13,7 +13,8 @@ import {
   FaMagnifyingGlass,
   FaHeart,
   FaCalendarCheck,
-  FaBullhorn
+  FaBullhorn,
+  FaArrowRight
 } from 'react-icons/fa6'
 import { FiMenu } from 'react-icons/fi'
 import logoImg from '../../assets/logo.png'
@@ -190,15 +191,26 @@ export default function Navbar() {
               <Link to="/contact" className="utility-link">Contact</Link>
             </div>
 
-            {/* Top Bar Full Height Contribute Now Button */}
-            <Link to="/contribution" className="btn-topbar-contribute">
-              <span>Contribute Now</span>
-            </Link>
+            {/* Top Bar Social Media Links */}
+            <div className="topbar-social-links">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="topbar-social-btn">
+                <FaFacebookF size={12} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="topbar-social-btn">
+                <FaInstagram size={12} />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="topbar-social-btn">
+                <FaYoutube size={12} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter X" className="topbar-social-btn">
+                <FaXTwitter size={12} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* 2. MIDDLE WHITE BRAND HEADER BAR (Exact Match to Rashtriya Sewa Bharati) */}
+      {/* 2. MIDDLE WHITE BRAND HEADER BAR */}
       <div className="middle-brand-header">
         <div className="middle-header-container">
           {/* Logo & Dual-Language Brand Text */}
@@ -212,8 +224,9 @@ export default function Navbar() {
 
           {/* Action Button: Join Us Only */}
           <div className="header-brand-actions">
-            <Link to="/contact" className="btn-header-joinus">
-              Join Us
+            <Link to="/contact" className="header-joinus-btn pmf-btn pmf-btn-outline">
+              <span>Join Us</span>
+              <span className="pmf-btn-icon">↗</span>
             </Link>
 
             {/* Mobile Hamburger Menu Toggle */}
@@ -458,8 +471,9 @@ export default function Navbar() {
         </div>
 
         <div className="drawer-footer">
-          <Link to="/contribution" className="btn-header-donate" style={{ width: '100%', justifyContent: 'center' }}>
+          <Link to="/contribution" className="drawer-donate-btn pmf-btn pmf-btn-fill" style={{ width: '100%', justifyContent: 'center' }}>
             <span>Donate Now</span>
+            <span className="pmf-btn-icon">↗</span>
           </Link>
         </div>
       </div>

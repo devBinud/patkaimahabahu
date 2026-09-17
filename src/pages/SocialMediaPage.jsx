@@ -5,8 +5,7 @@ import {
   FaXTwitter,
   FaWhatsapp,
   FaLinkedinIn,
-  FaCheck,
-  FaArrowUpRightFromSquare
+  FaCheck
 } from 'react-icons/fa6'
 import breadcrumbsBg from '../assets/breadcrumbs_bg.jpg'
 import './SocialMediaPage.css'
@@ -144,10 +143,10 @@ export default function SocialMediaPage() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="social-card-btn"
+                      className="pmf-btn pmf-btn-outline"
                     >
                       <span>{item.btnText}</span>
-                      <FaArrowUpRightFromSquare size={13} />
+                      <span className="pmf-btn-icon">↗</span>
                     </a>
                   </div>
                 )

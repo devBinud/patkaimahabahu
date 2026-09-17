@@ -32,12 +32,10 @@ import projectHomeThumb3 from '../assets/videos/projecthome3_thumbnail.jpeg'
 import projectHomeVideo4 from '../assets/videos/projecthome4.mp4'
 import projectHomeThumb4 from '../assets/videos/projecthome4_thumbnail.jpeg'
 import projectHomeVideo5 from '../assets/videos/projecthome5.mp4'
-import useScrollAnimations from '../hooks/useScrollAnimations'
 import './HomePage/HomePage.css'
 import './GalleryPage.css'
 
 export default function GalleryPage() {
-  const pageRef = useScrollAnimations()
   const [activeTab, setActiveTab] = useState('photos') // 'photos' active by default
   const [selectedVideo, setSelectedVideo] = useState(null)
   const [selectedIndex, setSelectedIndex] = useState(null)
@@ -305,14 +303,14 @@ export default function GalleryPage() {
   const selectedGalleryImg = selectedIndex !== null ? allGalleryImages[selectedIndex] : null
 
   return (
-    <div className="gallery-page-wrapper" ref={pageRef}>
+    <div className="gallery-page-wrapper">
       <Breadcrumb currentPage="Media & Photo Gallery" />
 
       <div className="gallery-main-section">
         <div className="gallery-main-container">
 
           {/* Digital India Inspired Tabs Bar */}
-          <div className="gallery-tabs-container" data-animate="fade-up">
+          <div className="gallery-tabs-container">
             <div className="gallery-tabs-bar">
               <button
                 type="button"
@@ -334,7 +332,7 @@ export default function GalleryPage() {
           {/* TAB 1: Photos Grid (Active by default) */}
           {activeTab === 'photos' && (
             <section className="gallery-section-block">
-              <div className="gallery-section-header" data-animate="fade-up">
+              <div className="gallery-section-header">
                 <h2 className="gallery-section-title">
                   Photos From <span className="gallery-title-highlight">The Field</span>
                 </h2>
@@ -343,7 +341,7 @@ export default function GalleryPage() {
                 </p>
               </div>
 
-              <div className="gallery-grid-field" data-animate="stagger" data-stagger-time="0.06">
+              <div className="gallery-grid-field">
                 {fieldItems.map((item, idx) => (
                   <div
                     key={item.id}
@@ -370,7 +368,7 @@ export default function GalleryPage() {
           {/* TAB 2: Videos Grid (Digital India Layout) */}
           {activeTab === 'videos' && (
             <section className="gallery-section-block">
-              <div className="gallery-section-header" data-animate="fade-up">
+              <div className="gallery-section-header">
                 <h2 className="gallery-section-title">
                   Videos &amp; <span className="gallery-title-highlight">Field Footage</span>
                 </h2>
@@ -379,7 +377,7 @@ export default function GalleryPage() {
                 </p>
               </div>
 
-              <div className="digitalindia-videos-grid" data-animate="stagger" data-stagger-time="0.08">
+              <div className="digitalindia-videos-grid">
                 {videoItems.map((video) => (
                   <div
                     key={video.id}
