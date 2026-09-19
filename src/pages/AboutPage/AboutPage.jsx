@@ -11,8 +11,11 @@ import arpitaImg from '../../assets/team/arpita_dhar.jpeg'
 import ashokImg from '../../assets/team/ashok_ranjan_borah.jpeg'
 import ranjitImg from '../../assets/team/ranjit_kr_das.jpeg'
 import nipulImg from '../../assets/team/nipul_borthakur.jpeg'
+import kamaljyotiImg from '../../assets/team/lamaljyoti_gogoi.jpeg'
+import shiromoniImg from '../../assets/team/shiromoni_bhuyan.jpeg'
 
 // Ground Team Images
+import pallabiImg from '../../assets/team/pallabi_rajkumari.jpeg'
 import kalpanaImg from '../../assets/team/kalpana_gogoi.png'
 import samarjitImg from '../../assets/team/samarjit_bora.jpeg'
 import utpalImg from '../../assets/team/utpal_gogoi.jpeg'
@@ -33,6 +36,7 @@ import urmilaImg from '../../assets/team/urmila_baruah.jpeg'
 import krisanubaruahImg from '../../assets/team/krishanu_aruah.jpeg'
 
 // Medical & Audit Images
+import drManasImg from '../../assets/team/dr_manas.jpeg'
 import sudiptaImg from '../../assets/team/suddipta_kumar_bora.jpeg'
 import arindamImg from '../../assets/team/arindam_lahkar.jpeg'
 import abinashImg from '../../assets/team/abhinash_dutta.jpeg'
@@ -133,6 +137,22 @@ export default function AboutPage() {
       name: 'Nipul Borthakur',
       designation: 'Industrialist',
       image: nipulImg
+    },
+    {
+      id: 'adv-9',
+      name: 'Dr. Kamaljyoti Gogoi',
+      designation: [
+        'Retired SECY, Board of Secondary Education, Assam (SEBA) & Assam Higher Secondary Education Council (AHSEC)',
+        'Ex Inspector of Schools',
+        'President, 800 years of Chaolung Sukafa Celebration Committee'
+      ],
+      image: kamaljyotiImg
+    },
+    {
+      id: 'adv-10',
+      name: 'Dr. Shiromoni Bhuyan',
+      designation: 'Advisor',
+      image: shiromoniImg
     }
   ]
 
@@ -171,7 +191,7 @@ export default function AboutPage() {
     {
       id: 'la-2',
       name: 'Ashok Ranjan Bora',
-      designation: 'Legal Advisor',
+      designation: 'Senior Advocate',
       image: ashokImg
     }
   ]
@@ -183,7 +203,7 @@ export default function AboutPage() {
       title: 'Ground Team at Flood Relief',
       subtitle: 'Field coordinators and volunteers delivering relief materials directly into flood-affected villages.',
       members: [
-        { id: 'g-1', name: 'Pallabi Rajkumari', designation: 'Ground Relief Coordinator', image: null },
+        { id: 'g-1', name: 'Pallabi Rajkumari', designation: 'Ground Relief Coordinator', image: pallabiImg },
         { id: 'g-2', name: 'Kalpana Gogoi', designation: 'Ground Relief Coordinator', image: kalpanaImg },
         { id: 'g-4', name: 'Samarjit Bora', designation: 'Ground Relief Coordinator', image: samarjitImg },
         { id: 'g-6', name: 'Pooja Borpatragohain', designation: 'Ground Relief Coordinator', image: poojaImg },
@@ -192,7 +212,7 @@ export default function AboutPage() {
         { id: 'g-9', name: 'Kumar Niroj Jyoti Gogoi (Niraj)', designation: 'Ground Relief Coordinator', image: nirajImg },
         { id: 'g-10', name: 'Krisanu Baruah', designation: 'Ground Relief Coordinator', image: krisanubaruahImg },
         { id: 'g-11', name: 'Dixit Subham Chetia', designation: 'Ground Relief Coordinator', image: dixitImg },
-        { id: 'g-12', name: 'Dhon & Team', designation: 'Ground Volunteer Team', image: null },
+        { id: 'g-12', name: 'Amlan Chetia', designation: 'Ground Relief Coordinator', image: amlanjitImg },
         { id: 'g-13', name: 'Horen Dutta (Bhaikon)', designation: 'Ground Relief Coordinator', image: horenImg },
         { id: 'g-14', name: 'Saurav Jyoti Gogoi', designation: 'Advocate', image: sauravImg },
         { id: 'g-15', name: 'Parineeta Bhuyan', designation: 'Advocate', image: parinitaImg },
@@ -208,8 +228,7 @@ export default function AboutPage() {
           ],
           image: jogeshImg
         },
-        { id: 'g-20', name: 'Shankuraj Konwar', designation: 'Assamese Artist , Singer, Composer', image: shankurajImg },
-        { id: 'g-22', name: 'Pranjal Jyoti Borbora', designation: 'Ground Relief Coordinator', image: null }
+        { id: 'g-20', name: 'Shankuraj Konwar', designation: 'Assamese Artist , Singer, Composer', image: shankurajImg }
       ]
     },
     {
@@ -217,11 +236,11 @@ export default function AboutPage() {
       title: 'Medical Team',
       subtitle: 'Healthcare volunteers and medical responders conducting relief health camps across affected areas.',
       members: [
-        { id: 'm-1', name: 'Manash Borgohain', designation: 'Medical Relief', image: null },
+        { id: 'm-1', name: 'Dr. Manash Borgohain', designation: 'Medical Relief', image: drManasImg },
         { id: 'm-2', name: 'Hiteswar Saikia', designation: 'Medical Team Member', image: null },
         {
           id: 'm-3',
-          name: 'Suddipta Kumar Bora',
+          name: 'Dr. Suddipta Kumar Bora',
           designation: [
             'Assistant Professor, Dept. of Community Medicine',
             'Jorhat Medical College'
@@ -265,12 +284,6 @@ export default function AboutPage() {
             'Town & Country Planning, Dispur, Guwahati - 6'
           ],
           image: babulImg
-        },
-        {
-          id: 'ph-1',
-          name: 'Amlanjit Chetia',
-          designation: 'Site Engineer (Project Home)',
-          image: amlanjitImg
         }
       ]
     },

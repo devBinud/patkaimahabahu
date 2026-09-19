@@ -6,6 +6,8 @@ import {
   FaExpand,
   FaXmark,
   FaArrowUpRightFromSquare,
+  FaArrowLeft,
+  FaArrowRight,
   FaHeart,
   FaCircleCheck,
   FaCheck,
@@ -18,7 +20,7 @@ import {
 } from 'react-icons/fa6'
 
 
-import heroImg from '../../assets/hero/hero.png'
+import heroImg from '../../assets/hero/hero.jpg'
 
 
 import pranabImg from '../../assets/pranab.jpeg'
@@ -60,6 +62,17 @@ const HomeShelterIcon = (props) => (
 export default function HomePage() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [touchStartX, setTouchStartX] = useState(null);
+  const fieldSliderRef = useRef(null);
+
+  const handleFieldScroll = (direction) => {
+    if (fieldSliderRef.current) {
+      const scrollAmount = 370;
+      fieldSliderRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const focusAreas = [
     {
@@ -431,90 +444,141 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Grassroots Ground Action & Field Updates (Matching Reference Screenshot 2) */}
+      {/* Grassroots Ground Action & Field Updates (Matching Reference Carousel UI) */}
       <section className="field-updates-section" aria-label="Grassroots Flood Relief Updates">
         <div className="field-updates-container">
-          {/* Section Header (Matching Reference Screenshot) */}
+          {/* Section Header (Matching Reference UI: Title & Subtitle Left, Arrows Right) */}
           <div className="field-updates-header">
             <div className="field-header-left">
               <h2 className="field-header-title">
-                Serving where<br />help matters most
+                Serving Where<br />Help Matters Most
               </h2>
+              <p className="field-header-desc">
+                Direct on-ground humanitarian relief, emergency supply distribution, and long-term rehabilitation across flood-affected communities in Assam.
+              </p>
+            </div>
+
+            <div className="field-header-controls">
+              <button
+                type="button"
+                className="field-nav-btn"
+                onClick={() => handleFieldScroll('left')}
+                aria-label="Previous card"
+              >
+                <FaArrowLeft />
+              </button>
+              <button
+                type="button"
+                className="field-nav-btn"
+                onClick={() => handleFieldScroll('right')}
+                aria-label="Next card"
+              >
+                <FaArrowRight />
+              </button>
             </div>
           </div>
 
-          {/* Top Row: 2 Cards (Wide Left ~60% + Narrow Right ~40%) */}
-          <div className="field-updates-grid-top">
-            <Link to="/gallery" className="field-update-card field-update-card-top-left">
+          {/* Horizontal Card Carousel Slider Track */}
+          <div className="field-slider-track" ref={fieldSliderRef}>
+            {/* Card 1: Featured Accent Card (matching Card 1 in reference UI) */}
+            <div className="field-card field-featured-card">
+              <div className="field-featured-inner">
+                <div className="field-featured-top">
+                  <h3 className="field-featured-title">Direct Flood Relief & Rebuilding</h3>
+                  <p className="field-featured-desc">
+                    Reaching remote unreached villages with food rations, clean water, medical camps, and rebuilding washed-out homes.
+                  </p>
+                </div>
+                <div className="field-featured-bottom">
+                  <Link to="/gallery" className="field-explore-btn">
+                    <span>Explore More</span>
+                    <span className="field-explore-btn-icon">↗</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Photo Card - Community Outreach */}
+            <Link to="/gallery" className="field-card field-photo-card">
               <img
                 src={gallery5}
                 alt="Standing with families after the floods"
-                className="field-update-img"
+                className="field-photo-img"
                 loading="lazy"
               />
-              <div className="field-update-gradient" aria-hidden="true" />
-              <div className="field-update-body">
-                <span className="field-update-tag">COMMUNITY HANDOVER</span>
-                <h3 className="field-update-title">Standing with families after the floods</h3>
+              <div className="field-photo-gradient" aria-hidden="true" />
+              <div className="field-photo-body">
+                <h3 className="field-photo-title">Community Outreach</h3>
               </div>
             </Link>
 
-            <Link to="/gallery" className="field-update-card field-update-card-top-right">
+            {/* Card 3: Photo Card - Household Support */}
+            <Link to="/gallery" className="field-card field-photo-card">
               <img
                 src={gallery3}
                 alt="Listening before support is planned"
-                className="field-update-img"
+                className="field-photo-img"
                 loading="lazy"
               />
-              <div className="field-update-gradient" aria-hidden="true" />
-              <div className="field-update-body">
-                <span className="field-update-tag">HOUSEHOLD CONVERSATIONS</span>
-                <h3 className="field-update-title">Listening before support is planned</h3>
+              <div className="field-photo-gradient" aria-hidden="true" />
+              <div className="field-photo-body">
+                <h3 className="field-photo-title">Household Support</h3>
               </div>
             </Link>
-          </div>
 
-          {/* Bottom Row: 3 Equal Cards */}
-          <div className="field-updates-grid-bottom">
-            <Link to="/gallery" className="field-update-card field-update-card-bottom">
+            {/* Card 4: Photo Card - Village Distribution */}
+            <Link to="/gallery" className="field-card field-photo-card">
               <img
                 src={gallery7}
                 alt="Supplies coordinated at village level"
-                className="field-update-img"
+                className="field-photo-img"
                 loading="lazy"
               />
-              <div className="field-update-gradient" aria-hidden="true" />
-              <div className="field-update-body">
-                <span className="field-update-tag">CHARAIDEO OUTREACH</span>
-                <h3 className="field-update-title">Supplies coordinated at village level</h3>
+              <div className="field-photo-gradient" aria-hidden="true" />
+              <div className="field-photo-body">
+                <h3 className="field-photo-title">Village Distribution</h3>
               </div>
             </Link>
 
-            <Link to="/gallery" className="field-update-card field-update-card-bottom">
+            {/* Card 5: Photo Card - Community Meals */}
+            <Link to="/gallery" className="field-card field-photo-card">
               <img
                 src={gallery8}
                 alt="Sharing food, restoring comfort"
-                className="field-update-img"
+                className="field-photo-img"
                 loading="lazy"
               />
-              <div className="field-update-gradient" aria-hidden="true" />
-              <div className="field-update-body">
-                <span className="field-update-tag">COMMUNITY MEALS</span>
-                <h3 className="field-update-title">Sharing food, restoring comfort</h3>
+              <div className="field-photo-gradient" aria-hidden="true" />
+              <div className="field-photo-body">
+                <h3 className="field-photo-title">Community Meals</h3>
               </div>
             </Link>
 
-            <Link to="/gallery" className="field-update-card field-update-card-bottom">
+            {/* Card 6: Photo Card - Project Home Rebuilding */}
+            <Link to="/project-home" className="field-card field-photo-card">
+              <img
+                src={rebuild2}
+                alt="Structural damage assessment and house rehabilitation"
+                className="field-photo-img"
+                loading="lazy"
+              />
+              <div className="field-photo-gradient" aria-hidden="true" />
+              <div className="field-photo-body">
+                <h3 className="field-photo-title">Project Home Rehab</h3>
+              </div>
+            </Link>
+
+            {/* Card 7: Photo Card - Supply Logistics */}
+            <Link to="/gallery" className="field-card field-photo-card">
               <img
                 src={gallery1}
                 alt="Supplies reaching families"
-                className="field-update-img"
+                className="field-photo-img"
                 loading="lazy"
               />
-              <div className="field-update-gradient" aria-hidden="true" />
-              <div className="field-update-body">
-                <span className="field-update-tag">RELIEF DISTRIBUTION</span>
-                <h3 className="field-update-title">Supplies reaching families</h3>
+              <div className="field-photo-gradient" aria-hidden="true" />
+              <div className="field-photo-body">
+                <h3 className="field-photo-title">Relief Distribution</h3>
               </div>
             </Link>
           </div>
