@@ -456,7 +456,8 @@
     display: flex;
     flex-direction: column;
     gap: 1.35rem;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .rf-mobile-brand-section .rf-brand-block {
@@ -479,13 +480,13 @@
   .rf-mobile-brand-section .rf-brand-assamese {
     font-size: 0.825rem;
     font-weight: 600;
-    color: #003853;
+    color: #3e3a3a;
   }
 
   .rf-mobile-brand-section .rf-brand-english {
     font-size: 1rem;
     font-weight: 600;
-    color: #003853;
+    color: #005C8A;
   }
 
   .rf-mobile-brand-section .rf-social-icons {
@@ -511,7 +512,7 @@
     margin-left: -1.25rem !important;
     margin-right: -1.25rem !important;
     margin-top: 1.15rem !important;
-    padding: 1.15rem 1.25rem calc(3.85rem + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 1.15rem 1.25rem calc(1.15rem + env(safe-area-inset-bottom, 0px)) !important;
     background-color: transparent !important;
     box-sizing: border-box !important;
   }

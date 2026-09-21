@@ -1,5 +1,34 @@
 /* HomePage.css - Patkai Mahabahu Foundation Home Page Styles (Rashtriya Sewa Bharati Palette) */
 
+/* ============================================
+   Scroll Reveal System
+   Elements with .reveal fade + rise into place the first time
+   they cross the viewport (paired with the Lenis smooth-scroll
+   instance running globally in App.jsx). Stagger siblings by
+   setting the --reveal-i custom property inline.
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--reveal-i, 0) * 100ms);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* Hero Slider Section */
 /* Hero Slider Section - Viewport Height Cover */
 .hero-slider-section {
@@ -231,6 +260,8 @@
   line-height: 1.65;
   margin-bottom: 1.65rem;
   font-weight: 500 !important;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .hero-banner-buttons {
@@ -774,6 +805,8 @@
   color: #475569;
   line-height: 1.65;
   margin-bottom: 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* About Us 3-Stat Impact Grid (Replacing Yellow Notice Box) */
@@ -949,6 +982,8 @@
   font-size: 1.125rem;
   color: #475569;
   line-height: 1.75;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .founder-editorial-desc p {
@@ -1519,6 +1554,8 @@
   color: #64748B !important;
   margin: 0;
   line-height: 1.65;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .editorial-gallery-header-right {
@@ -2562,6 +2599,8 @@
   line-height: 1.65;
   margin: 0;
   max-width: 620px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Metric Cards Grid (Pastel Style Matching 5,000+ & 40+ Top Cards) */
@@ -2779,6 +2818,8 @@
   color: #64748b;
   margin: 0 0 1rem 0;
   font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .project-home-commitment-lead {
@@ -3702,40 +3743,14 @@
 
 .field-updates-section {
   width: 100%;
-  background-color: #00273c;
-  background-image:
-    /* Layer 1: Luminous Abstract Wave Vector Splines */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='waveCyan' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2338bdf8' stop-opacity='0.45'/%3E%3Cstop offset='45%25' stop-color='%2306b6d4' stop-opacity='0.25'/%3E%3Cstop offset='100%25' stop-color='%230284c7' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='waveBlue' x1='100%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230ea5e9' stop-opacity='0.35'/%3E%3Cstop offset='60%25' stop-color='%230284c7' stop-opacity='0.15'/%3E%3Cstop offset='100%25' stop-color='%23003853' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='waveTeal' x1='0%25' y1='50%25' x2='100%25' y2='50%25'%3E%3Cstop offset='0%25' stop-color='%232dd4bf' stop-opacity='0.3'/%3E%3Cstop offset='50%25' stop-color='%2338bdf8' stop-opacity='0.2'/%3E%3Cstop offset='100%25' stop-color='%230284c7' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M-100,220 C320,60 580,420 980,200 C1300,40 1540,280 1720,180' stroke='url(%23waveCyan)' stroke-width='2.2' fill='none' opacity='0.7'/%3E%3Cpath d='M-100,260 C340,100 610,460 1020,240 C1340,80 1580,320 1720,220' stroke='url(%23waveBlue)' stroke-width='1.5' fill='none' opacity='0.55'/%3E%3Cpath d='M-100,300 C360,140 640,500 1060,280 C1380,120 1620,360 1720,260' stroke='url(%23waveTeal)' stroke-width='1.2' fill='none' opacity='0.4'/%3E%3Cpath d='M-100,640 C280,800 660,460 1060,660 C1380,820 1620,560 1720,660' stroke='url(%23waveCyan)' stroke-width='1.8' fill='none' opacity='0.5'/%3E%3Cpath d='M-100,680 C300,840 700,500 1100,700 C1420,860 1660,600 1720,700' stroke='url(%23waveBlue)' stroke-width='1.2' fill='none' opacity='0.35'/%3E%3C/svg%3E"),
-    /* Layer 2: Atmospheric Ambient Gradients */
-    radial-gradient(ellipse 75% 55% at 85% 15%, rgba(14, 165, 233, 0.25) 0%, transparent 65%),
-    radial-gradient(ellipse 65% 50% at 15% 85%, rgba(6, 182, 212, 0.20) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(0, 92, 138, 0.22) 0%, transparent 70%),
-    /* Layer 3: Themed Primary Deep Teal Palette (#002235 to #003853 to #001c2c) */
-    linear-gradient(175deg, #002235 0%, #003853 45%, #001c2c 100%);
-  background-size: cover, auto, auto, auto, auto;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-color: #FAF8F5;
+  background-image: url('../../assets/double-bubble-outline.png');
+  background-repeat: repeat;
+  background-position: center;
   padding: 5.5rem 0 6rem;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
-  border-top: 1px solid rgba(56, 189, 248, 0.18);
-  border-bottom: 1px solid rgba(56, 189, 248, 0.12);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-/* Ambient Top-Right Cyan Radiance Orb */
-.field-updates-section::before {
-  content: '';
-  position: absolute;
-  top: -15%;
-  right: -5%;
-  width: 600px;
-  height: 520px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.28) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 75%);
-  filter: blur(75px);
-  pointer-events: none;
-  z-index: 1;
 }
 
 .field-updates-container {
@@ -3762,22 +3777,27 @@
 }
 
 .field-header-title {
-  color: #ffffff;
+  color: #2B2B2B;
   font-family: var(--font-noto-serif), Georgia, serif !important;
   font-size: 2.9rem;
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.015em;
   margin: 0 0 1rem;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
+.field-header-highlight {
+  color: var(--primary, #005C8A);
+  font-family: var(--font-noto-serif);
 }
 
 .field-header-desc {
-  color: rgba(255, 255, 255, 0.80);
+  color: #475569;
   font-size: 1.06rem;
   line-height: 1.58;
   margin: 0;
   font-weight: 400;
+  text-justify: inter-word;
 }
 
 /* Navigation Arrow Controls */
@@ -3792,24 +3812,23 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #ffffff;
+  background: rgba(0, 56, 83, 0.05);
+  border: 1px solid rgba(0, 56, 83, 0.18);
+  color: #003853;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-size: 1.1rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(8px);
 }
 
 .field-nav-btn:hover {
-  background: #ffffff;
-  color: #003853;
-  border-color: #ffffff;
+  background: #003853;
+  color: #ffffff;
+  border-color: #003853;
   transform: scale(1.06);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 56, 83, 0.25);
 }
 
 .field-nav-btn:active {
@@ -3852,7 +3871,6 @@
   outline: 0 !important;
   -webkit-tap-highlight-color: transparent;
   background-color: #001f30;
-  box-shadow: 0 10px 30px -6px rgba(0, 0, 0, 0.45);
 }
 
 .field-card:hover,
@@ -3862,7 +3880,6 @@
   outline: 0 !important;
   border: 0 !important;
   text-decoration: none !important;
-  box-shadow: 0 10px 30px -6px rgba(0, 0, 0, 0.45);
 }
 
 /* 1. Featured Accent Card (Card 1 - Synced to LATEST button #FFE7AB warm gold) */
@@ -4026,7 +4043,7 @@
   }
 
   .field-header-title {
-    font-size: 2.35rem;
+    font-size: 1.85rem!important;
   }
 
   .field-card {

@@ -118,7 +118,7 @@ export default function Footer() {
             <div className="rf-address-block">
               <h5 className="rf-address-title">Contact Address</h5>
               <p className="rf-address-text">
-                <strong>Patkai Mahabahu Foundation:</strong> Deochora, Nearby Lane 10, Chandan Nagar Club Road, Assam, 781001
+                Deochora, Nearby Lane 10, Chandan Nagar Club Road, Assam, 781001
               </p>
               <p className="rf-contact-direct">
                 <a href="mailto:patkaimahabahufoundation@gmail.com" className="rf-contact-link">

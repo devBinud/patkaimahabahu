@@ -40,6 +40,7 @@ import rebuild1 from '../../assets/gallery/rebuilding_house_assessment/1.jpeg'
 import rebuild2 from '../../assets/gallery/rebuilding_house_assessment/2.jpeg'
 import rebuild3 from '../../assets/gallery/rebuilding_house_assessment/3.jpeg'
 import PersonTestimonials from '../../components/PersonTestimonials/PersonTestimonials'
+import useScrollReveal from '../../hooks/useScrollReveal'
 import './HomePage.css'
 
 const HomeShelterIcon = (props) => (
@@ -63,6 +64,9 @@ export default function HomePage() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [touchStartX, setTouchStartX] = useState(null);
   const fieldSliderRef = useRef(null);
+  const rootRef = useRef(null);
+
+  useScrollReveal(rootRef);
 
   const handleFieldScroll = (direction) => {
     if (fieldSliderRef.current) {
@@ -251,7 +255,7 @@ export default function HomePage() {
   const selectedGalleryImg = selectedIndex !== null ? allHomeImages[selectedIndex] : null
 
   return (
-    <div className="homepage-animated-root">
+    <div className="homepage-animated-root" ref={rootRef}>
       {/* Full-Width Hero Section */}
       <section className="hero-full-section hero-slider-section">
         <div className="hero-slider-container">
@@ -271,7 +275,7 @@ export default function HomePage() {
             <div className="hero-content-grid">
 
               {/* Text Block with natural staggered reveal */}
-              <div className="hero-text-block">
+              <div className="hero-text-block reveal">
                 <h1 className="hero-main-title">
                   <span className="hero-title-teal">Reaching Every</span><br />
                   <span className="hero-title-bold">Flood Affected Family</span>
@@ -303,7 +307,7 @@ export default function HomePage() {
           <div className="about-grid">
 
             {/* Left Column (Desktop): Content Column (Relief Delivered Transparently Tracked) */}
-            <div className="about-content-col">
+            <div className="about-content-col reveal">
               <h2 className="about-title">
                 Relief Delivered<br />
                 <span className="about-title-highlight">Transparently Tracked</span>
@@ -327,7 +331,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Column (Desktop) / Top (Mobile via order:-1): Photo Frame with Decorative Corner Brackets */}
-            <div className="about-photo-col">
+            <div className="about-photo-col reveal" style={{ '--reveal-i': 1 }}>
               <div className="founder-frame-wrapper">
                 <div className="founder-corner-bracket bracket-top-left" aria-hidden="true"></div>
                 <div className="founder-corner-bracket bracket-bottom-right" aria-hidden="true"></div>
@@ -353,7 +357,7 @@ export default function HomePage() {
           <div className="founder-editorial-layout">
 
             {/* Left: Image with Decorative Corner Brackets */}
-            <div className="founder-editorial-media">
+            <div className="founder-editorial-media reveal">
               <div className="founder-frame-wrapper">
                 <div className="founder-corner-bracket bracket-top-left" aria-hidden="true"></div>
                 <div className="founder-corner-bracket bracket-bottom-right" aria-hidden="true"></div>
@@ -370,7 +374,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: Editorial Typography */}
-            <div className="founder-editorial-content">
+            <div className="founder-editorial-content reveal" style={{ '--reveal-i': 1 }}>
               <h2 className="founder-editorial-title">The Founder & Chairman</h2>
               <p className="founder-editorial-name">Pranab Milan Gogoi</p>
               <div className="founder-editorial-desc">
@@ -392,7 +396,7 @@ export default function HomePage() {
         <div className="live-dashboard-container">
 
           {/* Left Column: Framed Editorial Photo + Button Directly Below Image */}
-          <div className="dashboard-split-left">
+          <div className="dashboard-split-left reveal">
             <div className="dashboard-image-frame">
               <img src={mainImg} alt="Assam Flood Relief Community Drive" className="dashboard-main-banner-img" />
             </div>
@@ -413,7 +417,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Column: Title, Subtitle, Fraxity Style Metric Cards */}
-          <div className="dashboard-split-right">
+          <div className="dashboard-split-right reveal" style={{ '--reveal-i': 1 }}>
             <div className="dashboard-header-block">
               <h2 className="dashboard-main-title">
                 Our Journey <span className="dashboard-title-highlight">Begins Here</span>
@@ -431,7 +435,8 @@ export default function HomePage() {
                   href="https://flood-relief.pages.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`dashboard-metric-card stat-pastel-${stat.bgType}`}
+                  className={`dashboard-metric-card stat-pastel-${stat.bgType} reveal`}
+                  style={{ '--reveal-i': idx }}
                   title={`View live details for ${stat.label}`}
                 >
                   <span className="dashboard-stat-num">{stat.value}</span>
@@ -449,9 +454,9 @@ export default function HomePage() {
         <div className="field-updates-container">
           {/* Section Header (Matching Reference UI: Title & Subtitle Left, Arrows Right) */}
           <div className="field-updates-header">
-            <div className="field-header-left">
+            <div className="field-header-left reveal">
               <h2 className="field-header-title">
-                Serving Where<br />Help Matters Most
+                Serving Where<br /><span className="field-header-highlight">Help Matters Most</span>
               </h2>
               <p className="field-header-desc">
                 Direct on-ground humanitarian relief, emergency supply distribution, and long-term rehabilitation across flood-affected communities in Assam.
@@ -589,7 +594,7 @@ export default function HomePage() {
       <section className="project-home-editorial-section">
         <div className="project-home-editorial-container">
           {/* Left Column: Story, Commitments & Actions */}
-          <div className="project-home-editorial-left">
+          <div className="project-home-editorial-left reveal">
             <h2 className="project-home-editorial-title">
               Rebuilding Homes <span className="project-home-title-highlight">Inspiring Hope And Shaping Futures</span>
             </h2>
@@ -632,7 +637,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Column: 3-Element Masonry Visual Grid */}
-          <div className="project-home-editorial-right">
+          <div className="project-home-editorial-right reveal" style={{ '--reveal-i': 1 }}>
             {/* Left tall image */}
             <div className="editorial-tall-card">
               <img
@@ -688,7 +693,7 @@ export default function HomePage() {
         </div>
 
         <div className="why-choose-container">
-          <div className="why-choose-content">
+          <div className="why-choose-content reveal">
             <h2 className="why-choose-title">
               Why Communities Choose Patkai Mahabahu Foundation
             </h2>
@@ -708,7 +713,7 @@ export default function HomePage() {
           </div>
 
           {/* Overlapping Featured Image Showcase Card */}
-          <div className="why-choose-video-wrapper">
+          <div className="why-choose-video-wrapper reveal" style={{ '--reveal-i': 1 }}>
             <div className="why-choose-video-card">
               <img
                 src={homeJoinUsImg}
@@ -729,7 +734,7 @@ export default function HomePage() {
       <section className="editorial-gallery-section">
         <div className="editorial-gallery-container">
           <div className="editorial-gallery-header">
-            <div className="editorial-gallery-header-left">
+            <div className="editorial-gallery-header-left reveal">
               <h2 className="editorial-gallery-title">
                 Relief Drive <span className="dashboard-title-highlight">Highlights</span>
               </h2>
@@ -749,7 +754,8 @@ export default function HomePage() {
             {galleryItems.map((item, index) => (
               <div
                 key={item.id}
-                className={`editorial-gallery-item item-${index + 1}`}
+                className={`editorial-gallery-item item-${index + 1} reveal`}
+                style={{ '--reveal-i': index % 5 }}
                 onClick={() => setSelectedIndex(index)}
                 title={item.title}
               >
