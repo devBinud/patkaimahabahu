@@ -375,8 +375,8 @@ export default function HomePage() {
 
             {/* Right: Editorial Typography */}
             <div className="founder-editorial-content reveal" style={{ '--reveal-i': 1 }}>
-              <h2 className="founder-editorial-title">The Founder & Chairman</h2>
-              <p className="founder-editorial-name">Pranab Milan Gogoi</p>
+              <h2 className="founder-editorial-title">Pranab Milan Gogoi</h2>
+              <p className="founder-editorial-name">The Founder & Chairman </p>
               <div className="founder-editorial-desc">
                 <p>
                   A strong commitment to humanitarian service and community development, with a vision to create meaningful and lasting change across Assam. The work extends across disaster relief, post-flood rehabilitation, healthcare, education, livelihood generation, environmental conservation, and empowerment of vulnerable communities.

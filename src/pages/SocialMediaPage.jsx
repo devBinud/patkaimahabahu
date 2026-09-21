@@ -7,7 +7,6 @@ import {
   FaLinkedinIn,
   FaCheck
 } from 'react-icons/fa6'
-import breadcrumbsBg from '../assets/breadcrumbs_bg.jpg'
 import './SocialMediaPage.css'
 
 export default function SocialMediaPage() {
@@ -88,18 +87,6 @@ export default function SocialMediaPage() {
 
   return (
     <div className="social-media-page">
-      {/* Hero Header with Background Image from assets/bg */}
-      <section
-        className="social-hero-section"
-        style={{
-          backgroundImage: `linear-gradient(135deg, rgba(0, 24, 42, 0.86) 0%, rgba(0, 56, 88, 0.82) 100%), url(${breadcrumbsBg})`
-        }}
-      >
-        <div className="social-hero-container">
-          <h1 className="social-hero-title">Patkai Social Media</h1>
-        </div>
-      </section>
-
       {/* Main Grid Content */}
       <div className="social-content-wrapper">
         <div className="social-main-container">

@@ -328,8 +328,6 @@ export default function Footer() {
             <p className="rf-copyright-text">
               © {new Date().getFullYear()} Patkai Mahabahu Foundation. All rights reserved
               <span className="rf-sep">|</span>
-              <Link to="/contact">Privacy Policy</Link>
-              <span className="rf-sep">|</span>
               Designed & Developed by{' '}
               <a
                 href="https://www.binudsoftwaresolutions.in/"
