@@ -177,9 +177,9 @@ export default function Navbar() {
               <span>+91 70028 08115</span>
             </a>
             <span className="topbar-vertical-divider"></span>
-            <a href="mailto:patkaimahabahufoundation@gmail.com" className="email-fullheight-link">
+            <a href="mailto:contact@patkaimahabahu.org" className="email-fullheight-link">
               <FaEnvelope size={11} />
-              <span>patkaimahabahufoundation@gmail.com</span>
+              <span>contact@patkaimahabahu.org</span>
             </a>
           </div>
 

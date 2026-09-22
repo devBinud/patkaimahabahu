@@ -232,7 +232,6 @@
 .middle-brand-header {
   background-color: #ffffff;
   padding: 0.75rem 1.5rem;
-  border-bottom: 1px dashed #e2e8f0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -279,7 +278,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   font-family: var(--font-noto-sans), sans-serif !important;
-  color: #005C8A;
+  color: #3475bb;
   margin: 0;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -460,7 +459,7 @@
   align-items: center;
   padding: 0.8rem 1.25rem;
   text-decoration: none;
-  border-bottom: 1px dashed #cbd5e1;
+  border-bottom: 1px solid #edf0f3;
   /* Dashed line divider between items */
   background-color: #ffffff;
   transition: background-color 0.2s ease;
@@ -605,7 +604,7 @@
 }
 
 .ticker-amount-highlight {
-  color: #005C8A;
+  color: #3475bb;
   font-weight: 500;
   background: rgba(0, 92, 138, 0.08);
   padding: 0.1rem 0.4rem;
@@ -780,7 +779,7 @@
 .drawer-nav-link:hover,
 .drawer-nav-link.active {
   background-color: rgba(0, 92, 138, 0.08);
-  color: #005C8A !important;
+  color: #3475bb !important;
   font-size: 0.9rem !important;
   transform: none !important;
 }
@@ -935,7 +934,7 @@
   .nav-search-block,
   .topbar-tagline,
   .topbar-assamese-pillars,
-  .email-fullheight-link,
+  .phone-fullheight-link,
   .topbar-vertical-divider,
   .utility-links-group {
     display: none !important;
@@ -999,10 +998,12 @@
 
   .brand-title-assamese {
     font-size: 0.9rem !important;
+    font-weight: 500!important;
   }
 
   .brand-title-english {
     font-size: 1rem !important;
+    font-weight: 500!important;
   }
 
   .top-bar-container {

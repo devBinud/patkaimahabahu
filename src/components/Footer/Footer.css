@@ -141,8 +141,8 @@
 
 .rf-brand-english {
   font-size: 1.05rem;
-  font-weight: 800;
-  color: #005C8A;
+  font-weight: 600;
+  color: #3475bb;
   letter-spacing: -0.015em;
   font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
 }
@@ -254,9 +254,8 @@
 
 /* Bottom Horizontal Copyright Bar */
 .rf-footer-bottom {
-  border-top: 0.6px solid #E2E8F0;
-  padding: 1.5rem 2rem;
-  background-color: #ffffff;
+  padding: 1rem 2rem;
+  background-color: #003853;
   position: relative;
   z-index: 2;
 }
@@ -270,30 +269,32 @@
 .rf-copyright-text {
   margin: 0;
   font-size: 0.85rem;
-  color: #64748B;
+  /* This bar's background is dark navy (#003853) — the old #64748B gray was
+     tuned for a white background and was nearly unreadable here. */
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
   font-family: var(--font-sans)
 }
 
 .rf-copyright-text a {
-  color: #475569 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   text-decoration: none !important;
   transition: color 0.2s ease;
 }
 
 .rf-copyright-text a:hover {
-  color: var(--primary, #005C8A) !important;
+  color: #E58325 !important;
   text-decoration: underline !important;
 }
 
 .rf-sep {
   margin: 0 0.65rem;
-  color: #CBD5E1;
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .rf-dev-link {
-  color: var(--primary, #005C8A) !important;
-  font-weight: 500 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
 }
 
 .rf-dev-link:hover {
@@ -524,9 +525,30 @@
     font-size: 0.8rem;
     line-height: 1.7;
     text-align: center;
+    /* This bar's background goes transparent on mobile (sits on the white
+       footer card above, not the dark bar desktop uses) — the white text
+       tuned for the desktop navy bar would be invisible here. */
+    color: #64748B;
+  }
+
+  .rf-copyright-text a {
+    color: #334155 !important;
+  }
+
+  .rf-copyright-text a:hover {
+    color: var(--primary, #005C8A) !important;
   }
 
   .rf-sep {
     margin: 0 0.35rem;
+    color: #CBD5E1;
+  }
+
+  .rf-dev-link {
+    color: var(--primary, #005C8A) !important;
+  }
+
+  .rf-dev-link:hover {
+    color: #E58325 !important;
   }
 }

@@ -233,7 +233,6 @@
 }
 
 .contrib-stat-box {
-  background: #f8fafc;
   border-radius: 8px;
   padding: 1rem 1.25rem;
   display: flex;
@@ -252,7 +251,7 @@
 .contrib-stat-val {
   font-size: 1.35rem;
   font-weight: 600;
-  color: #003853;
+  color: #2f3436;
   letter-spacing: -0.01em;
 }
 
@@ -642,8 +641,7 @@
   overflow-x: auto;
   margin-top: 0.5rem;
   margin-bottom: 1.25rem;
-  border: 0.8px solid #eaecf0;
-  border-radius: 8px;
+  border: 0.8px solid #3475bb;
 }
 
 .clean-contributors-table {
@@ -660,11 +658,11 @@
 .clean-contributors-table th {
   padding: 0.8rem 1rem;
   font-weight: 600;
-  color: #003853;
+  color: #3475bb;
   font-size: 0.82rem;
   text-transform: none;
   letter-spacing: 0.02em;
-  border: 0.8px solid #eaecf0;
+  border: 0.8px solid #3475bb;
   white-space: nowrap;
 }
 
@@ -690,8 +688,8 @@
 
 .clean-contributors-table td {
   padding: 0.85rem 1rem;
-  color: #334155;
-  border: 0.8px solid #f1f5f9;
+  color: #3475bb;
+  border: 0.8px solid #3475bb;
 }
 
 .td-index {

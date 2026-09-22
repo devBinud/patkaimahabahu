@@ -6,8 +6,6 @@ import {
   FaExpand,
   FaXmark,
   FaArrowUpRightFromSquare,
-  FaArrowLeft,
-  FaArrowRight,
   FaHeart,
   FaCircleCheck,
   FaCheck,
@@ -63,20 +61,9 @@ const HomeShelterIcon = (props) => (
 export default function HomePage() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [touchStartX, setTouchStartX] = useState(null);
-  const fieldSliderRef = useRef(null);
   const rootRef = useRef(null);
 
   useScrollReveal(rootRef);
-
-  const handleFieldScroll = (direction) => {
-    if (fieldSliderRef.current) {
-      const scrollAmount = 370;
-      fieldSliderRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   const focusAreas = [
     {
@@ -256,45 +243,40 @@ export default function HomePage() {
 
   return (
     <div className="homepage-animated-root" ref={rootRef}>
-      {/* Full-Width Hero Section */}
-      <section className="hero-full-section hero-slider-section">
-        <div className="hero-slider-container">
+      {/* Hero Section — split layout: text panel + photo panel */}
+      <section className="hero-full-section hero-split-section">
+        <div className="hero-split-container">
 
-          {/* Single Hero Background Image */}
-          <div
-            className="hero-single-bg"
-            style={{ backgroundImage: `url(${heroImg})` }}
-            aria-hidden="true"
-          />
+          {/* Text Panel */}
+          <div className="hero-split-text-panel">
+            <div className="hero-text-block reveal">
+              <h1 className="hero-main-title">
+                <span className="hero-title-teal">Reaching Every</span><br />
+                <span className="hero-title-bold">Flood Affected Family</span>
+              </h1>
 
-          {/* Deep Teal Blue Cinematic Gradient Overlay */}
-          <div className="hero-gradient-overlay"></div>
+              <p className="hero-banner-desc">
+                Emergency ration kits, clean water and essential supplies delivered directly to families displaced by the Assam floods, village by village.
+              </p>
 
-          {/* Hero Content Wrapper */}
-          <div className="hero-content-wrapper">
-            <div className="hero-content-grid">
-
-              {/* Text Block with natural staggered reveal */}
-              <div className="hero-text-block reveal">
-                <h1 className="hero-main-title">
-                  <span className="hero-title-teal">Reaching Every</span><br />
-                  <span className="hero-title-bold">Flood Affected Family</span>
-                </h1>
-
-                <p className="hero-banner-desc">
-                  Emergency ration kits, clean water and essential supplies delivered directly to families displaced by the Assam floods, village by village.
-                </p>
-
-                <div className="hero-banner-buttons">
-                  <Link to="/contribution" className="hero-donate-btn pmf-btn pmf-btn-outline">
-                    <span>Donate Now</span>
-                    <span className="pmf-btn-icon">↗</span>
-                  </Link>
-                </div>
+              <div className="hero-banner-buttons">
+                <Link to="/contribution" className="hero-donate-btn pmf-btn pmf-btn-fill">
+                  <span>Donate Now</span>
+                  <span className="pmf-btn-icon">↗</span>
+                </Link>
               </div>
-
             </div>
           </div>
+
+          {/* Photo Panel */}
+          <div className="hero-split-image-panel">
+            <img
+              src={heroImg}
+              alt="Volunteers evacuating stranded families by boat through flooded villages in Assam"
+              className="hero-split-img"
+            />
+          </div>
+
         </div>
       </section>
 
@@ -449,10 +431,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Grassroots Ground Action & Field Updates (Matching Reference Carousel UI) */}
+      {/* Grassroots Ground Action & Field Updates — full grid, all cards visible at once */}
       <section className="field-updates-section" aria-label="Grassroots Flood Relief Updates">
         <div className="field-updates-container">
-          {/* Section Header (Matching Reference UI: Title & Subtitle Left, Arrows Right) */}
           <div className="field-updates-header">
             <div className="field-header-left reveal">
               <h2 className="field-header-title">
@@ -462,48 +443,11 @@ export default function HomePage() {
                 Direct on-ground humanitarian relief, emergency supply distribution, and long-term rehabilitation across flood-affected communities in Assam.
               </p>
             </div>
-
-            <div className="field-header-controls">
-              <button
-                type="button"
-                className="field-nav-btn"
-                onClick={() => handleFieldScroll('left')}
-                aria-label="Previous card"
-              >
-                <FaArrowLeft />
-              </button>
-              <button
-                type="button"
-                className="field-nav-btn"
-                onClick={() => handleFieldScroll('right')}
-                aria-label="Next card"
-              >
-                <FaArrowRight />
-              </button>
-            </div>
           </div>
 
-          {/* Horizontal Card Carousel Slider Track */}
-          <div className="field-slider-track" ref={fieldSliderRef}>
-            {/* Card 1: Featured Accent Card (matching Card 1 in reference UI) */}
-            <div className="field-card field-featured-card">
-              <div className="field-featured-inner">
-                <div className="field-featured-top">
-                  <h3 className="field-featured-title">Direct Flood Relief & Rebuilding</h3>
-                  <p className="field-featured-desc">
-                    Reaching remote unreached villages with food rations, clean water, medical camps, and rebuilding washed-out homes.
-                  </p>
-                </div>
-                <div className="field-featured-bottom">
-                  <Link to="/gallery" className="field-explore-btn">
-                    <span>Explore More</span>
-                    <span className="field-explore-btn-icon">↗</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: Photo Card - Community Outreach */}
+          {/* Card Grid */}
+          <div className="field-slider-track">
+            {/* Card: Photo Card - Community Outreach */}
             <Link to="/gallery" className="field-card field-photo-card">
               <img
                 src={gallery5}

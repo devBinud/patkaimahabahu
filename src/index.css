@@ -5,7 +5,7 @@
      ========================================== */
 
   /* 🔵 Primary Deep Teal Blue Palette (#005C8A) */
-  --primary: #005C8A;
+  --primary: #3475bb;
   --primary-dark: #004366;
   --navy-blue: #003853;
   --navy-dark: #00273B;
@@ -30,11 +30,11 @@
   --bg-glass: rgba(255, 255, 255, 0.95);
 
   /* ⚫ Typography Colors */
-  --text-heading: #003853;
+  --text-heading: #3475bb;
   --text-body: #334155;
   --text-secondary: #64748B;
   --text-muted: #94A3B8;
-  --text-brand: #005C8A;
+  --text-brand: #3475bb;
 
   /* ⚙️ Borders & Shadows */
   --border-gold: #E2E8F0;
@@ -398,6 +398,30 @@ img {
   background: #F0F7FB !important;
   border-color: #005C8A !important;
   color: #005C8A !important;
+  transform: none !important;
+}
+
+/* Accent variant — for donate/giving CTAs only. Uses --accent-dark (not
+   --accent) as the resting fill: white text on the lighter #E58325 measures
+   ~2.8:1 contrast (fails WCAG AA's 3:1 floor even for large bold text);
+   --accent-dark's #C76D17 gets to ~3.8:1, close enough with the button's
+   600-weight text to be legible while staying in the site's own saffron family. */
+.pmf-btn-accent {
+  background: #C76D17 !important;
+  border-color: #C76D17 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(199, 109, 23, 0.3) !important;
+}
+
+.pmf-btn-accent .pmf-btn-icon {
+  background: #ffffff !important;
+  color: #C76D17 !important;
+}
+
+.pmf-btn-accent:hover {
+  background: #E58325 !important;
+  border-color: #E58325 !important;
+  color: #ffffff !important;
   transform: none !important;
 }
 

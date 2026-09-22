@@ -29,112 +29,159 @@
   }
 }
 
-/* Hero Slider Section */
-/* Hero Slider Section - Viewport Height Cover */
-.hero-slider-section {
-  position: relative;
+/* ============================================
+   Hero — split layout: text panel + photo panel
+   ============================================ */
+.hero-split-section {
   width: 100%;
-  min-height: 480px;
   overflow: hidden;
-  background: linear-gradient(135deg, #005C8A 0%, #0077A3 50%, #2B8BB1 100%);
-  display: flex;
-  align-items: center;
   margin-bottom: 0 !important;
-  contain: paint;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
-.hero-slider-container {
-  position: relative;
+.hero-split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 620px;
   width: 100%;
-  height: 100%;
+}
+
+.hero-split-text-panel {
   display: flex;
   align-items: center;
-}
-
-.hero-single-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: 0.95;
-  z-index: 2;
-  pointer-events: none;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  will-change: transform;
-}
-
-.hero-slide-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-  z-index: 1;
-  pointer-events: none;
-  transform: none !important;
-}
-
-.hero-slide-bg.active {
-  opacity: 0.88;
-  z-index: 2;
-  transform: none !important;
-}
-
-.hero-mobile-img-wrapper {
-  display: none;
-}
-
-.hero-gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(100deg,
-      rgba(0, 33, 51, 0.94) 0%,
-      rgba(0, 40, 61, 0.82) 30%,
-      rgba(0, 45, 68, 0.45) 55%,
-      rgba(0, 45, 68, 0.12) 75%,
-      rgba(0, 45, 68, 0) 100%);
-  z-index: 3;
-  pointer-events: none;
-}
-
-.hero-content-wrapper {
-  position: relative;
-  z-index: 4;
-  /* 1240px content width + 1.5rem side padding on each side, so the text
-     aligns with every other section's 1240px max-width container below it */
-  max-width: calc(1240px + 3rem);
-  margin: 0 auto;
-  width: 100%;
-  min-height: 520px;
-  min-height: 75svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3.5rem 1.5rem 4rem;
+  /* Was referencing --color-primary-50 / --color-surface, tokens that don't
+     exist in this file's palette — the gradient silently failed and the
+     panel rendered plain transparent. Using the site's own accent-light. */
+  background: linear-gradient(160deg, #aadafb 0%, #ffffff 70%);
+  /* Left edge matches where the site's standard 1240px centered container
+     (used by the nav logo and every section below) actually lands, instead
+     of a flat 3rem that landed short of it and looked misaligned. */
+  padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1240px) / 2));
   box-sizing: border-box;
 }
 
-.hero-content-grid {
-  display: block;
+.hero-split-text-panel .hero-text-block {
+  max-width: 460px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  /* Was var(--color-primary) / var(--color-primary-100) — undefined tokens,
+     same issue as the panel background above. */
+  color: var(--primary, #005C8A);
+  background: #E6F1FC;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  margin-bottom: 1.35rem;
+}
+
+.hero-split-image-panel {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.hero-split-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Below 960px: not a side-by-side split anymore — the photo becomes a
+   full-bleed background with text and button overlaid on top of it
+   (the classic single-hero treatment), rather than stacking the text
+   panel and the photo as two separate blocks. */
+@media (max-width: 960px) {
+  .hero-split-container {
+    display: block;
+    position: relative;
+    min-height: 560px;
+    min-height: 78svh;
+  }
+
+  .hero-split-image-panel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    z-index: 1;
+  }
+
+  .hero-split-image-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(0, 24, 38, 0.1) 0%,
+        rgba(0, 30, 48, 0.3) 40%,
+        rgba(0, 24, 38, 0.82) 75%,
+        rgba(0, 20, 34, 0.95) 100%);
+    pointer-events: none;
+  }
+
+  .hero-split-text-panel {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    min-height: 560px;
+    min-height: 78svh;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem 1.5rem 2.5rem;
+  }
+
+  .hero-split-text-panel .hero-text-block {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .hero-split-text-panel .hero-main-title {
+    color: #ffffff;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-split-text-panel .hero-title-teal {
+    color: #BAE6FD;
+  }
+
+  .hero-split-text-panel .hero-title-bold {
+    color: #ffffff;
+  }
+
+  .hero-split-text-panel .hero-banner-desc {
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-banner-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-split-container {
+    min-height: 520px;
+  }
+
+  .hero-split-text-panel {
+    min-height: 520px;
+    padding: 1.75rem 1.25rem 2rem;
+  }
 }
 
 .hero-text-block {
@@ -235,33 +282,34 @@
 
 .hero-main-title {
   font-family: var(--font-sans) !important;
-  font-size: 3.35rem;
+  font-size: 3rem;
   line-height: 1.15;
   margin-bottom: 1.15rem;
   font-weight: 500 !important;
   letter-spacing: -0.015em;
 }
 
+/* Text panel is now a light tint, not a dark photo overlay — these were
+   white/pale-blue for on-photo legibility. */
 .hero-title-teal {
-  color: #E0F2FE;
-  font-weight: 300;
+  font-weight: 500;
+  color:#2B2B2B;
 }
 
 .hero-title-bold {
-  color: #ffffff;
-  font-weight: 600;
+  color: var(--text-heading);
+  font-weight: 700;
   font-family: var(--font-noto-sans, 'Plus Jakarta Sans'), sans-serif !important;
 }
 
 .hero-banner-desc {
   font-family: var(--font-sans) !important;
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  color: var(--text-body);
   line-height: 1.65;
-  margin-bottom: 1.65rem;
-  font-weight: 500 !important;
-  text-align: justify;
-  text-justify: inter-word;
+  margin-bottom: 1.75rem;
+  font-weight: 400 !important;
+  text-align: left;
 }
 
 .hero-banner-buttons {
@@ -881,8 +929,7 @@
    ========================================================= */
 .founder-editorial-section {
   width: 100%;
-  background-color: #FAF8F5;
-  background-image: url('../../assets/double-bubble-outline.png');
+  background-color: #fff9eb;
   background-repeat: repeat;
   background-position: center;
   padding: 5rem 1.5rem;
@@ -1507,8 +1554,7 @@
 
 .editorial-gallery-section {
   width: 100% !important;
-  background-color: #FAF8F5 !important;
-  background-image: url('../../assets/double-bubble-outline.png') !important;
+  background-color: #fff9eb !important;
   background-repeat: repeat !important;
   background-position: center !important;
   padding: 2.5rem 1.5rem 6.5rem !important;
@@ -2074,122 +2120,6 @@
 /* Mobile Responsive Layout for Hero Section & All Page Sections */
 @media (max-width: 768px) {
 
-  .hero-slider-section {
-    position: relative !important;
-    width: 100% !important;
-    min-height: 500px !important;
-    min-height: 84svh !important;
-    max-height: 680px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-end !important;
-    background: #001e30 !important;
-    overflow: hidden !important;
-    margin-bottom: 0 !important;
-    contain: paint !important;
-    transform: translateZ(0) !important;
-    -webkit-transform: translateZ(0) !important;
-    backface-visibility: hidden !important;
-    -webkit-backface-visibility: hidden !important;
-  }
-
-  .hero-slider-container {
-    position: relative !important;
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 500px !important;
-    min-height: 84svh !important;
-    max-height: 680px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-end !important;
-    touch-action: pan-y pinch-zoom;
-  }
-
-  .hero-single-bg {
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    opacity: 0.95 !important;
-    transform: translate3d(0, 0, 0) !important;
-    -webkit-transform: translate3d(0, 0, 0) !important;
-    backface-visibility: hidden !important;
-    -webkit-backface-visibility: hidden !important;
-    will-change: transform !important;
-    z-index: 2 !important;
-    pointer-events: none !important;
-  }
-
-  .hero-slide-bg {
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background-size: cover !important;
-    background-position: center 25% !important;
-    opacity: 0 !important;
-    transition: opacity 1.2s ease-in-out !important;
-    transform: translate3d(0, 0, 0) !important;
-    backface-visibility: hidden !important;
-    z-index: 1 !important;
-    pointer-events: none !important;
-  }
-
-  .hero-slide-bg.active {
-    opacity: 1 !important;
-    z-index: 2 !important;
-  }
-
-  .hero-mobile-img-wrapper {
-    display: none !important;
-  }
-
-  .hero-gradient-overlay {
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: linear-gradient(180deg, rgba(0, 24, 38, 0.15) 0%, rgba(0, 30, 48, 0.32) 30%, rgba(0, 34, 54, 0.76) 55%, rgba(0, 24, 38, 0.94) 78%, rgb(33 86 121 / 99%) 100%) !important;
-    z-index: 3 !important;
-    pointer-events: none !important;
-  }
-
-  .hero-content-wrapper {
-    position: relative !important;
-    z-index: 5 !important;
-    padding: 1.75rem 1.25rem 2rem !important;
-    background: transparent !important;
-    width: 100% !important;
-    min-height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-end !important;
-    box-sizing: border-box !important;
-  }
-
-  .hero-content-wrapper::before {
-    display: none !important;
-  }
-
-  .hero-content-grid {
-    display: block !important;
-    width: 100% !important;
-    position: relative !important;
-    z-index: 2 !important;
-  }
-
   .hero-text-block {
     max-width: 100% !important;
     text-align: center !important;
@@ -2201,26 +2131,12 @@
     font-size: 1.85rem !important;
     line-height: 1.22 !important;
     margin-bottom: 0.75rem !important;
-    color: #ffffff !important;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6) !important;
-  }
-
-  .hero-title-teal {
-    color: #BAE6FD !important;
-    font-weight: 500 !important;
-  }
-
-  .hero-title-bold {
-    color: #ffffff !important;
-    font-weight: 700 !important;
   }
 
   .hero-banner-desc {
     font-size: 0.925rem !important;
-    color: rgba(255, 255, 255, 0.92) !important;
     margin-bottom: 1.35rem !important;
     line-height: 1.55 !important;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5) !important;
     max-width: 380px !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -2244,30 +2160,50 @@
 
   .about-grid {
     flex-direction: column !important;
+    /* Base rule's align-items: center isn't reset by width/margin alone —
+       without stretch the photo column shrinks to its content instead of
+       filling the inset width (same issue hit fixing the hero earlier). */
+    align-items: stretch !important;
     gap: 1.5rem !important;
   }
 
   .about-photo-col {
     order: -1 !important;
     flex: 0 0 auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 1.25rem !important;
   }
 
+  /* Not full-bleed: inset, rounded, framed with the same corner-bracket accent
+     the desktop layout already uses — was previously stripped to an edge-to-edge
+     square-cornered photo on mobile only. */
   .about-photo-col .founder-frame-wrapper {
-    padding: 0 !important;
+    padding: 10px !important;
+    margin-top: 16px !important;
   }
 
   .about-photo-col .founder-corner-bracket {
-    display: none !important;
+    display: block !important;
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .about-photo-col .bracket-top-left {
+    border-top-width: 3px !important;
+    border-left-width: 3px !important;
+  }
+
+  .about-photo-col .bracket-bottom-right {
+    border-bottom-width: 3px !important;
+    border-right-width: 3px !important;
   }
 
   .about-photo-box {
     height: auto !important;
     aspect-ratio: 4 / 3;
-    border-radius: 0 !important;
-    box-shadow: none !important;
+    border-radius: 4px !important;
+    box-shadow: 0 12px 32px rgba(0, 56, 83, 0.1) !important;
   }
 
   .about-content-col {
@@ -2722,19 +2658,6 @@
 
 
 @media (max-width: 640px) {
-  .hero-slider-section {
-    min-height: auto !important;
-  }
-
-  .hero-content-wrapper {
-    padding-top: 1.9rem !important;
-    padding-bottom: 4.5rem !important;
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-    min-height: auto !important;
-    height: auto !important;
-  }
-
   .hero-text-block {
     margin-top: 0 !important;
   }
@@ -3738,8 +3661,7 @@
 
 .field-updates-section {
   width: 100%;
-  background-color: #FAF8F5;
-  background-image: url('../../assets/double-bubble-outline.png');
+  background-color: #fff9eb;
   background-repeat: repeat;
   background-position: center;
   padding: 5.5rem 0 6rem;
@@ -3749,9 +3671,12 @@
 }
 
 .field-updates-container {
-  max-width: 1400px;
+  /* Matches every other homepage section's container (1240px + 1.5rem side
+     padding) — this one was wider (1400px/2rem) and visibly overran the
+     sections above and below it. */
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -3830,35 +3755,19 @@
   transform: scale(0.95);
 }
 
-/* Horizontal Card Carousel Slider Track */
+/* Card Grid — every card visible at once, no scrolling */
 .field-slider-track {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding-top: 20px;
-  margin-top: -20px;
-  padding-bottom: 2.5rem;
-  margin-bottom: -1.5rem;
-  padding-left: 0.5rem;
-  padding-right: 2rem;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.field-slider-track::-webkit-scrollbar {
-  display: none;
 }
 
 /* Base Card Style */
 .field-card {
-  flex: 0 0 350px;
-  height: 500px;
+  height: 420px;
   border-radius: 26px;
   overflow: hidden;
   position: relative;
-  scroll-snap-align: start;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -4015,7 +3924,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2rem 1.85rem;
+  padding: 1rem 1.85rem;
   z-index: 2;
   pointer-events: none;
 }
@@ -4023,7 +3932,7 @@
 .field-photo-title {
   color: #ffffff;
   font-family: var(--font-noto-serif), Georgia, serif !important;
-  font-size: 1.55rem;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -4041,17 +3950,12 @@
     font-size: 1.85rem !important;
   }
 
+  .field-slider-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .field-card {
-    flex: 0 0 310px;
-    height: 450px;
-  }
-
-  .field-featured-card {
-    padding: 1.85rem 1.65rem;
-  }
-
-  .field-featured-title {
-    font-size: 1.5rem;
+    height: 380px;
   }
 }
 
@@ -4071,18 +3975,17 @@
     font-size: 2rem;
   }
 
+  .field-slider-track {
+    grid-template-columns: 1fr;
+  }
+
   .field-card {
-    flex: 0 0 280px;
-    height: 420px;
+    height: 340px;
     border-radius: 22px;
   }
 
   .field-photo-title {
     font-size: 1.35rem;
-  }
-
-  .field-header-controls {
-    display: none;
   }
 
   .field-updates-section {

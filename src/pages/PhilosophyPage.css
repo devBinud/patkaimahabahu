@@ -97,7 +97,7 @@
 }
 
 .faq-icon-question {
-  color: #6f9e98;
+  color: var(--primary);
   font-size: 1.25rem;
   flex-shrink: 0;
 }

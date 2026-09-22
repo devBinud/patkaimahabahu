@@ -85,7 +85,7 @@
   font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
   font-size: 1.3rem;
   font-weight: 500;
-  color: #005C8A;
+  color: #3475bb;
   margin: 0 0 24px 0;
   letter-spacing: -0.015em;
   text-align: left;
@@ -194,7 +194,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #005C8A;
+  color: #3475bb;
   font-weight: 400;
   font-size: 1.05rem;
   text-decoration: none;
@@ -260,7 +260,7 @@
   font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
   font-size: 13.5px;
   font-weight: 600;
-  color: #003853;
+  color: #34393b;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
