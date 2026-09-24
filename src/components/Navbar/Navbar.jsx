@@ -177,9 +177,9 @@ export default function Navbar() {
               <span>+91 70028 08115</span>
             </a>
             <span className="topbar-vertical-divider"></span>
-            <a href="mailto:contact@patkaimahabahu.org" className="email-fullheight-link">
-              <FaEnvelope size={11} />
-              <span>contact@patkaimahabahu.org</span>
+            <a href="mailto:contact@patkaimahabahu.org" className="email-fullheight-link" title="contact@patkaimahabahu.org">
+              <FaEnvelope size={11} className="topbar-email-icon" />
+              <span className="topbar-email-text">contact@patkaimahabahu.org</span>
             </a>
           </div>
 
@@ -371,8 +371,8 @@ export default function Navbar() {
       <div className="latest-ticker-bar">
         <div className="ticker-container">
           <div className="ticker-badge">
-            <FaBullhorn size={11} />
-            <span>LATEST</span>
+            <FaBullhorn size={11} className="ticker-badge-icon" />
+            <span className="ticker-badge-text">Latest</span>
           </div>
           <div className="ticker-content-wrapper">
             <div className="ticker-text-track">

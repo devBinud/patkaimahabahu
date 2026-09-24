@@ -449,7 +449,7 @@ export default function HomePage() {
             <div className="about-supporters-col reveal" style={{ '--reveal-i': 1 }}>
               <div className="top-supporters-card">
                 {/* Header: Eyebrow + Verified Donors Pill */}
-                <h3 className="supporters-card-title">Our Supporters</h3>
+                <h3 className="supporters-card-title">Kind Contributors</h3>
 
                 {/* Supporters List from actual foundation records */}
                 <div className="supporters-list">
@@ -471,7 +471,7 @@ export default function HomePage() {
                 {/* Card Footer: Unified Site-wide PMF Button */}
                 <div className="supporters-card-footer">
                   <Link to="/contribution" className="pmf-btn pmf-btn-fill supporters-full-cta">
-                    <span>View All 1,072 Supporters</span>
+                    <span>View all Contributors</span>
                     <span className="pmf-btn-icon">↗</span>
                   </Link>
                 </div>

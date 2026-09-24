@@ -243,19 +243,19 @@ export default function Footer() {
 
             <div className="rf-social-icons">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rf-social-btn">
-                <FaFacebookF size={14} />
+                <FaFacebookF size={16} />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter X" className="rf-social-btn">
-                <FaXTwitter size={14} />
+                <FaXTwitter size={16} />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rf-social-btn">
-                <FaLinkedinIn size={14} />
+                <FaLinkedinIn size={16} />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rf-social-btn">
-                <FaInstagram size={14} />
+                <FaInstagram size={16} />
               </a>
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="rf-social-btn">
-                <FaYoutube size={14} />
+                <FaYoutube size={16} />
               </a>
             </div>
           </div>
