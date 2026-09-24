@@ -373,9 +373,9 @@
     border: none !important;
     outline: none !important;
     font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
-    font-size: 1.05rem !important;
-    font-weight: 600 !important;
-    color: #003853 !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #3e3a3a !important;
     text-align: left;
     cursor: pointer;
   }
@@ -439,9 +439,9 @@
     display: block;
     padding: 1.15rem 0 !important;
     font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
-    font-size: 1.05rem !important;
-    font-weight: 600 !important;
-    color: #003853 !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #3e3a3a !important;
     text-decoration: none !important;
   }
 
