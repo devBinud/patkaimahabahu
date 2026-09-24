@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import {
   FaChevronRight,
@@ -14,15 +14,20 @@ import {
   FaGraduationCap,
   FaSeedling,
   FaHouseChimney,
-  FaHeartPulse
+  FaHeartPulse,
+  FaArrowRight,
+  FaHandHoldingHeart
 } from 'react-icons/fa6'
 
-
+import heroSlide1 from '../../assets/hero/1.jpeg'
+import heroSlide2 from '../../assets/hero/2.jpeg'
+import heroSlide3 from '../../assets/hero/3.jpeg'
+import heroSlide4 from '../../assets/hero/4.jpeg'
 import heroImg from '../../assets/hero/hero.jpg'
 
+import cashContributorsData from '../../data/cashContributors.json'
 
 import pranabImg from '../../assets/pranab.jpeg'
-import floodReliefDeliveredImg from '../../assets/fld_home.jpeg'
 import homeJoinUsImg from '../../assets/home_joinus.jpeg'
 import gallery1 from '../../assets/gallery/1.jpeg'
 import gallery2 from '../../assets/gallery/2.jpeg'
@@ -64,6 +69,123 @@ export default function HomePage() {
   const rootRef = useRef(null);
 
   useScrollReveal(rootRef);
+
+  // Real community supporters from official cash donation records (5 records)
+  const topSupporters = useMemo(() => {
+    return [...cashContributorsData]
+      .sort((a, b) => (b.amount || 0) - (a.amount || 0))
+      .slice(0, 5);
+  }, []);
+
+  // Hero Slider data and logic
+  const originalSlides = [
+    {
+      id: 1,
+      image: heroSlide1,
+      alt: 'Community Flood Relief Drive distribution team with banner and local residents in Assam',
+      position: 'center 38%',
+    },
+    {
+      id: 2,
+      image: heroSlide2,
+      alt: 'Flood relief materials distribution program by Patkai Mahabahu Foundation and PWD',
+      position: 'center 30%',
+    },
+    {
+      id: 3,
+      image: heroSlide3,
+      alt: 'Emergency night relief supply distribution to flood displaced families',
+      position: 'center 40%',
+    },
+    {
+      id: 4,
+      image: heroSlide4,
+      alt: 'Relief distribution and shelter community support in Assam',
+      position: 'center 42%',
+    },
+  ];
+
+  // Infinite seamless slider array: [clone-last, 1, 2, 3, 4, clone-first]
+  const extendedSlides = [
+    { ...originalSlides[3], cloneKey: 'clone-last' },
+    ...originalSlides,
+    { ...originalSlides[0], cloneKey: 'clone-first' },
+  ];
+
+  const [activeSlideIndex, setActiveSlideIndex] = useState(1);
+  const [withTransition, setWithTransition] = useState(true);
+  const heroTouchStartX = useRef(null);
+  const isJumpingRef = useRef(false);
+
+  // Derive current dot index (0, 1, 2, 3)
+  const currentDotIndex = (activeSlideIndex - 1 + originalSlides.length) % originalSlides.length;
+
+  const handleNextSlide = () => {
+    if (isJumpingRef.current) return;
+    setWithTransition(true);
+    setActiveSlideIndex((prev) => prev + 1);
+  };
+
+  const handlePrevSlide = () => {
+    if (isJumpingRef.current) return;
+    setWithTransition(true);
+    setActiveSlideIndex((prev) => prev - 1);
+  };
+
+  // Auto-advance hero slides continuously every 2.8 seconds
+  useEffect(() => {
+    const slideTimer = setInterval(() => {
+      handleNextSlide();
+    }, 2800);
+    return () => clearInterval(slideTimer);
+  }, []);
+
+  const handleDotClick = (dotIdx) => {
+    setWithTransition(true);
+    setActiveSlideIndex(dotIdx + 1);
+  };
+
+  const handleTransitionEnd = (e) => {
+    if (e && e.target !== e.currentTarget) return;
+    if (activeSlideIndex >= extendedSlides.length - 1) {
+      // Reached trailing clone of slide 1 -> jump invisibly to real slide 1
+      isJumpingRef.current = true;
+      setWithTransition(false);
+      setActiveSlideIndex(1);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          isJumpingRef.current = false;
+          setWithTransition(true);
+        });
+      });
+    } else if (activeSlideIndex <= 0) {
+      // Reached leading clone of slide 4 -> jump invisibly to real slide 4
+      isJumpingRef.current = true;
+      setWithTransition(false);
+      setActiveSlideIndex(originalSlides.length);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          isJumpingRef.current = false;
+          setWithTransition(true);
+        });
+      });
+    }
+  };
+
+  const handleHeroTouchStart = (e) => {
+    heroTouchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleHeroTouchEnd = (e) => {
+    if (heroTouchStartX.current === null) return;
+    const diff = heroTouchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 40) {
+      handleNextSlide();
+    } else if (diff < -40) {
+      handlePrevSlide();
+    }
+    heroTouchStartX.current = null;
+  };
 
   const focusAreas = [
     {
@@ -243,40 +365,51 @@ export default function HomePage() {
 
   return (
     <div className="homepage-animated-root" ref={rootRef}>
-      {/* Hero Section — split layout: text panel + photo panel */}
-      <section className="hero-full-section hero-split-section">
-        <div className="hero-split-container">
-
-          {/* Text Panel */}
-          <div className="hero-split-text-panel">
-            <div className="hero-text-block reveal">
-              <h1 className="hero-main-title">
-                <span className="hero-title-teal">Reaching Every</span><br />
-                <span className="hero-title-bold">Flood Affected Family</span>
-              </h1>
-
-              <p className="hero-banner-desc">
-                Emergency ration kits, clean water and essential supplies delivered directly to families displaced by the Assam floods, village by village.
-              </p>
-
-              <div className="hero-banner-buttons">
-                <Link to="/contribution" className="hero-donate-btn pmf-btn pmf-btn-fill">
-                  <span>Donate Now</span>
-                  <span className="pmf-btn-icon">↗</span>
-                </Link>
+      {/* Hero Image Slider Section (Smooth Modern Infinite Slide) */}
+      <section
+        className="hero-slider-section"
+        aria-label="Hero Highlights Banner"
+        onTouchStart={handleHeroTouchStart}
+        onTouchEnd={handleHeroTouchEnd}
+      >
+        <div className="hero-slider-container">
+          <div
+            className={`hero-slider-track ${withTransition ? 'with-transition' : ''}`}
+            style={{ transform: `translate3d(-${activeSlideIndex * 100}%, 0, 0)` }}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            {extendedSlides.map((slide, index) => (
+              <div
+                key={slide.cloneKey || slide.id}
+                className={`hero-slide-item ${index === activeSlideIndex ? 'active' : ''}`}
+                aria-hidden={index !== activeSlideIndex}
+              >
+                <img
+                  src={slide.image}
+                  alt={slide.alt}
+                  className="hero-slide-img"
+                  style={{ objectPosition: slide.position }}
+                  loading={index <= 2 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
               </div>
-            </div>
+            ))}
           </div>
 
-          {/* Photo Panel */}
-          <div className="hero-split-image-panel">
-            <img
-              src={heroImg}
-              alt="Volunteers evacuating stranded families by boat through flooded villages in Assam"
-              className="hero-split-img"
-            />
+          {/* Bottom Pagination Dots Bar with Modern Expanding Pill */}
+          <div className="hero-slider-dots-bar" role="tablist" aria-label="Slide indicators">
+            {originalSlides.map((slide, index) => (
+              <button
+                key={slide.id}
+                type="button"
+                role="tab"
+                aria-selected={index === currentDotIndex}
+                aria-label={`Go to slide ${index + 1}`}
+                className={`hero-dot-indicator ${index === currentDotIndex ? 'active' : ''}`}
+                onClick={() => handleDotClick(index)}
+              />
+            ))}
           </div>
-
         </div>
       </section>
 
@@ -312,19 +445,35 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column (Desktop) / Top (Mobile via order:-1): Photo Frame with Decorative Corner Brackets */}
-            <div className="about-photo-col reveal" style={{ '--reveal-i': 1 }}>
-              <div className="founder-frame-wrapper">
-                <div className="founder-corner-bracket bracket-top-left" aria-hidden="true"></div>
-                <div className="founder-corner-bracket bracket-bottom-right" aria-hidden="true"></div>
+            {/* Right Column: Modern Top Contributors Card (Patkai Brand Palette) */}
+            <div className="about-supporters-col reveal" style={{ '--reveal-i': 1 }}>
+              <div className="top-supporters-card">
+                {/* Header: Eyebrow + Verified Donors Pill */}
+                <h3 className="supporters-card-title">Our Supporters</h3>
 
-                <div className="founder-photo-box about-photo-box">
-                  <img
-                    src={floodReliefDeliveredImg}
-                    alt="Flood relief delivered directly to families across Assam"
-                    className="founder-photo-img"
-                    loading="lazy"
-                  />
+                {/* Supporters List from actual foundation records */}
+                <div className="supporters-list">
+                  {topSupporters.map((supporter, idx) => (
+                    <div key={supporter.id || idx} className="supporter-row">
+                      <div className="supporter-left">
+                        <div className="supporter-meta">
+                          <h4 className="supporter-name">{supporter.name}</h4>
+                          <span className="supporter-subtitle">Verified Contributors</span>
+                        </div>
+                      </div>
+                      <div className="supporter-amount">
+                        ₹{supporter.amount?.toLocaleString('en-IN')}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Card Footer: Unified Site-wide PMF Button */}
+                <div className="supporters-card-footer">
+                  <Link to="/contribution" className="pmf-btn pmf-btn-fill supporters-full-cta">
+                    <span>View All 1,072 Supporters</span>
+                    <span className="pmf-btn-icon">↗</span>
+                  </Link>
                 </div>
               </div>
             </div>

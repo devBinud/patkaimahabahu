@@ -30,157 +30,146 @@
 }
 
 /* ============================================
-   Hero — split layout: text panel + photo panel
+   Hero Image Slider (Reference Portal Style)
+   Full-width edge-to-edge carousel with circular
+   arrows and centered bottom pagination dots
    ============================================ */
-.hero-split-section {
+.hero-slider-section {
   width: 100%;
+  position: relative;
+  background-color: #0b1520;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
   margin-bottom: 0 !important;
 }
 
-.hero-split-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 620px;
-  width: 100%;
-}
-
-.hero-split-text-panel {
-  display: flex;
-  align-items: center;
-  /* Was referencing --color-primary-50 / --color-surface, tokens that don't
-     exist in this file's palette — the gradient silently failed and the
-     panel rendered plain transparent. Using the site's own accent-light. */
-  background: linear-gradient(160deg, #aadafb 0%, #ffffff 70%);
-  /* Left edge matches where the site's standard 1240px centered container
-     (used by the nav logo and every section below) actually lands, instead
-     of a flat 3rem that landed short of it and looked misaligned. */
-  padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1240px) / 2));
-  box-sizing: border-box;
-}
-
-.hero-split-text-panel .hero-text-block {
-  max-width: 460px;
-}
-
-.hero-eyebrow {
-  display: inline-block;
-  font-family: var(--font-body), sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  /* Was var(--color-primary) / var(--color-primary-100) — undefined tokens,
-     same issue as the panel background above. */
-  color: var(--primary, #005C8A);
-  background: #E6F1FC;
-  padding: 0.4rem 0.9rem;
-  border-radius: 9999px;
-  margin-bottom: 1.35rem;
-}
-
-.hero-split-image-panel {
+.hero-slider-container {
   position: relative;
-  min-height: 620px;
+  width: 100%;
+  height: 420px;
+  max-height: 70vh;
   overflow: hidden;
 }
 
-.hero-split-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+@media (min-width: 1440px) {
+  .hero-slider-container {
+    height: 460px;
+  }
 }
 
-/* Below 960px: not a side-by-side split anymore — the photo becomes a
-   full-bleed background with text and button overlaid on top of it
-   (the classic single-hero treatment), rather than stacking the text
-   panel and the photo as two separate blocks. */
-@media (max-width: 960px) {
-  .hero-split-container {
-    display: block;
-    position: relative;
-    min-height: 560px;
-    min-height: 78svh;
+@media (max-width: 1024px) {
+  .hero-slider-container {
+    height: 360px;
   }
+}
 
-  .hero-split-image-panel {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 0;
-    z-index: 1;
-  }
-
-  .hero-split-image-panel::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg,
-        rgba(0, 24, 38, 0.1) 0%,
-        rgba(0, 30, 48, 0.3) 40%,
-        rgba(0, 24, 38, 0.82) 75%,
-        rgba(0, 20, 34, 0.95) 100%);
-    pointer-events: none;
-  }
-
-  .hero-split-text-panel {
-    position: relative;
-    z-index: 2;
-    background: transparent;
-    min-height: 560px;
-    min-height: 78svh;
-    display: flex;
-    align-items: flex-end;
-    padding: 2rem 1.5rem 2.5rem;
-  }
-
-  .hero-split-text-panel .hero-text-block {
-    max-width: 100%;
-    width: 100%;
-    text-align: center;
-  }
-
-  .hero-eyebrow {
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-
-  .hero-split-text-panel .hero-main-title {
-    color: #ffffff;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
-  }
-
-  .hero-split-text-panel .hero-title-teal {
-    color: #BAE6FD;
-  }
-
-  .hero-split-text-panel .hero-title-bold {
-    color: #ffffff;
-  }
-
-  .hero-split-text-panel .hero-banner-desc {
-    color: rgba(255, 255, 255, 0.92);
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-  }
-
-  .hero-banner-buttons {
-    justify-content: center;
+@media (max-width: 768px) {
+  .hero-slider-container {
+    height: 280px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-split-container {
-    min-height: 520px;
+  .hero-slider-container {
+    height: 210px;
+  }
+}
+
+.hero-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.hero-slider-track.with-transition {
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-slide-item {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: #0b1520;
+}
+
+.hero-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.hero-slide-item.active .hero-slide-img {
+  transform: scale(1.025);
+}
+
+/* Bottom Pagination Dots Bar with Modern Expanding Pill */
+.hero-slider-dots-bar {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+  padding: 3.5px 7px;
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-dot-indicator {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-dot-indicator:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: scale(1.15);
+}
+
+.hero-dot-indicator.active {
+  width: 6px;
+  height: 6px;
+  background: #3475bb;
+  box-shadow: 0 0 6px rgba(52, 117, 187, 0.9);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .hero-slider-dots-bar {
+    bottom: 10px;
+    gap: 5px;
+    padding: 3px 6px;
   }
 
-  .hero-split-text-panel {
-    min-height: 520px;
-    padding: 1.75rem 1.25rem 2rem;
+  .hero-dot-indicator {
+    width: 5.5px;
+    height: 5.5px;
+  }
+
+  .hero-dot-indicator.active {
+    width: 5.5px;
+    height: 5.5px;
   }
 }
 
@@ -293,7 +282,7 @@
    white/pale-blue for on-photo legibility. */
 .hero-title-teal {
   font-weight: 500;
-  color:#2B2B2B;
+  color: #2B2B2B;
 }
 
 .hero-title-bold {
@@ -802,18 +791,225 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4.5rem;
+  gap: 3.5rem;
   width: 100%;
 }
 
-.about-photo-col {
-  flex: 0 0 380px;
+.about-content-col {
+  flex: 1 1 auto;
+  max-width: 620px;
+}
+
+.about-supporters-col {
+  flex: 0 0 450px;
   max-width: 100%;
 }
 
-.about-content-col {
-  flex: 1 1 58%;
-  max-width: 660px;
+/* =========================================================
+   Top Contributors Card (Community of Giving - PMF Brand Palette)
+   ========================================================= */
+.top-supporters-card {
+  background: #ffffff;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 1.45rem 0 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 56, 83, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
+  border: 1px solid #E2E8F0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.supporters-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.15rem;
+  padding: 0 1.5rem;
+}
+
+.supporters-card-eyebrow {
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3475bb;
+}
+
+.supporters-donations-pill {
+  background: #EBF4FA;
+  color: #005C8A;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(52, 117, 187, 0.15);
+}
+
+.donor-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #48A047;
+  box-shadow: 0 0 0 0 rgba(72, 160, 71, 0.6);
+  animation: donor-pulse 2s infinite;
+}
+
+@keyframes donor-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(72, 160, 71, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 5px rgba(72, 160, 71, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(72, 160, 71, 0);
+  }
+}
+
+.supporters-card-title {
+  font-family: var(--font-noto-serif), sans-serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: #2B2B2B;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0.2rem 0 0.95rem;
+  padding: 0 1.5rem;
+}
+
+.supporters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.supporter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.62rem 1.5rem;
+  border-top: 1px solid #EDF2F7;
+  border-radius: 0;
+  gap: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.supporter-row:first-child {
+  border-top: none;
+}
+
+.supporter-row:last-child {
+  border-bottom: none;
+}
+
+.supporter-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.supporter-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #edc974;
+  color: #3475bb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.supporter-icon {
+  font-size: 0.95rem;
+  color: #edc974;
+}
+
+.supporter-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.supporter-name {
+  font-family: var(--font-geist, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #005C8A;
+  margin: 0;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.supporter-subtitle {
+  font-family: var(--font-noto-sans), sans-serif;
+  font-size: 0.72rem;
+  color: #64748B;
+  margin-top: 1px;
+  font-weight: 400;
+}
+
+.supporter-amount {
+  font-family: var(--font-noto-sans, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #005C8A;
+  white-space: nowrap;
+  letter-spacing: -0.015em;
+  flex-shrink: 0;
+  text-align: right;
+  margin-left: 0.5rem;
+}
+
+.supporters-card-footer {
+  border-top: none;
+  padding: 1.1rem 1.5rem 0.15rem;
+  margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.supporters-full-cta {
+  width: 100% !important;
+  justify-content: center !important;
+  font-size: 0.85rem !important;
+  padding: 0.5rem 1.3rem !important;
+  height: auto !important;
+}
+
+@media (max-width: 1080px) {
+  .about-grid {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .about-content-col {
+    max-width: 100%;
+  }
+
+  .about-supporters-col {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 580px;
+  }
 }
 
 .about-photo-box {
@@ -2164,46 +2360,57 @@
        without stretch the photo column shrinks to its content instead of
        filling the inset width (same issue hit fixing the hero earlier). */
     align-items: stretch !important;
-    gap: 1.5rem !important;
+    gap: 2rem !important;
   }
 
-  .about-photo-col {
-    order: -1 !important;
-    flex: 0 0 auto !important;
-    width: auto !important;
-    max-width: none !important;
-    margin: 0 1.25rem !important;
+  .about-supporters-col {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1.25rem !important;
   }
 
-  /* Not full-bleed: inset, rounded, framed with the same corner-bracket accent
-     the desktop layout already uses — was previously stripped to an edge-to-edge
-     square-cornered photo on mobile only. */
-  .about-photo-col .founder-frame-wrapper {
-    padding: 10px !important;
-    margin-top: 16px !important;
+  .top-supporters-card {
+    padding: 1.15rem 0 1rem !important;
+    border-radius: 18px !important;
+    margin-top: 20px;
   }
 
-  .about-photo-col .founder-corner-bracket {
-    display: block !important;
-    width: 26px !important;
-    height: 26px !important;
+  .supporters-card-header,
+  .supporters-card-title {
+    padding: 0 1.15rem !important;
   }
 
-  .about-photo-col .bracket-top-left {
-    border-top-width: 3px !important;
-    border-left-width: 3px !important;
+  .supporters-card-title {
+    font-size: 1.8rem !important;
+    margin: 0.2rem 0 1rem !important;
   }
 
-  .about-photo-col .bracket-bottom-right {
-    border-bottom-width: 3px !important;
-    border-right-width: 3px !important;
+  .supporter-row {
+    padding: 0.65rem 1.15rem !important;
+    gap: 0.65rem !important;
   }
 
-  .about-photo-box {
-    height: auto !important;
-    aspect-ratio: 4 / 3;
-    border-radius: 4px !important;
-    box-shadow: 0 12px 32px rgba(0, 56, 83, 0.1) !important;
+  .supporter-name {
+    font-size: 0.88rem !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .supporter-subtitle {
+    font-size: 0.68rem !important;
+  }
+
+  .supporter-amount {
+    font-size: 0.92rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .supporters-card-footer {
+    border-top: none !important;
+    padding: 0.95rem 1.15rem 0.15rem !important;
   }
 
   .about-content-col {
@@ -3544,7 +3751,7 @@
 }
 
 .why-choose-title {
-  font-size: clamp(2rem, 3.2vw, 2.75rem) !important;
+  font-size: 2.5rem !important;
   font-weight: 500;
   color: #ffffff;
   font-family: var(--font-noto-serif), sans-serif;

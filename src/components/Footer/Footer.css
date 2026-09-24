@@ -252,53 +252,43 @@
   transform: none !important;
 }
 
-/* Bottom Horizontal Copyright Bar */
-.rf-footer-bottom {
-  padding: 1rem 2rem;
-  background-color: #003853;
-  position: relative;
-  z-index: 2;
+/* Desktop Footer Bottom Bar (Single clean unified line - desktop only) */
+.rf-footer-bottom-desktop {
+  display: none !important;
 }
 
-.rf-bottom-content {
-  max-width: 1320px;
-  margin: 0 auto;
-  text-align: center;
+@media (min-width: 769px) {
+  .rf-footer-bottom-desktop {
+    display: block !important;
+    padding: 1.35rem 2rem;
+    background-color: transparent;
+    border-top: 1px solid #e8f7ff;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
-.rf-copyright-text {
+.rf-mobile-bottom-wrap {
+  display: none !important;
+}
+
+.rf-desktop-copyright-text {
   margin: 0;
   font-size: 0.85rem;
-  /* This bar's background is dark navy (#003853) — the old #64748B gray was
-     tuned for a white background and was nearly unreadable here. */
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.7;
-  font-family: var(--font-sans)
+  color: #64748B;
+  font-family: var(--font-sans);
+  line-height: 1.5;
 }
 
-.rf-copyright-text a {
-  color: rgba(255, 255, 255, 0.9) !important;
-  text-decoration: none !important;
+.rf-dev-link-desktop {
+  color: #3475bb !important;
+  font-weight: 600 !important;
   transition: color 0.2s ease;
 }
 
-.rf-copyright-text a:hover {
-  color: #E58325 !important;
-  text-decoration: underline !important;
-}
-
-.rf-sep {
-  margin: 0 0.65rem;
-  color: rgba(255, 255, 255, 0.35);
-}
-
-.rf-dev-link {
-  color: #ffffff !important;
-  font-weight: 600 !important;
-}
-
-.rf-dev-link:hover {
-  color: #E58325 !important;
+.rf-dev-link-desktop:hover {
+  color: #3475bb !important;
 }
 
 .rf-reg-bottom-text {
@@ -378,13 +368,13 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 1.15rem 0.25rem;
+    padding: 1.15rem 0 !important;
     background: transparent !important;
     border: none !important;
     outline: none !important;
     font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
-    font-size: 1.01rem !important;
-    font-weight: 500 !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
     color: #003853 !important;
     text-align: left;
     cursor: pointer;
@@ -413,25 +403,32 @@
   }
 
   .rf-accordion-links {
-    list-style: none;
-    margin: 0;
-    padding: 0.25rem 0.5rem 0.5rem;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0.35rem 0 0.85rem 0 !important;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
+  }
+
+  .rf-accordion-links li {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .rf-accordion-links li a {
     color: #475569 !important;
-    font-size: 0.92rem !important;
+    font-size: 0.94rem !important;
     text-decoration: none !important;
     display: block;
+    margin: 0 !important;
+    padding: 0 !important;
     transition: color 0.2s ease;
-    line-height: 1.4;
+    line-height: 1.45;
   }
 
   .rf-accordion-links li a:hover {
-    color: #005C8A !important;
+    color: #3475bb !important;
   }
 
   .rf-direct-item {
@@ -440,16 +437,16 @@
 
   .rf-direct-link {
     display: block;
-    padding: 1.15rem 0.25rem;
+    padding: 1.15rem 0 !important;
     font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
-    font-size: 1.01rem !important;
+    font-size: 1.05rem !important;
     font-weight: 600 !important;
     color: #003853 !important;
     text-decoration: none !important;
   }
 
   .rf-direct-link:hover {
-    color: #005C8A !important;
+    color: #3475bb !important;
   }
 
   .rf-mobile-brand-section {
@@ -488,7 +485,7 @@
   .rf-mobile-brand-section .rf-brand-english {
     font-size: 1rem;
     font-weight: 600;
-    color: #005C8A;
+    color: var(--primary);
   }
 
   .rf-mobile-brand-section .rf-social-icons {
@@ -511,44 +508,53 @@
     text-decoration: none !important;
   }
 
-  .rf-footer-bottom {
+  .rf-footer-bottom-desktop {
+    display: none !important;
+  }
+
+  .rf-mobile-bottom-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .rf-patkai-copyright {
+    padding: 1.25rem 1rem 1rem !important;
     border-top: 1px solid #E6ECEF !important;
+    text-align: center !important;
+    background-color: transparent !important;
+  }
+
+  .rf-patkai-copyright-text {
+    font-size: 0.8rem !important;
+    color: #64748B !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  .rf-dev-credits-bar {
     margin-left: -1.25rem !important;
     margin-right: -1.25rem !important;
-    margin-top: 1.15rem !important;
-    padding: 1.15rem 1.25rem calc(1.15rem + env(safe-area-inset-bottom, 0px)) !important;
-    background-color: transparent !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0.85rem 1.25rem calc(1.75rem + env(safe-area-inset-bottom, 0px)) !important;
+    background-color: #3475bb !important;
+    width: calc(100% + 2.5rem) !important;
     box-sizing: border-box !important;
+    text-align: center !important;
   }
 
-  .rf-copyright-text {
-    font-size: 0.8rem;
-    line-height: 1.7;
-    text-align: center;
-    /* This bar's background goes transparent on mobile (sits on the white
-       footer card above, not the dark bar desktop uses) — the white text
-       tuned for the desktop navy bar would be invisible here. */
-    color: #64748B;
+  .rf-dev-credits-text {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    margin: 0 !important;
   }
 
-  .rf-copyright-text a {
-    color: #334155 !important;
-  }
-
-  .rf-copyright-text a:hover {
-    color: var(--primary, #005C8A) !important;
-  }
-
-  .rf-sep {
-    margin: 0 0.35rem;
-    color: #CBD5E1;
-  }
-
+  .rf-dev-credits-text a,
   .rf-dev-link {
-    color: var(--primary, #005C8A) !important;
-  }
-
-  .rf-dev-link:hover {
-    color: #E58325 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
   }
 }

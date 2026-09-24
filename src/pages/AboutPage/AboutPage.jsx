@@ -14,6 +14,7 @@ import nipulImg from '../../assets/team/nipul_borthakur.jpeg'
 import kamaljyotiImg from '../../assets/team/lamaljyoti_gogoi.jpeg'
 import shiromoniImg from '../../assets/team/shiromoni_bhuyan.jpeg'
 
+
 // Ground Team Images
 import pallabiImg from '../../assets/team/pallabi_rajkumari.jpeg'
 import kalpanaImg from '../../assets/team/kalpana_gogoi.png'
