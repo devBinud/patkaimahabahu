@@ -81,12 +81,12 @@
 
 /* Signature Amber/Gold Theme - applied consistently to every card */
 .person-testimonials-card.theme-amber {
-  background: #FFE7AB !important;
+  background: #fbefd2 !important;
   border: none;
 }
 
 .person-testimonials-card.theme-amber .person-testimonial-tag {
-  color: #a35f38;
+  color: #dd8552;
 }
 
 .person-testimonials-card.theme-amber .person-testimonial-quote {

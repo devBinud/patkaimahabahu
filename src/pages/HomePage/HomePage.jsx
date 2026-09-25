@@ -621,7 +621,7 @@ export default function HomePage() {
               />
               <div className="field-photo-gradient" aria-hidden="true" />
               <div className="field-photo-body">
-                <h3 className="field-photo-title">Household Support</h3>
+                <h3 className="field-photo-title">Ground Execution Planning</h3>
               </div>
             </Link>
 
@@ -635,7 +635,7 @@ export default function HomePage() {
               />
               <div className="field-photo-gradient" aria-hidden="true" />
               <div className="field-photo-body">
-                <h3 className="field-photo-title">Village Distribution</h3>
+                <h3 className="field-photo-title">Relief Distribution</h3>
               </div>
             </Link>
 
@@ -663,7 +663,7 @@ export default function HomePage() {
               />
               <div className="field-photo-gradient" aria-hidden="true" />
               <div className="field-photo-body">
-                <h3 className="field-photo-title">Project Home Rehab</h3>
+                <h3 className="field-photo-title">Patkai Project Home</h3>
               </div>
             </Link>
 
@@ -677,7 +677,7 @@ export default function HomePage() {
               />
               <div className="field-photo-gradient" aria-hidden="true" />
               <div className="field-photo-body">
-                <h3 className="field-photo-title">Relief Distribution</h3>
+                <h3 className="field-photo-title">Support Where It Matters</h3>
               </div>
             </Link>
           </div>

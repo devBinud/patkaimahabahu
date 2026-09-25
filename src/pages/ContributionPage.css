@@ -42,6 +42,16 @@
   letter-spacing: -0.015em;
 }
 
+.disaster-title-dark {
+  color: #2B2B2B;
+  font-family: var(--font-noto-serif);
+}
+
+.disaster-title-primary {
+  font-family: var(--font-noto-serif);
+  color: var(--primary);
+}
+
 .disaster-page-subtitle {
   font-size: 1rem;
   color: #64748b;
@@ -51,6 +61,7 @@
 
 .disaster-narrative-text {
   max-width: 1050px;
+  padding-top: 10px;
 }
 
 .disaster-lead-p {

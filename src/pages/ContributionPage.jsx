@@ -84,11 +84,9 @@ export default function ContributionPage() {
           {/* 1. Header & Lead Narrative */}
           <section className="disaster-intro-block">
             <h1 className="disaster-page-title">
-              Flood Disaster Relief & Response: Saraideu, Sivasagar & Jorhat
+              <span className="disaster-title-dark">Flood Disaster Relief & Response</span>
+              <span className="disaster-title-primary">: Saraideu, Sivasagar & Jorhat</span>
             </h1>
-            <p className="disaster-page-subtitle">
-              Comprehensive ground relief operations, essential supply distribution, and humanitarian response active since 19 July.
-            </p>
 
             <div className="disaster-narrative-text">
               <p className="disaster-lead-p">
