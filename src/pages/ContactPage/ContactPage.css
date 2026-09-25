@@ -85,7 +85,7 @@
   font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
   font-size: 1.3rem;
   font-weight: 500;
-  color: #3475bb;
+  color: #2B2B2B;
   margin: 0 0 24px 0;
   letter-spacing: -0.015em;
   text-align: left;
@@ -374,29 +374,8 @@
 }
 
 .contact-submit-btn {
-  background-color: #FFE7AB;
-  color: #554d4d;
-  border: none;
-  border-radius: 9999px;
-  padding: 13px 48px;
-  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-submit-btn:hover:not(:disabled) {
-  background-color: #FCE096;
-  color: #3e3737;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  border: none;
 }
 
 .contact-submit-btn:disabled {

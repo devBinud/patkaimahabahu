@@ -146,7 +146,7 @@
 
 .news-block-title {
   font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
-  font-size: 2.15rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: #3e3a3a;
   line-height: 1.25;
@@ -539,15 +539,19 @@
   .news-block-title {
     font-size: 1.55rem !important;
   }
+
   .news-modal-title {
     display: none;
   }
+
   .news-modal-nav-prev {
     left: 0.5rem;
   }
+
   .news-modal-nav-next {
     right: 0.5rem;
   }
+
   .news-press-contact-card {
     flex-direction: column;
     align-items: stretch;

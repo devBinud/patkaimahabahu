@@ -314,15 +314,18 @@ export default function ContactPage() {
               <div className="contact-form-submit-row">
                 <button
                   type="submit"
-                  className="contact-submit-btn"
+                  className="contact-submit-btn pmf-btn pmf-btn-fill"
                   disabled={status === 'submitting'}
                 >
                   {status === 'submitting' ? (
                     <span className="btn-loading-flex">
-                      <FaSpinner className="spin-icon" /> SUBMITTING...
+                      <FaSpinner className="spin-icon" /> Submitting...
                     </span>
                   ) : (
-                    'SUBMIT'
+                    <>
+                      <span>Submit</span>
+                      <span className="pmf-btn-icon">↗</span>
+                    </>
                   )}
                 </button>
               </div>

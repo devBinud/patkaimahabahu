@@ -104,7 +104,7 @@
 }
 
 .rf-bold-link:hover {
-  color: #E58325 !important;
+  color: var(--primary, #005C8A) !important;
 }
 
 /* Column 5: Brand Block */

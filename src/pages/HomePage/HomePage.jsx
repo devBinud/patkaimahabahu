@@ -36,12 +36,12 @@ import gallery3 from '../../assets/gallery/3.jpeg'
 import gallery4 from '../../assets/gallery/4.jpeg'
 import gallery5 from '../../assets/gallery/5.jpeg'
 import gallery6 from '../../assets/gallery/6.jpeg'
-import gallery7 from '../../assets/gallery/7.jpeg'
-import gallery8 from '../../assets/gallery/8.jpeg'
+import gallery7 from '../../assets/fld_home.jpeg'
+import gallery8 from '../../assets/amealtogether.jpeg'
 import gallery9 from '../../assets/gallery/11.jpeg'
 import mainImg from '../../assets/main.jpeg'
 import rebuild1 from '../../assets/gallery/rebuilding_house_assessment/1.jpeg'
-import rebuild2 from '../../assets/gallery/rebuilding_house_assessment/2.jpeg'
+import rebuild2 from '../../assets/rebuildinghomes.jpeg'
 import rebuild3 from '../../assets/gallery/rebuilding_house_assessment/3.jpeg'
 import PersonTestimonials from '../../components/PersonTestimonials/PersonTestimonials'
 import useScrollReveal from '../../hooks/useScrollReveal'
@@ -649,7 +649,7 @@ export default function HomePage() {
               />
               <div className="field-photo-gradient" aria-hidden="true" />
               <div className="field-photo-body">
-                <h3 className="field-photo-title">Community Meals</h3>
+                <h3 className="field-photo-title">Food, Care and Togetherness</h3>
               </div>
             </Link>
 
