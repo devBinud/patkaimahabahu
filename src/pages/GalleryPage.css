@@ -510,10 +510,10 @@
   background: none;
   border: none;
   font-family: inherit;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #64748b;
-  padding: 0.65rem 0.25rem 0.95rem;
+  padding: 0.65rem 0.25rem 0.75rem;
   cursor: pointer;
   position: relative;
   transition: color 0.2s ease;
@@ -544,9 +544,9 @@
    ========================================== */
 .digitalindia-videos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 340px));
-  gap: 2rem;
-  justify-content: flex-start;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  width: 100%;
 }
 
 .digitalindia-video-card {
@@ -597,13 +597,13 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: #c25e00;
+  background: var(--primary, #005C8A);
   border: 2.5px solid #ffffff;
   box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
   z-index: 2;
   pointer-events: none;
 }
@@ -617,7 +617,7 @@
 
 .digitalindia-video-card:hover .digitalindia-play-badge {
   transform: translate(-50%, -50%);
-  background: #d86900;
+  background: var(--primary-dark, #004366);
   box-shadow: none;
 }
 
@@ -716,12 +716,12 @@
   }
 
   .digitalindia-videos-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 500px) {
   .gallery-tabs-container {
     margin-bottom: 1.5rem;
   }
@@ -730,7 +730,7 @@
     grid-template-columns: 1fr !important;
     max-width: 100%;
     margin: 0;
-    gap: 1.5rem !important;
+    gap: 1.25rem !important;
   }
 
   .digitalindia-play-badge {

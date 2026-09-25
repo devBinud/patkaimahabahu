@@ -4,9 +4,9 @@ import {
   FaYoutube,
   FaXTwitter,
   FaWhatsapp,
-  FaLinkedinIn,
-  FaCheck
+  FaLinkedinIn
 } from 'react-icons/fa6'
+import checklistIcon from '../assets/icons/checklist.png'
 import './SocialMediaPage.css'
 
 export default function SocialMediaPage() {
@@ -16,10 +16,8 @@ export default function SocialMediaPage() {
       name: 'Facebook',
       handle: '@patkaimahabahufoundation',
       link: 'https://facebook.com',
-      badge: 'Official Community Page',
       icon: FaFacebookF,
       themeClass: 'theme-facebook',
-      followers: '15.4K+ Followers',
       btnText: 'Follow on Facebook',
       desc: 'Ground photo albums, live village distribution broadcasts, and community updates from our flood relief coordinators across Assam.'
     },
@@ -28,10 +26,8 @@ export default function SocialMediaPage() {
       name: 'Instagram',
       handle: '@patkaimahabahu_foundation',
       link: 'https://instagram.com',
-      badge: 'Field Stories & Reels',
       icon: FaInstagram,
       themeClass: 'theme-instagram',
-      followers: '8.2K+ Followers',
       btnText: 'Follow on Instagram',
       desc: 'Visual ground stories, volunteer highlight reels, and daily dispatch carousels showing direct relief kit distribution in marooned villages.'
     },
@@ -40,10 +36,8 @@ export default function SocialMediaPage() {
       name: 'YouTube',
       handle: '@patkaimahabahufoundation',
       link: 'https://youtube.com',
-      badge: 'Field Documentaries & News',
       icon: FaYoutube,
       themeClass: 'theme-youtube',
-      followers: '4.6K+ Subscribers',
       btnText: 'Subscribe on YouTube',
       desc: 'In-depth relief drive video reports, volunteer field diaries, boat rescue footage, and ground interviews with flood-affected families.'
     },
@@ -52,10 +46,8 @@ export default function SocialMediaPage() {
       name: 'WhatsApp Channel & Helpline',
       handle: '+91 70028 08115',
       link: 'https://wa.me/917002808115?text=Hello%20Patkai%20Mahabahu%20Foundation%2C%20I%20would%20like%20to%20receive%20relief%20updates',
-      badge: 'Instant Ground Alerts',
       icon: FaWhatsapp,
       themeClass: 'theme-whatsapp',
-      followers: 'Direct 24/7 Helpline',
       btnText: 'Join WhatsApp Channel',
       desc: 'Instant alert network for real-time flood emergency needs, drop-off point coordination, volunteer calls, and immediate distress requests.'
     },
@@ -64,10 +56,8 @@ export default function SocialMediaPage() {
       name: 'X (Twitter)',
       handle: '@patkaimahabahu',
       link: 'https://twitter.com',
-      badge: 'Live Bulletins',
       icon: FaXTwitter,
       themeClass: 'theme-x',
-      followers: '3.1K+ Followers',
       btnText: 'Follow on X',
       desc: 'Fast-paced ground updates, public alerts, tagging district administrations, and daily accounting figures during peak flood rescue drives.'
     },
@@ -76,10 +66,8 @@ export default function SocialMediaPage() {
       name: 'LinkedIn',
       handle: 'patkai-mahabahu-foundation',
       link: 'https://linkedin.com',
-      badge: 'CSR & Institutional',
       icon: FaLinkedinIn,
       themeClass: 'theme-linkedin',
-      followers: 'Institutional Network',
       btnText: 'Connect on LinkedIn',
       desc: 'Corporate social responsibility (CSR) tie-ups, healthcare alliances, structured rehabilitation programs, and annual governance disclosures.'
     }
@@ -111,20 +99,18 @@ export default function SocialMediaPage() {
                       <div className="social-card-titles">
                         <div className="social-card-name-row">
                           <h3 className="social-card-platform">{item.name}</h3>
-                          <span className="verified-badge" title="Official Verified Handle">
-                            <FaCheck size={10} />
-                          </span>
+                          <img
+                            src={checklistIcon}
+                            alt="Verified"
+                            className="verified-badge-img"
+                            title="Official Verified Handle"
+                          />
                         </div>
                         <span className="social-card-handle">{item.handle}</span>
                       </div>
                     </div>
 
                     <p className="social-card-desc">{item.desc}</p>
-
-                    <div className="social-card-meta">
-                      <span className="social-followers-pill">{item.followers}</span>
-                      <span className="social-badge-pill">{item.badge}</span>
-                    </div>
 
                     <a
                       href={item.link}

@@ -1,7 +1,7 @@
 /* Breadcrumb.css - Simple, Clean & Minimal Breadcrumb Bar */
 
 .page-breadcrumb-strip {
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255);
   padding: 0.85rem 1.5rem;
   width: 100%;
   box-sizing: border-box;
@@ -48,6 +48,7 @@
   font-weight: 500;
   transition: color 0.2s ease;
   white-space: nowrap;
+  font-family: var(--font-noto-sans), sans-serif !important;
 }
 
 .breadcrumb-link:hover {

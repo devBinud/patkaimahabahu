@@ -96,10 +96,26 @@
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
 }
 
-.faq-icon-question {
-  color: var(--primary);
-  font-size: 1.25rem;
+.faq-badge-q {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  background: var(--primary, #005C8A);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  line-height: 1;
   flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0, 92, 138, 0.22);
+  transition: all 0.2s ease;
+}
+
+.faq-item-card.open .faq-badge-q {
+  background: #003853;
 }
 
 .faq-arrow-icon {
@@ -118,22 +134,13 @@
   border-top: 1px solid #f1f5f9;
 }
 
-.faq-assamese-text {
-  margin: 1rem 0 0.6rem;
-  color: #00273B;
-  font-weight: 500;
+.faq-answer-text {
+  margin: 1.15rem 0 0;
+  color: #334155;
   font-size: 0.95rem;
-  line-height: 1.65;
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
-}
-
-.faq-english-text {
-  margin: 0;
-  color: #64748B;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.7;
   font-weight: 400;
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif !important;
 }
 
 /* Contact CTA Box */
@@ -180,7 +187,18 @@
     font-size: 0.95rem !important;
   }
 
+  .faq-badge-q {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    font-size: 0.8rem;
+  }
+
   .faq-answer-block {
-    padding: 0 1.15rem 1.25rem !important;
+    padding: 0 1.15rem 1.25rem 2.85rem !important;
+  }
+
+  .faq-answer-text {
+    font-size: 0.9rem !important;
   }
 }

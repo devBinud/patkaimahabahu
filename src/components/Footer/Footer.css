@@ -374,7 +374,6 @@
     outline: none !important;
     font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
     font-size: 1rem !important;
-    font-weight: 500 !important;
     color: #3e3a3a !important;
     text-align: left;
     cursor: pointer;

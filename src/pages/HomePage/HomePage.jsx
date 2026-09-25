@@ -7,7 +7,6 @@ import {
   FaXmark,
   FaArrowUpRightFromSquare,
   FaHeart,
-  FaCircleCheck,
   FaCheck,
   FaAward,
   FaHandHoldingDroplet,
@@ -18,6 +17,8 @@ import {
   FaArrowRight,
   FaHandHoldingHeart
 } from 'react-icons/fa6'
+
+import checklistAmberIcon from '../../assets/icons/checklist_amber.png'
 
 import heroSlide1 from '../../assets/hero/1.jpeg'
 import heroSlide2 from '../../assets/hero/2.jpeg'
@@ -697,25 +698,25 @@ export default function HomePage() {
             <div className="project-home-checklist">
               <div className="checklist-column">
                 <div className="checklist-item">
-                  <FaCircleCheck className="check-icon" />
+                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
                   <span>Ground Household Damage Surveys</span>
                 </div>
                 <div className="checklist-item">
-                  <FaCircleCheck className="check-icon" />
+                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
                   <span>Rebuilding Washed-Out Mud & Bamboo Homes</span>
                 </div>
                 <div className="checklist-item">
-                  <FaCircleCheck className="check-icon" />
+                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
                   <span>Ensuring Safe Shelter & Dignity</span>
                 </div>
               </div>
               <div className="checklist-column">
                 <div className="checklist-item">
-                  <FaCircleCheck className="check-icon" />
+                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
                   <span>Corrugated Tin & Bamboo Supply</span>
                 </div>
                 <div className="checklist-item">
-                  <FaCircleCheck className="check-icon" />
+                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
                   <span>Protecting Vulnerable Children & Elders</span>
                 </div>
               </div>

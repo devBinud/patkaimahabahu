@@ -1,4 +1,5 @@
 import Breadcrumb from '../components/Breadcrumb/Breadcrumb'
+import healthcareImg from '../assets/healthcare.jpg'
 import './InnerInfoPage.css'
 
 export default function HealthcarePage() {
@@ -8,6 +9,14 @@ export default function HealthcarePage() {
 
       <section className="inner-info-section">
         <div className="inner-info-container">
+          <div className="inner-info-image-wrapper">
+            <img
+              src={healthcareImg}
+              alt="Healthcare initiatives"
+              className="inner-info-featured-img"
+            />
+          </div>
+
           <p className="inner-info-text">
             We are working on this page. Content is currently under construction.
           </p>
