@@ -50,6 +50,16 @@
   --font-noto-sans: 'Noto Sans', sans-serif;
   --font-noto-serif: 'Noto Serif', Georgia, serif;
 
+  /* 📝 Description / Paragraph Copy
+     Clean editorial body text: Poppins 400, neutral gray, airy line-height,
+     always left-aligned (never justified). Used by every section/card description. */
+  --font-desc: 'Poppins', 'Geist', system-ui, sans-serif;
+  --text-desc: #5D5D5D;
+  --desc-size: 1rem;
+  --desc-size-sm: 0.9375rem;
+  --desc-size-xs: 0.875rem;
+  --desc-line-height: 1.6;
+
   --shadow-sm: 0 2px 6px rgba(0, 92, 138, 0.06);
   --shadow-md: 0 8px 24px -4px rgba(0, 92, 138, 0.12);
   --shadow-lg: 0 20px 40px -8px rgba(0, 92, 138, 0.18);

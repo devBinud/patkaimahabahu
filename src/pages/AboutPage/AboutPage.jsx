@@ -32,9 +32,10 @@ import prachurjyaImg from '../../assets/team/prachurjya_protim_gogoi.jpeg'
 import gargeeImg from '../../assets/team/gargee_gogoi.jpeg'
 import dimpleImg from '../../assets/team/dimple_baruah.jpeg'
 import jogeshImg from '../../assets/team/jogesh_ojha.jpeg'
-import shankurajImg from '../../assets/team/shankuraj_konwar.jpg'
+import shankurajImg from '../../assets/team/shankuraj_konwar.jpeg'
 import urmilaImg from '../../assets/team/urmila_baruah.jpeg'
 import krisanubaruahImg from '../../assets/team/krishanu_aruah.jpeg'
+import arindamKhanikarImg from '../../assets/team/arindam_khanikar.jpeg'
 
 // Medical & Audit Images
 import drManasImg from '../../assets/team/dr_manas.jpeg'
@@ -201,7 +202,7 @@ export default function AboutPage() {
   const floodReliefSections = [
     {
       id: 'ground',
-      title: 'Ground Team at Flood Relief',
+      title: 'Ground Team',
       subtitle: 'Field coordinators and volunteers delivering relief materials directly into flood-affected villages.',
       members: [
         { id: 'g-1', name: 'Pallabi Rajkumari', designation: 'Ground Relief Coordinator', image: pallabiImg },
@@ -229,7 +230,17 @@ export default function AboutPage() {
           ],
           image: jogeshImg
         },
-        { id: 'g-20', name: 'Shankuraj Konwar', designation: 'Assamese Artist , Singer, Composer', image: shankurajImg }
+        { id: 'g-20', name: 'Shankuraj Konwar', designation: 'Assamese Artist , Singer, Composer', image: shankurajImg },
+        {
+          id: 'g-21',
+          name: 'Arindam Khanikar',
+          designation: [
+            'Territory Manager',
+            'Rallis India Limited',
+            'Tata Chemicals'
+          ],
+          image: arindamKhanikarImg
+        }
       ]
     },
     {

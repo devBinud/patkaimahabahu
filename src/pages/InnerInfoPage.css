@@ -49,12 +49,12 @@
 }
 
 .inner-info-text {
-  font-family: var(--font-geist, var(--font-sans, system-ui), -apple-system, sans-serif);
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: #64748B;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  font-weight: 400;
+  color: var(--text-desc);
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: var(--desc-line-height);
   text-align: center;
 }
 
@@ -68,7 +68,7 @@
   }
 
   .inner-info-text {
-    font-size: 1rem;
+    font-size: var(--desc-size-sm);
   }
 
   .inner-info-image-wrapper {

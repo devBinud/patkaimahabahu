@@ -51,9 +51,10 @@
 }
 
 .gallery-section-desc {
-  font-size: 0.95rem;
-  color: #64748b;
-  line-height: 1.55;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin: 0;
   max-width: 850px;
 }
@@ -149,8 +150,7 @@
   }
 
   .gallery-section-desc {
-    font-size: 0.82rem !important;
-    line-height: 1.45 !important;
+    font-size: var(--desc-size-sm) !important;
   }
 
   .gallery-grid-field {

@@ -136,11 +136,11 @@
 
 .faq-answer-text {
   margin: 1.15rem 0 0;
-  color: #334155;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  color: var(--text-desc);
+  font-size: var(--desc-size-sm);
+  line-height: var(--desc-line-height);
   font-weight: 400;
-  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif !important;
+  font-family: var(--font-desc) !important;
 }
 
 /* Contact CTA Box */
@@ -199,6 +199,6 @@
   }
 
   .faq-answer-text {
-    font-size: 0.9rem !important;
+    font-size: var(--desc-size-xs) !important;
   }
 }

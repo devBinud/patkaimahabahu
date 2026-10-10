@@ -18,7 +18,6 @@ import {
   FaHandHoldingHeart
 } from 'react-icons/fa6'
 
-import checklistAmberIcon from '../../assets/icons/checklist_amber.png'
 
 import heroSlide1 from '../../assets/hero/1.jpeg'
 import heroSlide2 from '../../assets/hero/2.jpeg'
@@ -44,8 +43,56 @@ import rebuild1 from '../../assets/gallery/rebuilding_house_assessment/1.jpeg'
 import rebuild2 from '../../assets/rebuildinghomes.jpeg'
 import rebuild3 from '../../assets/gallery/rebuilding_house_assessment/3.jpeg'
 import PersonTestimonials from '../../components/PersonTestimonials/PersonTestimonials'
+import MediaCoverageSlider from '../../components/MediaCoverageSlider/MediaCoverageSlider'
+import firstHomeFoundationImg from '../../assets/gallery/project_home/first_home/scratch_step.jpeg'
+import firstHomeFrameImg from '../../assets/gallery/project_home/first_home/step1.jpeg'
+import firstHomeWallsImg from '../../assets/gallery/project_home/first_home/step2.jpeg'
+import firstHomeCompletedImg from '../../assets/gallery/project_home/first_home/first_home_glimpse4.jpeg'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import './HomePage.css'
+
+// First Project Home (Betbari, Sivasagar), foundation to completed home.
+// `position` frames the house in the arch. `hasStamp` photos carry a geo-tag
+// box in their bottom 14%, so they're zoomed slightly from the top to hide it.
+const firstHomeStages = [
+  {
+    id: 'foundation',
+    label: 'Foundation',
+    image: firstHomeFoundationImg,
+    position: 'center top',
+    hasStamp: true
+  },
+  {
+    id: 'frame',
+    label: 'Frame & Roof',
+    image: firstHomeFrameImg,
+    position: 'center top'
+  },
+  {
+    id: 'walls',
+    label: 'Walls & Finishing',
+    image: firstHomeWallsImg,
+    position: 'center top',
+    hasStamp: true
+  },
+  {
+    id: 'completed',
+    label: 'Completed Home',
+    image: firstHomeCompletedImg,
+    position: 'center bottom'
+  }
+]
+
+// Location of the first home, shown in Assamese beside the section heading
+const firstHomeAddress = {
+  place: 'চেতিয়া কৈৱৰ্ত গাঁও, বেতবাৰী',
+  // `en` is the English name, kept on one line so it never splits mid-parenthesis
+  rows: [
+    { label: 'ডাকঘৰৰ নাম', value: 'বেতবাৰী শাখা ডাকঘৰ', },
+    { label: 'জিলা', value: 'শিৱসাগৰ' },
+    { label: 'পিন কোড', value: '৭৮৫৬৪০' }
+  ]
+}
 
 const HomeShelterIcon = (props) => (
   <svg
@@ -687,41 +734,14 @@ export default function HomePage() {
       {/* Project Home: Editorial Showcase (Matching Reference Screenshot 1) */}
       <section className="project-home-editorial-section">
         <div className="project-home-editorial-container">
-          {/* Left Column: Story, Commitments & Actions */}
+          {/* Left: the first home under Project Home */}
           <div className="project-home-editorial-left reveal">
             <h2 className="project-home-editorial-title">
-              Rebuilding Homes <span className="project-home-title-highlight">Inspiring Hope And Shaping Futures</span>
+              Our First Home Under <span className="project-home-title-highlight first-home-title-nowrap">Project Home</span>
             </h2>
             <p className="project-home-editorial-desc">
-              Patkai Mahabahu Foundation has to its credit continuous dedication and an enriching journey during which on-ground relief and structural rehabilitation have reached vulnerable families on the strength of an exceptional vision and mission, as well as an untiring effort to rebuild what floodwaters destroyed.
+              Project Home is Patkai Mahabahu Foundation’s mission to build new homes for 50 families left homeless by the floods across Sivasagar, Charaideo and Jorhat. The first of these homes now stands complete in Betbari, Sivasagar: raised on concrete pillars above flood level, finished with woven bamboo walls, and handed over to the family.
             </p>
-            <div className="project-home-checklist">
-              <div className="checklist-column">
-                <div className="checklist-item">
-                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
-                  <span>Ground Household Damage Surveys</span>
-                </div>
-                <div className="checklist-item">
-                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
-                  <span>Rebuilding Washed-Out Mud & Bamboo Homes</span>
-                </div>
-                <div className="checklist-item">
-                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
-                  <span>Ensuring Safe Shelter & Dignity</span>
-                </div>
-              </div>
-              <div className="checklist-column">
-                <div className="checklist-item">
-                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
-                  <span>Corrugated Tin & Bamboo Supply</span>
-                </div>
-                <div className="checklist-item">
-                  <img src={checklistAmberIcon} alt="Check" className="checklist-amber-icon" />
-                  <span>Protecting Vulnerable Children & Elders</span>
-                </div>
-              </div>
-            </div>
-
             <div className="project-home-bottom-actions">
               <Link to="/project-home" className="pmf-btn pmf-btn-outline">
                 <span>Read More</span>
@@ -730,48 +750,73 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right Column: 3-Element Masonry Visual Grid */}
-          <div className="project-home-editorial-right reveal" style={{ '--reveal-i': 1 }}>
-            {/* Left tall image */}
-            <div className="editorial-tall-card">
-              <img
-                src={rebuild2}
-                alt="Household flood damage assessment survey"
-                className="editorial-tall-img"
-                loading="lazy"
-              />
-            </div>
-
-            {/* Right stack: top image + bottom blue stat card */}
-            <div className="editorial-stack-cards">
-              <div className="editorial-top-card">
-                <img
-                  src={rebuild1}
-                  alt="Rural home assessment and restoration"
-                  className="editorial-top-img"
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="editorial-stat-card">
-                <img
-                  src={rebuild3}
-                  alt="Rural home assessment background"
-                  className="editorial-stat-bg"
-                  aria-hidden="true"
-                />
-                <div className="editorial-stat-overlay" aria-hidden="true" />
-
-                <div className="editorial-stat-text-group">
-                  <div className="editorial-stat-number">
-                    50<span className="editorial-stat-plus">+</span>
+          {/* Right: where the first home stands (Assamese address) */}
+          <div className="project-home-editorial-aside">
+            <address className="first-home-address">
+              <span className="first-home-address-kicker">স্থান</span>
+              <p className="first-home-address-place">{firstHomeAddress.place}</p>
+              <dl className="first-home-address-list">
+                {firstHomeAddress.rows.map((row) => (
+                  <div key={row.label} className="first-home-address-row">
+                    <dt>{row.label}</dt>
+                    <dd>
+                      {row.value}
+                      {row.en && <span className="first-home-address-en"> {row.en}</span>}
+                    </dd>
                   </div>
-                  <div className="editorial-stat-label">Target Rebuilding Homes</div>
+                ))}
+              </dl>
+            </address>
+          </div>
+        </div>
+
+        {/* First home, foundation to completion, in one full-width row */}
+        <div className="first-home-row">
+          {firstHomeStages.map((stage, idx) => (
+            <figure key={stage.id} className="first-home-card">
+              <div className="first-home-frame">
+                <div className="first-home-arch">
+                  <img
+                    src={stage.image}
+                    alt={`First Project Home in Betbari, Sivasagar: ${stage.label.toLowerCase()}`}
+                    className={stage.hasStamp ? 'hide-stamp' : undefined}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ objectPosition: stage.position }}
+                  />
                 </div>
+                <span className="first-home-tag">
+                  <span className="first-home-sr">Step {idx + 1}: </span>
+                  {stage.label}
+                </span>
               </div>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* Media Coverage: news video slider (same videos as the News & Media page) */}
+      <section className="media-coverage-section" aria-labelledby="media-coverage-heading">
+        <div className="media-coverage-container">
+          <div className="editorial-gallery-header">
+            <div className="editorial-gallery-header-left reveal">
+              <h2 id="media-coverage-heading" className="editorial-gallery-title">
+                News &amp; <span className="dashboard-title-highlight">Media</span>
+              </h2>
+              <p className="editorial-gallery-subtitle">
+                Television and digital news reports on the foundation’s flood relief and home rebuilding work across Assam.
+              </p>
+            </div>
+            <div className="editorial-gallery-header-right">
+              <Link to="/news-media" className="pmf-btn pmf-btn-outline">
+                <span>View All</span>
+                <span className="pmf-btn-icon">↗</span>
+              </Link>
             </div>
           </div>
         </div>
+
+        <MediaCoverageSlider />
       </section>
 
       {/* Why Choose Us / Trust Showcase Section (Matching Reference with Theme Blue Overlay) */}
@@ -807,7 +852,7 @@ export default function HomePage() {
           </div>
 
           {/* Overlapping Featured Image Showcase Card */}
-          <div className="why-choose-video-wrapper reveal" style={{ '--reveal-i': 1 }}>
+          <div className="why-choose-video-wrapper">
             <div className="why-choose-video-card">
               <img
                 src={homeJoinUsImg}

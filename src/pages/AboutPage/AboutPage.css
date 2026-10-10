@@ -57,9 +57,11 @@
 }
 
 .about-intro-desc {
-  font-size: 1rem;
-  color: #64748B;
-  line-height: 1.65;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  font-weight: 400;
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin: 0 0 1.5rem;
 }
 
@@ -143,9 +145,11 @@
 }
 
 .team-section-main-desc {
-  font-size: 1rem;
-  color: #64748B;
-  line-height: 1.55;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  font-weight: 400;
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin: 0;
 }
 
@@ -176,9 +180,11 @@
 }
 
 .department-group-desc {
-  font-size: 1rem;
-  color: #64748B;
-  line-height: 1.45;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size-sm);
+  font-weight: 400;
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin: 0;
 }
 

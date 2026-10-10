@@ -20,6 +20,13 @@
 
 
 
+/* Entire footer uses the site's description font (Poppins). The element
+   list beats the global p/span/li (Geist) and h1-h6 (heading font) rules. */
+.rf-footer-card,
+.rf-footer-card :is(h1, h2, h3, h4, h5, h6, p, span, li, a, button) {
+  font-family: var(--font-desc);
+}
+
 .rf-footer-card {
   width: 100% !important;
   background: #ffffff !important;
@@ -50,10 +57,10 @@
 /* Headings */
 .rf-col-heading {
   font-size: 0.975rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--navy-blue, #003853);
   margin: 0 0 1.25rem;
-  font-family: var(--font-noto-sans);
+  font-family: var(--font-desc);
   letter-spacing: -0.01em;
 }
 
@@ -141,10 +148,10 @@
 
 .rf-brand-english {
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #3475bb;
   letter-spacing: -0.015em;
-  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-family: var(--font-desc);
 }
 
 /* Registration Badge */
@@ -155,9 +162,9 @@
   background-color: #F8FAFC;
   border: 1px solid #E2E8F0;
   color: #005C8A;
-  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-family: var(--font-desc);
   font-size: 0.76rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0.35rem 0.75rem;
   border-radius: 6px;
   margin-bottom: 1.15rem;
@@ -185,10 +192,10 @@
 
 .rf-address-title {
   font-size: 0.925rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--navy-blue, #003853);
   margin: 0 0 0.55rem;
-  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-family: var(--font-desc);
 }
 
 .rf-address-text {
@@ -200,7 +207,7 @@
 
 .rf-address-text strong {
   color: #1E293B;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .rf-contact-direct {
@@ -216,7 +223,7 @@
 .rf-contact-link {
   color: var(--primary, #005C8A) !important;
   text-decoration: none !important;
-  font-weight: 600;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
@@ -277,13 +284,13 @@
   margin: 0;
   font-size: 0.85rem;
   color: #64748B;
-  font-family: var(--font-sans);
+  font-family: var(--font-desc);
   line-height: 1.5;
 }
 
 .rf-dev-link-desktop {
   color: #3475bb !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   transition: color 0.2s ease;
 }
 
@@ -293,7 +300,7 @@
 
 .rf-reg-bottom-text {
   color: #005C8A;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Visibility Helpers */
@@ -372,7 +379,7 @@
     background: transparent !important;
     border: none !important;
     outline: none !important;
-    font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+    font-family: var(--font-desc) !important;
     font-size: 1rem !important;
     color: #3e3a3a !important;
     text-align: left;
@@ -437,7 +444,7 @@
   .rf-direct-link {
     display: block;
     padding: 1.15rem 0 !important;
-    font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif !important;
+    font-family: var(--font-desc) !important;
     font-size: 1rem !important;
     font-weight: 500 !important;
     color: #3e3a3a !important;
@@ -483,7 +490,7 @@
 
   .rf-mobile-brand-section .rf-brand-english {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--primary);
   }
 
@@ -518,7 +525,7 @@
   }
 
   .rf-patkai-copyright {
-    padding: 1.25rem 1rem 1rem !important;
+    padding: 1.25rem 1rem 0.35rem !important;
     border-top: 1px solid #E6ECEF !important;
     text-align: center !important;
     background-color: transparent !important;
@@ -531,28 +538,31 @@
     margin: 0 !important;
   }
 
+  /* Developer credits: plain text line under the copyright (no background),
+     studio name as a brand-blue link */
   .rf-dev-credits-bar {
-    margin-left: -1.25rem !important;
-    margin-right: -1.25rem !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding: 0.45rem 1.25rem calc(.5rem + env(safe-area-inset-bottom, 0px)) !important;
-    background-color: #3475bb !important;
-    width: calc(100% + 2.5rem) !important;
-    box-sizing: border-box !important;
+    padding: 0 1rem calc(1.25rem + env(safe-area-inset-bottom, 0px)) !important;
+    background: transparent !important;
     text-align: center !important;
   }
 
   .rf-dev-credits-text {
     font-size: 0.8rem !important;
-    line-height: 1.4 !important;
-    color: rgba(255, 255, 255, 0.95) !important;
+    color: #64748B !important;
+    line-height: 1.5 !important;
     margin: 0 !important;
   }
 
-  .rf-dev-credits-text a,
   .rf-dev-link {
-    color: #ffffff !important;
-    font-weight: 700 !important;
+    white-space: nowrap !important;
+    color: var(--primary) !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+  }
+
+  .rf-dev-link:hover,
+  .rf-dev-link:focus-visible {
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
   }
 }

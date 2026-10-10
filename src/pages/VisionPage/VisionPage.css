@@ -265,9 +265,10 @@
 }
 
 .vision-prose p {
-  font-size: 1rem;
-  color: #334155;
-  line-height: 1.75;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin-bottom: 1.35rem;
 }
 
@@ -321,9 +322,10 @@
 }
 
 .vision-pillar-box p {
-  font-size: 0.88rem;
-  color: #64748B;
-  line-height: 1.55;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size-xs);
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin: 0;
 }
 

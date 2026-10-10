@@ -7,12 +7,45 @@ import {
 } from 'react-icons/fa6'
 import media1 from '../assets/gallery/media/1.jpeg'
 import media2 from '../assets/gallery/media/2.jpeg'
+import printMedia1 from '../assets/gallery/media/print_media1.jpeg'
+import printMedia3 from '../assets/gallery/media/print_media3.jpeg'
+import printMedia3Thumb from '../assets/gallery/media/print_media3_thumb.jpg'
+import printMedia4 from '../assets/gallery/media/print_media4.jpeg'
+import printMedia4Thumb from '../assets/gallery/media/print_media4_thumb.jpg'
+import { videoCoverage } from '../data/mediaCoverage'
+import VideoCoverageCard from '../components/VideoCoverageCard/VideoCoverageCard'
 import './NewsMediaPage.css'
 
 export default function NewsMediaPage() {
   const [selectedImgIndex, setSelectedImgIndex] = useState(null)
 
   const pressClippings = [
+    {
+      id: 'pc-print-1',
+      image: printMedia1,
+      publication: 'Assamese Daily Newspaper',
+      title: 'Newspaper report: Patkai Mahabahu Foundation’s positive step in Betbari as Pranab Milan Gogoi moves ahead with the aim of building 50 homes',
+      date: 'October 2026',
+      desc: 'Print coverage from Sivasagar of the first home handed over in Betbari under the foundation’s plan to build homes for 50 flood-affected families.'
+    },
+    {
+      id: 'pc-print-2',
+      image: printMedia3,
+      thumb: printMedia3Thumb,
+      publication: 'Assamese Daily Newspaper',
+      title: 'Newspaper report: Patkai Mahabahu Foundation’s initiative hands over the first house to a flood-affected family in Betbari',
+      date: 'October 2026',
+      desc: 'Sivasagar report on the first house handed over in Betbari, with the foundation pledging homes and household materials to more flood-affected families.'
+    },
+    {
+      id: 'pc-print-3',
+      image: printMedia4,
+      thumb: printMedia4Thumb,
+      publication: 'Pratidin (Dibrugarh edition)',
+      title: 'Pratidin, 5 October 2026: stilt house built for a flood-affected family in Betbari by Patkai Mahabahu Foundation',
+      date: '5 October 2026',
+      desc: 'Pratidin report on the chang-ghar (stilt house) built for a family left with nothing by the floods in Betbari, Sivasagar.'
+    },
     {
       id: 'pc-1',
       image: media1,
@@ -64,7 +97,22 @@ export default function NewsMediaPage() {
       <div className="news-content-wrapper">
         <div className="news-main-container">
 
-          {/* SECTION 1: Newspaper Clippings & Print Coverage */}
+          {/* SECTION 1: Video & Digital News Coverage */}
+          <section className="news-block">
+            <div className="news-block-header">
+              <h2 className="news-block-title">
+                Video &amp; Digital <span className="news-title-highlight">Media Coverage</span>
+              </h2>
+            </div>
+
+            <div className="news-video-grid">
+              {videoCoverage.map((video) => (
+                <VideoCoverageCard key={video.id} video={video} />
+              ))}
+            </div>
+          </section>
+
+          {/* SECTION 2: Newspaper Clippings & Print Coverage */}
           <section className="news-block">
             <div className="news-block-header">
               <h2 className="news-block-title">
@@ -83,8 +131,9 @@ export default function NewsMediaPage() {
                   onKeyDown={(e) => { if (e.key === 'Enter') setSelectedImgIndex(idx) }}
                 >
                   <div className="news-clipping-img-wrap">
+                    {/* `thumb` is an optional crop of just the story; the lightbox shows the full page */}
                     <img
-                      src={item.image}
+                      src={item.thumb || item.image}
                       alt={item.title}
                       loading="lazy"
                       className="news-clipping-img"

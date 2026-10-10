@@ -1,0 +1,83 @@
+/* =========================================================
+   MEDIA COVERAGE SLIDER (Homepage)
+   A centred, looping strip of the same video cards used on the
+   News & Media page (styles in components/VideoCoverageCard),
+   about three across on desktop, with dots below.
+   ========================================================= */
+
+.mcs-root {
+  width: 100%;
+}
+
+.mcs-viewport {
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0 22px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.mcs-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.mcs-track {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  will-change: transform;
+}
+
+.mcs-slide {
+  flex: 0 0 auto;
+  display: flex;
+}
+
+/* Equal-height cards across the strip */
+.mcs-slide > .news-video-card {
+  flex: 1;
+}
+
+/* Dots */
+.mcs-dots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 0 1rem;
+}
+
+.mcs-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mcs-dot:hover {
+  background: #94a3b8;
+}
+
+.mcs-dot.is-active {
+  background: var(--primary-dark);
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px var(--primary-dark);
+}
+
+.mcs-dot:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 6px;
+}
+
+@media (max-width: 640px) {
+  .mcs-dots {
+    gap: 12px;
+  }
+}

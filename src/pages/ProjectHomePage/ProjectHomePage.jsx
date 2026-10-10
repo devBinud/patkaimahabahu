@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
-import { FaXmark, FaChevronLeft, FaChevronRight, FaArrowRight } from 'react-icons/fa6'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
+import { FaXmark, FaChevronLeft, FaChevronRight, FaExpand } from 'react-icons/fa6'
 
 // Project Home Assessment Images
 import ph1 from '../../assets/gallery/project_home/1.jpeg'
@@ -21,31 +18,32 @@ import ph12 from '../../assets/gallery/project_home/12.jpeg'
 
 import './ProjectHomePage.css'
 
-const projectHomeImages = [
-  { id: 'ph-1', src: ph1, alt: 'Assessment Image 1' },
-  { id: 'ph-2', src: ph2, alt: 'Assessment Image 2' },
-  { id: 'ph-3', src: ph3, alt: 'Assessment Image 3' },
-  { id: 'ph-4', src: ph4, alt: 'Assessment Image 4' },
-  { id: 'ph-5', src: ph5, alt: 'Assessment Image 5' },
-  { id: 'ph-6', src: ph6, alt: 'Assessment Image 6' },
-  { id: 'ph-7', src: ph7, alt: 'Assessment Image 7' },
-  { id: 'ph-8', src: ph8, alt: 'Assessment Image 8' },
-  { id: 'ph-9', src: ph9, alt: 'Assessment Image 9' },
-  { id: 'ph-10', src: ph10, alt: 'Assessment Image 10' },
-  { id: 'ph-11', src: ph11, alt: 'Assessment Image 11' },
-  { id: 'ph-12', src: ph12, alt: 'Assessment Image 12' }
-]
+const projectHomeImages = [ph1, ph2, ph3, ph4, ph5, ph6, ph7, ph8, ph9, ph10, ph11, ph12].map((src, i, all) => ({
+  id: `ph-${i + 1}`,
+  src,
+  alt: `Geo-tagged photo of a flood-damaged house (${i + 1} of ${all.length})`
+}))
+
+const totalImages = projectHomeImages.length
 
 export default function ProjectHomePage() {
+  // activeIndex drives the spotlight viewer; selectedIndex drives the full-screen lightbox
+  const [activeIndex, setActiveIndex] = useState(0)
   const [selectedIndex, setSelectedIndex] = useState(null)
   const [touchStartX, setTouchStartX] = useState(null)
 
   const handlePrev = () => {
-    setSelectedIndex((prev) => (prev === 0 ? projectHomeImages.length - 1 : prev - 1))
+    setSelectedIndex((prev) => (prev === 0 ? totalImages - 1 : prev - 1))
   }
 
   const handleNext = () => {
-    setSelectedIndex((prev) => (prev === projectHomeImages.length - 1 ? 0 : prev + 1))
+    setSelectedIndex((prev) => (prev === totalImages - 1 ? 0 : prev + 1))
+  }
+
+  // Keep the spotlight on whichever photo the visitor ended on in the lightbox
+  const closeModal = () => {
+    setActiveIndex(selectedIndex)
+    setSelectedIndex(null)
   }
 
   useEffect(() => {
@@ -57,6 +55,7 @@ export default function ProjectHomePage() {
       } else if (e.key === 'ArrowRight') {
         handleNext()
       } else if (e.key === 'Escape') {
+        setActiveIndex(selectedIndex)
         setSelectedIndex(null)
       }
     }
@@ -82,6 +81,7 @@ export default function ProjectHomePage() {
     setTouchStartX(null)
   }
 
+  const activeImg = projectHomeImages[activeIndex]
   const selectedImg = selectedIndex !== null ? projectHomeImages[selectedIndex] : null
 
   return (
@@ -99,34 +99,47 @@ export default function ProjectHomePage() {
             </p>
           </div>
 
-          <div className="ph-images-grid">
-            {projectHomeImages.map((item, idx) => (
-              <div
-                key={item.id}
-                className="ph-image-card"
-                onClick={() => setSelectedIndex(idx)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    setSelectedIndex(idx)
-                  }
-                }}
-                aria-label={`View assessment photo ${idx + 1}`}
-              >
-                <div className="ph-image-wrapper">
-                  <LazyLoadImage
-                    src={item.src}
-                    alt={item.alt}
-                    effect="blur"
-                    threshold={200}
-                    className="ph-img"
-                    wrapperClassName="ph-lazy-wrapper"
-                  />
-                </div>
+          {/* Spotlight viewer: one large photo + thumbnail picker, instead of a long wall of cards */}
+          <div className="ph-showcase">
+            <button
+              type="button"
+              className="ph-stage"
+              onClick={() => setSelectedIndex(activeIndex)}
+              aria-label={`View photo ${activeIndex + 1} of ${totalImages} full size`}
+            >
+              <img
+                key={activeImg.id}
+                src={activeImg.src}
+                alt={activeImg.alt}
+                className="ph-stage-img"
+                decoding="async"
+              />
+              <span className="ph-stage-chip" aria-hidden="true">
+                <FaExpand size={12} />
+                View full size
+              </span>
+            </button>
+
+            <div className="ph-panel">
+              <div className="ph-thumbs">
+                {projectHomeImages.map((item, idx) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    className={`ph-thumb${idx === activeIndex ? ' is-active' : ''}`}
+                    onClick={() => setActiveIndex(idx)}
+                    aria-label={`Show photo ${idx + 1}`}
+                    aria-pressed={idx === activeIndex}
+                  >
+                    <img src={item.src} alt="" loading="lazy" decoding="async" />
+                  </button>
+                ))}
               </div>
-            ))}
+
+              <p className="ph-panel-hint">
+                Every photo is geo-tagged on site with GPS coordinates and a timestamp. Select a thumbnail to preview it, or open the large photo to view it full size.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -180,14 +193,14 @@ export default function ProjectHomePage() {
       {selectedImg && (
         <div
           className="ph-modal-overlay"
-          onClick={() => setSelectedIndex(null)}
+          onClick={closeModal}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
           <div className="ph-modal-content" onClick={(e) => e.stopPropagation()}>
             <button
               className="ph-modal-close"
-              onClick={() => setSelectedIndex(null)}
+              onClick={closeModal}
               aria-label="Close modal"
             >
               <FaXmark size={20} />

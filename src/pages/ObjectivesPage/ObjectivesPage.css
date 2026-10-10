@@ -71,13 +71,12 @@
 }
 
 .objective-doc-text p {
-  font-family: var(--font-geist), sans-serif;
-  font-size: 0.95rem;
-  color: #64748B;
-  line-height: 1.7;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin: 0;
   text-align: left;
-  letter-spacing: 0.005em;
 }
 
 /* ==========================================
@@ -107,8 +106,7 @@
   }
 
   .objective-doc-text p {
-    font-size: 0.88rem;
-    line-height: 1.6;
+    font-size: var(--desc-size-sm);
   }
 }
 
@@ -137,7 +135,6 @@
   }
 
   .objective-doc-text p {
-    font-size: 0.82rem;
-    line-height: 1.55;
+    font-size: var(--desc-size-xs);
   }
 }

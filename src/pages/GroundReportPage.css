@@ -154,9 +154,10 @@
 }
 
 .ground-narrative-text {
-  font-size: 0.95rem;
-  color: #475569;
-  line-height: 1.65;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin: 0;
 }
 
@@ -237,8 +238,7 @@
   }
 
   .ground-narrative-text {
-    font-size: 0.95rem !important;
-    line-height: 1.65 !important;
+    font-size: var(--desc-size-sm) !important;
   }
 
   .ground-hero-title {

@@ -65,17 +65,19 @@
 }
 
 .disaster-lead-p {
-  font-size: 1.025rem;
-  line-height: 1.75;
-  color: #334155;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  line-height: var(--desc-line-height);
+  color: var(--text-desc);
   font-weight: 400;
   margin: 0 0 1rem;
 }
 
 .disaster-body-p {
-  font-size: 0.975rem;
-  line-height: 1.65;
-  color: #64748b;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  line-height: var(--desc-line-height);
+  color: var(--text-desc);
   font-weight: 400;
   margin: 0;
 }
@@ -189,9 +191,10 @@
 }
 
 .section-subtitle {
-  font-size: 0.92rem;
-  color: #64748b;
-  line-height: 1.5;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size-sm);
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin: 0;
 }
 
@@ -655,9 +658,13 @@
   /* border: 0.8px solid #3475bb; */
 }
 
+/* Outer frame stays brand blue: at 1px it is wider than the 0.8px cell
+   borders, so it wins on the table's edges in the collapsed border model
+   while the inner dividers stay light. */
 .clean-contributors-table {
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid #3475bb;
   text-align: left;
   font-size: 0.885rem;
 }
@@ -673,7 +680,8 @@
   font-size: 0.82rem;
   text-transform: none;
   letter-spacing: 0.02em;
-  border: 0.8px solid #3475bb;
+  border: 0.8px solid #dbe5f1;
+  border-bottom-color: #3475bb;
   white-space: nowrap;
 }
 
@@ -700,7 +708,7 @@
 .clean-contributors-table td {
   padding: 0.85rem 1rem;
   color: #3475bb;
-  border: 0.8px solid #3475bb;
+  border: 0.8px solid #dbe5f1;
 }
 
 .td-index {
@@ -709,6 +717,7 @@
 }
 
 .td-name {
+  font-family: var(--font-desc);
   font-weight: 500;
   color: #0f172a;
 }
@@ -844,12 +853,13 @@
 }
 
 .table-note-text {
+  font-family: var(--font-desc);
   font-size: 0.84rem;
-  color: #5a5a5a;
+  color: var(--text-desc);
   margin: 0;
   font-style: normal;
-  font-weight: 500;
-  line-height: 1.55;
+  font-weight: 400;
+  line-height: var(--desc-line-height);
 }
 
 /* ==========================================================================

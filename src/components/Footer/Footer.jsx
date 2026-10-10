@@ -286,7 +286,7 @@ export default function Footer() {
 
           <div className="rf-dev-credits-bar">
             <p className="rf-dev-credits-text">
-              Designed & Developed by{' '}
+              Designed &amp; Developed by{' '}
               <a
                 href="https://www.binudsoftwaresolutions.in/"
                 target="_blank"

@@ -1,0 +1,119 @@
+/* =========================================================
+   VIDEO COVERAGE CARD
+   Static card: 16:9 thumbnail (the only link, with a play badge), then a
+   red source badge, title and description. Used by the News & Media page
+   grid and the homepage media slider.
+   ========================================================= */
+.news-video-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(0, 43, 64, 0.06);
+}
+
+.news-video-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+/* Static play badge (no hover state): translucent dark circle, white triangle */
+.news-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Optical centering: the triangle's visual mass sits left of its box */
+.news-video-play svg {
+  margin-left: 4px;
+}
+
+.news-video-thumb:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: -3px;
+}
+
+.news-video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-video-body {
+  --news-video-pad-x: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.35rem var(--news-video-pad-x) 1.5rem;
+}
+
+/* Source badge: news-strip red tab with white caps, pulled out to sit flush
+   against the card's left edge (offset = body padding, so it stays attached
+   at every breakpoint) with only its right end rounded */
+.news-video-source {
+  margin-left: calc(-1 * var(--news-video-pad-x));
+  margin-bottom: 0.9rem;
+  padding: 0.45rem 1rem 0.45rem var(--news-video-pad-x);
+  background: #e11d24;
+  color: #ffffff;
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0 4px 12px rgba(225, 29, 36, 0.22);
+  font-family: var(--font-desc);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.news-video-title {
+  font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #3e3a3a;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6rem;
+}
+
+.news-video-desc {
+  font-family: var(--font-desc);
+  font-size: var(--desc-size-xs);
+  line-height: var(--desc-line-height);
+  color: var(--text-desc);
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .news-video-body {
+    --news-video-pad-x: 1.15rem;
+    padding: 1.15rem var(--news-video-pad-x) 1.3rem;
+  }
+
+  .news-video-play {
+    width: 52px;
+    height: 52px;
+  }
+
+  .news-video-title {
+    font-size: 1.1rem;
+  }
+}

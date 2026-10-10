@@ -208,10 +208,11 @@
 }
 
 .sidebar-sos-desc {
-  font-size: 0.9rem;
-  color: #64748b;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size-xs);
+  color: var(--text-desc);
   margin-bottom: 1.25rem;
-  line-height: 1.45;
+  line-height: var(--desc-line-height);
 }
 
 .sidebar-emergency-btn {

@@ -45,12 +45,12 @@
 }
 
 .contact-intro-text {
-  font-family: var(--font-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-size: 1rem;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
   font-weight: 400;
-  color: #475569;
+  color: var(--text-desc);
   margin: 0;
-  line-height: 1.5;
+  line-height: var(--desc-line-height);
 }
 
 /* Card Foundations - Seamless Clean White Section */

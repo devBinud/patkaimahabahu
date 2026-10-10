@@ -227,9 +227,10 @@
 }
 
 .social-card-desc {
-  font-size: 0.88rem;
-  color: #475569;
-  line-height: 1.6;
+  font-family: var(--font-desc);
+  font-size: var(--desc-size-xs);
+  color: var(--text-desc);
+  line-height: var(--desc-line-height);
   margin: 0 0 1.6rem;
   flex-grow: 1;
 }
