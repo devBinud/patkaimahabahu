@@ -16,7 +16,53 @@ import ph10 from '../../assets/gallery/project_home/10.jpeg'
 import ph11 from '../../assets/gallery/project_home/11.jpeg'
 import ph12 from '../../assets/gallery/project_home/12.jpeg'
 
+// First Project Home Showcase Images
+import firstHomeFoundationImg from '../../assets/gallery/project_home/first_home/scratch_step.jpeg'
+import firstHomeFrameImg from '../../assets/gallery/project_home/first_home/step1.jpeg'
+import firstHomeWallsImg from '../../assets/gallery/project_home/first_home/step2.jpeg'
+import firstHomeCompletedImg from '../../assets/gallery/project_home/first_home/first_home_glimpse4.jpeg'
+
 import './ProjectHomePage.css'
+
+// First Project Home (Betbari, Sivasagar), foundation to completed home.
+const firstHomeStages = [
+  {
+    id: 'foundation',
+    label: 'Foundation',
+    image: firstHomeFoundationImg,
+    position: 'center top',
+    hasStamp: true
+  },
+  {
+    id: 'frame',
+    label: 'Frame & Roof',
+    image: firstHomeFrameImg,
+    position: 'center top'
+  },
+  {
+    id: 'walls',
+    label: 'Walls & Finishing',
+    image: firstHomeWallsImg,
+    position: 'center top',
+    hasStamp: true
+  },
+  {
+    id: 'completed',
+    label: 'Completed Home',
+    image: firstHomeCompletedImg,
+    position: 'center bottom'
+  }
+]
+
+// Location of the first home, shown in Assamese beside the section heading
+const firstHomeAddress = {
+  place: 'চেতিয়া কৈৱৰ্ত গাঁও, বেতবাৰী',
+  rows: [
+    { label: 'ডাকঘৰৰ নাম', value: 'বেতবাৰী শাখা ডাকঘৰ' },
+    { label: 'জিলা', value: 'শিৱসাগৰ' },
+    { label: 'পিন কোড', value: '৭৮৫৬৪০' }
+  ]
+}
 
 const projectHomeImages = [ph1, ph2, ph3, ph4, ph5, ph6, ph7, ph8, ph9, ph10, ph11, ph12].map((src, i, all) => ({
   id: `ph-${i + 1}`,
@@ -88,12 +134,83 @@ export default function ProjectHomePage() {
     <div className="project-home-page">
       <Breadcrumb currentPage="Project Home" />
 
+      {/* Project Home: Editorial Showcase (Matching Reference Screenshot 1) */}
+      <section className="project-home-editorial-section" id="first-home">
+        <div className="project-home-editorial-container">
+          {/* Left: the first home under Project Home */}
+          <div className="project-home-editorial-left">
+            <h2 className="project-home-editorial-title">
+              Our First Home Under <span className="project-home-title-highlight first-home-title-nowrap">Project Home</span>
+            </h2>
+            <p className="project-home-editorial-desc">
+              Project Home is Patkai Mahabahu Foundation’s mission to build new homes for 50 families left homeless by the floods across Sivasagar, Charaideo and Jorhat. The first of these homes now stands complete in Betbari, Sivasagar: raised on concrete pillars above flood level, finished with woven bamboo walls, and handed over to the family.
+            </p>
+            <div className="project-home-bottom-actions">
+              <a
+                href="#damage-assessment"
+                className="pmf-btn pmf-btn-outline"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.getElementById('damage-assessment')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
+                <span>Read More</span>
+                <span className="pmf-btn-icon">↗</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right: where the first home stands (Assamese address) */}
+          <div className="project-home-editorial-aside">
+            <address className="first-home-address">
+              <span className="first-home-address-kicker">স্থান</span>
+              <p className="first-home-address-place">{firstHomeAddress.place}</p>
+              <dl className="first-home-address-list">
+                {firstHomeAddress.rows.map((row) => (
+                  <div key={row.label} className="first-home-address-row">
+                    <dt>{row.label}</dt>
+                    <dd>
+                      {row.value}
+                      {row.en && <span className="first-home-address-en"> {row.en}</span>}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </address>
+          </div>
+        </div>
+
+        {/* First home, foundation to completion, in one full-width row */}
+        <div className="first-home-row">
+          {firstHomeStages.map((stage, idx) => (
+            <figure key={stage.id} className="first-home-card">
+              <div className="first-home-frame">
+                <div className="first-home-arch">
+                  <img
+                    src={stage.image}
+                    alt={`First Project Home in Betbari, Sivasagar: ${stage.label.toLowerCase()}`}
+                    className={stage.hasStamp ? 'hide-stamp' : undefined}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ objectPosition: stage.position }}
+                  />
+                </div>
+                <span className="first-home-tag">
+                  <span className="first-home-sr">Step {idx + 1}: </span>
+                  {stage.label}
+                </span>
+              </div>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* Assessment Images Grid Showcase */}
-      <section className="ph-gallery-section" aria-label="Project Home Assessment Images">
+      <section id="damage-assessment" className="ph-gallery-section" aria-label="Project Home Assessment Images">
         <div className="ph-gallery-container">
           {/* Section Header */}
           <div className="ph-header-block">
-            <h1 className="ph-title">House Damage Assessment</h1>
+            <h2 className="ph-title">House Damage Assessment</h2>
             <p className="ph-subtitle">
               On-ground structural evaluation and geo-tagged documentation of flood-damaged houses in Soraideu, Sivsagar & Jorhat.
             </p>

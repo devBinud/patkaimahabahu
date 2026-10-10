@@ -1,0 +1,141 @@
+/* PrivacyPolicyPage.css - Clean Direct Content Layout (No Card, No Grey BG) */
+
+.privacy-page-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.privacy-content-section {
+  width: 100%;
+  padding: 2.75rem 1.5rem 6rem;
+  box-sizing: border-box;
+}
+
+.privacy-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.privacy-header {
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.privacy-title {
+  font-family: var(--font-desc);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.35rem 0;
+  line-height: 1.3;
+}
+
+.privacy-updated {
+  font-family: var(--font-desc);
+  font-size: 0.9rem;
+  color: #64748B;
+  margin: 0;
+}
+
+.privacy-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.privacy-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.privacy-section-title {
+  font-family: var(--font-desc);
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.privacy-p {
+  font-family: var(--font-desc);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #475569;
+  margin: 0;
+}
+
+.privacy-list {
+  margin: 0.5rem 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.privacy-list li {
+  font-family: var(--font-desc);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.privacy-contact-box {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0.25rem 0 0 0;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-width: 600px;
+}
+
+.privacy-contact-box p {
+  font-family: var(--font-desc);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
+}
+
+.privacy-contact-box strong {
+  color: #1e293b;
+}
+
+.privacy-contact-box a {
+  color: #3475bb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacy-contact-box a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .privacy-content-section {
+    padding: 1.75rem 1.25rem 4rem;
+  }
+
+  .privacy-container {
+    padding: 0;
+  }
+
+  .privacy-title {
+    font-size: 1.35rem;
+  }
+}

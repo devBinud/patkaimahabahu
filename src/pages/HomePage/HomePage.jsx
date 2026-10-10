@@ -807,12 +807,6 @@ export default function HomePage() {
                 Television and digital news reports on the foundation’s flood relief and home rebuilding work across Assam.
               </p>
             </div>
-            <div className="editorial-gallery-header-right">
-              <Link to="/news-media" className="pmf-btn pmf-btn-outline">
-                <span>View All</span>
-                <span className="pmf-btn-icon">↗</span>
-              </Link>
-            </div>
           </div>
         </div>
 

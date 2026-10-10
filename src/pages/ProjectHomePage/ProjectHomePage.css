@@ -606,3 +606,372 @@
     height: 38px;
   }
 }
+
+/* =========================================================
+   PROJECT HOME: EDITORIAL SHOWCASE (Matching Reference 1)
+   ========================================================= */
+.project-home-editorial-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 5.5rem 1.5rem 5.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.project-home-editorial-container {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: end;
+  box-sizing: border-box;
+}
+
+/* Left Content Column */
+.project-home-editorial-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.project-home-editorial-title {
+  font-family: var(--font-noto-serif), Georgia, 'Times New Roman', serif !important;
+  font-size: 2.35rem !important;
+  font-weight: 500 !important;
+  color: #3e3a3a !important;
+  line-height: 1.24 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 1.25rem 0 !important;
+}
+
+.project-home-title-highlight {
+  color: var(--primary, #005C8A) !important;
+  font-family: inherit !important;
+}
+
+.project-home-editorial-desc {
+  font-family: var(--font-desc);
+  font-size: var(--desc-size);
+  line-height: var(--desc-line-height);
+  color: var(--text-desc);
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+}
+
+.project-home-commitment-lead {
+  font-family: var(--font-sans, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #1e293b;
+  font-weight: 500;
+  margin: 0 0 1.25rem 0;
+}
+
+/* Actions Row */
+.project-home-bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.editorial-award-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.62rem 1.35rem;
+  border-radius: 9999px;
+  border: 1.5px solid #bfdbfe;
+  background-color: #f8fafc;
+  color: #005C8A;
+  font-family: var(--font-heading, 'Plus Jakarta Sans'), sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.award-badge-icon {
+  color: #005C8A;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+/* Right column: Assamese address card for the first home, bottom-aligned
+   with the paragraph */
+.project-home-editorial-aside {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.first-home-address {
+  --address-pad-x: 2rem;
+  width: 100%;
+  max-width: 480px;
+  font-style: normal;
+  background: #f9f5ec;
+  border-radius: 20px;
+  padding: 1.75rem var(--address-pad-x) 1.85rem;
+  box-sizing: border-box;
+}
+
+/* "স্থান" tab: a wooden plank (shared surface below) pulled out to sit flush
+   against the card's left edge (offset = card padding, so it stays attached at
+   every breakpoint); only its right end is rounded */
+.first-home-address-kicker {
+  position: relative;
+  display: inline-block;
+  margin-left: calc(-1 * var(--address-pad-x));
+  margin-bottom: 0.9rem;
+  padding: 0.4rem 1.6rem 0.4rem var(--address-pad-x);
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-desc);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.first-home-address-place {
+  font-family: var(--font-desc);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #3e3a3a;
+  line-height: 1.35;
+  margin: 0 0 1.35rem;
+}
+
+/* Label | value rows, separated by spacing only */
+.first-home-address-list {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 0.7rem;
+  margin: 0;
+}
+
+.first-home-address-row {
+  display: contents;
+}
+
+.first-home-address-row dt {
+  font-family: var(--font-desc);
+  font-size: 0.88rem;
+  color: #7a6f63;
+  line-height: 1.5;
+}
+
+.first-home-address-row dd {
+  margin: 0;
+  font-family: var(--font-desc);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #3e3a3a;
+  line-height: 1.5;
+}
+
+.first-home-address-en {
+  white-space: nowrap;
+}
+
+/* Keep "Project Home" together when the heading wraps */
+.first-home-title-nowrap {
+  white-space: nowrap;
+}
+
+/* First home, foundation to completion: four arch-framed photos in one row.
+   Each photo sits in a 4:5 arch (semicircle top) inside a thin outline that
+   follows the same curve, with a white label tag on the bottom edge. The row
+   runs a little wider than the text column above so the photos read large. */
+.first-home-row {
+  max-width: 1400px;
+  margin: 3.25rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.first-home-card {
+  margin: 0 0 1.25rem;
+}
+
+/* Outline ring: percentage radii keep the top a true semicircle at any width
+   (vertical radius = half the width, expressed as a share of the height) */
+.first-home-frame {
+  position: relative;
+  padding: 7px;
+  border: 1.5px solid rgb(187 114 52 / 45%);
+  border-radius: 50% 50% 16px 16px / 40.5% 40.5% 16px 16px;
+}
+
+.first-home-arch {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #e2e8f0;
+  border-radius: 50% 50% 10px 10px / 40% 40% 10px 10px;
+}
+
+.first-home-arch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 4:5 shows the top ~94% of a 3:4 photo; a 12% zoom anchored at the top
+   trims that to ~84%, just above the geo-tag box */
+.first-home-arch img.hide-stamp {
+  transform: scale(1.12);
+  transform-origin: center top;
+}
+
+/* Label tag straddling the frame's bottom edge */
+/* Wooden signboard tag on each photo (surface shared with the "স্থান" tab) */
+.first-home-tag {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  transform: translateY(45%);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.55rem;
+  border-radius: 6px;
+  font-family: var(--font-desc);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* Shared wooden plank surface: CSS-only grain + one knot + edge shading,
+   a darker wood border, cream lettering, and a nail head at each end */
+.first-home-tag,
+.first-home-address-kicker {
+  border-top: 2px solid #6b4220;
+  border-right: 2px solid #6b4220;
+  border-bottom: 2px solid #6b4220;
+  background-color: #a0693a;
+  background-image:
+    linear-gradient(180deg, rgba(255, 235, 200, 0.22) 0%, rgba(255, 235, 200, 0) 35%, rgba(50, 25, 5, 0.18) 100%),
+    radial-gradient(ellipse 16px 5px at 24% 58%, rgba(70, 35, 10, 0.45), rgba(70, 35, 10, 0) 70%),
+    repeating-linear-gradient(178.5deg, rgba(60, 30, 10, 0) 0 3px, rgba(60, 30, 10, 0.2) 4px, rgba(60, 30, 10, 0) 6px),
+    repeating-linear-gradient(181.5deg, rgba(255, 215, 160, 0) 0 5px, rgba(255, 215, 160, 0.12) 8px, rgba(255, 215, 160, 0) 12px);
+  box-shadow: 0 6px 14px rgba(60, 30, 10, 0.3), inset 0 1px 0 rgba(255, 235, 200, 0.25);
+  color: #fff4dc;
+  text-shadow: 0 1px 0 rgba(40, 20, 5, 0.55);
+}
+
+/* Photo tags also have a left border; the "স্থান" tab doesn't (it meets the card edge) */
+.first-home-tag {
+  border-left: 2px solid #6b4220;
+}
+
+.first-home-tag::before,
+.first-home-tag::after,
+.first-home-address-kicker::before,
+.first-home-address-kicker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f1ebe2 0%, #b3a596 45%, #5c4a3a 100%);
+  box-shadow: 0 1px 1px rgba(30, 15, 5, 0.5);
+}
+
+.first-home-tag::before,
+.first-home-address-kicker::before {
+  left: 7px;
+}
+
+.first-home-tag::after,
+.first-home-address-kicker::after {
+  right: 7px;
+}
+
+/* Screen-reader-only text (announces the step number before each label) */
+.first-home-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .project-home-editorial-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .project-home-editorial-aside {
+    justify-content: flex-start;
+  }
+
+  .first-home-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .project-home-editorial-section {
+    padding: 1.25rem 1.25rem 3.5rem !important;
+  }
+
+  .project-home-editorial-title {
+    font-size: 1.85rem !important;
+  }
+
+  .first-home-address {
+    --address-pad-x: 1.35rem;
+    padding: 1.4rem var(--address-pad-x) 1.5rem;
+    border-radius: 16px;
+  }
+
+  .first-home-address-place {
+    font-size: 1.3rem;
+  }
+
+  .first-home-address-list {
+    column-gap: 1rem;
+  }
+
+  /* Phones: keep the four photos in one line as a swipeable strip */
+  .first-home-row {
+    margin-top: 2.25rem;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 72%;
+    gap: 1.1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding: 0 1.25rem 1rem;
+    scroll-padding: 0 1.25rem;
+  }
+
+  .first-home-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .first-home-card {
+    scroll-snap-align: start;
+  }
+
+  .first-home-tag {
+    right: 12px;
+    font-size: 0.85rem;
+  }
+}

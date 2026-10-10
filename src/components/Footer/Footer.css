@@ -298,6 +298,29 @@
   color: #3475bb !important;
 }
 
+.rf-legal-link-desktop {
+  color: #64748B !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.rf-legal-link-desktop:hover {
+  color: #3475bb !important;
+  text-decoration: underline !important;
+}
+
+.rf-legal-link-mobile {
+  color: #64748B !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+.rf-legal-link-mobile:hover {
+  color: #3475bb !important;
+  text-decoration: underline !important;
+}
+
 .rf-reg-bottom-text {
   color: #005C8A;
   font-weight: 500;

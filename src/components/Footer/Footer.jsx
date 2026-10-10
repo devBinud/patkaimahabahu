@@ -264,7 +264,11 @@ export default function Footer() {
         {/* Desktop View: Single unified bottom copyright bar (NO separate blue bar) */}
         <div className="rf-footer-bottom-desktop rf-desktop-only">
           <p className="rf-desktop-copyright-text">
-            © {new Date().getFullYear()} Patkai Mahabahu Foundation. All rights reserved. &nbsp;|&nbsp; Designed & Developed by{' '}
+            © {new Date().getFullYear()} Patkai Mahabahu Foundation. All rights reserved. &nbsp;|&nbsp;{' '}
+            <Link to="/privacy-policy" className="rf-legal-link-desktop">
+              Privacy Policy
+            </Link>{' '}
+            &nbsp;|&nbsp; Designed & Developed by{' '}
             <a
               href="https://www.binudsoftwaresolutions.in/"
               target="_blank"
@@ -280,7 +284,10 @@ export default function Footer() {
         <div className="rf-mobile-bottom-wrap rf-mobile-only">
           <div className="rf-patkai-copyright">
             <p className="rf-patkai-copyright-text">
-              © {new Date().getFullYear()} Patkai Mahabahu Foundation. All rights reserved.
+              © {new Date().getFullYear()} Patkai Mahabahu Foundation. All rights reserved. &nbsp;|&nbsp;{' '}
+              <Link to="/privacy-policy" className="rf-legal-link-mobile">
+                Privacy Policy
+              </Link>
             </p>
           </div>
 

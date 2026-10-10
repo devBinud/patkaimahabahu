@@ -21,6 +21,7 @@ import ProjectHomePage from './pages/ProjectHomePage/ProjectHomePage'
 import EducationPage from './pages/EducationPage'
 import EnvironmentPage from './pages/EnvironmentPage'
 import HealthcarePage from './pages/HealthcarePage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import {
   AdminAuthProvider,
   ProtectedRoute,
@@ -175,6 +176,7 @@ function App() {
       <Route path="/education" element={<EducationPage />} />
       <Route path="/environment" element={<EnvironmentPage />} />
       <Route path="/healthcare" element={<HealthcarePage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="/projects" element={<Navigate to="/project-home" replace />} />
       {/* Legacy redirects */}
       <Route path="/chairmans-vision" element={<Navigate to="/about" replace />} />
