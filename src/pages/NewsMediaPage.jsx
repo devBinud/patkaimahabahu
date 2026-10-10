@@ -10,8 +10,6 @@ import media2 from '../assets/gallery/media/2.jpeg'
 import printMedia1 from '../assets/gallery/media/print_media1.jpeg'
 import printMedia3 from '../assets/gallery/media/print_media3.jpeg'
 import printMedia3Thumb from '../assets/gallery/media/print_media3_thumb.jpg'
-import printMedia4 from '../assets/gallery/media/print_media4.jpeg'
-import printMedia4Thumb from '../assets/gallery/media/print_media4_thumb.jpg'
 import { videoCoverage } from '../data/mediaCoverage'
 import VideoCoverageCard from '../components/VideoCoverageCard/VideoCoverageCard'
 import './NewsMediaPage.css'
@@ -36,15 +34,6 @@ export default function NewsMediaPage() {
       title: 'Newspaper report: Patkai Mahabahu Foundation’s initiative hands over the first house to a flood-affected family in Betbari',
       date: 'October 2026',
       desc: 'Sivasagar report on the first house handed over in Betbari, with the foundation pledging homes and household materials to more flood-affected families.'
-    },
-    {
-      id: 'pc-print-3',
-      image: printMedia4,
-      thumb: printMedia4Thumb,
-      publication: 'Pratidin (Dibrugarh edition)',
-      title: 'Pratidin, 5 October 2026: stilt house built for a flood-affected family in Betbari by Patkai Mahabahu Foundation',
-      date: '5 October 2026',
-      desc: 'Pratidin report on the chang-ghar (stilt house) built for a family left with nothing by the floods in Betbari, Sivasagar.'
     },
     {
       id: 'pc-1',
