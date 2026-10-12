@@ -411,7 +411,7 @@ export default function GalleryPage() {
                           className="digitalindia-poster-video"
                         />
                       )}
-                      {/* Center Orange Play Button */}
+                      {/* Center Play Badge */}
                       <div className="digitalindia-play-badge" aria-label="Play video">
                         <FaPlay className="digitalindia-play-icon" />
                       </div>

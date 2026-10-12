@@ -559,13 +559,12 @@
   aspect-ratio: 9 / 14;
   /* Taller/portrait card to display entire vertical video thumbnail */
   display: block;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   user-select: none;
 }
 
-.digitalindia-video-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+.digitalindia-video-card:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
 }
 
 /* Poster / Exact Video Frame */
@@ -588,37 +587,29 @@
   background: #000000;
 }
 
-/* Center Play Button Badge - Refined, elegant proportion */
+/* Static play badge (no hover state), matching the News & Media cards:
+   translucent dark circle, white triangle */
 .digitalindia-play-badge {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 46px;
-  height: 46px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: var(--primary, #005C8A);
-  border: 2.5px solid #ffffff;
-  box-shadow: none;
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease, transform 0.2s ease;
   z-index: 2;
   pointer-events: none;
 }
 
 .digitalindia-play-icon {
   color: #ffffff;
-  font-size: 0.95rem;
-  margin-left: 2px;
-  /* optical center alignment for play triangle */
-}
-
-.digitalindia-video-card:hover .digitalindia-play-badge {
-  transform: translate(-50%, -50%);
-  background: var(--primary-dark, #004366);
-  box-shadow: none;
+  font-size: 1.25rem;
+  /* optical centering: the triangle's visual mass sits left of its box */
+  margin-left: 4px;
 }
 
 /* ==========================================
@@ -734,14 +725,8 @@
   }
 
   .digitalindia-play-badge {
-    width: 40px;
-    height: 40px;
-    border-width: 2px;
-  }
-
-  .digitalindia-play-icon {
-    font-size: 0.82rem;
-    margin-left: 2px;
+    width: 52px;
+    height: 52px;
   }
 
   .video-popup-overlay {
